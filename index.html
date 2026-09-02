@@ -1752,13 +1752,13 @@
           </tr>
           <tr>
             <td><strong>الخصوصية والامان</strong></td>
-            <td class="col-highlight">✅ 100% محلية بجهازك بلا سيرفرات</td>
+            <td class="col-highlight">✅ 100% محلية بجهازك بدون سيرفرات</td>
             <td>❌ تتبع سحابي واشتراكات</td>
             <td>❌ اعلانات وجمع بيانات</td>
           </tr>
           <tr>
             <td><strong>الجانب الايماني (مصحف وصلوات)</strong></td>
-            <td class="col-highlight">✅ مصحف بلا نت وتقويم ام القرى</td>
+            <td class="col-highlight">✅ مصحف بدون نت وتقويم ام القرى</td>
             <td>❌ معدوم كليا</td>
             <td>⚠️ معزول بتطبيق مستقل</td>
           </tr>
@@ -2184,11 +2184,11 @@
       const vEl = document.getElementById('telemetry-visits');
       const caEl = document.getElementById('telemetry-clicks-apple');
       const cgEl = document.getElementById('telemetry-clicks-google');
-      const saEl = document.getElementById('telemetry-saud');
+      const saudEl = document.getElementById('telemetry-saud');
       if (vEl) vEl.textContent = Telemetry.visits;
       if (caEl) caEl.textContent = Telemetry.clicksApple;
       if (cgEl) cgEl.textContent = Telemetry.clicksGoogle;
-      if (saEl) saEl.textContent = Telemetry.saudInteractions;
+      if (saudEl) saudEl.textContent = Telemetry.saudInteractions;
     }
 
     function openAnalyticsModal() {
@@ -2260,7 +2260,7 @@
 
     // محاكي المدرب سعود AI
     const SAUD_RESPONSES = {
-      'ليش اطفى بعد ٣ ايام وش الحل؟': 'يا بعدي صدقني مو كسل! السر انك تبدا بحماس الف وتفتح خمس تطبيقات وكلها تعطيك تنبيهات لين تطفش. بالهمة رتبنا لك شاشة وحدة وسلسلة التزام وحدة. ابدا بمهام خفيفة اول يومين، وكل ما تممت مهمة خذ ريالات همة ونقاط ترفعك مستوى. بتلقى نفسك تكمل اسبوع بلا ما تحس!',
+      'ليش اطفى بعد ٣ ايام وش الحل؟': 'يا بعدي صدقني مو كسل! السر انك تبدا بحماس الف وتفتح خمس تطبيقات وكلها تعطيك تنبيهات لين تطفش. بالهمة رتبنا لك شاشة وحدة وسلسلة التزام وحدة. ابدا بمهام خفيفة اول يومين، وكل ما تممت مهمة خذ ريالات همة ونقاط ترفعك مستوى. بتلقى نفسك تكمل اسبوع بدون ما تحس!',
       'كيف اوفق بين وردي وشغلي وجيمي؟': 'عين العقل! جدول يومك بالهمة مبني على اوقات الصلوات بتقويم ام القرى. تخلي وردك مرتبط بركعتي الفجر او المغرب، والجيم له وقت ثابت بجدول التمارين، والنظام يذكرك بلطف بدون ما يضغطك. الصملة تبي تنظيم مو ارهاق!',
       'وش يفرق الهمة عن باقي التطبيقات؟': 'الفرق باختصار: الهمة مو تطبيق عادات مترجم وبارد. الهمة تطبيق سعودي فاهم يومك، يجمع وردك وصلاتك واكلك وفلوسك وجيمك بشاشة وحدة، وكل شي فيه له طعم اللعبة اللي تنجحك فعلا، وفوقها بياناتك بجهازك 100% بدون اعلانات.',
       'كيف اوفر من راتبي بدون حرمان؟': 'قاعدة الهمة واضحة: اول ما ينزل الراتب حدد المبلغ اللي تبيه بحصالة الهمة للهدف، والباقي وزعه على الميزانية. ومع حاسبة قطات الطلعات ما عاد تشيل هم حساب القهوة والعشاء مع اخوياك. فلسفة توفير بذكاء مو بحرمان!'
@@ -2317,7 +2317,7 @@
       }
       const display = document.getElementById('savings-total-display');
       if (display) {
-        display.textContent = total.toLocaleString('ar-SA') + ' ريال';
+        display.textContent = total.toLocaleString('en-US') + ' ريال';
       }
       logEvent('calculate_savings', { total: total });
     }
