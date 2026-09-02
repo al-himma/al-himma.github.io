@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>تطبيق الهمة — المنظومة السعودية الاولى لتطوير الذات ويومك الكامل</title>
   <meta name="description" content="تطبيق سعودي يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI بخصوصية محلية 100% وبدون اعلانات.">
-  <meta name="keywords" content="تطبيق الهمة, عادات, روتين, مصحف, صلاة, تمارين, مصاريف, الذكاء الاصطناعي, سعود AI, تطوير الذات, السعودية">
+  <meta name="keywords" content="تطبيق الهمة, عادات, روتين, مصحف, صلاة, تمارين, مصاريف, الذكاء الاصطناعي, المدرب سعود AI, تطوير الذات, السعودية">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
@@ -87,7 +87,7 @@
 
     html {
       scroll-behavior: smooth;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Tahoma, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Arabic", "Segoe UI", "Tajawal", "Almarai", "Cairo", sans-serif;
     }
 
     body {
@@ -777,6 +777,511 @@
       font-size: 0.88rem;
       font-weight: 800;
       color: var(--primary-ink);
+    }
+
+    
+    /* هالات الإضاءة التنفسية المريحة للأعصاب */
+    .landing-ambient-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.12;
+      animation: ambientBreathe 11s ease-in-out infinite alternate;
+      will-change: transform, opacity;
+    }
+
+    .ambient-orb-1 {
+      width: 480px;
+      height: 480px;
+      background: var(--primary);
+      top: -100px;
+      right: -80px;
+    }
+
+    .ambient-orb-2 {
+      width: 420px;
+      height: 420px;
+      background: #0284c7;
+      top: 38%;
+      left: -120px;
+      animation-delay: -4s;
+    }
+
+    .ambient-orb-3 {
+      width: 360px;
+      height: 360px;
+      background: var(--accent);
+      bottom: 8%;
+      right: 8%;
+      opacity: 0.08;
+      animation-delay: -7s;
+    }
+
+    @keyframes ambientBreathe {
+      0% {
+        transform: scale(0.94) translate(0, 0);
+        opacity: 0.10;
+      }
+      100% {
+        transform: scale(1.08) translate(20px, 25px);
+        opacity: 0.20;
+      }
+    }
+
+    /* أنيميشن الظهور الانسيابي عند التمرير */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* نبض الشارة السعودية */
+    .landing-badge-pill {
+      animation: softBadgePulse 3.5s ease-in-out infinite;
+    }
+
+    @keyframes softBadgePulse {
+      0%, 100% { transform: scale(1); box-shadow: var(--shadow-sm); }
+      50% { transform: scale(1.02); box-shadow: 0 4px 16px rgba(18, 85, 86, 0.2); }
+    }
+
+    /* تفاعل الازرار اللمسي الفاخر */
+    .landing-hero-primary-btn,
+    .landing-hero-secondary-btn,
+    .landing-btn-download-nav,
+    .store-badge-btn,
+    .saud-quick-btn,
+    .comparison-filter-btn {
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .landing-hero-primary-btn:active,
+    .landing-hero-secondary-btn:active,
+    .landing-btn-download-nav:active,
+    .store-badge-btn:active {
+      transform: scale(0.97) !important;
+    }
+
+    /* عناصر قسم الفرق الواضح المتطورة */
+    .comparison-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .comparison-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .comparison-filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .comparison-filter-btn:hover {
+      background: var(--primary-bg);
+      color: var(--primary-ink);
+      border-color: var(--primary);
+    }
+
+    .comparison-filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 14px rgba(18, 85, 86, 0.25);
+    }
+
+    .comparison-view-toggle {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .view-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .view-toggle-btn.active {
+      background: var(--surface);
+      color: var(--heading);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* بطاقات المقارنة الذكية للجوال */
+    .landing-comparison-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .comparison-card-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .comparison-card-item.hidden-by-filter {
+      display: none !important;
+    }
+
+    .comparison-card-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .comparison-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 10px;
+    }
+
+    .comparison-card-title {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--heading);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comparison-card-cat {
+      font-size: 0.74rem;
+      font-weight: 800;
+      background: var(--bg);
+      color: var(--text-secondary);
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .comparison-card-himmah {
+      background: linear-gradient(135deg, var(--primary-bg), rgba(18, 85, 86, 0.08));
+      border: 1.5px solid var(--primary);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      position: relative;
+    }
+
+    .comparison-card-himmah-tag {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 2px 10px;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(18, 85, 86, 0.3);
+    }
+
+    .comparison-card-himmah-label {
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: var(--primary-ink);
+      margin-bottom: 4px;
+    }
+
+    .comparison-card-himmah-val {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.6;
+    }
+
+    .comparison-card-others {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .comparison-card-others {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comparison-other-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .comparison-other-label {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      font-weight: 800;
+    }
+
+    .comparison-other-val {
+      font-size: 0.86rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* مؤشر السحب الافقي للجدول */
+    .comparison-scroll-hint {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--primary-bg);
+      color: var(--primary-ink);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 8px 14px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-scroll-hint.scrolled {
+      display: none !important;
+    }
+
+    /* تثبيت اعمدة الجدول */
+    .landing-comparison-table th:first-child,
+    .landing-comparison-table td:first-child {
+      position: sticky;
+      right: 0;
+      z-index: 5;
+      background: var(--surface);
+      box-shadow: -4px 0 10px rgba(0, 0, 0, 0.04);
+      min-width: 190px;
+    }
+
+    .landing-comparison-table th:first-child {
+      z-index: 15;
+      background: var(--bg);
+    }
+
+    .landing-comparison-table tbody tr:hover td {
+      background-color: var(--primary-bg);
+    }
+
+    .landing-comparison-table tr.hidden-by-filter {
+      display: none !important;
+    }
+
+    .col-highlight-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-scroll-hint {
+        display: flex;
+      }
+      .landing-comparison-table-wrapper.mode-cards {
+        display: none !important;
+      }
+      .landing-comparison-cards.mode-table {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .comparison-view-toggle {
+        display: none !important;
+      }
+      .landing-comparison-cards {
+        display: none !important;
+      }
+      .landing-comparison-table-wrapper {
+        display: block !important;
+      }
+    }
+
+    /* مؤشر كتابة سعود AI */
+    .saud-typing-indicator {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      border-bottom-right-radius: 2px;
+      align-self: flex-start;
+      max-width: 85%;
+    }
+
+    .saud-typing-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: typingBounce 1.4s infinite ease-in-out;
+    }
+
+    .saud-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .saud-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingBounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* محاكي تجربة الروتين والشعلة */
+    .routine-sim-card {
+      margin-top: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .routine-sim-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .routine-sim-flame {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(234, 179, 8, 0.15);
+      color: #b45309;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      border: 1px solid rgba(234, 179, 8, 0.3);
+    }
+
+    .routine-sim-task {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .routine-sim-task:hover {
+      border-color: var(--primary);
+      background: var(--primary-bg);
+    }
+
+    .routine-sim-task.completed {
+      background: var(--primary-bg);
+      border-color: var(--primary);
+      color: var(--primary-ink);
+      text-decoration: line-through;
+    }
+
+    .routine-sim-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 900;
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+
+    .routine-sim-task.completed .routine-sim-box {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .routine-sim-popup {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--primary);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .routine-sim-popup.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     /* جدول المقارنة الفارق */
@@ -1557,6 +2062,12 @@
   </style>
 </head>
 <body>
+  <!-- هالات الإضاءة التنفسية المريحة للعين -->
+  <div class="landing-ambient-container" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
 
   <!-- الترويسة العلوية -->
   <header class="landing-nav">
@@ -1564,7 +2075,7 @@
       <img src="logo.png" alt="شعار الهمة" class="landing-nav-logo">
       <div>
         <div class="landing-nav-title">الهمة</div>
-        <div class="landing-nav-sub">Al-Himmah</div>
+        <div class="landing-nav-sub">«الهمة حتى القمة»</div>
       </div>
     </a>
     <div class="landing-nav-actions">
@@ -1578,7 +2089,7 @@
   </header>
 
   <!-- الهيرو الرئيسي -->
-  <section class="landing-hero">
+  <section class="landing-hero reveal-on-scroll">
     <div class="landing-badge-pill">
       <span>🏔️ المنظومة السعودية الاولى للانضباط وتطوير الذات</span>
     </div>
@@ -1587,7 +2098,7 @@
       <span class="landing-title-highlight">بهمة ما تنكسر</span>
     </h1>
     <p class="landing-hero-desc">
-      <strong>تبدا بحماس وتطفي بعد ثلاثة ايام؟</strong> المشكلة مو فيك... ما عندك نظام يشبهك! «الهمة» يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI وكل بياناتك بجهازك بخصوصية تامة 100%.
+      <strong>تبدا بحماس وتطفي بعد ثلاثة ايام؟</strong> المشكلة مو فيك... ما عندك نظام يشبهك! «الهمة» يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI وكل بياناتك بجهازك بخصوصية تامة 100% وبدون اعلانات.
     </p>
 
     <div class="landing-hero-cta-group">
@@ -1595,7 +2106,7 @@
         📱 حمل التطبيق وابدا رحلتك مجانا
       </a>
       <a href="#interactive-preview" class="landing-hero-secondary-btn" onclick="trackFeatureNav('hero_chat')">
-        💬 جرب المدرب سعود AI الان
+        💬 كلم المدرب سعود AI الان
       </a>
       <button class="landing-hero-secondary-btn" onclick="openPreview(0); trackFeatureNav('hero_explore');">
         🔍 استكشف الـ 55 ميزة
@@ -1611,15 +2122,15 @@
   </section>
 
   <!-- شريط الارقام والاحصائيات -->
-  <section class="landing-stats-section">
+  <section class="landing-stats-section reveal-on-scroll">
     <div class="landing-stats-grid">
       <div class="landing-stat-card">
-        <div class="landing-stat-num">+55</div>
+        <div class="landing-stat-num" data-target="55" data-suffix="+">+55</div>
         <div class="landing-stat-label">ميزة واداة متكاملة</div>
         <div class="landing-stat-sub">تغنيك عن 8 تطبيقات منفصلة وتوفر مساحة وذاكرة جوالك</div>
       </div>
       <div class="landing-stat-card">
-        <div class="landing-stat-num">100%</div>
+        <div class="landing-stat-num" data-target="100" data-suffix="%">100%</div>
         <div class="landing-stat-label">خصوصية محلية بجهازك</div>
         <div class="landing-stat-sub">يومياتك ومصاريفك وصلاتك ما تغادر هاتفك نهائيا</div>
       </div>
@@ -1637,7 +2148,7 @@
   </section>
 
   <!-- المشكلة والحل: ليش تطفي؟ -->
-  <section class="landing-solution-section">
+  <section class="landing-solution-section reveal-on-scroll">
     <div class="landing-solution-card">
       <div>
         <h2 class="landing-solution-title">ليش اغلب الناس يطفون بعد 3 ايام؟</h2>
@@ -1675,7 +2186,7 @@
   </section>
 
   <!-- تجربة تفاعلية حية: شات سعود AI + حاسبة التوفير -->
-  <section id="interactive-preview" class="landing-interactive-section">
+  <section id="interactive-preview" class="landing-interactive-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">⚡ جرب قبل التحميل</span>
       <h2 class="landing-section-title">تفاعل مع الهمة مباشرة</h2>
@@ -1713,7 +2224,7 @@
 
       <!-- 2. حاسبة توفير الاشتراكات -->
       <div class="interactive-card">
-        <div class="interactive-card-badge">💰 حاسبة التوفير</div>
+        <div class="interactive-card-badge">💰 حاسبة التوفير والتحفيز</div>
         <h3 class="interactive-card-title">كم يوفر عليك الهمة سنويا؟</h3>
         <p class="interactive-card-desc">حدد التطبيقات اللي تدفع عليها حاليا وشوف كم بتوفر لما تجمعها بالهمة:</p>
 
@@ -1753,22 +2264,49 @@
           <div class="savings-item" onclick="toggleSavingsCheckbox('cb-quran')">
             <label>
               <input type="checkbox" id="cb-quran" checked onchange="calculateSavings()">
-              <span>تطبيقات الختمات والمذكرات المدفوعة</span>
+              <span>برامج الختمات والمواقيت المتفرقة</span>
             </label>
             <span class="savings-item-cost">350 ريال/سنة</span>
           </div>
         </div>
 
         <div class="savings-result-box">
-          <div class="savings-total-val" id="savings-total-display">1,800 ريال</div>
-          <div class="savings-total-label">توفير سنوي مباشر في جيبك + خصوصية تامة وصفر اعلانات</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--primary-ink); margin-bottom: 4px;">
+            مجموع ما توفره مع «الهمة» سنويا:
+          </div>
+          <div id="savings-total-display" style="font-size: 1.7rem; font-weight: 900; color: var(--primary);">
+            1,800 ريال
+          </div>
+          <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">
+            استثمار ذكي في تطبيق واحد يجمع يومك كله 🇸🇦
+          </div>
+        </div>
+
+        <!-- محاكي تجربة اتمام العادة اليومية والشعلة -->
+        <div class="routine-sim-card">
+          <div class="routine-sim-header">
+            <span style="font-size: 0.84rem; font-weight: 800; color: var(--heading);">🔥 جرب تمم مهمة وشوف الشعلة:</span>
+            <span class="routine-sim-flame" id="sim-flame-badge">🔥 صملة 7 ايام</span>
+          </div>
+          <div class="routine-sim-task" onclick="toggleRoutineTask(this, 50)">
+            <div class="routine-sim-box">✓</div>
+            <span>صلاة الفجر بالمسجد</span>
+          </div>
+          <div class="routine-sim-task" onclick="toggleRoutineTask(this, 30)">
+            <div class="routine-sim-box"></div>
+            <span>شرب لتر ماء مع بداية الصباح</span>
+          </div>
+          <div class="routine-sim-task" onclick="toggleRoutineTask(this, 40)">
+            <div class="routine-sim-box"></div>
+            <span>جلسة تركيز بومودورو 25 دقيقة</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- استعراض الاركان الـ 10 والمميزات الـ 55 -->
-  <section id="features" class="landing-features-section">
+  <section id="features" class="landing-features-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">✨ كل ما تحتاجه في مكان واحد</span>
       <h2 class="landing-section-title">اركان الهمة الشاملة</h2>
@@ -1882,64 +2420,235 @@
           <span class="landing-feature-tag">التبويب الخامس: فخري</span>
         </div>
         <h3 class="landing-feature-title">المجلس وديوان الهمة</h3>
-        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، موقد الوجار النجدي وشعلة التحدي، ومتحف الـ 24 وساما، وحصاد الاسبوع (Wrapped).</p>
+        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، موقد الوجار النجدي وشعلة التحدي، ومتحف الـ 24 وساما، وحصاد إنجازك السنوي الفاخر.</p>
         <span class="landing-feature-action">استكشف ركن الفخر ›</span>
       </div>
     </div>
   </section>
 
-  <!-- جدول المقارنة -->
-  <section class="landing-comparison-section">
+  <!-- جدول المقارنة المتفاعل -->
+  <section class="landing-comparison-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">⚖️ الفرق الواضح</span>
       <h2 class="landing-section-title">ليش «الهمة» غير عن اي تطبيق ثاني؟</h2>
-      <p class="landing-section-desc">مقارنة سريعة توضح لك ليش الهمة هو الخيار الطبيعي لكل من يبي ينجز</p>
+      <p class="landing-section-desc">مقارنة واضحة ومباشرة توضح لك ليش الهمة هو الخيار الطبيعي لكل من يبي ينجز</p>
     </div>
 
-    <div class="landing-comparison-table-wrapper">
-      <table class="landing-comparison-table">
+    <div class="comparison-controls">
+      <!-- ازرار التصفية السريعة -->
+      <div class="comparison-filters" role="group" aria-label="تصفية معايير المقارنة">
+        <button type="button" class="comparison-filter-btn active" onclick="filterComparison('all', this)">✨ عرض الكل (6 معايير)</button>
+        <button type="button" class="comparison-filter-btn" onclick="filterComparison('holistic', this)">🕌 الشمولية والعبادة</button>
+        <button type="button" class="comparison-filter-btn" onclick="filterComparison('identity', this)">🇸🇦 الهوية والذكاء</button>
+        <button type="button" class="comparison-filter-btn" onclick="filterComparison('privacy', this)">🔒 الخصوصية والامان</button>
+        <button type="button" class="comparison-filter-btn" onclick="filterComparison('gamification', this)">🏆 التحفيز والتوفير</button>
+      </div>
+
+      <!-- محول العرض للجوال -->
+      <div class="comparison-view-toggle" role="group" aria-label="طريقة العرض">
+        <button type="button" class="view-toggle-btn active" id="btn-view-cards" onclick="switchComparisonView('cards')">
+          📱 بطاقات ذكية
+        </button>
+        <button type="button" class="view-toggle-btn" id="btn-view-table" onclick="switchComparisonView('table')">
+          📊 جدول شامل
+        </button>
+      </div>
+    </div>
+
+    <!-- 1. بطاقات المقارنة الذكية (الافتراضي للجوال والشاشات المتقاربة) -->
+    <div class="landing-comparison-cards mode-cards" id="comparison-cards-container">
+      
+      <!-- معيار 1: الشمولية -->
+      <div class="comparison-card-item" data-cat="holistic">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">🎯 الشمولية في مكان واحد</div>
+          <span class="comparison-card-cat">شمولية وانتاجية</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">الخيار الاشمل 🏆</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ يجمع وردك وصلاتك، روتينك، تمارينك وجيمك، مصاريفك وعالم اطفالك بشاشة وحدة</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">❌ عادات مفرغة فقط بلا سياق</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">❌ 6 تطبيقات مشتتة واشتراكات متعددة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- معيار 2: اللغة والهوية -->
+      <div class="comparison-card-item" data-cat="identity">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">🇸🇦 اللغة واللهجة والهوية</div>
+          <span class="comparison-card-cat">هوية وثقافة</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">سعودي 100% 🇸🇦</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ سعودي اصيل + المدرب سعود AI يفهم لهجتك وسياقك وبيئتك وطاقتك</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">❌ لغة انجليزية او ترجمة آلية ركيكة</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">⚠️ تجارب متباينة وغير متناسقة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- معيار 3: الخصوصية والامان -->
+      <div class="comparison-card-item" data-cat="privacy">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">🔒 الخصوصية والامان</div>
+          <span class="comparison-card-cat">امان وثقة</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">خط احمر 🛡️</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ 100% محلية بجهازك، بدون ايميل وبدون سيرفرات وبدون اعلانات تزعجك</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">❌ تتبع سحابي دائم وجمع بيانات</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">❌ اعلانات تجارية مزعجة تشتت تركيزك</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- معيار 4: الجانب الايماني -->
+      <div class="comparison-card-item" data-cat="holistic">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">🕌 الجانب الايماني والقرآن</div>
+          <span class="comparison-card-cat">طاعة وعبادة</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">مدمج بيومك 📖</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ مصحف كامل بدون نت، تقويم ام القرى الرسمي، والاذان وبنك الاذكار</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">❌ معدوم كليا بالتطبيقات الاجنبية</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">⚠️ معزول بتطبيق مستقل بلا ربط بروتينك</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- معيار 5: نظام التحفيز والمكافآت -->
+      <div class="comparison-card-item" data-cat="gamification">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">🏆 نظام التحفيز والالعاب</div>
+          <span class="comparison-card-cat">تحفيز وانجاز</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">حماس مستمر 🔥</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ مستويات، ريالات همة، 24 وساما، موقد الوجار النجدي وديوان الهمة</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">⚠️ بعضها ارقام جافة وتنبيهات باردة</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">❌ بدون اي تحفيز او تتويج حقيقي</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- معيار 6: التكلفة والوضوح -->
+      <div class="comparison-card-item" data-cat="gamification">
+        <div class="comparison-card-header">
+          <div class="comparison-card-title">💰 التكلفة والاشتراكات</div>
+          <span class="comparison-card-cat">توفير وراحة</span>
+        </div>
+        <div class="comparison-card-himmah">
+          <span class="comparison-card-himmah-tag">قيمة حقيقية 💎</span>
+          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
+          <div class="comparison-card-himmah-val">✅ مجاني بالكامل بخصائصه الاساسية، وباقات استثمار واضحة بالريال بلا تجديد مفاجئ</div>
+        </div>
+        <div class="comparison-card-others">
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
+            <span class="comparison-other-val">❌ اشتراكات شهرية بالدولار تقص الظهر</span>
+          </div>
+          <div class="comparison-other-col">
+            <span class="comparison-other-label">تطبيقات متفرقة:</span>
+            <span class="comparison-other-val">❌ اشتراكات متعددة مرهقة ومكلفة</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 2. جدول المقارنة المطور ذو العمود الثابت والمؤشر التفاعلي -->
+    <div class="landing-comparison-table-wrapper mode-cards" id="comparison-table-container">
+      <div class="comparison-scroll-hint" id="comp-scroll-hint">
+        <span>👈 اسحب لليسار لرؤية باقي المقارنات</span>
+      </div>
+      <table class="landing-comparison-table" id="comparison-main-table">
         <thead>
           <tr>
             <th>المعيار</th>
-            <th class="col-highlight">تطبيق الهمة 🇸🇦</th>
+            <th class="col-highlight">
+              <span class="col-highlight-badge">الخيار الاشمل 🏆</span><br>
+              تطبيق الهمة 🇸🇦
+            </th>
             <th>تطبيقات العادات الاجنبية</th>
             <th>تطبيقات متفرقة</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr data-cat="holistic">
             <td><strong>الشمولية في مكان واحد</strong></td>
             <td class="col-highlight">✅ يجمع وردك، روتينك، جيمك، وفلوسك</td>
             <td>❌ عادات فقط</td>
             <td>❌ 6 تطبيقات مشتتة</td>
           </tr>
-          <tr>
-            <td><strong>اللغة واللهجة</strong></td>
+          <tr data-cat="identity">
+            <td><strong>اللغة واللهجة والهوية</strong></td>
             <td class="col-highlight">✅ سعودي اصيل + المدرب سعود AI</td>
             <td>❌ انجليزي او ترجمة آلية ركيكة</td>
             <td>⚠️ متباينة</td>
           </tr>
-          <tr>
+          <tr data-cat="privacy">
             <td><strong>الخصوصية والامان</strong></td>
-            <td class="col-highlight">✅ 100% محلية بجهازك بدون سيرفرات</td>
+            <td class="col-highlight">✅ 100% محلية بجهازك بدون سيرفرات وبدون اعلانات</td>
             <td>❌ تتبع سحابي واشتراكات</td>
             <td>❌ اعلانات وجمع بيانات</td>
           </tr>
-          <tr>
-            <td><strong>الجانب الايماني (مصحف وصلوات)</strong></td>
-            <td class="col-highlight">✅ مصحف بدون نت وتقويم ام القرى</td>
+          <tr data-cat="holistic">
+            <td><strong>الجانب الايماني ومواقيت الصلاة</strong></td>
+            <td class="col-highlight">✅ مصحف بدون نت وتقويم ام القرى والاذان</td>
             <td>❌ معدوم كليا</td>
             <td>⚠️ معزول بتطبيق مستقل</td>
           </tr>
-          <tr>
+          <tr data-cat="gamification">
             <td><strong>نظام المكافآت واللعب</strong></td>
-            <td class="col-highlight">✅ مستويات، ريالات همة، 24 وساما</td>
+            <td class="col-highlight">✅ مستويات، ريالات همة، 24 وساما، موقد الوجار</td>
             <td>⚠️ بعضها بسيط وبارد</td>
             <td>❌ بدون اي تحفيز</td>
           </tr>
-          <tr>
+          <tr data-cat="gamification">
             <td><strong>التكلفة والاشتراكات</strong></td>
-            <td class="col-highlight">✅ مجاني بالكامل بخصائصه الاساسية</td>
+            <td class="col-highlight">✅ مجاني بالكامل بخصائصه الاساسية وباقات واضحة بالريال</td>
             <td>❌ اشتراك شهري بالدولار</td>
             <td>❌ اشتراكات متعددة مرهقة</td>
           </tr>
@@ -1949,7 +2658,7 @@
   </section>
 
   <!-- تجارب واقعية من اهل الهمة -->
-  <section class="landing-testimonials-section">
+  <section class="landing-testimonials-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">💬 مجتمع الهمة</span>
       <h2 class="landing-section-title">قصص نجاح من كل مدن المملكة</h2>
@@ -1999,7 +2708,7 @@
   </section>
 
   <!-- باقات الاسعار والاستثمار في نفسك -->
-  <section id="pricing" class="landing-pricing-section">
+  <section id="pricing" class="landing-pricing-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">💎 استثمارك في تطوير ذاتك</span>
       <h2 class="landing-section-title">باقات واضحة بدون اشتراكات مخفية</h2>
@@ -2184,6 +2893,7 @@
   </div>
 
   <div class="toast" id="toast">تم نسخ رابط التطبيق! شاركه مع ربعك 🚀</div>
+  <div class="routine-sim-popup" id="routine-popup">🎉 كفو! +50 نقطة همة وشعلتك زادت توهجا!</div>
 
   <script>
     // بيانات الاركان الـ 10 الشاملة لكل محتويات التطبيق الـ 55+
@@ -2412,7 +3122,7 @@
     function askSaud(question) {
       Telemetry.saudInteractions += 1;
       localStorage.setItem('alhimmah_saud_count', Telemetry.saudInteractions);
-      logEvent('ask_saud_ai', { question: question });
+      logEvent('ask_saud_coach', { question: question });
 
       const chatBox = document.getElementById('saud-chat-box');
       if (!chatBox) return;
@@ -2524,8 +3234,189 @@
       } catch (e) {}
     }
 
+    
+    // محاكي كتابة سعود AI المحسن
+    function askSaud(question) {
+      Telemetry.saudInteractions += 1;
+      localStorage.setItem('alhimmah_saud_count', Telemetry.saudInteractions);
+      logEvent('ask_saud_coach', { question: question });
+
+      const chatBox = document.getElementById('saud-chat-box');
+      if (!chatBox) return;
+
+      const userMsg = document.createElement('div');
+      userMsg.className = 'saud-chat-msg user';
+      userMsg.textContent = question;
+      chatBox.appendChild(userMsg);
+
+      // مؤشر الكتابة التفاعلي
+      const typingIndicator = document.createElement('div');
+      typingIndicator.className = 'saud-typing-indicator';
+      typingIndicator.id = 'saud-typing';
+      typingIndicator.innerHTML = '<span style="font-size:0.75rem; color:var(--text-secondary); margin-left:4px;">سعود يكتب...</span><span class="saud-typing-dot"></span><span class="saud-typing-dot"></span><span class="saud-typing-dot"></span>';
+      chatBox.appendChild(typingIndicator);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+        const typingEl = document.getElementById('saud-typing');
+        if (typingEl) typingEl.remove();
+
+        const botMsg = document.createElement('div');
+        botMsg.className = 'saud-chat-msg bot';
+        botMsg.textContent = SAUD_RESPONSES[question] || 'يا هلا بك! اسالني عن روتينك او تمرينك او خطتك وابشر بالسعد.';
+        chatBox.appendChild(botMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 550);
+    }
+
+    // تصفية معايير المقارنة
+    function filterComparison(cat, btn) {
+      document.querySelectorAll('.comparison-filter-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.comparison-card-item');
+      const tableRows = document.querySelectorAll('#comparison-main-table tbody tr');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.classList.remove('hidden-by-filter');
+        } else {
+          card.classList.add('hidden-by-filter');
+        }
+      });
+
+      tableRows.forEach(row => {
+        if (cat === 'all' || row.getAttribute('data-cat') === cat) {
+          row.classList.remove('hidden-by-filter');
+        } else {
+          row.classList.add('hidden-by-filter');
+        }
+      });
+
+      logEvent('filter_comparison', { category: cat });
+    }
+
+    // تبديل نمط عرض المقارنة على الجوال
+    function switchComparisonView(mode) {
+      const cardsCont = document.getElementById('comparison-cards-container');
+      const tableCont = document.getElementById('comparison-table-container');
+      const btnCards = document.getElementById('btn-view-cards');
+      const btnTable = document.getElementById('btn-view-table');
+
+      if (mode === 'cards') {
+        if (cardsCont) { cardsCont.classList.remove('mode-table'); cardsCont.classList.add('mode-cards'); }
+        if (tableCont) { tableCont.classList.remove('mode-table'); tableCont.classList.add('mode-cards'); }
+        if (btnCards) btnCards.classList.add('active');
+        if (btnTable) btnTable.classList.remove('active');
+      } else {
+        if (cardsCont) { cardsCont.classList.remove('mode-cards'); cardsCont.classList.add('mode-table'); }
+        if (tableCont) { tableCont.classList.remove('mode-cards'); tableCont.classList.add('mode-table'); }
+        if (btnCards) btnCards.classList.remove('active');
+        if (btnTable) btnTable.classList.add('active');
+      }
+      logEvent('switch_comparison_view', { mode: mode });
+    }
+
+    // مؤشر سحب الجدول
+    const compWrapper = document.getElementById('comparison-table-container');
+    if (compWrapper) {
+      compWrapper.addEventListener('scroll', () => {
+        const hint = document.getElementById('comp-scroll-hint');
+        if (hint && !hint.classList.contains('scrolled')) {
+          hint.classList.add('scrolled');
+        }
+      }, { passive: true });
+    }
+
+    // محاكي انجاز مهمة الروتين اليومي
+    let simFlameStreak = 7;
+    function toggleRoutineTask(el, xp) {
+      const box = el.querySelector('.routine-sim-box');
+      const popup = document.getElementById('routine-popup');
+      const flameBadge = document.getElementById('sim-flame-badge');
+
+      if (!el.classList.contains('completed')) {
+        el.classList.add('completed');
+        if (box) box.textContent = '✓';
+        simFlameStreak += 1;
+        if (flameBadge) flameBadge.textContent = '🔥 صملة ' + simFlameStreak + ' ايام';
+        if (popup) {
+          popup.textContent = '🎉 كفو والله! +' + xp + ' نقطة همة وشعلتك زادت توهجا!';
+          popup.classList.add('show');
+          setTimeout(() => popup.classList.remove('show'), 2200);
+        }
+        logEvent('sim_routine_complete', { xp: xp, streak: simFlameStreak });
+      } else {
+        el.classList.remove('completed');
+        if (box) box.textContent = '';
+        simFlameStreak = Math.max(7, simFlameStreak - 1);
+        if (flameBadge) flameBadge.textContent = '🔥 صملة ' + simFlameStreak + ' ايام';
+      }
+    }
+
+    // عداد الاحصائيات المتصاعد التفاعلي (Count-Up)
+    function animateStatNumbers() {
+      const statNums = document.querySelectorAll('.landing-stat-num');
+      statNums.forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        if (isNaN(target)) return;
+
+        let start = 0;
+        const duration = 1400;
+        const startTime = performance.now();
+
+        function updateNumber(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Easing out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+
+          if (suffix === '+') {
+            el.textContent = (el.textContent.startsWith('+') ? '+' : '') + current + (suffix === '+' && !el.textContent.startsWith('+') ? '+' : '');
+          } else if (suffix === '%') {
+            el.textContent = current + '%';
+          } else {
+            el.textContent = current;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          } else {
+            el.textContent = (suffix === '+' && el.getAttribute('data-target') === '55' ? '+' : '') + target + (suffix === '+' && el.getAttribute('data-target') === '800' ? '+' : '') + (suffix === '%' ? '%' : '');
+          }
+        }
+        requestAnimationFrame(updateNumber);
+      });
+    }
+
+    // تهيئة مراقب التمرير للانيميشن والظهور الانسيابي
+    let statsAnimated = false;
+    function initScrollReveals() {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-revealed'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            if (entry.target.classList.contains('landing-stats-section') && !statsAnimated) {
+              statsAnimated = true;
+              animateStatNumbers();
+            }
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    }
+
     // تهيئة الصفحة
     renderModalTabs();
+    initScrollReveals();
     detectPlatform();
     logEvent('page_view_init', { referrer: document.referrer || 'direct' });
   </script>
