@@ -888,6 +888,178 @@
       color: var(--text-secondary);
     }
 
+    /* باقات الاسعار والاشتراك */
+    .landing-pricing-section {
+      max-width: 960px;
+      margin: 48px auto 64px;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .landing-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 28px;
+    }
+
+    .landing-pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 38px 28px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .landing-pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .landing-pricing-card.featured {
+      border: 2px solid var(--accent);
+      background: linear-gradient(180deg, rgba(234, 179, 8, 0.04) 0%, var(--surface) 100%);
+    }
+
+    .landing-pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: #122425;
+      font-size: 0.8rem;
+      font-weight: 900;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 14px rgba(202, 138, 4, 0.35);
+      white-space: nowrap;
+    }
+
+    .landing-pricing-header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .landing-pricing-name {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+
+    .landing-pricing-sub {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .landing-pricing-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+      margin: 18px 0 6px;
+    }
+
+    .landing-pricing-num {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--heading);
+      line-height: 1;
+    }
+
+    .landing-pricing-cur {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .landing-pricing-usd {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 22px;
+      background: var(--primary-bg);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      align-self: center;
+      font-weight: 700;
+    }
+
+    .landing-pricing-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .landing-pricing-features li {
+      font-size: 0.92rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .landing-pricing-features li span.icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .landing-pricing-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      font-weight: 900;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .landing-pricing-btn.primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(18, 85, 86, 0.25);
+    }
+
+    .landing-pricing-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(18, 85, 86, 0.35);
+    }
+
+    .landing-pricing-btn.featured {
+      background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+      color: #122425;
+      box-shadow: 0 4px 14px rgba(202, 138, 4, 0.3);
+    }
+
+    .landing-pricing-btn.featured:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(202, 138, 4, 0.45);
+    }
+
+    .landing-pricing-note {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
     /* قسم الخصوصية */
     .landing-privacy-banner {
       max-width: 960px;
@@ -1396,9 +1568,6 @@
       </div>
     </a>
     <div class="landing-nav-actions">
-      <button class="landing-btn-analytics" onclick="openAnalyticsModal()" aria-label="عرض احصائيات الصفحة المباشرة">
-        📊 <span>الاحصائيات</span>
-      </button>
       <button class="landing-btn-share" onclick="shareApp()" aria-label="مشاركة رابط تطبيق الهمة">
         📤 مشاركة
       </button>
@@ -1793,9 +1962,9 @@
           "اول مرة يمر علي تطبيق يربط صلاتي ووردي بجدول الجيم ومصاريفي. كنت اضيع بين 4 تطبيقات وكلها تطفي بعد اسبوع. الحين وصلت 35 يوم بسلسلة الروتين بدون ما اوقف!"
         </p>
         <div class="landing-testimonial-user">
-          <div class="landing-testimonial-avatar">ع</div>
+          <div class="landing-testimonial-avatar">ر</div>
           <div>
-            <div class="landing-testimonial-name">عبدالله بن فهد</div>
+            <div class="landing-testimonial-name">راكان بن عبدالله</div>
             <div class="landing-testimonial-city">الرياض — مهندس ومحب للرياضة</div>
           </div>
         </div>
@@ -1806,9 +1975,9 @@
           "حاسبة المعدل الجامعي بالساعات المعتمدة ومؤقت بومودورو مع روتين المذاكرة خلت دراستي اسهل بكثير. والمدرب سعود AI يرد باسلوب يعطيك دافع مو نصائح مكررة."
         </p>
         <div class="landing-testimonial-user">
-          <div class="landing-testimonial-avatar">س</div>
+          <div class="landing-testimonial-avatar">أ</div>
           <div>
-            <div class="landing-testimonial-name">سارة القحطاني</div>
+            <div class="landing-testimonial-name">أفراح بنت أحمد</div>
             <div class="landing-testimonial-city">جدة — طالبة جامعية</div>
           </div>
         </div>
@@ -1819,14 +1988,82 @@
           "ميزة ان بياناتي ما تطلع من جوالي بدون ايميل وبدون اعلانات تزعجني هي اللي خلتني ارتاح له. تطبيق محترم وفخم ويستاهل كل جوال سعودي."
         </p>
         <div class="landing-testimonial-user">
-          <div class="landing-testimonial-avatar">ف</div>
+          <div class="landing-testimonial-avatar">ع</div>
           <div>
-            <div class="landing-testimonial-name">فيصل الدوسري</div>
+            <div class="landing-testimonial-name">عادل العنزي</div>
             <div class="landing-testimonial-city">الدمام — موظف قطاع خاص</div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- باقات الاسعار والاستثمار في نفسك -->
+  <section id="pricing" class="landing-pricing-section">
+    <div class="landing-section-header">
+      <span class="landing-section-badge">💎 استثمارك في تطوير ذاتك</span>
+      <h2 class="landing-section-title">باقات واضحة بدون اشتراكات مخفية</h2>
+      <p class="landing-section-desc">ابدأ تجربتك مجانا، واختر الباقة التي تناسبك واستفد من التطبيق الكامل</p>
+    </div>
+
+    <div class="landing-pricing-grid">
+      <!-- باقة 3 اشهر -->
+      <div class="landing-pricing-card">
+        <div class="landing-pricing-header">
+          <h3 class="landing-pricing-name">اشتراك ٣ أشهر</h3>
+          <p class="landing-pricing-sub">الخيار المثالي لتثبيت عاداتك وبناء روتين يومي متماسك</p>
+          <div class="landing-pricing-price">
+            <span class="landing-pricing-num">15</span>
+            <span class="landing-pricing-cur">ريال سعودي</span>
+          </div>
+          <div class="landing-pricing-usd">ما يعادل 3.99 دولار فقط (5 ريالات بالشهر)</div>
+        </div>
+
+        <ul class="landing-pricing-features">
+          <li><span class="icon">✅</span><span>وصول كامل لكافة اركان المنظومة الـ 10</span></li>
+          <li><span class="icon">✅</span><span>المدرب سعود AI معك لتوجيهك وصناعة خططك</span></li>
+          <li><span class="icon">✅</span><span>جداول التمارين بالصور المخصصة للبيت او النادي</span></li>
+          <li><span class="icon">✅</span><span>حاسبة المعدل الجامعي وموزع مراجعة الاختبارات</span></li>
+          <li><span class="icon">✅</span><span>تتبع المصاريف والختمات والالعاب التراثية</span></li>
+          <li><span class="icon">✅</span><span>جميع التحديثات خلال فترة اشتراكك</span></li>
+        </ul>
+
+        <a href="#download" class="landing-pricing-btn primary" onclick="trackFeatureNav('pricing_3m')">
+          حمل وابدا تجربتك الان
+        </a>
+      </div>
+
+      <!-- باقة مدى الحياة -->
+      <div class="landing-pricing-card featured">
+        <div class="landing-pricing-badge">👑 الاكثر طلبا وتوفيرا — تدفعها لمرة واحدة فقط</div>
+        <div class="landing-pricing-header">
+          <h3 class="landing-pricing-name">اشتراك مدى الحياة</h3>
+          <p class="landing-pricing-sub">استثمار دائم لراحتك وتطويرك بدون اي تجديد او رسوم متكررة</p>
+          <div class="landing-pricing-price">
+            <span class="landing-pricing-num">75</span>
+            <span class="landing-pricing-cur">ريال سعودي</span>
+          </div>
+          <div class="landing-pricing-usd">ما يعادل 19.99 دولار فقط — تدفع لمرة واحدة للأبد</div>
+        </div>
+
+        <ul class="landing-pricing-features">
+          <li><span class="icon">⭐</span><strong>تدفع لمرة واحدة وتستفيد من جميع المميزات مدى الحياة</strong></li>
+          <li><span class="icon">⭐</span><strong>كافة الميزات والادوات والتحديثات القادمة مجانا للأبد</strong></li>
+          <li><span class="icon">✅</span><span>التطبيق في تطور مستمر واضافات اسبوعية نوعية</span></li>
+          <li><span class="icon">✅</span><span>المدرب سعود AI بدون حدود على مدار الساعة</span></li>
+          <li><span class="icon">✅</span><span>جميع الـ 55+ ميزة والالعاب والتحديات بالكامل</span></li>
+          <li><span class="icon">✅</span><span>اولوية الدعم الفني واوسمة التميز الحصرية</span></li>
+        </ul>
+
+        <a href="#download" class="landing-pricing-btn featured" onclick="trackFeatureNav('pricing_lifetime')">
+          امتلك نسختك مدى الحياة
+        </a>
+      </div>
+    </div>
+
+    <p class="landing-pricing-note">
+      🔒 جميع العمليات مؤمنة عبر متجر Apple الرسمي ومتجر Google Play مع ضمان كامل
+    </p>
   </section>
 
   <!-- قسم الخصوصية والامان الفائق -->
@@ -1906,7 +2143,7 @@
         <a href="data-deletion.html">حذف البيانات</a>
         <a href="#interactive-preview">المدرب سعود</a>
         <a href="#features">المميزات</a>
-        <a href="javascript:void(0)" onclick="openAnalyticsModal()">لوحة الاحصائيات</a>
+        <a href="#pricing">الباقات والاسعار</a>
       </div>
     </div>
     <div class="landing-footer-bottom">
@@ -1942,66 +2179,6 @@
         <a href="#download" class="landing-hero-primary-btn" onclick="closePreview(); trackDownloadClick('modal_cta');" style="padding: 10px 22px; font-size: 0.92rem;">
           تحميل التطبيق الان 📥
         </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- نافذة لوحة التتبع والاحصائيات المباشرة للمطور والمالك -->
-  <div class="modal-overlay" id="analytics-modal" onclick="if(event.target===this) closeAnalyticsModal()">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <div class="modal-title">
-          <span>📊</span>
-          <span>احصائيات صفحة الهبوط المباشرة</span>
-        </div>
-        <button class="modal-close" onclick="closeAnalyticsModal()" aria-label="اغلاق نافذة الاحصائيات">&times;</button>
-      </div>
-
-      <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">
-        هذا المتتبع المحلي يسجل تفاعلات الجلسة الحالية والزيارات التراكمية في جهازك مباشرة دون اي خوادم وسيطة، بالاضافة الى ارسال الاحداث تلقائيا الى Google Analytics 4:
-      </p>
-
-      <div class="analytics-modal-grid">
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-visits">1</div>
-          <div class="analytics-stat-lbl">عدد مرات زيارة الصفحة</div>
-        </div>
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-time">0 ثانية</div>
-          <div class="analytics-stat-lbl">مدة البقاء الحالية (Dwell Time)</div>
-        </div>
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-clicks-apple">0</div>
-          <div class="analytics-stat-lbl">نقرات App Store</div>
-        </div>
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-clicks-google">0</div>
-          <div class="analytics-stat-lbl">نقرات Google Play</div>
-        </div>
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-saud">0</div>
-          <div class="analytics-stat-lbl">تفاعلات شات سعود AI</div>
-        </div>
-        <div class="analytics-stat-item">
-          <div class="analytics-stat-val" id="telemetry-scroll">0%</div>
-          <div class="analytics-stat-lbl">اقصى عمق تمرير (Scroll)</div>
-        </div>
-      </div>
-
-      <div style="font-size: 0.82rem; font-weight: 800; color: var(--heading); margin: 10px 0 6px;">
-        سجل الاحداث الفوري (Console Log):
-      </div>
-      <div class="analytics-log-box" id="telemetry-log">
-        [init] Analytics engine loaded.
-      </div>
-
-      <div class="modal-footer" style="margin-top: 16px;">
-        <button type="button" class="landing-btn-share" onclick="resetLocalAnalytics()">
-          تصفير العداد المحلي
-        </button>
-        <button type="button" class="landing-btn-download-nav" onclick="closeAnalyticsModal()">
-          تم
-        </button>
       </div>
     </div>
   </div>
@@ -2178,40 +2355,6 @@
 
     function trackFeatureNav(name) {
       logEvent('nav_feature', { target: name });
-    }
-
-    function updateTelemetryUI() {
-      const vEl = document.getElementById('telemetry-visits');
-      const caEl = document.getElementById('telemetry-clicks-apple');
-      const cgEl = document.getElementById('telemetry-clicks-google');
-      const saudEl = document.getElementById('telemetry-saud');
-      if (vEl) vEl.textContent = Telemetry.visits;
-      if (caEl) caEl.textContent = Telemetry.clicksApple;
-      if (cgEl) cgEl.textContent = Telemetry.clicksGoogle;
-      if (saudEl) saudEl.textContent = Telemetry.saudInteractions;
-    }
-
-    function openAnalyticsModal() {
-      updateTelemetryUI();
-      document.getElementById('analytics-modal').classList.add('open');
-      logEvent('open_analytics_modal');
-    }
-
-    function closeAnalyticsModal() {
-      document.getElementById('analytics-modal').classList.remove('open');
-    }
-
-    function resetLocalAnalytics() {
-      localStorage.removeItem('alhimmah_visits');
-      localStorage.removeItem('alhimmah_clicks_apple');
-      localStorage.removeItem('alhimmah_clicks_google');
-      localStorage.removeItem('alhimmah_saud_count');
-      Telemetry.visits = 1;
-      Telemetry.clicksApple = 0;
-      Telemetry.clicksGoogle = 0;
-      Telemetry.saudInteractions = 0;
-      updateTelemetryUI();
-      logEvent('reset_local_analytics');
     }
 
     // اكتشاف نظام التشغيل التلقائي واضاءة المتجر المناسب
