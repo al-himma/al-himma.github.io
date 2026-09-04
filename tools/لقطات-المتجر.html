@@ -1,0 +1,2501 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الهمة — استوديو لقطات المتجر الاحترافي (Screenshots Studio Pro)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C2A24C;
+    --gold-light: #F3DB92;
+    --gold-hover: #D4B660;
+    --deep: #7A3A33;
+    --leather: #3D2B1E;
+    --bg: #0F0A06;
+    --surface: #1B130D;
+    --surface-card: #251B12;
+    --surface-hover: #32251A;
+    --text: #F5ECD8;
+    --text-2: #BCAA8C;
+    --text-muted: #82725B;
+    --border: #443326;
+    --border-light: #5C4635;
+    --accent-glow: rgba(194, 162, 76, 0.3);
+    --teal: #14B8A6;
+    --teal-bg: rgba(20, 184, 166, 0.15);
+    --teal-border: rgba(20, 184, 166, 0.4);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Cairo", "Tajawal", system-ui, -apple-system, sans-serif;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .header-titles h1 {
+    margin: 0 0 4px;
+    font-size: 26px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-titles p {
+    margin: 0;
+    color: var(--text-2);
+    font-size: 14px;
+  }
+  .badge-tag {
+    background: rgba(194, 162, 76, 0.15);
+    color: var(--gold-light);
+    border: 1px solid var(--gold);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Control Panels */
+  .control-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  }
+  .toolbar-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .toolbar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .toolbar-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.5px;
+  }
+  select, input[type="text"] {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  select:focus, input[type="text"]:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold) 60%, #947932);
+    color: #17110C;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(194, 162, 76, 0.35);
+    transition: all 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(194, 162, 76, 0.5);
+  }
+  .btn-secondary {
+    background: var(--surface-card);
+    color: var(--gold-light);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--gold);
+  }
+  .btn-teal {
+    background: rgba(20, 184, 166, 0.2);
+    color: #5EEAD4;
+    border: 1px solid rgba(20, 184, 166, 0.4);
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-weight: 800;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  .btn-teal:hover {
+    background: rgba(20, 184, 166, 0.3);
+    border-color: #2DD4BF;
+    transform: translateY(-1px);
+  }
+
+  /* Copy Profiles Switcher Banner */
+  .profile-switcher-banner {
+    background: linear-gradient(135deg, rgba(27, 19, 13, 0.95), rgba(37, 27, 18, 0.95));
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .profile-title-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .profile-title-area .icon {
+    font-size: 24px;
+    background: rgba(194, 162, 76, 0.15);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+  }
+  .profile-title-area h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+  .profile-title-area p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--text-2);
+  }
+  .profile-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .profile-btn {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    color: var(--text-2);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .profile-btn:hover {
+    border-color: var(--gold);
+    color: var(--text);
+  }
+  .profile-btn.active {
+    background: linear-gradient(135deg, rgba(194, 162, 76, 0.25), rgba(122, 58, 51, 0.3));
+    border-color: var(--gold);
+    color: var(--gold-light);
+    box-shadow: 0 0 12px var(--accent-glow);
+  }
+
+  /* Quick Jump & Filter Sticky Bar */
+  .quick-nav-bar {
+    position: sticky;
+    top: 12px;
+    z-index: 50;
+    background: rgba(27, 19, 13, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  }
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .nav-pill {
+    background: var(--surface-card);
+    border: 1px solid var(--border-light);
+    color: var(--text-2);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+  .nav-pill:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: var(--surface-hover);
+  }
+  .nav-pill.disabled-pill {
+    opacity: 0.45;
+    text-decoration: line-through;
+  }
+  .nav-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-search input {
+    width: 170px;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  .selection-summary {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Info Banner */
+  .guide-box {
+    background: linear-gradient(90deg, rgba(122, 58, 51, 0.2), rgba(194, 162, 76, 0.12));
+    border-right: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid rgba(194, 162, 76, 0.2);
+    border-bottom: 1px solid rgba(194, 162, 76, 0.2);
+    border-left: 1px solid rgba(194, 162, 76, 0.2);
+  }
+  .guide-box .icon { font-size: 20px; line-height: 1; }
+  .guide-box p { margin: 0; color: var(--text); font-size: 12.5px; }
+  .guide-box strong { color: var(--gold-light); }
+
+  /* Studio Workspace Grid */
+  .studio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+  }
+
+  .slot-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  .slot-card:hover {
+    border-color: var(--border-light);
+  }
+  .slot-card.is-disabled {
+    opacity: 0.55;
+    filter: grayscale(0.2);
+    border-style: dashed;
+  }
+  
+  .slot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(194, 162, 76, 0.15);
+  }
+  .slot-title {
+    font-weight: 800;
+    color: var(--gold-light);
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .slot-number {
+    background: var(--gold);
+    color: #17110C;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+  }
+  .slot-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .btn-icon {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    color: var(--text-2);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.15s;
+  }
+  .btn-icon:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: var(--surface-hover);
+  }
+  .toggle-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--text-2);
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle-wrap input {
+    cursor: pointer;
+    accent-color: var(--gold);
+  }
+
+  .input-label {
+    font-size: 11px;
+    color: var(--text-2);
+    font-weight: 700;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input-label-category {
+    font-size: 9.5px;
+    color: var(--gold-light);
+    background: rgba(194, 162, 76, 0.12);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .slot-field {
+    width: 100%;
+  }
+
+  /* File Uploader styling */
+  .upload-area {
+    border: 1.5px dashed var(--border-light);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background: var(--bg);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .upload-area:hover {
+    border-color: var(--gold);
+    background: rgba(194, 162, 76, 0.05);
+  }
+  .upload-area span { font-size: 12px; color: var(--text-2); }
+  .upload-area small { font-size: 10px; color: var(--text-muted); }
+  .upload-area input[type="file"] { display: none; }
+
+  /* Canvas preview box */
+  .canvas-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    margin-top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .slot-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .btn-slot {
+    flex: 1;
+    background: var(--surface-card);
+    border: 1px solid var(--border-light);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: inherit;
+  }
+  .btn-slot:hover {
+    background: var(--surface-hover);
+    color: var(--gold-light);
+    border-color: var(--gold);
+  }
+  
+  /* Quick Preset Pills & Hooks */
+  .quick-hooks-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 5px;
+  }
+  .preset-section-title {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+  }
+  .quick-hooks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .hook-chip {
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 3px 8px;
+    font-size: 10.5px;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1.4;
+  }
+  .hook-chip:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(194, 162, 76, 0.12);
+  }
+  .hook-chip.landing-chip {
+    border-color: var(--teal-border);
+    background: var(--teal-bg);
+    color: #99F6E4;
+  }
+  .hook-chip.landing-chip:hover {
+    border-color: #2DD4BF;
+    color: #FFFFFF;
+    background: rgba(20, 184, 166, 0.25);
+  }
+
+  /* Preset Pills */
+  .badge-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .badge-chip {
+    background: rgba(194, 162, 76, 0.08);
+    border: 1px solid rgba(194, 162, 76, 0.25);
+    border-radius: 10px;
+    padding: 2px 7px;
+    font-size: 10px;
+    color: var(--text-2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .badge-chip:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    background: rgba(194, 162, 76, 0.18);
+  }
+  .badge-chip.landing-chip {
+    border-color: var(--teal-border);
+    background: var(--teal-bg);
+    color: #99F6E4;
+  }
+  .badge-chip.landing-chip:hover {
+    border-color: #2DD4BF;
+    color: #FFFFFF;
+  }
+
+  /* Modal Gallery Viewer */
+  .gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .gallery-modal.open {
+    display: flex;
+  }
+  .gallery-content {
+    max-width: 900px;
+    width: 100%;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .gallery-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .gallery-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+  .gallery-close {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  .gallery-img-wrap {
+    width: auto;
+    max-width: 100%;
+    max-height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(0,0,0,0.8);
+    border: 1px solid var(--border-light);
+  }
+  .gallery-img-wrap img {
+    max-height: 76vh;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .gallery-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  /* Toast notification */
+  .toast-box {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1F2937;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .toast-box.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-titles">
+    <h1><span>✨</span> الهمة — استوديو لقطات المتجر الاحترافي</h1>
+    <p>توليد وتصميم لقطات الشاشة الرسمية للمتاجر بهوية سعودية فاخرة وخالية من الشدات وعلامات التعجب.</p>
+  </div>
+  <div class="header-actions">
+    <span class="badge-tag">الإصدار 3.0 الشامل</span>
+    <button id="btnGallery" class="btn-secondary" onclick="openGallery()">
+      <span>👁️</span> عرض تسلسلي (معاينة المتجر)
+    </button>
+    <button id="dlAll" class="btn-primary">
+      <span>📥</span> تنزيل الحزمة المحددة (<span id="dlCountText">11</span> لقطة)
+    </button>
+  </div>
+</div>
+
+<!-- Profile Switcher: One-Click Marketing Copy Presets -->
+<div class="profile-switcher-banner">
+  <div class="profile-title-area">
+    <div class="icon">📜</div>
+    <div>
+      <h3>حزم النصوص التسويقية الجاهزة (Copy Profiles):</h3>
+      <p>بدّل كامل نصوص اللقطات بنقرة واحدة بين نصوص المتجر المقتضبة أو نصوص صفحة الهبوط الشاملة</p>
+    </div>
+  </div>
+  <div class="profile-btns">
+    <button class="profile-btn active" id="prof_store" onclick="switchProfile('store')">
+      <span>📱</span> نصوص المتجر الرسمية (App Store / Play)
+    </button>
+    <button class="profile-btn" id="prof_landing" onclick="switchProfile('landing')">
+      <span>🌐</span> نصوص صفحة الهبوط (الأركان الـ 10)
+    </button>
+    <button class="profile-btn" id="prof_value" onclick="switchProfile('value')">
+      <span>💎</span> نصوص الشمولية والتوفير والقيمة
+    </button>
+  </div>
+</div>
+
+<!-- Quick Navigation & Live Filter Sticky Bar -->
+<div class="quick-nav-bar">
+  <div class="nav-pills" id="navPillsContainer">
+    <!-- Rendered dynamically -->
+  </div>
+  
+  <div class="nav-search">
+    <input type="text" id="slotSearch" placeholder="🔍 تصفية اللقطات..." oninput="filterCards(this.value)">
+    <div class="selection-summary">
+      <button class="btn-secondary" style="padding:4px 9px; font-size:11px;" onclick="selectAll(true)">تحديد الكل</button>
+      <button class="btn-secondary" style="padding:4px 9px; font-size:11px;" onclick="selectFirstN(5)">أول 5 (آبل)</button>
+      <button class="btn-secondary" style="padding:4px 9px; font-size:11px;" onclick="selectFirstN(8)">أول 8 (جوجل)</button>
+      <button class="btn-secondary" style="padding:4px 9px; font-size:11px;" onclick="selectAll(false)">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- Controls bar -->
+<div class="control-panel">
+  <div class="toolbar-row">
+    <div class="toolbar-group">
+      <label>📱 المقاس الرسمي:</label>
+      <select id="size">
+        <option value="2048x2732|ipad_13">iPad 13" / 12.9" Pro (2048×2732 px) — لقسم 13 بوصة بآبل (المعتمد)</option>
+        <option value="2064x2752|ipad_13_m4">iPad Pro 13" M4 (2064×2752 px) — بديل 13 بوصة بآبل</option>
+        <option value="1668x2388|ipad_11">iPad 11" Display (1668×2388 px) — لقسم 11 بوصة بآبل</option>
+        <option value="1242x2688|iphone_6.5">iPhone 6.5" Display (1242×2688 px) — لقسم 6.5 بوصة بآبل</option>
+        <option value="1290x2796|iphone_6.7">iPhone 6.7" Display (1290×2796 px) — لقسم 6.7 بوصة بآبل</option>
+        <option value="1242x2208|iphone_5.5">iPhone 5.5" Display (1242×2208 px) — لقسم 5.5 بوصة بآبل</option>
+        <option value="1080x2400|android_tall">Google Play — أندرويد طولي (1080×2400 px) — موصى به</option>
+        <option value="1080x1920|android_standard">Google Play — أندرويد كلاسيكي (1080×1920 px)</option>
+        <option value="1024x500|google_feature">Google Play — الغلاف المميز Feature Graphic (1024×500 px)</option>
+      </select>
+    </div>
+
+    <div class="toolbar-group">
+      <label>🎨 الثيم والخلفية الفاخرة:</label>
+      <select id="theme">
+        <option value="sadu">سدو الفاخر — جلد عودي وذهب ناصع وزخارف نجدية</option>
+        <option value="saqqar">الصقار — رملي صحراوي وأناقة الأصالة</option>
+        <option value="hibr">حبر ملكي — أسود فاخر وأونيكس وبريق ذهبي</option>
+        <option value="emerald">الزمردي النجدي — أخضر سعودي ملكي ساحر</option>
+        <option value="glass">المجرة (Glass) — سماء ليلية وشهب ناعمة</option>
+        <option value="royalGold">الذهب الإمبراطوري — بريق مشع</option>
+      </select>
+    </div>
+
+    <div class="toolbar-group">
+      <label>🖼️ نمط الإطار:</label>
+      <select id="frameStyle">
+        <option value="cleanFrame">إطار نقي أنيق بدون نوتش أو نقاط سوداء</option>
+        <option value="floatingCard">بطاقة عائمة بحواف ناعمة وظل سينمائي</option>
+        <option value="angle3d">منظور ثلاثي الأبعاد مائل</option>
+        <option value="borderless">شاشة كاملة ممتدة بدون إطار</option>
+      </select>
+    </div>
+
+    <div class="toolbar-group">
+      <label>📜 نص الشعار السفلي (Footer):</label>
+      <input type="text" id="footerSlogan" value="معنا نشحن همتك لـ قمتك" style="width: 250px;">
+      <div class="quick-hooks" style="margin-top: 2px;">
+        <span class="hook-chip" onclick="setFooterSlogan('معنا نشحن همتك لـ قمتك')">معنا نشحن همتك لـ قمتك</span>
+        <span class="hook-chip" onclick="setFooterSlogan('معنا همتك فوق هام السحب')">معنا همتك فوق هام السحب</span>
+        <span class="hook-chip" onclick="setFooterSlogan('الهمة حتى القمة')">الهمة حتى القمة</span>
+        <span class="hook-chip" onclick="setFooterSlogan('نظام حياتك اليومي')">نظام حياتك اليومي</span>
+        <span class="hook-chip" onclick="setFooterSlogan('')">❌ إخفاء الشعار</span>
+      </div>
+    </div>
+
+    <div style="margin-right: auto; display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end;">
+      <button id="renderAll" class="btn-secondary">🔄 تحديث المعاينة</button>
+      <button id="btnSaveDraft" class="btn-secondary" onclick="saveDraft()">💾 حفظ مسودة</button>
+      <button id="btnExportJson" class="btn-secondary" onclick="exportJson()">📤 تصدير JSON</button>
+      <button id="btnImportJson" class="btn-secondary" onclick="document.getElementById('importFile').click()">📥 استيراد JSON</button>
+      <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importJson(event)">
+      <button id="resetDefaults" class="btn-secondary" style="color:#F87171;">⚙️ استعادة الأصل</button>
+    </div>
+  </div>
+</div>
+
+<!-- Slots Grid -->
+<div class="studio-grid" id="grid"></div>
+
+<!-- Modal Gallery Viewer -->
+<div class="gallery-modal" id="galleryModal">
+  <div class="gallery-content">
+    <div class="gallery-header">
+      <div class="gallery-title" id="galleryTitle">معاينة اللقطة 1</div>
+      <button class="gallery-close" onclick="closeGallery()">&times;</button>
+    </div>
+    <div class="gallery-img-wrap">
+      <img id="galleryImg" src="" alt="معاينة اللقطة">
+    </div>
+    <div class="gallery-nav">
+      <button class="btn-secondary" onclick="prevGallerySlide()">‹ السابق</button>
+      <span style="font-size:13px; font-weight:800; color:var(--gold-light);" id="galleryCounter">1 / 11</span>
+      <button class="btn-secondary" onclick="nextGallerySlide()">التالي ›</button>
+      <button class="btn-primary" style="margin-right: 20px;" onclick="downloadCurrentGallery()">📥 تنزيل هذه اللقطة</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Box -->
+<div class="toast-box" id="toast"></div>
+
+<script>
+// Clean string helper: Zero Shadda, No Exclamation/Question Marks, No Coach, No Ya Batal, No Bala, No Salawat/Rouhaniyat
+function sanitizeText(str) {
+  if (!str) return '';
+  return str
+    .replace(/[\u0651]/g, '') // remove shadda
+    .replace(/[!؟?]/g, '')    // remove exclamation/question marks
+    .replace(/كوتش/g, 'المدرب') // replace coach
+    .replace(/يا بطل/g, 'يا همام') // remove ya batal
+    .replace(/بلا/g, 'بدون')   // replace بلا with بدون
+    .replace(/روحانيات/g, 'عبادتك') // replace روحانيات
+    .replace(/صلوات/g, 'عبادتك') // replace صلوات
+    .trim();
+}
+
+// 1. Base Store Slides (Short & Punchy for App Store / Play Store)
+const STORE_SLIDES = [
+  {
+    id: 1,
+    enabled: true,
+    badgeText: "المنظومة الشاملة",
+    title: "يومك كله بشاشة وحدة",
+    subtitle: "نيتك واجندتك وسلسلتك قدامك بثواني",
+    mockType: "dashboard",
+    badgePresets: ["المنظومة الشاملة", "تطبيق سعودي 100%", "بدل 6 تطبيقات", "بوصلة يومك"],
+    landingBadgePresets: ["المنظومة السعودية الاولى", "نظامك اليومي المتكامل", "تطبيق سعودي 100%", "حياتك وعاداتك"],
+    quickHooks: ["يومك كله بشاشة وحدة", "حياتك وعاداتك بهمة لا تنكسر", "بدل 6 تطبيقات نظام واحد", "كل ما تحتاجه بمكان واحد"],
+    landingHooks: ["حياتك وعاداتك ووردك بهمة ما تنكسر", "نظامك اليومي المتكامل يجمع يومك كله", "ليش تطفي بعد 3 ايام؟ قفل يومك بنظام واحد", "بدل 6 تطبيقات مشتتة شاشة وحدة"],
+    subPresets: ["نيتك واجندتك وسلسلتك قدامك بثواني", "يجمع روتينك ووردك وصحتك ومصاريفك بدون تشتت", "نظام متكامل يمسك بيدك ويحول يومك لانجاز"],
+    landingSubPresets: ["يجمع وردك وصلاتك وروتينك وصحتك ومصاريفك مع المدرب سعود AI", "سلسلة وحدة ما تنكسر بدل 6 تطبيقات مشتتة واشتراكات متعددة", "روتين الصباح والمساء وسلاسل التزام وبوصلة نيتك اليومية لحفظ تركيزك"]
+  },
+  {
+    id: 2,
+    enabled: true,
+    badgeText: "الروتين والانضباط",
+    title: "كل انجاز يرفعك مستوى",
+    subtitle: "حول روتينك للعبة ممتعة تنجحك بالواقع",
+    mockType: "levelup",
+    badgePresets: ["الروتين والانضباط", "سلسلة عادات لا تنكسر", "دوبامين الانجاز", "نقاط واوسمة"],
+    landingBadgePresets: ["الروتين وسلاسل الهمة", "صملة ما تنكسر", "حصيلة اليوم Day Wrap", "دوبامين الانجاز"],
+    quickHooks: ["كل انجاز يرفعك مستوى", "روتينك اليومي بلمسة وحدة", "ابدا يومك بنية واختمه بفخر", "لعبة تنجحك بالواقع"],
+    landingHooks: ["سلاسل التزام وبوصلة نية ما تنكسر", "كل مهمة ترفعك مستوى ونقاط خبرة وريالات", "صمم روتين الصباح والمساء بلمسة وحدة", "لعبة تنجحك بالواقع مع حماية التوقف"],
+    subPresets: ["حول روتينك للعبة ممتعة تنجحك بالواقع", "بناء روتين الصباح والمساء وسلاسل ايام متتالية", "قفل حصيلة يومك بنقاط ومستويات تحفزك"],
+    landingSubPresets: ["صمم روتين الصباح والمساء وابن عاداتك بنقاط فوز ترفعك مستوى", "بوصلة نيتك اليومية لحفظ تركيزك بدون تشتت مع حماية التوقف", "حصاد يومك بنقاط خبرة ترفعك مستوى وتمنحك ريالات همة رمزية"]
+  },
+  {
+    id: 3,
+    enabled: true,
+    badgeText: "حياتك بمربعات",
+    title: "روتينك ووردك واكلك بلمسة",
+    subtitle: "مربعات ذكية تنظم حياتك بدون تعقيد",
+    mockType: "mylife",
+    badgePresets: ["حياتك بمربعات", "4.9 تقييم بالمتجر", "نظام حياة متكامل", "عاداتك بسهولة"],
+    landingBadgePresets: ["الجمع بدل التشتت", "اركان الهمة الشاملة", "55 ميزة بيومك", "نظام حياة متكامل"],
+    quickHooks: ["روتينك ووردك واكلك بلمسة", "نظم حياتك اليومية بسهولة", "عاداتك تبدا من هنا", "يومك بمربعات ذكية"],
+    landingHooks: ["كل شي بشاشة وحدة تغنيك عن 6 تطبيقات", "صممنا 10 اركان تغطي 55 ميزة لخدمة يومك", "روتينك وصلاتك وجيمك وفلوسك بمكان واحد", "سلسلة وحدة تجمع كل تفاصيل يومك"],
+    subPresets: ["مربعات ذكية تنظم حياتك بدون تعقيد", "وصول سريع لكل ركن بيومك بلمسة وحدة", "تتبع متكامل لعاداتك ومزاجك وصحتك"],
+    landingSubPresets: ["صممنا 10 اركان تغطي 55 ميزة لتخدم يومك من الفجر الين النوم باسلوب مريح", "وردك وروتينك واكلك ومصاريفك وتمارينك بمكان واحد منظم", "وصول سريع لكل ركن بيومك بدون ما تضيع بين التطبيقات"]
+  },
+  {
+    id: 4,
+    enabled: true,
+    badgeText: "يعمل بدون انترنت",
+    title: "عبادتك ومصحفك بدون انترنت",
+    subtitle: "قران كامل واذكار ومواقيت ام القرى",
+    mockType: "quran",
+    badgePresets: ["يعمل بدون انترنت", "عبادتك بجيبك", "مصحف نقي", "مواقيت ام القرى"],
+    landingBadgePresets: ["طاعة وعبادة", "مصحف نقي بدون نت", "مواقيت ام القرى الرسمية", "تقويم الختمات الذكي"],
+    quickHooks: ["عبادتك ومصحفك بدون انترنت", "مصحف كامل ووردك اليومي معك", "رتب عبادتك ووردك بيومك", "تلاوتك واذكارك مدمجة بيومك"],
+    landingHooks: ["مصحف بدون نت ومواقيت ام القرى", "رتب عبادتك ووردك مدمجة بروتينك اليومي", "تقويم ختمات ذكي بحساب الصفحات والدقائق", "مواقيت الصلاة الرسمية والاذان وبنك الاذكار"],
+    subPresets: ["قران كامل واذكار ومواقيت ام القرى", "مصحف نصي نقي وتقويم ختمات ذكي وبنك اذكار", "دقائق التلاوة وتقويم الختمة بدون نت"],
+    landingSubPresets: ["مصحف نصي كامل يعمل بدون اتصال انترنت مع تقويم الختمات ومواقيت ام القرى", "دقائق التلاوة وتقويم الختمة بدون انترنت مع بوصلة القبلة", "اذكار الصباح والمساء ومتابعة صلواتك في شاشة وحدة مريحة"]
+  },
+  {
+    id: 5,
+    enabled: true,
+    badgeText: "صحة وحيوية",
+    title: "صحتك واكلك بارقامك انت",
+    subtitle: "تتبع شرب الماء وخطوات المشي وحرق السعرات",
+    mockType: "health",
+    badgePresets: ["صحة وحيوية", "كابتن التمارين", "ميزانك وسعراتك", "لياقتك اليومية"],
+    landingBadgePresets: ["صحة ونشاط", "جدول تمارين مخصص", "تتبع الماء والسعرات", "ميزانك ونومك"],
+    quickHooks: ["صحتك واكلك بارقامك انت", "جدول تمارين مفصل على هدفك", "احسب سعراتك وصمم وجباتك", "لياقتك وميزانك بيدك"],
+    landingHooks: ["جدول تمارينك بالصور وميزانك بيدك", "صمم جدول تمارينك بالبيت او النادي حسب ايامك", "تتبع شرب الماء وخطوات المشي وحرق السعرات", "صحتك واكلك ونومك بارقامك انت"],
+    subPresets: ["تتبع شرب الماء وخطوات المشي وحرق السعرات", "كابتن التمارين ومصمم الوجبات يضبطون يومك", "نومك وصحتك وصيامك بتتبع دقيق وذكي"],
+    landingSubPresets: ["المدرب سعود يصمم جدولك بالبيت او النادي مع تتبع الماء والسعرات والنوم", "تمارين مفصلة بالصور تناسب مكانك وايامك مع تتبع الوزن", "مراقبة النوم والخطوات وحرق السعرات مع صيام متقطع ذكي"]
+  },
+  {
+    id: 6,
+    enabled: true,
+    badgeText: "ذكاء اصطناعي سعودي",
+    title: "مدرب ذكي يكلمك بلهجتك",
+    subtitle: "مستشارك الذكي لتحليل ادائك وعلاج التسويف",
+    mockType: "aicoach",
+    badgePresets: ["ذكاء اصطناعي سعودي", "المدرب سعود AI", "مستشارك 24/7", "تخطيط ذكي"],
+    landingBadgePresets: ["مستشارك 24/7", "11 وضعا تدريبيا", "فهم للسياق السعودي", "علاج التسويف والمماطلة"],
+    quickHooks: ["مدرب ذكي يكلمك بلهجتك", "مستشارك الذكي لعلاج التسويف", "المدرب سعود معك بكل خطوة", "تخطيط ذكي يفهمك صح"],
+    landingHooks: ["المدرب سعود AI يفهم لهجتك وسياقك", "مستشارك الذكي بـ 11 وضعا تدريبيا", "يفهم بيئتك وسياقك ويعالج التسويف والمماطلة", "خطط يومية واقعية تناسب جدولك وطاقتك"],
+    subPresets: ["مستشارك الذكي لتحليل ادائك وعلاج التسويف", "المدرب سعود يشد عزمك ويصمم جداولك", "بناء خطط مخصصة تضاعف انتاجيتك يوميا"],
+    landingSubPresets: ["مستشارك وخويك الذكي بـ 11 وضعا يحلل اسبوعك ويعالج التسويف والمماطلة", "خويك الذكي بلهجة سعودية اصيلة يحلل نقاط القوة والضعف", "اوضاع تدريبية متنوعة (المحفز، الصارم، التكتيكي) ترفع انتاجيتك"]
+  },
+  {
+    id: 7,
+    enabled: true,
+    badgeText: "طالب همة والتعلم",
+    title: "دراستك ومعدلك تحت السيطرة",
+    subtitle: "حاسبة المعدل الفصلي والتراكمي وإدارة المذاكرة",
+    mockType: "students",
+    badgePresets: ["طالب همة والتعلم", "حاسبة المعدل الذكية", "ادارة المذاكرة", "تفوق دراسي"],
+    landingBadgePresets: ["دراسة وتفوق", "حاسبة المعدل بالساعات", "موزع مراجعة ذكي", "جدول المحاضرات والحرمان"],
+    quickHooks: ["دراستك ومعدلك تحت السيطرة", "حاسبة المعدل الفصلي والتراكمي", "جدول حصصك ومحاضراتك ومذاكرتك", "طالب همة للتفوق والنجاح"],
+    landingHooks: ["حاسبة المعدل بالساعات وموزع المراجعة", "دراستك ومعدلك الجامعي تحت السيطرة", "موزع المراجعة الذكي لجدولة الاختبارات", "جدول المحاضرات مع رصد نسبة الحرمان"],
+    subPresets: ["حاسبة المعدل الفصلي والتراكمي وإدارة المذاكرة", "متابعة المواد وساعات المذاكرة مع بومودورو", "تنظيم كامل للمدرسة والجامعة يرفع معدلك"],
+    landingSubPresets: ["حاسبة التراكمي والفصلي مع جدول المحاضرات ورصد نسبة الحرمان", "حاسبة دقيقة بالساعات المعتمدة للنظام الجامعي والمدرسي مع بومودورو", "تنظيم كامل للمواد والمذاكرة وبطاقة طالب وشهادة تفوق"]
+  },
+  {
+    id: 8,
+    enabled: true,
+    badgeText: "عالم لينا للاطفال",
+    title: "عالم لينا.. عادات لاطفالك بمرح",
+    subtitle: "اغرس العادات الحسنة باسلوب تفاعلي ممتع",
+    mockType: "kids",
+    badgePresets: ["عالم لينا للاطفال", "تربية ذكية ومحفزة", "ملصقات وهدايا", "انضباط بمرح"],
+    landingBadgePresets: ["عالم الصغار", "براعم لينا للاطفال", "واجهة مستقلة وامنة", "بوابة رقابة الاهل"],
+    quickHooks: ["عالم لينا.. عادات لاطفالك بمرح", "اغرس العادات الحسنة باسلوب تفاعلي", "مهام يومية وحصالة وملصقات تشجع طفلك", "بيئة امنة ومحفزة لهمة اطفالك"],
+    landingHooks: ["عالم الاطفال وبراعم لينا.. عادات بمرح", "اغرس العادات الحسنة باسلوب تفاعلي مرح", "مهام يومية للاطفال واذكار وقصص قبل النوم", "حصالة توفير وبوابة امان خاصة باولياء الامور"],
+    subPresets: ["اغرس العادات الحسنة باسلوب تفاعلي ممتع", "مهام ثابتة وتتبع المزاج مع قفل امان للوالدين", "شجع طفلك بجوائز وملصقات اسبوعية قيمة"],
+    landingSubPresets: ["واجهة مستقلة وامنة للاطفال مع مهام وقصص وبوابة امان للاهل برمز PIN", "شجع طفلك بمهام يومية وجوائز وملصقات اسبوعية قيمة", "بيئة امنة بالكامل بدون انترنت مع رمز قفل PIN للوالدين"]
+  },
+  {
+    id: 9,
+    enabled: true,
+    badgeText: "المالية الذكية",
+    title: "فلوسك ومصاريفك بالريال",
+    subtitle: "كشف حساب الهمة وحصالة الاهداف والميزانية",
+    mockType: "finance",
+    badgePresets: ["المالية الذكية", "وفر بذكاء", "بنك الهمة", "حصالة الادخار"],
+    landingBadgePresets: ["مالية وادخار", "حاسبة قطة الطلعات", "حصالة الاهداف الذكية", "ميزانية الراتب"],
+    quickHooks: ["فلوسك ومصاريفك بالريال", "كشف حساب الهمة وحصالة الاهداف", "وقف مصاريفك قبل ما تطير", "ميزانيتك وحصالتك تحت سيطرتك"],
+    landingHooks: ["تتبع مصاريفك وحاسبة قطة الطلعات", "فلوسك ومصاريفك تحت سيطرتك بريالها", "وفر 1,800 ريال سنويا بدمج تطبيقاتك", "حصالة ادخار ذكية تحقق اهدافك المالية"],
+    subPresets: ["كشف حساب الهمة وحصالة الاهداف والميزانية", "تتبع مصاريفك واعرف وين راحت بريالها", "مكافات ريالات همة وحاسبة قطة المصاريف"],
+    landingSubPresets: ["ميزانية الراتب ومتبقي الايام وحصالة الاهداف الذكية لطلعات الشباب", "تتبع المصاريف والراتب ومتبقي الايام بدون حرمان مالي", "بنك الهمة لتحويل نقاط انجازك لريالات ومكافات رمزية"]
+  },
+  {
+    id: 10,
+    enabled: true,
+    badgeText: "منصة التتويج",
+    title: "24 وسام وسلسلة ما تنكسر",
+    subtitle: "منصة توثيق فخرك وانجازاتك مع ديوان الهمة",
+    mockType: "badges",
+    badgePresets: ["منصة التتويج", "ديوان الهمة وفخرك", "24 وسام مجد", "شعلة الموقد"],
+    landingBadgePresets: ["فخر وتتويج", "24 وسام انجاز نادر", "مجلس الهمة والشعلة", "ديوان الهمة الحصري"],
+    quickHooks: ["24 وسام وسلسلة ما تنكسر", "منصة توثيق فخرك وانجازاتك", "مجلس وديوان الهمة مع شعلة الموقد", "افتخر بكل خطوة للامام"],
+    landingHooks: ["24 وسام انجاز ومجلس وديوان الهمة", "منصة تتويج انجازاتك وشهادات فخرك", "متحف الـ 24 وساما يخلد مراحل نجاحك", "مجلس الهمة وشعلة الاستمرار مع ديوان الشعر"],
+    subPresets: ["منصة توثيق فخرك وانجازاتك مع ديوان الهمة", "اوسمة وارقام قياسية وقصائد تفخر فيها", "تتويج حقيقي لرحلتك يذكرك دائما انك قادر"],
+    landingSubPresets: ["منصة توثيق فخرك وتتويج رحلتك مع قصائد حصرية وشعلة التحدي", "متحف الـ 24 وساما لتوثيق كل خطوة نحو قمتك", "تقرير الحصاد الاسبوعي والسنوي التفاعلي الفاخر"]
+  },
+  {
+    id: 11,
+    enabled: true,
+    badgeText: "خصوصية محلية 100%",
+    title: "بياناتك بجهازك خصوصية 100%",
+    subtitle: "بدون حساب ولا ايميل ولا اعلانات مزعجة",
+    mockType: "privacy",
+    badgePresets: ["خصوصية محلية 100%", "صفر تتبع وصفر اعلانات", "بياناتك ملكك وحدك", "تخزين محلي امن"],
+    landingBadgePresets: ["امان وثقة", "صفر تتبع وصفر اعلانات", "بدون حساب وبدون ايميل", "تخزين محلي امن 100%"],
+    quickHooks: ["بياناتك بجهازك خصوصية 100%", "بياناتك ملكك وحدك وصفر تتبع", "امانك وخصوصيتك اولا دائما", "صفر اعلانات وصفر تعقب"],
+    landingHooks: ["بياناتك ملكك وحدك.. صفر تتبع وصفر اعلانات", "خصوصية محلية 100% بدون خوادم خارجية", "صفر تتبع وصفر اعلانات وصفر سيرفرات", "ما نطلب ايميلك ولا نشارك بياناتك مع احد"],
+    subPresets: ["بدون حساب ولا ايميل ولا اعلانات مزعجة", "تخزين محلي امن بالكامل بدون مشاركة لاي بيانات", "تركيز خالص على اهدافك بدون اي تشتيت"],
+    landingSubPresets: ["100% محلية بجهازك بدون حساب ولا ايميل ولا خوادم خارجية", "يومياتك ووردك ومصاريفك وصحتك محفوظة محليا بذاكرة جهازك", "امانك وخصوصيتك خط احمر بدون تتبع سحابي دائم"]
+  }
+];
+
+// Profile 2: Landing Page Direct Copy
+const LANDING_PROFILES = [
+  { badge: "المنظومة السعودية الاولى", title: "حياتك وعاداتك ووردك بهمة ما تنكسر", sub: "نظامك اليومي المتكامل يجمع وردك وصلاتك وروتينك وصحتك ومصاريفك مع المدرب سعود AI" },
+  { badge: "الروتين وسلاسل الهمة", title: "سلاسل التزام وبوصلة نية ما تنكسر", sub: "صمم روتين الصباح والمساء وابن عاداتك بنقاط فوز ترفعك مستوى وتمنحك ريالات همة" },
+  { badge: "الجمع بدل التشتت", title: "كل شي بشاشة وحدة تغنيك عن 6 تطبيقات", sub: "صممنا 10 اركان تغطي 55 ميزة لتخدم يومك من الفجر الين النوم باسلوب مريح" },
+  { badge: "طاعة وعبادة", title: "مصحف بدون نت ومواقيت ام القرى", sub: "مصحف نصي كامل يعمل بدون اتصال انترنت مع تقويم الختمات ومواقيت ام القرى وبنك الاذكار" },
+  { badge: "صحة ونشاط", title: "جدول تمارينك بالصور وميزانك بيدك", sub: "المدرب سعود يصمم جدولك بالبيت او النادي مع تتبع الماء والسعرات والنوم" },
+  { badge: "ذكاء اصطناعي سعودي", title: "المدرب سعود AI يفهم لهجتك وسياقك", sub: "مستشارك وخويك الذكي بـ 11 وضعا يحلل اسبوعك ويعالج التسويف والمماطلة" },
+  { badge: "دراسة وتفوق", title: "حاسبة المعدل بالساعات وموزع المراجعة", sub: "حاسبة التراكمي والفصلي بالساعات المعتمدة مع موزع المراجعة الذكي ورصد الحرمان" },
+  { badge: "عالم الصغار", title: "عالم الاطفال وبراعم لينا.. عادات بمرح", sub: "واجهة مستقلة وامنة للاطفال مع مهام وقصص وبوابة امان للاهل برمز PIN" },
+  { badge: "مالية وادخار", title: "تتبع مصاريفك وحاسبة قطة الطلعات", sub: "ميزانية الراتب ومتبقي الايام وحصالة الاهداف الذكية لطلعات الشباب" },
+  { badge: "فخر وتتويج", title: "24 وسام انجاز ومجلس وديوان الهمة", sub: "منصة توثيق فخرك وتتويج رحلتك مع قصائد حصرية وشعلة التحدي ومتحف الاوسمة" },
+  { badge: "امان وثقة", title: "بياناتك ملكك وحدك.. صفر تتبع وصفر اعلانات", sub: "100% محلية بجهازك بدون حساب ولا ايميل ولا خوادم خارجية تزعجك" }
+];
+
+// Profile 3: Value & Problem/Solution Copy
+const VALUE_PROFILES = [
+  { badge: "بدل 6 تطبيقات", title: "ليش تطفي بعد 3 ايام؟ قفل يومك بنظام واحد", sub: "المشكلة مو كسل المشكلة تشتت التطبيقات.. اجمع روتينك وصلاتك وجيمك وفلوسك بسلسلة وحدة" },
+  { badge: "دوبامين الانجاز", title: "لعبة تنجحك بالواقع مع حماية التوقف", sub: "حصيلة يومك بنقاط خبرة ومستويات وريالات همة تحول التزامك لعادات دائمة" },
+  { badge: "تكامل يومك الكامل", title: "روتينك وصلاتك وجيمك وفلوسك بمكان واحد", sub: "وصول سريع لكل ركن بيومك بلمسة وحدة بدون ما تضيع بين التطبيقات" },
+  { badge: "مدمج بيومك", title: "رتب عبادتك ووردك مدمجة بروتينك", sub: "تقويم ختمات ذكي بالصفحات والدقائق مع مواقيت ام القرى الرسمية والاذان" },
+  { badge: "مدرب ومصمم وجبات", title: "تمارينك واكلك مصممة على جدولك انت", sub: "مصمم وجبات وفق سعراتك ومؤقت طبخ بالخطوات مع مراقبة الوزن والخطوات" },
+  { badge: "11 وضعا تدريبيا", title: "مستشارك الذكي لعلاج التسويف والمماطلة", sub: "المدرب سعود المحفز والصارم والتكتيكي يصنع خطط تناسب طاقتك وسياقك" },
+  { badge: "تفوق دراسي", title: "موزع المراجعة للاختبارات وبومودورو", sub: "حاسبة دقيقة بالساعات المعتمدة للنظام الجامعي والمدرسي وبطاقة طالب" },
+  { badge: "انضباط بمرح", title: "اغرس العادات لاطفالك ببيئة امنة 100%", sub: "مهام يومية للاطفال واذكار مصورة وقصص قبل النوم وحصالة توفير تشجعهم" },
+  { badge: "وفر 1,800 ريال", title: "وفر 1,800 ريال سنويا بدمج تطبيقاتك", sub: "استثمار ذكي في تطبيق واحد يجمع مصاريفك وروتينك وجيمك بدون اشتراكات مرهقة" },
+  { badge: "شعلة الموقد", title: "متحف الـ 24 وساما يخلد مراحل نجاحك", sub: "مجلس الهمة وشعلة الاستمرار مع تقرير الحصاد الاسبوعي والسنوي التفاعلي" },
+  { badge: "خط احمر", title: "صفر تتبع وصفر اعلانات وصفر سيرفرات", sub: "يومياتك ومصاريفك وصحتك محفوظة محليا بذاكرة جهازك بدون اي مشاركة خارجية" }
+];
+
+const THEMES = {
+  sadu: {
+    name: 'سدو الفاخر',
+    bg1: '#18100A', bg2: '#0A0604',
+    accent: '#7A3A33', accentGold: '#E4C97E',
+    title: '#FDF7EB', sub: '#D9C8A8',
+    frameTint: '#C2A24C', glow: 'rgba(228,201,126,0.3)',
+    pillBg: 'rgba(122,58,51,0.35)', pillBorder: '#C2A24C', pillText: '#F3DB92',
+    pattern: 'sadu'
+  },
+  saqqar: {
+    name: 'الصقار',
+    bg1: '#24180C', bg2: '#0F0904',
+    accent: '#8A6A4A', accentGold: '#E8940A',
+    title: '#FFF2D9', sub: '#E5CCA6',
+    frameTint: '#E8940A', glow: 'rgba(232,148,10,0.32)',
+    pillBg: 'rgba(138,106,74,0.35)', pillBorder: '#E8940A', pillText: '#FDE047',
+    pattern: 'desert'
+  },
+  hibr: {
+    name: 'حبر ملكي',
+    bg1: '#161618', bg2: '#060608',
+    accent: '#38383F', accentGold: '#D4AF37',
+    title: '#FFFFFF', sub: '#B4B4BC',
+    frameTint: '#71717A', glow: 'rgba(212,175,55,0.25)',
+    pillBg: 'rgba(212,175,55,0.2)', pillBorder: '#D4AF37', pillText: '#FDF08A',
+    pattern: 'minimal'
+  },
+  emerald: {
+    name: 'الزمردي النجدي',
+    bg1: '#0A2015', bg2: '#030E08',
+    accent: '#006C35', accentGold: '#6EE7B7',
+    title: '#F0FDF4', sub: '#B7F5D4',
+    frameTint: '#10B981', glow: 'rgba(16,185,129,0.32)',
+    pillBg: 'rgba(0,108,53,0.35)', pillBorder: '#10B981', pillText: '#6EE7B7',
+    pattern: 'emerald'
+  },
+  glass: {
+    name: 'المجرة',
+    bg1: '#0D1524', bg2: '#040810',
+    accent: '#3B82F6', accentGold: '#93C5FD',
+    title: '#F8FAFC', sub: '#C7E4FD',
+    frameTint: '#60A5FA', glow: 'rgba(59,130,246,0.35)',
+    pillBg: 'rgba(59,130,246,0.25)', pillBorder: '#60A5FA', pillText: '#BAE6FD',
+    pattern: 'stars'
+  },
+  royalGold: {
+    name: 'الذهب الإمبراطوري',
+    bg1: '#261D0C', bg2: '#100B03',
+    accent: '#967425', accentGold: '#FDE047',
+    title: '#FEF9C3', sub: '#F5D77F',
+    frameTint: '#CA8A04', glow: 'rgba(234,179,8,0.4)',
+    pillBg: 'rgba(202,138,4,0.3)', pillBorder: '#FDE047', pillText: '#FEF08A',
+    pattern: 'gold'
+  }
+};
+
+// Initialize State with LocalStorage persistence if present
+let slidesState = [];
+const savedDraft = localStorage.getItem('alhimmah_screenshots_state_v3');
+if (savedDraft) {
+  try {
+    slidesState = JSON.parse(savedDraft);
+  } catch(e) {
+    slidesState = JSON.parse(JSON.stringify(STORE_SLIDES));
+  }
+} else {
+  slidesState = JSON.parse(JSON.stringify(STORE_SLIDES));
+}
+
+let activeProfile = localStorage.getItem('alhimmah_active_profile') || 'store';
+let currentGalleryIdx = 0;
+
+const grid = document.getElementById('grid');
+
+function renderGrid() {
+  grid.innerHTML = '';
+  slidesState.forEach((slide, idx) => {
+    const card = document.createElement('div');
+    card.className = `slot-card ${slide.enabled === false ? 'is-disabled' : ''}`;
+    card.id = `card_slot_${idx}`;
+    card.dataset.idx = idx;
+
+    card.innerHTML = `
+      <div class="slot-header">
+        <div class="slot-title">
+          <span class="slot-number">${idx + 1}</span>
+          <span>لقطة ${idx + 1}: ${slide.badgeText || slide.mockType}</span>
+        </div>
+
+        <div class="slot-controls">
+          <label class="toggle-wrap" title="تضمين أو استبعاد من التنزيل الجماعي">
+            <input type="checkbox" ${slide.enabled !== false ? 'checked' : ''} onchange="toggleSlotEnabled(${idx}, this.checked)">
+            <span>${slide.enabled !== false ? 'مضمّنة ✅' : 'مستبعدة ⏸️'}</span>
+          </label>
+          <button class="btn-icon" title="تحريك لأعلى" onclick="moveSlide(${idx}, -1)">⬆️</button>
+          <button class="btn-icon" title="تحريك لأسفل" onclick="moveSlide(${idx}, 1)">⬇️</button>
+          <button class="btn-icon" title="استعادة الأصلي لهذه اللقطة" onclick="resetSingleSlot(${idx})">↩️</button>
+        </div>
+      </div>
+
+      <div>
+        <label class="input-label">
+          <span>نوع واجهة المحاكاة (Mockup Screen):</span>
+        </label>
+        <select class="slot-field" style="margin-bottom:8px;" onchange="changeMockType(${idx}, this.value)">
+          <option value="dashboard" ${slide.mockType === 'dashboard' ? 'selected' : ''}>الرئيسية والروتين (Dashboard)</option>
+          <option value="levelup" ${slide.mockType === 'levelup' ? 'selected' : ''}>الترقية ونظام اللعب (Level Up)</option>
+          <option value="mylife" ${slide.mockType === 'mylife' ? 'selected' : ''}>حياتي بمربعات (My Life)</option>
+          <option value="quran" ${slide.mockType === 'quran' ? 'selected' : ''}>عبادتك والقرآن (Quran & Ibada)</option>
+          <option value="health" ${slide.mockType === 'health' ? 'selected' : ''}>الصحة واللياقة والوجبات (Health & Fitness)</option>
+          <option value="aicoach" ${slide.mockType === 'aicoach' ? 'selected' : ''}>المدرب سعود AI (AI Coach)</option>
+          <option value="students" ${slide.mockType === 'students' ? 'selected' : ''}>طالب الهمة والتعلم (Student & GPA)</option>
+          <option value="kids" ${slide.mockType === 'kids' ? 'selected' : ''}>عالم الأطفال — لينا (Kids Mode)</option>
+          <option value="finance" ${slide.mockType === 'finance' ? 'selected' : ''}>المالية الذكية وبنك الهمة (Finance & Piggy)</option>
+          <option value="badges" ${slide.mockType === 'badges' ? 'selected' : ''}>منصة التتويج والأوسمة (Badges & Pride)</option>
+          <option value="privacy" ${slide.mockType === 'privacy' ? 'selected' : ''}>الأمان والخصوصية 100% (Privacy & Security)</option>
+        </select>
+      </div>
+      
+      <div>
+        <label class="input-label">
+          <span>نص الشارة العلوية (Badge Pill):</span>
+          <span class="input-label-category">اضغط لاختيار بديل سريع</span>
+        </label>
+        <input type="text" class="slot-field" id="badge_${idx}" value="${escapeHtml(slide.badgeText || '')}">
+        <div class="badge-presets">
+          ${(slide.badgePresets || []).map(p => `<span class="badge-chip" onclick="applyBadge(${idx}, '${escapeHtml(p)}')">${escapeHtml(p)}</span>`).join('')}
+          ${(slide.landingBadgePresets || []).map(p => `<span class="badge-chip landing-chip" onclick="applyBadge(${idx}, '${escapeHtml(p)}')">🌐 ${escapeHtml(p)}</span>`).join('')}
+        </div>
+      </div>
+
+      <div>
+        <label class="input-label">
+          <span>العنوان الرئيسي (Hook Title):</span>
+          <span class="input-label-category">بدائل المتجر وصفحة الهبوط</span>
+        </label>
+        <input type="text" class="slot-field" id="title_${idx}" value="${escapeHtml(slide.title)}">
+        
+        <div class="quick-hooks-group">
+          <div class="preset-section-title">📱 بدائل المتجر الرسمية:</div>
+          <div class="quick-hooks">
+            ${(slide.quickHooks || []).map(h => `<span class="hook-chip" onclick="applyHook(${idx}, '${escapeHtml(h)}')">${escapeHtml(h)}</span>`).join('')}
+          </div>
+          
+          <div class="preset-section-title" style="color:#5EEAD4;">🌐 بدائل صفحة الهبوط:</div>
+          <div class="quick-hooks">
+            ${(slide.landingHooks || []).map(h => `<span class="hook-chip landing-chip" onclick="applyHook(${idx}, '${escapeHtml(h)}')">🌐 ${escapeHtml(h)}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="input-label">
+          <span>العنوان الفرعي الموضح (Subtitle):</span>
+          <span class="input-label-category">شرح الأركان والفوائد</span>
+        </label>
+        <input type="text" class="slot-field" id="sub_${idx}" value="${escapeHtml(slide.subtitle || '')}">
+        
+        <div class="quick-hooks-group">
+          <div class="preset-section-title">📱 شرح المتجر:</div>
+          <div class="quick-hooks">
+            ${(slide.subPresets || []).map(s => `<span class="hook-chip" style="font-size:9.5px;" onclick="applySub(${idx}, '${escapeHtml(s)}')">${escapeHtml(s)}</span>`).join('')}
+          </div>
+
+          <div class="preset-section-title" style="color:#5EEAD4;">🌐 شرح صفحة الهبوط:</div>
+          <div class="quick-hooks">
+            ${(slide.landingSubPresets || []).map(s => `<span class="hook-chip landing-chip" style="font-size:9.5px;" onclick="applySub(${idx}, '${escapeHtml(s)}')">🌐 ${escapeHtml(s)}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      <div class="upload-area" id="upload_box_${idx}">
+        <span>📷 اسحب صورة التطبيق الحقيقية هنا أو اضغط للاختيار</span>
+        <small>إذا تركتها فارغة، سيتم رسم واجهة محاكاة ذكية فائقة الدقة</small>
+        <input type="file" accept="image/*" id="file_${idx}">
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="canvas_${idx}"></canvas>
+      </div>
+
+      <div class="slot-actions">
+        <button class="btn-slot" onclick="downloadSingle(${idx})">📥 تنزيل هذه اللقطة</button>
+        <button class="btn-slot" onclick="openGalleryAt(${idx})">👁️ تكبير</button>
+        ${slide.userImg ? `<button class="btn-slot" style="color:#F87171;" onclick="clearImage(${idx})">🗑️ إزالة الصورة</button>` : ''}
+      </div>
+    `;
+    grid.appendChild(card);
+
+    // File input handling
+    const fileInput = card.querySelector(`#file_${idx}`);
+    const uploadBox = card.querySelector(`#upload_box_${idx}`);
+    uploadBox.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', e => handleFile(idx, e.target.files[0]));
+
+    // Drag & drop
+    uploadBox.addEventListener('dragover', e => { e.preventDefault(); uploadBox.style.borderColor = '#C2A24C'; });
+    uploadBox.addEventListener('dragleave', e => { e.preventDefault(); uploadBox.style.borderColor = ''; });
+    uploadBox.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadBox.style.borderColor = '';
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleFile(idx, e.dataTransfer.files[0]);
+      }
+    });
+
+    // Inputs binding with clean sanitization
+    card.querySelector(`#badge_${idx}`).addEventListener('input', e => {
+      slide.badgeText = sanitizeText(e.target.value);
+      saveStateDebounced();
+      drawSlot(idx);
+    });
+    card.querySelector(`#title_${idx}`).addEventListener('input', e => {
+      slide.title = sanitizeText(e.target.value);
+      saveStateDebounced();
+      drawSlot(idx);
+    });
+    card.querySelector(`#sub_${idx}`).addEventListener('input', e => {
+      slide.subtitle = sanitizeText(e.target.value);
+      saveStateDebounced();
+      drawSlot(idx);
+    });
+  });
+
+  renderNavPills();
+  updateDownloadCount();
+  drawAll();
+}
+
+function renderNavPills() {
+  const container = document.getElementById('navPillsContainer');
+  if (!container) return;
+  const icons = ['🌅', '🎮', '📱', '📖', '🏃‍♂️', '🤖', '🎓', '👶', '💰', '🏛️', '🔒'];
+  
+  container.innerHTML = slidesState.map((s, idx) => {
+    const icon = icons[idx % icons.length];
+    const isDis = s.enabled === false;
+    return `
+      <a href="#card_slot_${idx}" class="nav-pill ${isDis ? 'disabled-pill' : ''}" onclick="scrollToCard(event, ${idx})">
+        <span>${icon}</span>
+        <span>${idx + 1}. ${(s.badgeText || s.title || '').slice(0, 10)}</span>
+      </a>
+    `;
+  }).join('');
+}
+
+function scrollToCard(e, idx) {
+  e.preventDefault();
+  const card = document.getElementById(`card_slot_${idx}`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.style.borderColor = 'var(--gold)';
+    setTimeout(() => { card.style.borderColor = ''; }, 1200);
+  }
+}
+
+function escapeHtml(str) {
+  return (str || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+window.applyBadge = function(idx, text) {
+  slidesState[idx].badgeText = sanitizeText(text);
+  document.getElementById(`badge_${idx}`).value = slidesState[idx].badgeText;
+  saveStateDebounced();
+  drawSlot(idx);
+};
+
+window.applyHook = function(idx, text) {
+  slidesState[idx].title = sanitizeText(text);
+  document.getElementById(`title_${idx}`).value = slidesState[idx].title;
+  saveStateDebounced();
+  drawSlot(idx);
+};
+
+window.applySub = function(idx, text) {
+  slidesState[idx].subtitle = sanitizeText(text);
+  document.getElementById(`sub_${idx}`).value = slidesState[idx].subtitle;
+  saveStateDebounced();
+  drawSlot(idx);
+};
+
+window.changeMockType = function(idx, type) {
+  slidesState[idx].mockType = type;
+  saveStateDebounced();
+  drawSlot(idx);
+};
+
+window.setFooterSlogan = function(text) {
+  const clean = sanitizeText(text);
+  document.getElementById('footerSlogan').value = clean;
+  drawAll();
+};
+
+window.clearImage = function(idx) {
+  slidesState[idx].userImg = null;
+  renderGrid();
+};
+
+window.toggleSlotEnabled = function(idx, isChecked) {
+  slidesState[idx].enabled = isChecked;
+  const card = document.getElementById(`card_slot_${idx}`);
+  if (card) {
+    if (isChecked) card.classList.remove('is-disabled');
+    else card.classList.add('is-disabled');
+  }
+  updateDownloadCount();
+  renderNavPills();
+  saveStateDebounced();
+};
+
+window.moveSlide = function(idx, dir) {
+  const targetIdx = idx + dir;
+  if (targetIdx < 0 || targetIdx >= slidesState.length) return;
+  const temp = slidesState[idx];
+  slidesState[idx] = slidesState[targetIdx];
+  slidesState[targetIdx] = temp;
+  renderGrid();
+  showToast(`تم تغيير ترتيب اللقطة ${idx + 1} بنجاح`);
+  saveStateDebounced();
+};
+
+window.resetSingleSlot = function(idx) {
+  const defaultSlide = STORE_SLIDES[idx] || STORE_SLIDES[0];
+  slidesState[idx].badgeText = defaultSlide.badgeText;
+  slidesState[idx].title = defaultSlide.title;
+  slidesState[idx].subtitle = defaultSlide.subtitle;
+  slidesState[idx].mockType = defaultSlide.mockType;
+  slidesState[idx].enabled = true;
+  renderGrid();
+  showToast(`تمت استعادة اللقطة ${idx + 1}`);
+  saveStateDebounced();
+};
+
+function updateDownloadCount() {
+  const activeCount = slidesState.filter(s => s.enabled !== false).length;
+  const countEl = document.getElementById('dlCountText');
+  if (countEl) countEl.textContent = activeCount;
+}
+
+window.selectAll = function(enableAll) {
+  slidesState.forEach(s => { s.enabled = enableAll; });
+  renderGrid();
+  showToast(enableAll ? 'تم تفعيل جميع اللقطات' : 'تم إلغاء تحديد الكل');
+  saveStateDebounced();
+};
+
+window.selectFirstN = function(n) {
+  slidesState.forEach((s, i) => {
+    s.enabled = (i < n);
+  });
+  renderGrid();
+  showToast(`تم تحديد أول ${n} لقطات فقط`);
+  saveStateDebounced();
+};
+
+window.filterCards = function(query) {
+  const q = (query || '').trim().toLowerCase();
+  slidesState.forEach((slide, idx) => {
+    const card = document.getElementById(`card_slot_${idx}`);
+    if (!card) return;
+    if (!q) {
+      card.style.display = '';
+      return;
+    }
+    const match = (slide.badgeText || '').toLowerCase().includes(q) ||
+                  (slide.title || '').toLowerCase().includes(q) ||
+                  (slide.subtitle || '').toLowerCase().includes(q) ||
+                  (slide.mockType || '').toLowerCase().includes(q);
+    card.style.display = match ? '' : 'none';
+  });
+};
+
+// Profile Switcher Implementation
+window.switchProfile = function(profileKey) {
+  activeProfile = profileKey;
+  localStorage.setItem('alhimmah_active_profile', profileKey);
+
+  document.querySelectorAll('.profile-btn').forEach(btn => btn.classList.remove('active'));
+  const btn = document.getElementById(`prof_${profileKey}`);
+  if (btn) btn.classList.add('active');
+
+  if (profileKey === 'store') {
+    slidesState.forEach((s, idx) => {
+      const orig = STORE_SLIDES[idx];
+      if (orig) {
+        s.badgeText = orig.badgeText;
+        s.title = orig.title;
+        s.subtitle = orig.subtitle;
+      }
+    });
+    showToast('تم تطبيق نصوص المتجر الرسمية على جميع اللقطات 📱');
+  } else if (profileKey === 'landing') {
+    slidesState.forEach((s, idx) => {
+      const p = LANDING_PROFILES[idx];
+      if (p) {
+        s.badgeText = p.badge;
+        s.title = p.title;
+        s.subtitle = p.sub;
+      }
+    });
+    showToast('تم تطبيق نصوص صفحة الهبوط الرسمية (الأركان الـ 10) 🌐');
+  } else if (profileKey === 'value') {
+    slidesState.forEach((s, idx) => {
+      const v = VALUE_PROFILES[idx];
+      if (v) {
+        s.badgeText = v.badge;
+        s.title = v.title;
+        s.subtitle = v.sub;
+      }
+    });
+    showToast('تم تطبيق نصوص الشمولية والتوفير والقيمة 💎');
+  }
+
+  renderGrid();
+  saveStateDebounced();
+};
+
+// Persistence & Portability
+let saveTimeout = null;
+function saveStateDebounced() {
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(() => {
+    saveDraft(false);
+  }, 400);
+}
+
+window.saveDraft = function(showMsg = true) {
+  const stateCopy = slidesState.map(s => {
+    const copy = { ...s };
+    delete copy.userImg; // avoid serializing HTMLImageElement
+    return copy;
+  });
+  localStorage.setItem('alhimmah_screenshots_state_v3', JSON.stringify(stateCopy));
+  if (showMsg) showToast('تم حفظ مسودة التعديلات محلياً بنجاح 💾');
+};
+
+window.exportJson = function() {
+  const stateCopy = slidesState.map(s => {
+    const copy = { ...s };
+    delete copy.userImg;
+    return copy;
+  });
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(stateCopy, null, 2));
+  const a = document.createElement('a');
+  a.setAttribute("href", dataStr);
+  a.setAttribute("download", "alhimmah_screenshots_config.json");
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  showToast('تم تصدير ملف الإعدادات JSON بنجاح 📤');
+};
+
+window.importJson = function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(evt) {
+    try {
+      const parsed = JSON.parse(evt.target.result);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        slidesState = parsed;
+        renderGrid();
+        showToast('تم استيراد ملف الإعدادات بنجاح 📥');
+        saveStateDebounced();
+      }
+    } catch(err) {
+      alert('خطأ في قراءة ملف الـ JSON، تأكد من صحة الملف.');
+    }
+  };
+  reader.readAsText(file);
+};
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => { t.classList.remove('show'); }, 2500);
+}
+
+function handleFile(idx, file) {
+  if (!file) return;
+  const img = new Image();
+  img.onload = () => {
+    slidesState[idx].userImg = img;
+    renderGrid();
+  };
+  img.src = URL.createObjectURL(file);
+}
+
+function getDimensions() {
+  const raw = document.getElementById('size').value.split('|')[0];
+  const [w, h] = raw.split('x').map(Number);
+  return { w, h };
+}
+
+function getFrameStyle() {
+  const sizeVal = document.getElementById('size').value;
+  if (sizeVal.includes('ipad') || sizeVal.includes('tablet')) {
+    return 'ipadPro';
+  }
+  if (sizeVal.includes('google_feature')) {
+    return 'featureGraphic';
+  }
+  return document.getElementById('frameStyle').value;
+}
+
+// Draw a single slot
+function drawSlot(idx) {
+  const { w: W, h: H } = getDimensions();
+  const canvas = document.getElementById(`canvas_${idx}`);
+  if (!canvas) return;
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  const theme = THEMES[document.getElementById('theme').value] || THEMES.sadu;
+  const frameStyle = getFrameStyle();
+  const slide = slidesState[idx];
+
+  // 1. Draw Luxurious Ambient Background with Sadu & Najdi Ornaments
+  drawBackground(ctx, W, H, theme);
+
+  // 2. Feature Graphic Specific Layout
+  if (frameStyle === 'featureGraphic') {
+    drawFeatureGraphic(ctx, W, H, theme, slide);
+    return;
+  }
+
+  // 3. Draw Top Header (Badge High Up + Title Separated with Generous Spacing)
+  const headerBottomY = drawHeaderTexts(ctx, W, H, theme, slide);
+
+  // 4. Draw Device Mockup (Clean Screen without Black Notch/Dot)
+  drawDevice(ctx, W, H, theme, slide, headerBottomY, frameStyle);
+
+  // 5. Draw Luxury Footer Slogan (Customizable)
+  drawFooter(ctx, W, H, theme, slide);
+}
+
+function drawBackground(ctx, W, H, theme) {
+  // Rich Base Gradient
+  const bgGrad = ctx.createLinearGradient(0, 0, W * 0.4, H);
+  bgGrad.addColorStop(0, theme.bg1);
+  bgGrad.addColorStop(1, theme.bg2);
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Top Ambient Radial Lighting
+  const glow = ctx.createRadialGradient(W * 0.5, H * 0.16, 0, W * 0.5, H * 0.16, W * 0.9);
+  glow.addColorStop(0, theme.glow);
+  glow.addColorStop(0.5, 'rgba(0,0,0,0.1)');
+  glow.addColorStop(1, 'transparent');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  // Luxurious Sadu / Najdi Filigree Borders
+  drawLuxuryOrnaments(ctx, W, H, theme);
+}
+
+function drawLuxuryOrnaments(ctx, W, H, theme) {
+  ctx.save();
+  // Sadu Diamond Header Band
+  const bandY = H * 0.022;
+  const step = W * 0.045;
+  ctx.fillStyle = theme.accentGold + '40';
+  for (let x = 0; x < W + step; x += step) {
+    ctx.beginPath();
+    ctx.moveTo(x, bandY);
+    ctx.lineTo(x + step * 0.5, bandY - H * 0.007);
+    ctx.lineTo(x + step, bandY);
+    ctx.lineTo(x + step * 0.5, bandY + H * 0.007);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  // Subtle ambient stars / sparkles
+  ctx.fillStyle = '#FFFFFF';
+  for (let i = 0; i < 35; i++) {
+    const sx = (Math.sin(i * 123) * 0.5 + 0.5) * W;
+    const sy = (Math.cos(i * 87) * 0.5 + 0.5) * (H * 0.35);
+    const rad = (i % 4 === 0) ? 2.2 : 1.2;
+    ctx.globalAlpha = 0.15 + (i % 5) * 0.08;
+    ctx.beginPath();
+    ctx.arc(sx, sy, rad, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  ctx.restore();
+}
+
+function drawHeaderTexts(ctx, W, H, theme, slide) {
+  const isTablet = (getFrameStyle() === 'ipadPro');
+  // Start high up with optimal margins
+  let curY = isTablet ? H * 0.028 : H * 0.035;
+
+  const badgeText = sanitizeText(slide.badgeText);
+  if (badgeText) {
+    ctx.save();
+    const bFont = Math.round(isTablet ? Math.min(W * 0.028, H * 0.020) : Math.min(W * 0.032, H * 0.024));
+    ctx.font = `700 ${bFont}px "Cairo", "Tajawal", sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.direction = 'rtl';
+
+    const textWidth = ctx.measureText(badgeText).width;
+    const padX = bFont * 1.3;
+    const padY = bFont * 0.55;
+    const pillW = textWidth + padX * 2;
+    const pillH = bFont + padY * 1.5;
+    const pillX = (W - pillW) / 2;
+
+    // Pill Glow Shadow
+    ctx.shadowColor = 'rgba(0,0,0,0.5)';
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetY = 4;
+
+    // Pill Background
+    ctx.fillStyle = theme.pillBg;
+    ctx.strokeStyle = theme.pillBorder;
+    ctx.lineWidth = Math.max(2, W * 0.0025);
+    roundRect(ctx, pillX, curY, pillW, pillH, pillH * 0.5);
+    ctx.fill();
+    ctx.stroke();
+
+    // Pill Text (Centred vertically via textBaseline middle)
+    ctx.shadowColor = 'transparent';
+    ctx.fillStyle = theme.pillText;
+    ctx.fillText(badgeText, W / 2, curY + pillH * 0.52);
+    ctx.restore();
+
+    // Generous clear margin so title is completely separated
+    curY += pillH + (isTablet ? H * 0.024 : H * 0.038);
+  } else {
+    curY += isTablet ? H * 0.020 : H * 0.028;
+  }
+
+  // Main Title (Hook)
+  const title = sanitizeText(slide.title);
+  const isLong = title.length > 24;
+  const titleFontSize = Math.round(isTablet ? Math.min(W * 0.052, H * 0.038) : W * (isLong ? 0.068 : 0.080));
+  ctx.font = `900 ${titleFontSize}px "Cairo", "Tajawal", sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  ctx.direction = 'rtl';
+  ctx.fillStyle = theme.title;
+  
+  // Luxury Deep Glow & Shadow
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
+  ctx.shadowBlur = titleFontSize * 0.45;
+  ctx.shadowOffsetY = titleFontSize * 0.12;
+
+  const lines = wrapText(ctx, title, W * 0.88);
+  const lineHeight = titleFontSize * 1.30;
+  lines.forEach((line, i) => {
+    ctx.fillText(line, W / 2, curY + i * lineHeight);
+  });
+
+  curY += lines.length * lineHeight + (isTablet ? H * 0.010 : H * 0.014);
+  ctx.shadowColor = 'transparent';
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetY = 0;
+
+  // Subtitle (Always visible and given dedicated breathing space)
+  const sub = sanitizeText(slide.subtitle);
+  if (sub) {
+    const subFontSize = Math.round(isTablet ? Math.min(W * 0.032, H * 0.022) : Math.min(W * 0.038, H * 0.028));
+    ctx.font = `600 ${subFontSize}px "Cairo", "Tajawal", sans-serif`;
+    ctx.textBaseline = 'top';
+    ctx.fillStyle = theme.sub;
+    ctx.shadowColor = 'rgba(0,0,0,0.85)';
+    ctx.shadowBlur = subFontSize * 0.35;
+    ctx.fillText(sub, W / 2, curY);
+    curY += subFontSize * 1.35;
+    ctx.shadowColor = 'transparent';
+  }
+
+  return curY + (isTablet ? H * 0.018 : H * 0.022);
+}
+
+function drawDevice(ctx, W, H, theme, slide, startY, frameStyle) {
+  const isTablet = (frameStyle === 'ipadPro');
+  const is3D = (frameStyle === 'angle3d');
+  
+  const bottomLimit = H * 0.94;
+  const availH = Math.max(H * 0.40, bottomLimit - startY);
+  
+  let devW, devH, devX, devY;
+  
+  if (isTablet) {
+    // iPad aspect ratio ~ 3:4 (w:h = 0.75)
+    devH = Math.min(availH * 0.96, H * 0.64);
+    devW = Math.min(W * 0.80, devH * 0.75);
+    devH = devW / 0.75;
+    devX = (W - devW) / 2;
+    devY = startY + (availH - devH) / 2;
+    if (devY < startY) devY = startY;
+  } else {
+    // Phone aspect ratio ~ 1:2.16
+    devH = Math.min(availH * 0.96, Math.min(H * 0.70, (W * 0.82) * 2.16));
+    devW = devH / 2.16;
+    if (devW > W * 0.82) {
+      devW = W * 0.82;
+      devH = devW * 2.16;
+    }
+    devX = (W - devW) / 2;
+    devY = startY + (availH - devH) / 2;
+    if (devY < startY) devY = startY;
+  }
+
+  const radius = isTablet ? devW * 0.04 : devW * 0.10;
+  const bezel = isTablet ? devW * 0.022 : devW * 0.026;
+
+  ctx.save();
+
+  // 3D Perspective angle transform
+  if (is3D) {
+    ctx.translate(W * 0.5, H * 0.58);
+    ctx.transform(1, 0, -0.05, 0.97, 0, 0);
+    ctx.rotate(0.025);
+    ctx.translate(-W * 0.5, -H * 0.58);
+  }
+
+  // Outer Floating Shadow
+  ctx.save();
+  ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+  ctx.shadowBlur = W * 0.08;
+  ctx.shadowOffsetY = W * 0.035;
+  ctx.fillStyle = '#080503';
+  roundRect(ctx, devX, devY, devW, devH, radius);
+  ctx.fill();
+  ctx.restore();
+
+  // Metallic Gold Frame Rim (Clean, No notches or black dots)
+  const frameGrad = ctx.createLinearGradient(devX, devY, devX + devW, devY + devH);
+  frameGrad.addColorStop(0, theme.frameTint);
+  frameGrad.addColorStop(0.3, '#221810');
+  frameGrad.addColorStop(0.7, '#2F2317');
+  frameGrad.addColorStop(1, theme.frameTint);
+
+  ctx.strokeStyle = frameGrad;
+  ctx.lineWidth = Math.max(3, W * 0.007);
+  roundRect(ctx, devX, devY, devW, devH, radius);
+  ctx.stroke();
+
+  // Inner Screen Area (clipped)
+  const screenX = devX + bezel;
+  const screenY = devY + bezel;
+  const screenW = devW - bezel * 2;
+  const screenH = devH - bezel * 2;
+  const screenRadius = Math.max(6, radius - bezel * 0.8);
+
+  ctx.save();
+  roundRect(ctx, screenX, screenY, screenW, screenH, screenRadius);
+  ctx.clip();
+
+  // Screen Content (Clean Screenshot or Pixel-Perfect Simulated App UI)
+  if (slide.userImg) {
+    coverImage(ctx, slide.userImg, screenX, screenY, screenW, screenH);
+  } else {
+    drawHighFidelityMockup(ctx, screenX, screenY, screenW, screenH, slide.mockType, theme);
+  }
+
+  // NO BLACK DYNAMIC ISLAND OR BLACK DOTS - Clean Status Header Bar
+  drawCleanStatusBar(ctx, screenX, screenY, screenW, screenH);
+
+  // Subtle Screen Glass Sheen overlay
+  const glareGrad = ctx.createLinearGradient(screenX, screenY, screenX + screenW * 0.8, screenY + screenH * 0.4);
+  glareGrad.addColorStop(0, 'rgba(255,255,255,0.09)');
+  glareGrad.addColorStop(0.3, 'rgba(255,255,255,0.02)');
+  glareGrad.addColorStop(0.6, 'transparent');
+  ctx.fillStyle = glareGrad;
+  ctx.fillRect(screenX, screenY, screenW, screenH);
+
+  ctx.restore(); // end screen clip
+
+  ctx.restore(); // end transform
+}
+
+function drawCleanStatusBar(ctx, sx, sy, sw, sh) {
+  ctx.save();
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.font = `700 ${Math.round(sw * 0.038)}px -apple-system, system-ui, sans-serif`;
+  ctx.textAlign = 'right';
+  ctx.fillText('9:41', sx + sw * 0.90, sy + sh * 0.034);
+
+  ctx.textAlign = 'left';
+  ctx.font = `600 ${Math.round(sw * 0.034)}px sans-serif`;
+  ctx.fillText('5G 🔋', sx + sw * 0.10, sy + sh * 0.034);
+  ctx.restore();
+}
+
+function drawFooter(ctx, W, H, theme, slide) {
+  const footerInput = document.getElementById('footerSlogan');
+  const footerText = sanitizeText(footerInput ? footerInput.value : 'معنا نشحن همتك لـ قمتك');
+  if (!footerText) return;
+
+  ctx.save();
+  ctx.fillStyle = theme.sub;
+  ctx.font = `700 ${Math.round(W * 0.033)}px "Cairo", "Tajawal", sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.direction = 'rtl';
+  ctx.fillText(footerText, W / 2, H * 0.974);
+  ctx.restore();
+}
+
+// Google Feature Graphic (1024x500)
+function drawFeatureGraphic(ctx, W, H, theme, slide) {
+  const phoneW = W * 0.32;
+  const phoneH = H * 0.88;
+  const phoneX = W * 0.10;
+  const phoneY = H * 0.06;
+
+  ctx.save();
+  ctx.shadowColor = 'rgba(0,0,0,0.8)';
+  ctx.shadowBlur = 30;
+  ctx.shadowOffsetY = 10;
+  roundRect(ctx, phoneX, phoneY, phoneW, phoneH, 20);
+  ctx.fillStyle = '#080503';
+  ctx.fill();
+  ctx.restore();
+
+  ctx.save();
+  roundRect(ctx, phoneX + 6, phoneY + 6, phoneW - 12, phoneH - 12, 16);
+  ctx.clip();
+  if (slide.userImg) {
+    coverImage(ctx, slide.userImg, phoneX + 6, phoneY + 6, phoneW - 12, phoneH - 12);
+  } else {
+    drawHighFidelityMockup(ctx, phoneX + 6, phoneY + 6, phoneW - 12, phoneH - 12, slide.mockType, theme);
+  }
+  ctx.restore();
+
+  // Marketing Copy
+  ctx.save();
+  ctx.direction = 'rtl';
+  ctx.textAlign = 'right';
+
+  // App Name
+  ctx.fillStyle = theme.accentGold;
+  ctx.font = `900 ${Math.round(H * 0.15)}px "Cairo", sans-serif`;
+  ctx.fillText('الهمة — مفكرة النجاح', W * 0.92, H * 0.34);
+
+  // Hook Title
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = `700 ${Math.round(H * 0.088)}px "Cairo", sans-serif`;
+  ctx.fillText(sanitizeText(slide.title), W * 0.92, H * 0.52);
+
+  // Subtitle
+  ctx.fillStyle = theme.sub;
+  ctx.font = `500 ${Math.round(H * 0.062)}px "Cairo", sans-serif`;
+  ctx.fillText(sanitizeText(slide.subtitle || 'روتينك ووردك وأكلك ومصاريفك بمكان واحد'), W * 0.92, H * 0.67);
+
+  // Badge Pill
+  ctx.fillStyle = 'rgba(194,162,76,0.2)';
+  ctx.strokeStyle = theme.accentGold;
+  roundRect(ctx, W * 0.68, H * 0.76, W * 0.24, H * 0.12, 10);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = theme.accentGold;
+  ctx.font = `700 ${Math.round(H * 0.055)}px "Cairo", sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.fillText('صناعة سعودية 100%', W * 0.80, H * 0.84);
+
+  ctx.restore();
+}
+
+// Procedural Realistic UI Mockups
+function drawHighFidelityMockup(ctx, x, y, w, h, type, theme) {
+  // Dark App Surface
+  ctx.fillStyle = '#18120C';
+  ctx.fillRect(x, y, w, h);
+
+  const pad = w * 0.06;
+  let cy = y + h * 0.07;
+
+  // Header Nav with User Level & Streak
+  ctx.save();
+  ctx.direction = 'rtl';
+  ctx.textAlign = 'right';
+  ctx.fillStyle = '#F5E4B8';
+  ctx.font = `700 ${Math.round(w * 0.052)}px "Cairo", sans-serif`;
+  ctx.fillText('الهمة ✨', x + w - pad, cy + w * 0.04);
+
+  // Streak Pill
+  const streakW = w * 0.32;
+  const streakH = w * 0.08;
+  const streakX = x + pad;
+  ctx.fillStyle = 'rgba(234, 88, 12, 0.2)';
+  ctx.strokeStyle = '#FB923C';
+  roundRect(ctx, streakX, cy, streakW, streakH, streakH * 0.5);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#FED7AA';
+  ctx.font = `700 ${Math.round(w * 0.038)}px "Cairo", sans-serif`;
+  ctx.fillText('🔥 ٢١ يوما', streakX + streakW / 2, cy + streakH * 0.7);
+  ctx.restore();
+
+  cy += w * 0.14;
+
+  if (type === 'dashboard') {
+    // 1. Daily Intention Card
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.16, '#281E16', () => {
+      ctx.fillStyle = '#E4C97E';
+      ctx.font = `700 ${Math.round(w * 0.042)}px "Cairo", sans-serif`;
+      ctx.fillText('🌟 نيتي اليوم:', x + w - pad * 1.5, cy + h * 0.045);
+      ctx.fillStyle = '#E9DCC4';
+      ctx.font = `500 ${Math.round(w * 0.036)}px "Cairo", sans-serif`;
+      ctx.fillText('«إتقان العمل ومضاعفة التركيز»', x + w - pad * 1.5, cy + h * 0.09);
+    });
+
+    cy += h * 0.18;
+
+    // 2. Today Routine Checklist
+    const tasks = [
+      { text: 'أذكار الصباح وسورة الكهف', done: true, xp: '+50 XP' },
+      { text: 'تمرين الحديد صدر وباي', done: true, xp: '+100 XP' },
+      { text: 'قراءة ٣٠ دقيقة في كتاب القيادة', done: false, xp: '+40 XP' },
+      { text: 'شرب ٣ لتر ماء ومتابعة الوجبات', done: false, xp: '+30 XP' }
+    ];
+
+    tasks.forEach(t => {
+      drawMockTask(ctx, x + pad, cy, w - pad * 2, h * 0.08, t);
+      cy += h * 0.092;
+    });
+
+  } else if (type === 'levelup') {
+    // Huge XP Celebration
+    cy += h * 0.02;
+    ctx.save();
+    ctx.textAlign = 'center';
+    
+    // Level Badge Circle
+    ctx.beginPath();
+    ctx.arc(x + w / 2, cy + h * 0.14, w * 0.18, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(194,162,76,0.2)';
+    ctx.fill();
+    ctx.strokeStyle = '#E4C97E';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    ctx.fillStyle = '#FDE047';
+    ctx.font = `900 ${Math.round(w * 0.14)}px "Cairo", sans-serif`;
+    ctx.fillText('7', x + w / 2, cy + h * 0.18);
+
+    cy += h * 0.30;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = `900 ${Math.round(w * 0.068)}px "Cairo", sans-serif`;
+    ctx.fillText('ترقية للمستوى التالي', x + w / 2, cy);
+
+    cy += h * 0.06;
+    ctx.fillStyle = '#E4C97E';
+    ctx.font = `700 ${Math.round(w * 0.046)}px "Cairo", sans-serif`;
+    ctx.fillText('«فارس الهمة» — 2,450 XP', x + w / 2, cy);
+
+    // XP Progress Bar
+    cy += h * 0.05;
+    const barW = w * 0.7;
+    const barH = h * 0.025;
+    const barX = x + (w - barW) / 2;
+    ctx.fillStyle = '#281E16';
+    roundRect(ctx, barX, cy, barW, barH, barH * 0.5);
+    ctx.fill();
+
+    ctx.fillStyle = '#E4C97E';
+    roundRect(ctx, barX, cy, barW * 0.85, barH, barH * 0.5);
+    ctx.fill();
+
+    ctx.restore();
+
+  } else if (type === 'mylife') {
+    const modules = [
+      { title: '📖 وردي القرآني', sub: 'سورة الملك • صفحة ٥٦٢', color: '#10B981' },
+      { title: '🥗 صحتي ووجباتي', sub: '١٨٥٠ / ٢٢٠٠ سعرة', color: '#F59E0B' },
+      { title: '💪 جدول تماريني', sub: 'يوم الأرجل والبطن', color: '#EF4444' },
+      { title: '💰 ميزانيتي ومصاريفي', sub: 'وفر ٤٥٠ ريال هذا الشهر', color: '#3B82F6' }
+    ];
+
+    const cardW = (w - pad * 3) / 2;
+    const cardH = h * 0.24;
+
+    modules.forEach((m, i) => {
+      const mx = (i % 2 === 0) ? x + pad : x + pad * 2 + cardW;
+      const my = cy + Math.floor(i / 2) * (cardH + pad * 0.8);
+      drawMockCard(ctx, mx, my, cardW, cardH, '#281E16', () => {
+        ctx.fillStyle = m.color;
+        ctx.font = `700 ${Math.round(w * 0.042)}px "Cairo", sans-serif`;
+        ctx.fillText(m.title, mx + cardW - pad * 0.6, my + cardH * 0.35);
+        ctx.fillStyle = '#BCAA8C';
+        ctx.font = `500 ${Math.round(w * 0.03)}px "Cairo", sans-serif`;
+        ctx.fillText(m.sub, mx + cardW - pad * 0.6, my + cardH * 0.65);
+      });
+    });
+
+  } else if (type === 'quran') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.58, '#241910', () => {
+      ctx.fillStyle = '#E4C97E';
+      ctx.textAlign = 'center';
+      ctx.font = `700 ${Math.round(w * 0.05)}px "Cairo", sans-serif`;
+      ctx.fillText('سورة الملك', x + w / 2, cy + h * 0.07);
+
+      ctx.fillStyle = '#F5ECD8';
+      ctx.font = `400 ${Math.round(w * 0.042)}px "Cairo", sans-serif`;
+      ctx.fillText('بسم الله الرحمن الرحيم', x + w / 2, cy + h * 0.14);
+
+      ctx.font = `500 ${Math.round(w * 0.036)}px "Cairo", sans-serif`;
+      ctx.fillText('تبارك الذي بيده الملك وهو على كل شيء قدير', x + w / 2, cy + h * 0.22);
+      ctx.fillText('الذي خلق الموت والحياة ليبلوكم أيكم أحسن عملا', x + w / 2, cy + h * 0.30);
+      ctx.fillText('وهو العزيز الغفور', x + w / 2, cy + h * 0.38);
+
+      // Prayer times pill
+      ctx.fillStyle = 'rgba(194,162,76,0.15)';
+      roundRect(ctx, x + pad * 2, cy + h * 0.46, w - pad * 4, h * 0.08, 10);
+      ctx.fill();
+      ctx.fillStyle = '#E4C97E';
+      ctx.font = `700 ${Math.round(w * 0.034)}px "Cairo", sans-serif`;
+      ctx.fillText('🕌 العصر القادم: ٣:٣٤ م (أم القرى)', x + w / 2, cy + h * 0.51);
+    });
+
+  } else if (type === 'aicoach') {
+    const msgs = [
+      { sender: 'user', text: 'يا مدربنا مالي خلق اتمرن اليوم وتعبان' },
+      { sender: 'coach', text: 'هلا بك يا همام.. طبيعي يمر عليك يوم تثقل فيه رجولك.. بس تذكر تمرين خفيف مدته ٢٠ دقيقة احسن بمليون مرة من الصفر.. توكل على الله والهمة معك' },
+      { sender: 'user', text: 'شورك وهداية الله.. قايم للتمارين الحين' }
+    ];
+
+    msgs.forEach(m => {
+      const isUser = (m.sender === 'user');
+      const boxW = w * 0.76;
+      const boxH = isUser ? h * 0.09 : h * 0.22;
+      const bx = isUser ? x + w - pad - boxW : x + pad;
+      ctx.fillStyle = isUser ? '#7A3A33' : '#281E16';
+      ctx.strokeStyle = isUser ? '#A84B42' : '#C2A24C';
+      roundRect(ctx, bx, cy, boxW, boxH, 12);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#F5ECD8';
+      ctx.font = `600 ${Math.round(w * 0.034)}px "Cairo", sans-serif`;
+      ctx.direction = 'rtl';
+      ctx.textAlign = 'right';
+      wrapText(ctx, m.text, boxW - pad * 1.5).forEach((line, li) => {
+        ctx.fillText(line, bx + boxW - pad * 0.75, cy + (li + 1) * (w * 0.05));
+      });
+
+      cy += boxH + h * 0.025;
+    });
+
+  } else if (type === 'health') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.18, '#1F2A1E', () => {
+      ctx.fillStyle = '#86EFAC';
+      ctx.font = `700 ${Math.round(w * 0.038)}px "Cairo", sans-serif`;
+      ctx.fillText('🏃‍♂️ نشاطك وصحتك اليوم', x + w - pad * 1.5, cy + h * 0.05);
+      ctx.fillStyle = '#4ADE80';
+      ctx.font = `900 ${Math.round(w * 0.072)}px "Cairo", sans-serif`;
+      ctx.fillText('٨,٤٢٠ خطوة', x + w - pad * 1.5, cy + h * 0.12);
+      ctx.fillStyle = '#6EE7B7';
+      ctx.font = `700 ${Math.round(w * 0.034)}px "Cairo", sans-serif`;
+      ctx.textAlign = 'left';
+      ctx.fillText('💧 ٢.٤ لتر ماء', x + pad * 1.5, cy + h * 0.12);
+    });
+
+    cy += h * 0.20;
+
+    const healthTasks = [
+      { text: 'تمرين كابتن الهمة: لياقة وحديد', xp: '+100 XP', done: true },
+      { text: 'تسجيل وجبة الغداء وحساب السعرات', xp: '1850 سعرة', done: true },
+      { text: 'سجل الوزن الاسبوعي والميزان', xp: '74.5 كجم', done: false },
+      { text: 'نوم 8 ساعات وصيام متقطع 16:8', xp: 'هدف نشط', done: false }
+    ];
+
+    healthTasks.forEach(t => {
+      drawMockTask(ctx, x + pad, cy, w - pad * 2, h * 0.08, t);
+      cy += h * 0.092;
+    });
+
+  } else if (type === 'students') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.18, '#1A2332', () => {
+      ctx.fillStyle = '#93C5FD';
+      ctx.font = `700 ${Math.round(w * 0.038)}px "Cairo", sans-serif`;
+      ctx.fillText('🎓 طالب همة — المعدل التراكمي', x + w - pad * 1.5, cy + h * 0.05);
+      ctx.fillStyle = '#60A5FA';
+      ctx.font = `900 ${Math.round(w * 0.075)}px "Cairo", sans-serif`;
+      ctx.fillText('4.88 / 5.00', x + w - pad * 1.5, cy + h * 0.12);
+      ctx.fillStyle = '#34D399';
+      ctx.font = `700 ${Math.round(w * 0.034)}px "Cairo", sans-serif`;
+      ctx.textAlign = 'left';
+      ctx.fillText('ممتاز مرتفع A+', x + pad * 1.5, cy + h * 0.12);
+    });
+
+    cy += h * 0.20;
+
+    const studyTasks = [
+      { text: 'حل واجب الرياضيات المتقدمة', xp: 'واجب غدا', done: true },
+      { text: 'مراجعة فيزياء 45 دقيقة بومودورو', xp: '+60 XP', done: true },
+      { text: 'تسليم مشروع الحاسب والبرمجة', xp: 'باقي يومين', done: false },
+      { text: 'محاضرة الاحصاء قاعة 104', xp: '9:00 ص', done: false }
+    ];
+
+    studyTasks.forEach(t => {
+      drawMockTask(ctx, x + pad, cy, w - pad * 2, h * 0.08, t);
+      cy += h * 0.092;
+    });
+
+  } else if (type === 'kids') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.16, '#2D1B28', () => {
+      ctx.fillStyle = '#F472B6';
+      ctx.font = `700 ${Math.round(w * 0.042)}px "Cairo", sans-serif`;
+      ctx.fillText('🌈 عالم لينا للاطفال', x + w - pad * 1.5, cy + h * 0.045);
+      ctx.fillStyle = '#FDF2F8';
+      ctx.font = `500 ${Math.round(w * 0.036)}px "Cairo", sans-serif`;
+      ctx.fillText('«رائع يا همام.. جمعت 12 نجمة اليوم»', x + w - pad * 1.5, cy + h * 0.09);
+      ctx.fillStyle = '#FBBF24';
+      ctx.font = `700 ${Math.round(w * 0.038)}px sans-serif`;
+      ctx.textAlign = 'left';
+      ctx.fillText('⭐ 12 نجمة', x + pad * 1.5, cy + h * 0.09);
+    });
+
+    cy += h * 0.18;
+
+    const kidTasks = [
+      { text: 'رتبت سريري وغرفتي الصباح 🛏️', xp: '+2 ⭐', done: true },
+      { text: 'فرشت اسناني قبل النوم 🪥', xp: '+2 ⭐', done: true },
+      { text: 'صليت بوقته مع ابوي 🕌', xp: '+3 ⭐', done: true },
+      { text: 'قرات قصة مفيدة 15 دقيقة 📚', xp: '+2 ⭐', done: false }
+    ];
+
+    kidTasks.forEach(t => {
+      drawMockTask(ctx, x + pad, cy, w - pad * 2, h * 0.08, t);
+      cy += h * 0.092;
+    });
+
+  } else if (type === 'badges') {
+    const badges = [
+      { title: 'بطل الاستمرار', sub: 'سلسلة ٣٠ يوم', icon: '🏆' },
+      { title: 'فجر الأبطال', sub: 'صلاة الفجر بالمسجد', icon: '🌅' },
+      { title: 'وحش الحديد', sub: '١٠٠ تمرين مكتمل', icon: '⚡' },
+      { title: 'حافظ العهد', sub: 'صفر مخالفة للعهود', icon: '🛡️' }
+    ];
+
+    const bw = (w - pad * 3) / 2;
+    const bh = h * 0.23;
+
+    badges.forEach((b, i) => {
+      const bx = (i % 2 === 0) ? x + pad : x + pad * 2 + bw;
+      const by = cy + Math.floor(i / 2) * (bh + pad * 0.8);
+      drawMockCard(ctx, bx, by, bw, bh, '#281E16', () => {
+        ctx.textAlign = 'center';
+        ctx.font = `${Math.round(w * 0.1)}px sans-serif`;
+        ctx.fillText(b.icon, bx + bw / 2, by + bh * 0.4);
+        ctx.fillStyle = '#E4C97E';
+        ctx.font = `700 ${Math.round(w * 0.036)}px "Cairo", sans-serif`;
+        ctx.fillText(b.title, bx + bw / 2, by + bh * 0.68);
+        ctx.fillStyle = '#BCAA8C';
+        ctx.font = `500 ${Math.round(w * 0.028)}px "Cairo", sans-serif`;
+        ctx.fillText(b.sub, bx + bw / 2, by + bh * 0.88);
+      });
+    });
+
+  } else if (type === 'finance') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.2, '#281E16', () => {
+      ctx.fillStyle = '#BCAA8C';
+      ctx.font = `600 ${Math.round(w * 0.035)}px "Cairo", sans-serif`;
+      ctx.fillText('ميزانية الشهر المتبقية:', x + w - pad * 1.5, cy + h * 0.05);
+      ctx.fillStyle = '#10B981';
+      ctx.font = `900 ${Math.round(w * 0.075)}px "Cairo", sans-serif`;
+      ctx.fillText('٣٤٥٠ ريال', x + w - pad * 1.5, cy + h * 0.12);
+    });
+
+    cy += h * 0.23;
+
+    const expenses = [
+      { title: 'مطاعم وكافيهات', amount: '-120 ريال', cat: 'ترفيه' },
+      { title: 'اشتراك النادي الرياضي', amount: '-350 ريال', cat: 'صحة' },
+      { title: 'حصالة الادخار الذكية', amount: '+500 ريال', cat: 'توفير' }
+    ];
+
+    expenses.forEach(e => {
+      drawMockTask(ctx, x + pad, cy, w - pad * 2, h * 0.08, { text: e.title, xp: e.amount, done: true });
+      cy += h * 0.092;
+    });
+
+  } else if (type === 'privacy') {
+    drawMockCard(ctx, x + pad, cy, w - pad * 2, h * 0.55, '#241910', () => {
+      ctx.textAlign = 'center';
+      ctx.font = `${Math.round(w * 0.14)}px sans-serif`;
+      ctx.fillText('🔒', x + w / 2, cy + h * 0.14);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = `800 ${Math.round(w * 0.052)}px "Cairo", sans-serif`;
+      ctx.fillText('بياناتك ملكك وحدك', x + w / 2, cy + h * 0.25);
+
+      ctx.fillStyle = '#BCAA8C';
+      ctx.font = `500 ${Math.round(w * 0.034)}px "Cairo", sans-serif`;
+      ctx.fillText('• تخزين محلي بالكامل على جوالك', x + w / 2, cy + h * 0.34);
+      ctx.fillText('• صفر إعلانات وصفر تتبع تجاري', x + w / 2, cy + h * 0.40);
+      ctx.fillText('• لا نطلب بريدك الإلكتروني ولا حساب', x + w / 2, cy + h * 0.46);
+    });
+  }
+
+  // Bottom Navigation Bar
+  drawBottomNav(ctx, x, y + h - h * 0.08, w, h * 0.08);
+}
+
+function drawMockCard(ctx, x, y, w, h, bg, contentCb) {
+  ctx.save();
+  ctx.fillStyle = bg;
+  ctx.strokeStyle = '#443326';
+  ctx.lineWidth = 1.5;
+  roundRect(ctx, x, y, w, h, 14);
+  ctx.fill();
+  ctx.stroke();
+  ctx.direction = 'rtl';
+  ctx.textAlign = 'right';
+  if (contentCb) contentCb();
+  ctx.restore();
+}
+
+function drawMockTask(ctx, x, y, w, h, t) {
+  ctx.save();
+  ctx.fillStyle = '#201811';
+  ctx.strokeStyle = t.done ? '#C2A24C' : '#3D2B1E';
+  roundRect(ctx, x, y, w, h, 10);
+  ctx.fill();
+  ctx.stroke();
+
+  // Checkbox
+  const cbSize = h * 0.42;
+  const cbX = x + w - h * 0.3 - cbSize;
+  const cbY = y + (h - cbSize) / 2;
+  ctx.fillStyle = t.done ? '#C2A24C' : 'transparent';
+  ctx.strokeStyle = '#E4C97E';
+  roundRect(ctx, cbX, cbY, cbSize, cbSize, 6);
+  ctx.fill();
+  ctx.stroke();
+
+  if (t.done) {
+    ctx.fillStyle = '#17110C';
+    ctx.font = `900 ${Math.round(cbSize * 0.8)}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText('✓', cbX + cbSize / 2, cbY + cbSize * 0.8);
+  }
+
+  // Text
+  ctx.fillStyle = t.done ? '#F5ECD8' : '#BCAA8C';
+  ctx.font = `600 ${Math.round(h * 0.35)}px "Cairo", sans-serif`;
+  ctx.textAlign = 'right';
+  ctx.direction = 'rtl';
+  ctx.fillText(t.text, cbX - h * 0.25, y + h * 0.62);
+
+  // XP Pill
+  ctx.fillStyle = t.xp.includes('-') ? '#EF4444' : '#E4C97E';
+  ctx.font = `700 ${Math.round(h * 0.3)}px "Cairo", sans-serif`;
+  ctx.textAlign = 'left';
+  ctx.direction = 'ltr';
+  ctx.fillText(t.xp, x + h * 0.3, y + h * 0.62);
+
+  ctx.restore();
+}
+
+function drawBottomNav(ctx, x, y, w, h) {
+  ctx.save();
+  ctx.fillStyle = '#140E0A';
+  ctx.strokeStyle = '#3D2B1E';
+  ctx.lineWidth = 1;
+  ctx.fillRect(x, y, w, h);
+
+  const tabs = ['الرئيسية', 'حياتي', 'التزامي', 'تطوري', 'فخري'];
+  const tabW = w / tabs.length;
+  tabs.forEach((tab, i) => {
+    const tx = x + (tabs.length - 1 - i) * tabW + tabW / 2;
+    ctx.fillStyle = (i === 0) ? '#E4C97E' : '#82725B';
+    ctx.font = `700 ${Math.round(w * 0.03)}px "Cairo", sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText(tab, tx, y + h * 0.6);
+  });
+  ctx.restore();
+}
+
+function wrapText(ctx, text, maxWidth) {
+  const words = (text || '').split(' ');
+  const lines = [];
+  let currentLine = '';
+
+  for (let i = 0; i < words.length; i++) {
+    const testLine = currentLine ? currentLine + ' ' + words[i] : words[i];
+    const testWidth = ctx.measureText(testLine).width;
+    if (testWidth > maxWidth && currentLine) {
+      lines.push(currentLine);
+      currentLine = words[i];
+    } else {
+      currentLine = testLine;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+  return lines;
+}
+
+function roundRect(ctx, x, y, width, height, radius) {
+  ctx.beginPath();
+  if (ctx.roundRect) {
+    ctx.roundRect(x, y, width, height, radius);
+  } else {
+    ctx.moveTo(x + radius, y);
+    ctx.arcTo(x + width, y, x + width, y + height, radius);
+    ctx.arcTo(x + width, y + height, x, y + height, radius);
+    ctx.arcTo(x, y + height, x, y, radius);
+    ctx.arcTo(x, y + x + width, y, radius);
+    ctx.closePath();
+  }
+}
+
+function coverImage(ctx, img, dx, dy, dw, dh) {
+  const s = Math.max(dw / img.width, dh / img.height);
+  const w = img.width * s;
+  const h = img.height * s;
+  ctx.drawImage(img, dx + (dw - w) / 2, dy + (dh - h) / 2, w, h);
+}
+
+function drawAll() {
+  slidesState.forEach((_, i) => drawSlot(i));
+}
+
+// Global controls bindings
+document.getElementById('renderAll').onclick = drawAll;
+document.getElementById('size').onchange = () => { drawAll(); };
+document.getElementById('theme').onchange = () => { drawAll(); };
+document.getElementById('frameStyle').onchange = () => { drawAll(); };
+document.getElementById('footerSlogan').oninput = () => { drawAll(); };
+
+document.getElementById('resetDefaults').onclick = () => {
+  if (!confirm('هل أنت متأكد من رغبتك في إعادة ضبط جميع اللقطات للنصوص الأصلية؟')) return;
+  slidesState = JSON.parse(JSON.stringify(STORE_SLIDES));
+  document.getElementById('footerSlogan').value = 'معنا نشحن همتك لـ قمتك';
+  localStorage.removeItem('alhimmah_screenshots_state_v3');
+  renderGrid();
+  showToast('تمت استعادة الإعدادات الأصلية بالكامل');
+};
+
+window.downloadSingle = function(idx) {
+  const sizeTag = document.getElementById('size').value.split('|')[1] || 'screen';
+  const canvas = document.getElementById(`canvas_${idx}`);
+  if (!canvas) return;
+  const a = document.createElement('a');
+  const numStr = (idx + 1).toString().padStart(2, '0');
+  a.download = `alhimmah_${sizeTag}_${numStr}_${slidesState[idx].mockType}.png`;
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+  showToast(`تم تنزيل اللقطة ${idx + 1} بنجاح`);
+};
+
+document.getElementById('dlAll').onclick = () => {
+  const sizeTag = document.getElementById('size').value.split('|')[1] || 'screen';
+  const activeSlides = slidesState
+    .map((slide, i) => ({ slide, i }))
+    .filter(item => item.slide.enabled !== false);
+
+  if (activeSlides.length === 0) {
+    alert('لا توجد لقطات محددة للتنزيل! حدد لقطة واحدة على الأقل.');
+    return;
+  }
+
+  showToast(`جاري تنزيل ${activeSlides.length} لقطة متتالية...`);
+
+  activeSlides.forEach((item, seq) => {
+    setTimeout(() => {
+      const canvas = document.getElementById(`canvas_${item.i}`);
+      if (canvas) {
+        const a = document.createElement('a');
+        const numStr = (seq + 1).toString().padStart(2, '0');
+        a.download = `alhimmah_${sizeTag}_${numStr}_${item.slide.mockType}.png`;
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      }
+    }, seq * 280);
+  });
+};
+
+// Gallery Modal Functions
+window.openGallery = function() {
+  openGalleryAt(0);
+};
+
+window.openGalleryAt = function(idx) {
+  currentGalleryIdx = idx;
+  updateGalleryContent();
+  document.getElementById('galleryModal').classList.add('open');
+};
+
+window.closeGallery = function() {
+  document.getElementById('galleryModal').classList.remove('open');
+};
+
+function updateGalleryContent() {
+  const canvas = document.getElementById(`canvas_${currentGalleryIdx}`);
+  const imgEl = document.getElementById('galleryImg');
+  const titleEl = document.getElementById('galleryTitle');
+  const counterEl = document.getElementById('galleryCounter');
+  
+  if (canvas && imgEl) {
+    imgEl.src = canvas.toDataURL('image/png');
+  }
+  const slide = slidesState[currentGalleryIdx];
+  if (titleEl) {
+    titleEl.textContent = `لقطة ${currentGalleryIdx + 1}: ${slide.badgeText || slide.title}`;
+  }
+  if (counterEl) {
+    counterEl.textContent = `${currentGalleryIdx + 1} / ${slidesState.length}`;
+  }
+}
+
+window.nextGallerySlide = function() {
+  currentGalleryIdx = (currentGalleryIdx + 1) % slidesState.length;
+  updateGalleryContent();
+};
+
+window.prevGallerySlide = function() {
+  currentGalleryIdx = (currentGalleryIdx - 1 + slidesState.length) % slidesState.length;
+  updateGalleryContent();
+};
+
+window.downloadCurrentGallery = function() {
+  downloadSingle(currentGalleryIdx);
+};
+
+// Keyboard navigation for Gallery
+window.addEventListener('keydown', e => {
+  const modal = document.getElementById('galleryModal');
+  if (!modal || !modal.classList.contains('open')) return;
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') nextGallerySlide();
+  if (e.key === 'ArrowRight' || e.key === 'ArrowUp') prevGallerySlide();
+  if (e.key === 'Escape') closeGallery();
+});
+
+// Initial Render
+renderGrid();
+</script>
+</body>
+</html>
