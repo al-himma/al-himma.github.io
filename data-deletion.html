@@ -517,11 +517,18 @@
     font-family: inherit;
   }
 
-  .feedback-tag-btn.active,
   .feedback-tag-btn:hover {
     background: var(--primary-bg);
     color: var(--primary-ink);
     border-color: var(--primary);
+  }
+
+  .feedback-tag-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    font-weight: 800;
+    box-shadow: var(--shadow-sm);
   }
 
   .feedback-textarea {

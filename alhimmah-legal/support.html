@@ -517,11 +517,18 @@
     font-family: inherit;
   }
 
-  .feedback-tag-btn.active,
   .feedback-tag-btn:hover {
     background: var(--primary-bg);
     color: var(--primary-ink);
     border-color: var(--primary);
+  }
+
+  .feedback-tag-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    font-weight: 800;
+    box-shadow: var(--shadow-sm);
   }
 
   .feedback-textarea {
@@ -907,19 +914,30 @@
         });
       }
 
-      // عند الضغط على اي تصنيف ينضاف مباشرة بالنص مع حفظ كلام العميل
+      // ادارة تصنيفات المقترحات واضافتها كعنوان واضح
       var selectedTag = 'اقتراح ميزة جديدة';
       var tagBtns = document.querySelectorAll('.feedback-tag-btn');
       var taInput = document.getElementById('feedbackText');
 
+      function extractTagAndDetails(raw) {
+        var trimmed = (raw || '').trim();
+        var tag = selectedTag;
+        var details = trimmed;
+        var match = trimmed.match(/^\[([^\]]+)\]:\s*([\s\S]*)$/);
+        if (match) {
+          tag = match[1].trim() || selectedTag;
+          details = match[2].trim();
+        }
+        return { tag: tag, details: details };
+      }
+
       function insertTagIntoText(tag) {
         selectedTag = tag;
+        if (!taInput) return;
         var cur = taInput.value || '';
-        var prefixRegex = /^[[^]]+]:s*/;
-        if (prefixRegex.test(cur)) {
-          taInput.value = '[' + tag + ']: ' + cur.replace(prefixRegex, '');
-        } else if (cur.trim().length > 0) {
-          taInput.value = '[' + tag + ']: ' + cur;
+        var parsed = extractTagAndDetails(cur);
+        if (parsed.details.length > 0) {
+          taInput.value = '[' + tag + ']: ' + parsed.details;
         } else {
           taInput.value = '[' + tag + ']: ';
         }
@@ -941,15 +959,30 @@
       var sendTg = document.getElementById('sendFeedbackTg');
       if (sendTg) {
         sendTg.addEventListener('click', function () {
-          var text = (taInput.value || '').trim();
-          if (!text) {
-            text = '[' + selectedTag + ']: (بدون تفاصيل اضافية)';
+          var raw = taInput ? (taInput.value || '').trim() : '';
+          var parsed = extractTagAndDetails(raw);
+          var tag = parsed.tag || selectedTag;
+          var details = parsed.details;
+          if (!details && raw && !raw.startsWith('[')) {
+            details = raw;
           }
-          var message = 'السلام عليكم أخوي سعود، لدي مقترح لتطبيق الهمة:
-
-' + text;
+          if (!details) {
+            details = '(بدون تفاصيل اضافية)';
+          }
+          var lines = [
+            'السلام عليكم أخوي سعود، لدي مقترح لتطبيق الهمة:',
+            '',
+            '📌 الموضوع: ' + tag,
+            '',
+            '📝 التفاصيل:',
+            details
+          ];
+          var message = lines.join('\n');
           var url = 'https://t.me/Saud_HD?text=' + encodeURIComponent(message);
-          window.open(url, '_blank');
+          var win = window.open(url, '_blank');
+          if (!win) {
+            location.href = url;
+          }
         });
       }
 
@@ -957,15 +990,27 @@
       var sendMail = document.getElementById('sendFeedbackMail');
       if (sendMail) {
         sendMail.addEventListener('click', function () {
-          var text = (taInput.value || '').trim();
-          if (!text) {
-            text = '[' + selectedTag + ']: (بدون تفاصيل اضافية)';
+          var raw = taInput ? (taInput.value || '').trim() : '';
+          var parsed = extractTagAndDetails(raw);
+          var tag = parsed.tag || selectedTag;
+          var details = parsed.details;
+          if (!details && raw && !raw.startsWith('[')) {
+            details = raw;
           }
-          var subject = encodeURIComponent('اقتراح لتطبيق الهمة: ' + selectedTag);
-          var body = encodeURIComponent('السلام عليكم فريق تطبيق الهمة،
-
-' + text);
-          location.href = 'mailto:tharwat.aleilm@gmail.com?subject=' + subject + '&body=' + body;
+          if (!details) {
+            details = '(بدون تفاصيل اضافية)';
+          }
+          var subject = 'اقتراح لتطبيق الهمة — ' + tag;
+          var lines = [
+            'السلام عليكم فريق تطبيق الهمة،',
+            '',
+            '📌 الموضوع: ' + tag,
+            '',
+            '📝 التفاصيل:',
+            details
+          ];
+          var body = lines.join('\n');
+          location.href = 'mailto:tharwat.aleilm@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
       }
     })();
