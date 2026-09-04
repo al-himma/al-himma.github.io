@@ -17,6 +17,11 @@
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
 
+  <!-- الخطوط العربية المريحة للعين (Tajawal) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
   <!-- Google Analytics 4 (GA4) Tracker -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-23KV2GS557"></script>
   <script>
@@ -31,25 +36,25 @@
 
   <style>
     :root {
-      --bg: #f4f7f7;
+      --bg: #f7f9f8;
       --surface: #ffffff;
-      --surface-glass: rgba(255, 255, 255, 0.85);
-      --heading: #122425;
-      --text: #2d3b3c;
-      --text-secondary: #5e7071;
-      --primary: #125556;
-      --primary-hover: #0c3e3f;
-      --primary-bg: #e5f1f1;
-      --primary-ink: #125556;
-      --accent: #eab308;
-      --accent-hover: #ca8a04;
-      --border: #dbe4e4;
-      --border-light: #e8efef;
-      --shadow-sm: 0 2px 8px rgba(18, 36, 37, 0.04);
-      --shadow-card: 0 8px 24px rgba(18, 36, 37, 0.07);
-      --shadow-lg: 0 16px 40px rgba(18, 36, 37, 0.12);
-      --deep: #152627;
-      --deep-2: #1b3d3e;
+      --surface-glass: rgba(255, 255, 255, 0.88);
+      --heading: #112627;
+      --text: #243738;
+      --text-secondary: #586c6d;
+      --primary: #124d4e;
+      --primary-hover: #0a3637;
+      --primary-bg: #e8f3f3;
+      --primary-ink: #124d4e;
+      --accent: #c89a2b;
+      --accent-hover: #ad831f;
+      --border: #d8e3e3;
+      --border-light: #ebf2f2;
+      --shadow-sm: 0 2px 10px rgba(17, 38, 39, 0.04);
+      --shadow-card: 0 8px 24px rgba(17, 38, 39, 0.06);
+      --shadow-lg: 0 16px 42px rgba(17, 38, 39, 0.10);
+      --deep: #0e1e1f;
+      --deep-2: #153233;
       --radius-sm: 12px;
       --radius-md: 18px;
       --radius-lg: 26px;
@@ -57,25 +62,25 @@
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0c1414;
-        --surface: #141f20;
-        --surface-glass: rgba(20, 31, 32, 0.88);
-        --heading: #f0f6f6;
-        --text: #d2dede;
-        --text-secondary: #92a4a4;
-        --primary: #2fa19e;
-        --primary-hover: #3fc2bf;
-        --primary-bg: rgba(47, 161, 158, 0.16);
-        --primary-ink: #55d6d3;
-        --accent: #facc15;
-        --accent-hover: #eab308;
-        --border: #223334;
-        --border-light: #182829;
-        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+        --bg: #0b1414;
+        --surface: #121e1f;
+        --surface-glass: rgba(18, 30, 31, 0.90);
+        --heading: #eef6f6;
+        --text: #d0dede;
+        --text-secondary: #8b9ea0;
+        --primary: #31aba7;
+        --primary-hover: #45c4c0;
+        --primary-bg: rgba(49, 171, 167, 0.16);
+        --primary-ink: #65dfdc;
+        --accent: #e5b338;
+        --accent-hover: #c89a2b;
+        --border: #203334;
+        --border-light: #162627;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
         --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
         --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-        --deep: #081010;
-        --deep-2: #102223;
+        --deep: #070e0e;
+        --deep-2: #0e1c1d;
       }
     }
 
@@ -87,16 +92,18 @@
 
     html {
       scroll-behavior: smooth;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Arabic", "Segoe UI", "Tajawal", "Almarai", "Cairo", sans-serif;
+      font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, "SF Pro Arabic", "Segoe UI", sans-serif;
     }
 
     body {
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
       min-height: 100vh;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      word-spacing: normal;
+      letter-spacing: normal;
     }
 
     /* الترويسة العلوية */
@@ -265,7 +272,7 @@
       line-height: 1.25;
       color: var(--heading);
       margin: 0 0 22px;
-      letter-spacing: -0.5px;
+      letter-spacing: normal;
     }
 
     .landing-title-highlight {
@@ -2861,9 +2868,9 @@
           "حاسبة المعدل الجامعي بالساعات المعتمدة ومؤقت بومودورو مع روتين المذاكرة خلت دراستي اسهل بكثير. والمدرب سعود AI يرد باسلوب يعطيك دافع مو نصائح مكررة."
         </p>
         <div class="landing-testimonial-user">
-          <div class="landing-testimonial-avatar">أ</div>
+          <div class="landing-testimonial-avatar">ر</div>
           <div>
-            <div class="landing-testimonial-name">أفراح بنت أحمد</div>
+            <div class="landing-testimonial-name">رها بنت محمد</div>
             <div class="landing-testimonial-city">جدة — طالبة جامعية</div>
           </div>
         </div>
@@ -3027,6 +3034,7 @@
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="support.html">الدعم الفني</a>
         <a href="data-deletion.html">حذف البيانات</a>
+        <a href="https://t.me/alhimmah_app" target="_blank" rel="noopener">تواصل تليغرام 💬</a>
         <a href="#interactive-preview">المدرب سعود</a>
         <a href="#features">المميزات</a>
         <a href="#pricing">الباقات والاسعار</a>
@@ -3078,7 +3086,7 @@
       <img src="logo.png" alt="الهمة" class="landing-fab-logo">
       <div>
         <div class="landing-fab-title">تطبيق الهمة</div>
-        <div class="landing-fab-sub">مجاني وبخصوصية تامة</div>
+        <div class="landing-fab-sub">تجربة شهر مجاني وبخصوصية تامة</div>
       </div>
     </div>
     <a href="#download" class="landing-fab-btn" id="fab-download-btn" onclick="trackDownloadClick('fab_bar')">

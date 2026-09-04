@@ -6,47 +6,50 @@
   <title>طلب وإجراءات حذف البيانات — تطبيق الهمة</title>
   <meta name="description" content="دليل واجراءات حذف البيانات من تطبيق الهمة (com.alhimmah.app) — حذف فوري وبدون رجعة بخصوصية تامة.">
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
   :root {
-    --bg: #f4f7f7;
+    --bg: #f7f9f8;
     --surface: #ffffff;
     --surface-card: #ffffff;
-    --surface-glass: rgba(255, 255, 255, 0.92);
-    --border: #dbe4e4;
-    --border-light: #eef3f3;
-    --primary: #125556;
-    --primary-hover: #0d4344;
-    --primary-bg: #e5f1f1;
-    --primary-ink: #125556;
-    --gold: #c59b27;
-    --heading: #122425;
-    --text: #2d3b3c;
-    --text-secondary: #5e7071;
-    --shadow-sm: 0 2px 8px rgba(18, 36, 37, 0.05);
-    --shadow-card: 0 4px 16px rgba(18, 36, 37, 0.07);
-    --radius-sm: 8px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
+    --surface-glass: rgba(255, 255, 255, 0.88);
+    --border: #d8e3e3;
+    --border-light: #ebf2f2;
+    --primary: #124d4e;
+    --primary-hover: #0a3637;
+    --primary-bg: #e8f3f3;
+    --primary-ink: #124d4e;
+    --gold: #c89a2b;
+    --heading: #112627;
+    --text: #243738;
+    --text-secondary: #586c6d;
+    --shadow-sm: 0 2px 10px rgba(17, 38, 39, 0.04);
+    --shadow-card: 0 8px 24px rgba(17, 38, 39, 0.06);
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0d1717;
-      --surface: #142223;
-      --surface-card: #182829;
-      --surface-glass: rgba(20, 34, 35, 0.92);
-      --border: #233738;
-      --border-light: #1b2e2f;
-      --primary: #2ca5a7;
-      --primary-hover: #3bc2c4;
+      --bg: #0b1414;
+      --surface: #121e1f;
+      --surface-card: #152425;
+      --surface-glass: rgba(18, 30, 31, 0.90);
+      --border: #203334;
+      --border-light: #162627;
+      --primary: #31aba7;
+      --primary-hover: #45c4c0;
       --primary-bg: #143536;
-      --primary-ink: #6ee3e5;
-      --gold: #dfb235;
+      --primary-ink: #65dfdc;
+      --gold: #e5b338;
       --heading: #eef6f6;
       --text: #d0dede;
-      --text-secondary: #8c9e9f;
+      --text-secondary: #8b9ea0;
       --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-      --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.35);
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
   }
 
@@ -57,14 +60,16 @@
   }
 
   body {
-    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.85;
+    line-height: 1.8;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     -webkit-font-smoothing: antialiased;
+    word-spacing: normal;
+    letter-spacing: normal;
   }
 
   /* الترويسة الموحدة */
@@ -405,6 +410,178 @@
     line-height: 1.75;
   }
 
+  /* بطاقة تليغرام للدعم والتواصل */
+  .telegram-card {
+    background: linear-gradient(135deg, rgba(34, 158, 217, 0.08), rgba(18, 77, 78, 0.06));
+    border: 1px solid rgba(34, 158, 217, 0.25);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .telegram-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .telegram-icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #229ed9;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .telegram-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .btn-telegram-direct {
+    background: #229ed9;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-telegram-direct:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  /* صندوق المقترحات التفاعلي */
+  .feedback-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feedback-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--primary));
+  }
+
+  .feedback-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0;
+  }
+
+  .feedback-tag-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-tag-btn.active,
+  .feedback-tag-btn:hover {
+    background: var(--primary-bg);
+    color: var(--primary-ink);
+    border-color: var(--primary);
+  }
+
+  .feedback-textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.94rem;
+    color: var(--text);
+    background: var(--bg);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .feedback-textarea:focus {
+    border-color: var(--primary);
+  }
+
+  .feedback-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .feedback-submit-tg {
+    background: #229ed9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-submit-tg:hover {
+    opacity: 0.92;
+  }
+
+  .feedback-submit-mail {
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-submit-mail:hover {
+    opacity: 0.92;
+  }
+
   /* التذييل الموحد */
   .landing-footer {
     background: var(--surface);
@@ -597,6 +774,7 @@
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="support.html">الدعم الفني</a>
         <a href="data-deletion.html">حذف البيانات</a>
+        <a href="https://t.me/alhimmah_app" target="_blank" rel="noopener">تواصل تليغرام 💬</a>
       </div>
     </div>
     <div class="landing-footer-bottom">
