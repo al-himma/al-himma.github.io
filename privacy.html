@@ -1,147 +1,155 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سياسة الخصوصية — الهمة</title>
-<style>
-  /* صفحة ثابتة خارج التطبيق، فتوكنز global.css ما توصلها — نعرّف نفس
-     الأدوار هنا محلياً، ونقلبها بـprefers-color-scheme لأن الصفحة تُفتح
-     غالباً داخل التطبيق ليلاً وكانت تنفجر بياضاً بالوجه. */
-  :root {
-    --bg: #f5f8f8;
-    --surface: #ffffff;
-    --on-surface: #1a1f1f;
-    --brand: #006c35;
-    --muted: #6c7a7c;
-    --line: #dfe7e6;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1514;
-      --surface: #17201e;
-      --on-surface: #e8efed;
-      --brand: #4cc38a;
-      --muted: #9aa8a6;
-      --line: #26312f;
-    }
-  }
-  body {
-    font-family: Tahoma, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--on-surface);
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-    line-height: 1.9;
-  }
-  h1 { color: var(--brand); margin-bottom: 8px; }
-  h2 {
-    font-size: 18px;
-    color: var(--brand);
-    margin-top: 32px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-  }
-  .updated { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
-  a { color: var(--brand); }
-  /* فهرس أعلى الصفحة — ١٥ بنداً بتمرير طويل بلا أي قفزة قبله */
-  .toc {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin: 24px 0;
-    line-height: 2.2;
-  }
-  .toc-title { font-weight: bold; color: var(--brand); margin-bottom: 4px; }
-  .toc ol { margin: 0; padding-inline-start: 20px; }
-  .copy-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 24px; }
-  .copy-btn {
-    font: inherit;
-    font-size: 14px;
-    color: var(--brand);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 6px 12px;
-    cursor: pointer;
-  }
-  .copy-btn:active { transform: scale(0.97); }
-  .copy-done { color: var(--muted); font-size: 13px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية — تطبيق الهمة</title>
+  <meta name="description" content="سياسة الخصوصية وحماية البيانات لتطبيق الهمة — خصوصية محلية تامة 100% بجهازك وبدون اعلانات.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>${commonCss}</style>
 </head>
 <body>
-<h1>سياسة الخصوصية — تطبيق الهمة</h1>
-<div class="updated">آخر تحديث: أغسطس ٢٠٢٦</div>
-<div class="copy-row">
-  <button class="copy-btn" id="copyLink" type="button">انسخ رابط الصفحة</button>
-  <span class="copy-done" id="copyDone" hidden>تم النسخ</span>
-</div>
+${buildHeader('privacy')}
 
-<nav class="toc">
-  <div class="toc-title">محتوى الصفحة</div>
-  <ol>
-    <li><a href="#s1">البيانات التي نخزنها</a></li>
-    <li><a href="#s2">المزايا الذكية الاختيارية</a></li>
-    <li><a href="#s3">الاشتراك المدفوع</a></li>
-    <li><a href="#s4">إحصائيات استخدام مجهولة</a></li>
-    <li><a href="#s5">الصلاحيات</a></li>
-    <li><a href="#s6">حذف بياناتك</a></li>
-    <li><a href="#s7">تصدير بياناتك</a></li>
-    <li><a href="#s8">تواصل معنا</a></li>
-  </ol>
-</nav>
+  <main class="legal-container">
+    <div class="legal-hero-card">
+      <span class="legal-badge">🔒 وثيقة رسمية معتمدة</span>
+      <h1 class="legal-title">سياسة الخصوصية وحماية البيانات — تطبيق الهمة</h1>
+      <p class="legal-section-text">
+        نؤمن في تطبيق «الهمة» بان خصوصيتك حق اصيل لا يقبل المساومة. صُمم التطبيق ليعمل وفق مبدا الخصوصية المحلية التامة بجهازك، بدون تتبع، وبدون بيع بيانات، وبدون اعلانات.
+      </p>
+      <div class="legal-meta-row">
+        <span class="legal-updated">آخر تحديث: أغسطس ٢٠٢٦</span>
+        <button class="copy-btn" id="copyLink" type="button">🔗 انسخ رابط الوثيقة</button>
+        <span class="copy-done" id="copyDone" hidden>تم النسخ بنجاح!</span>
+      </div>
+    </div>
 
-<h2 id="s1">١. البيانات التي نخزنها</h2>
-<p>يحفظ تطبيق «الهمة» كل بياناتك الشخصية على جهازك فقط، داخل مساحة تخزين التطبيق. لا يوجد حساب مستخدم على خادم لدينا، ولا نبيع بياناتك ولا نشاركها مع أي جهة إعلانية.</p>
+    <nav class="legal-toc-card" aria-label="فهرس بنود سياسة الخصوصية">
+      <div class="legal-toc-title">
+        <span>📑</span>
+        <span>فهرس البنود والمحتويات</span>
+      </div>
+      <div class="legal-toc-grid">
+        <a href="#s1" class="legal-toc-link">١. البيانات التي نخزنها</a>
+        <a href="#s2" class="legal-toc-link">٢. المزايا الذكية الاختيارية</a>
+        <a href="#s3" class="legal-toc-link">٣. الاشتراك المدفوع</a>
+        <a href="#s4" class="legal-toc-link">٤. احصائيات استخدام مجهولة</a>
+        <a href="#s5" class="legal-toc-link">٥. الصلاحيات</a>
+        <a href="#s6" class="legal-toc-link">٦. حذف بياناتك</a>
+        <a href="#s7" class="legal-toc-link">٧. تصدير بياناتك</a>
+        <a href="#s8" class="legal-toc-link">٨. تواصل معنا</a>
+      </div>
+    </nav>
 
-<h2 id="s2">٢. المزايا الذكية الاختيارية</h2>
-<p>بعض المزايا الاختيارية ترسل النص أو الصورة التي تدخلها لمزود ذكاء اصطناعي خارجي، لتوليد الرد أو استخراج المعلومات المطلوبة فقط. لا تحفظ هذه البيانات لدينا بشكل دائم، ولا تستخدم لتعريف هويتك أو للإعلانات.</p>
+    <section class="legal-section-card" id="s1">
+      <div class="legal-section-header">
+        <span class="legal-section-num">١</span>
+        <h2 class="legal-section-title">البيانات التي نخزنها</h2>
+      </div>
+      <p class="legal-section-text">
+        يحفظ تطبيق «الهمة» كل بياناتك الشخصية على جهازك فقط، داخل مساحة تخزين التطبيق المحلية. لا يوجد حساب مستخدم على خادم مركزي لدينا، ولا نبيع بياناتك ولا نشاركها مع اي جهة اعلانية او تجارية نهائيا.
+      </p>
+    </section>
 
-<h2 id="s3">٣. الاشتراك المدفوع</h2>
-<p>عند الاشتراك عبر متجر التطبيقات، تتم عملية الدفع بالكامل عبر أنظمة الفوترة الرسمية لآبل أو جوجل. نستخدم مزودا خارجيا لإدارة حالة الاشتراك فقط، ويستقبل معرف جهاز مجهولا وبيانات الشراء دون أي بيانات شخصية أخرى.</p>
+    <section class="legal-section-card" id="s2">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٢</span>
+        <h2 class="legal-section-title">المزايا الذكية الاختيارية</h2>
+      </div>
+      <p class="legal-section-text">
+        بعض المزايا الاختيارية (مثل المدرب سعود AI) ترسل النص او الصورة التي تدخلها لمزود ذكاء اصطناعي خارجي لتوليد الرد او استخراج المعلومات المطلوبة فقط. لا تحفظ هذه البيانات لدينا بشكل دائم، ولا تستخدم لتعريف هويتك او للإعلانات.
+      </p>
+    </section>
 
-<h2 id="s4">٤. إحصائيات استخدام مجهولة</h2>
-<p>نجمع إحصائيات استخدام عامة مجهولة الهوية لتحسين التطبيق، ولا تتضمن أي محتوى شخصي كتبته.</p>
+    <section class="legal-section-card" id="s3">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٣</span>
+        <h2 class="legal-section-title">الاشتراك المدفوع</h2>
+      </div>
+      <p class="legal-section-text">
+        عند الاشتراك عبر متجر التطبيقات، تتم عملية الدفع بالكامل عبر انظمة الفوترة الرسمية لابل (App Store) او جوجل (Google Play). نستخدم مزودا خارجيا معتمدا لإدارة حالة الاشتراك فقط، ويستقبل معرف جهاز مجهولا وبيانات الشراء دون اي بيانات شخصية اخرى.
+      </p>
+    </section>
 
-<h2 id="s5">٥. الصلاحيات</h2>
-<p>قد يطلب التطبيق صلاحيات اختيارية (كالكاميرا أو الإشعارات أو بيانات الحركة) لتفعيل مزايا معينة، وتبقى بياناتها داخل جهازك فقط ولا ترسل لأي خادم.</p>
+    <section class="legal-section-card" id="s4">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٤</span>
+        <h2 class="legal-section-title">احصائيات استخدام مجهولة</h2>
+      </div>
+      <p class="legal-section-text">
+        قد نجمع احصائيات استخدام عامة مجهولة الهوية بالكامل للمساعدة في تحسين استقرار التطبيق وتجربة الاستخدام، ولا تتضمن هذه الاحصائيات اي محتوى شخصي كتبته او ادخلته.
+      </p>
+    </section>
 
-<h2 id="s6">٦. حذف بياناتك</h2>
-<p>يمكنك حذف كل بياناتك نهائيا في أي وقت من: الإعدادات ← «بياناتك على الجهاز» ← «حذف كل بياناتي نهائيا». كما يمسح حذف التطبيق نفسه كل بياناته المحلية تلقائيا. الحذف فوري ولا رجعة فيه.</p>
+    <section class="legal-section-card" id="s5">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٥</span>
+        <h2 class="legal-section-title">الصلاحيات</h2>
+      </div>
+      <p class="legal-section-text">
+        قد يطلب التطبيق صلاحيات اختيارية (كالكاميرا لمسح الرموز، او الاشعارات للتذكير بالورد والصلاة، او عداد الخطوات) لتفعيل مزايا معينة، وتبقى بياناتها داخل جهازك فقط ولا ترسل لاي خادم خارجي.
+      </p>
+    </section>
 
-<h2 id="s7">٧. تصدير بياناتك</h2>
-<p>يمكنك تصدير نسخة من بياناتك من الإعدادات لحفظها أو نقلها بنفسك.</p>
+    <section class="legal-section-card" id="s6">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٦</span>
+        <h2 class="legal-section-title">حذف بياناتك</h2>
+      </div>
+      <p class="legal-section-text">
+        يمكنك حذف كل بياناتك نهائيا في اي وقت مباشرة من داخل التطبيق: <strong>الإعدادات ← «بياناتك على الجهاز» ← «حذف كل بياناتي نهائيا»</strong>. كما يمسح حذف التطبيق نفسه من جهازك كل بياناته المحلية تلقائيا. الحذف فوري وبدون رجعة فيه. للمزيد راجع صفحة <a href="data-deletion.html">اجراءات حذف البيانات</a>.
+      </p>
+    </section>
 
-<h2 id="s8">٨. تواصل معنا</h2>
-<p>لأي استفسار عن خصوصيتك، راسلنا على: <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a></p>
+    <section class="legal-section-card" id="s7">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٧</span>
+        <h2 class="legal-section-title">تصدير بياناتك</h2>
+      </div>
+      <p class="legal-section-text">
+        تطبيق الهمة يمنحك حق الملكية الكاملة لمعلوماتك؛ يمكنك تصدير نسخة احتياطية مشفرة او كاملة من بياناتك من شاشة الإعدادات لحفظها او استرجاعها بنفسك بدون اي قيود.
+      </p>
+    </section>
 
-<script>
-  /* نسخ الرابط — يفيد بمراجعة المتاجر لما نحتاج نستشهد بالوثيقة نفسها.
-     clipboard API يفشل بلا https أو بلا إذن، فنسقط لتحديد نص مخفي. */
-  (function () {
-    var btn = document.getElementById('copyLink');
-    var done = document.getElementById('copyDone');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var url = location.href;
-      var show = function () {
-        done.hidden = false;
-        setTimeout(function () { done.hidden = true; }, 2000);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(show, function () {});
-        return;
-      }
-      var ta = document.createElement('textarea');
-      ta.value = url;
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand('copy'); show(); } catch (e) {}
-      document.body.removeChild(ta);
-    });
-  })();
-</script>
+    <section class="legal-section-card" id="s8">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٨</span>
+        <h2 class="legal-section-title">تواصل معنا</h2>
+      </div>
+      <p class="legal-section-text">
+        لأي استفسار او طلب يتعلق بسياسة الخصوصية وحماية بياناتك، يسعدنا تواصلك معنا عبر البريد الرسمي المعتمد:
+        <br>
+        📧 <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+${buildFooter()}
+
+  <script>
+    (function () {
+      var btn = document.getElementById('copyLink');
+      var done = document.getElementById('copyDone');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var url = location.href;
+        var show = function () {
+          done.hidden = false;
+          setTimeout(function () { done.hidden = true; }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(show, function () {});
+          return;
+        }
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); show(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+    })();
+  </script>
 </body>
 </html>

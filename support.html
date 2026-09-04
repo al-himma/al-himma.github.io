@@ -1,54 +1,128 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الدعم — الهمة</title>
-<style>
-  body {
-    font-family: Tahoma, Arial, sans-serif;
-    background: #f5f8f8;
-    color: #1a1f1f;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-    line-height: 1.9;
-  }
-  h1 { color: #006c35; }
-  h2 { font-size: 18px; color: #006c35; margin-top: 32px; }
-  .updated { color: #6c7a7c; font-size: 14px; margin-bottom: 24px; }
-  a { color: #006c35; }
-  .email-box {
-    background: #fff;
-    border: 1px solid #e7edec;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 16px;
-    text-align: center;
-    font-size: 18px;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الدعم الفني والمساعدة — تطبيق الهمة</title>
+  <meta name="description" content="مركز الدعم الفني والمساعدة الرسمية لتطبيق الهمة — نحن هنا لخدمتك والاجابة على استفساراتك.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>${commonCss}</style>
 </head>
 <body>
-<h1>الدعم — تطبيق الهمة</h1>
-<div class="updated">الهمة حتى القمة 🏔️</div>
+${buildHeader('support')}
 
-<h2>تحتاج مساعدة؟</h2>
-<p>لو واجهت أي مشكلة بالتطبيق، أو عندك اقتراح، أو استفسار عن حسابك أو اشتراكك — تواصل معنا مباشرة وبنرد عليك بأقرب وقت.</p>
+  <main class="legal-container">
+    <div class="legal-hero-card">
+      <span class="legal-badge">💬 خدمة المستفيدين</span>
+      <h1 class="legal-title">الدعم الفني والمساعدة — تطبيق الهمة</h1>
+      <p class="legal-section-text">
+        حياك الله في مركز مساعدة تطبيق «الهمة». اذا واجهت اي استفسار، صعوبة تقنية، او كان عندك اقتراح ملهم لتطوير المنظومة، فريقنا بخدمتك دائما.
+      </p>
+      <div class="legal-meta-row">
+        <span class="legal-updated">«الهمة حتى القمة 🏔️»</span>
+      </div>
+    </div>
 
-<div class="email-box">
-  📧 <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a>
-</div>
+    <!-- بطاقة التواصل المباشر -->
+    <div class="legal-section-card">
+      <div class="legal-section-header">
+        <span class="legal-section-num">✉️</span>
+        <h2 class="legal-section-title">تواصل معنا مباشرة عبر البريد</h2>
+      </div>
+      <p class="legal-section-text">
+        راسلنا مباشرة على البريد الرسمي المعتمد للتطبيق، ونرد على كافة الاستفسارات خلال اقل من 24 ساعة:
+      </p>
+      <div class="email-box-modern">
+        <a href="mailto:tharwat.aleilm@gmail.com" id="supportMail">tharwat.aleilm@gmail.com</a>
+        <button class="copy-btn" id="copyMailBtn" type="button">📋 نسخ البريد</button>
+      </div>
+      <span class="copy-done" id="mailDone" hidden style="margin-top: 8px; display: inline-block;">تم نسخ البريد بنجاح!</span>
+    </div>
 
-<h2>أسئلة شائعة</h2>
-<p><strong>كيف أحذف بياناتي؟</strong><br>
-من داخل التطبيق: الإعدادات ← «بياناتك على الجهاز» ← «حذف كل بياناتي نهائيا». هذا الإجراء فوري ولا رجعة فيه.</p>
+    <!-- الاسئلة الشائعة -->
+    <div style="margin: 36px 0 16px;">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--heading); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+        <span>❓</span>
+        <span>الاسئلة الاكثر شيوعا</span>
+      </h2>
 
-<p><strong>كيف ألغي الاشتراك؟</strong><br>
-الاشتراك يُدار بالكامل عبر متجر التطبيقات (App Store / Google Play). تقدر تلغيه من إعدادات حسابك بالمتجر مباشرة قبل نهاية الفترة الحالية.</p>
+      <div class="faq-card">
+        <div class="faq-q">
+          <span>🎯</span>
+          <span>كيف احذف بياناتي بالكامل؟</span>
+        </div>
+        <div class="faq-a">
+          من داخل التطبيق مباشرة: توجه الى <strong>الإعدادات ← «بياناتك على الجهاز» ← «حذف كل بياناتي نهائيا»</strong>. هذا الإجراء يمسح كل بياناتك محليا وفورا وبدون رجعة فيه. للمزيد راجع صفحة <a href="data-deletion.html" style="color: var(--primary-ink); font-weight: 700;">حذف البيانات</a>.
+        </div>
+      </div>
 
-<p><strong>وين بياناتي محفوظة؟</strong><br>
-كل بياناتك محفوظة محلياً على جهازك فقط. راجع <a href="privacy.html">سياسة الخصوصية</a> لتفاصيل أكثر.</p>
+      <div class="faq-card">
+        <div class="faq-q">
+          <span>💳</span>
+          <span>كيف الغي او اعدل الاشتراك؟</span>
+        </div>
+        <div class="faq-a">
+          الاشتراكات تدار بنسبة 100% عبر متجر تطبيقات جهازك الرسمي (Apple App Store او Google Play). يمكنك الغاء التجديد التلقائي في اي وقت من إعدادات حسابك بالمتجر قبل نهاية الفترة الحالية، وبدون اي رسوم اضافية.
+        </div>
+      </div>
 
+      <div class="faq-card">
+        <div class="faq-q">
+          <span>🔒</span>
+          <span>اين تحفظ بياناتي اليومية ومصاريفي؟</span>
+        </div>
+        <div class="faq-a">
+          جميع بياناتك (صلاتك، وردك، مصاريفك، اهدافك، روتينك) محفوظة محليا على هاتفك فقط ولا ترفع على اي سيرفر مركزي، مما يوفر لك اعلى درجات الخصوصية والامان.
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-q">
+          <span>⚡</span>
+          <span>هل التطبيق يعمل بدون اتصال بالإنترنت؟</span>
+        </div>
+        <div class="faq-a">
+          نعم! تطبيق الهمة صُمم ليعمل بنظام Offline-First؛ المصحف الشريف، الاذكار، مواقيت الصلاة، الروتين، تتبع المصاريف، الصيام، والجيم والالعاب تعمل جميعها بدون نت.
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <div class="faq-q">
+          <span>🇸🇦</span>
+          <span>كيف اتواصل مع المدرب سعود AI؟</span>
+        </div>
+        <div class="faq-a">
+          المدرب سعود متاح على مدار 24 ساعة في تبويب «تطوري»، تقدر تساله عن خططك وروتينك وتستشيره بلهجة سعودية حكيمة، مع الحفاظ الكامل على خصوصية محادثاتك.
+        </div>
+      </div>
+    </div>
+  </main>
+
+${buildFooter()}
+
+  <script>
+    (function () {
+      var btn = document.getElementById('copyMailBtn');
+      var done = document.getElementById('mailDone');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var email = 'tharwat.aleilm@gmail.com';
+        var show = function () {
+          done.hidden = false;
+          setTimeout(function () { done.hidden = true; }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(show, function () {});
+          return;
+        }
+        var ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); show(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+    })();
+  </script>
 </body>
 </html>

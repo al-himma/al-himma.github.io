@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>حذف بياناتك — تطبيق الهمة</title>
-<style>
-  body {
-    font-family: Tahoma, Arial, sans-serif;
-    background: #f5f8f8;
-    color: #1a1f1f;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-    line-height: 1.9;
-  }
-  h1 { color: #006c35; }
-  h2 { font-size: 18px; color: #006c35; margin-top: 32px; }
-  .updated { color: #6c7a7c; font-size: 14px; margin-bottom: 24px; }
-  a { color: #006c35; }
-  ol { padding-right: 20px; }
-  li { margin-bottom: 8px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طلب وإجراءات حذف البيانات — تطبيق الهمة</title>
+  <meta name="description" content="دليل واجراءات حذف البيانات من تطبيق الهمة (com.alhimmah.app) — حذف فوري وبدون رجعة بخصوصية تامة.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <style>${commonCss}</style>
 </head>
 <body>
-<h1>طلب حذف البيانات — تطبيق الهمة (com.alhimmah.app)</h1>
-<div class="updated">آخر تحديث: أغسطس ٢٠٢٦</div>
+${buildHeader('deletion')}
 
-<h2>كيف تحذف بياناتك؟</h2>
-<p>كل بيانات تطبيق «الهمة» تُخزن محليا على جهازك فقط — لا يوجد حساب أو خادم مركزي يحتفظ بنسخة منها. عندك طريقتان للحذف الفوري:</p>
+  <main class="legal-container">
+    <div class="legal-hero-card">
+      <span class="legal-badge">🗑️ اجراء فوري معتمد</span>
+      <h1 class="legal-title">طلب وإجراءات حذف البيانات — تطبيق الهمة (com.alhimmah.app)</h1>
+      <p class="legal-section-text">
+        نظرا لان تطبيق «الهمة» يعتمد التخزين المحلي الكامل على جهازك فقط (Local Storage)، فلا توجد بيانات لك على خوادم مركزية، ولديك الحرية المطلقة لحذف كل شيء فورا وبدون اي وسطاء.
+      </p>
+      <div class="legal-meta-row">
+        <span class="legal-updated">آخر تحديث: أغسطس ٢٠٢٦</span>
+      </div>
+    </div>
 
-<h2>الطريقة الأولى (داخل التطبيق، موصى بها)</h2>
-<ol>
-  <li>افتح تطبيق «الهمة».</li>
-  <li>روح إلى: <strong>الإعدادات ← «بياناتك على الجهاز»</strong>.</li>
-  <li>اضغط <strong>«حذف كل بياناتي نهائيا»</strong> وأكد.</li>
-</ol>
-<p>هذا الإجراء يمسح كل بياناتك من جهازك <strong>فورا وبلا رجعة</strong> — لا تحتاج إرسال أي طلب لنا أو الانتظار.</p>
+    <!-- الطريقة الاولى -->
+    <section class="legal-section-card">
+      <div class="legal-section-header">
+        <span class="legal-section-num">١</span>
+        <h2 class="legal-section-title">الطريقة الأولى: من داخل التطبيق (فورية وموصى بها)</h2>
+      </div>
+      <p class="legal-section-text">
+        يمكنك مسح كامل سجلاتك بنقرة واحدة بدون الحاجة للتواصل معنا:
+      </p>
+      <ol class="legal-step-list">
+        <li>افتح تطبيق «الهمة» على جوالك.</li>
+        <li>توجه إلى: <strong>الإعدادات ← «بياناتك على الجهاز»</strong>.</li>
+        <li>اضغط على خيار <strong>«حذف كل بياناتي نهائيا»</strong> ثم اكد الإجراء.</li>
+      </ol>
+      <p class="legal-section-text" style="color: var(--primary-ink); font-weight: 700;">
+        ⚠️ هذا الإجراء فوري وبدون رجعة فيه؛ يمسح كل الروتين، الصلوات، الختمات، المصاريف، والنقاط نهائيا من ذاكرة جهازك.
+      </p>
+    </section>
 
-<h2>الطريقة الثانية</h2>
-<p>حذف التطبيق نفسه من جهازك (إلغاء التثبيت) يمسح كل بياناته المحلية تلقائيا.</p>
+    <!-- الطريقة الثانية -->
+    <section class="legal-section-card">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٢</span>
+        <h2 class="legal-section-title">الطريقة الثانية: عبر نظام تشغيل الجوال</h2>
+      </div>
+      <p class="legal-section-text">
+        حذف التطبيق نفسه من هاتفك (الغاء التثبيت / Uninstall) او مسح بيانات التخزين من إعدادات النظام يمسح تلقائيا كافة البيانات والملفات المحلية بدون اي استثناء وبدون بقاء اي اثر.
+      </p>
+    </section>
 
-<h2>ما الذي يُحذف، وما الذي يُحتفظ به؟</h2>
-<ul>
-  <li><strong>يُحذف بالكامل وفورا:</strong> كل بياناتك المحلية. هذه البيانات موجودة فقط على جهازك، فحذفها محليا يعني حذفها نهائيا بلا تأخير.</li>
-  <li><strong>لا يُحتفظ به أصلا:</strong> عند استخدام مزايا ذكية اختيارية، تُرسل بياناتها لمزود ذكاء اصطناعي خارجي بغرض توليد الرد فقط، وتُعالج لحظيا دون تخزين دائم مرتبط بهويتك.</li>
-  <li><strong>بيانات الاشتراك (نسخة المتاجر فقط):</strong> معرف جهاز مجهول وحالة الاشتراك يُداران عبر مزود خارجي طالما اشتراكك فعال، وتُحذف تلقائيا حسب سياسة الاحتفاظ الخاصة به بعد إلغاء الاشتراك.</li>
-</ul>
-<p>تفاصيل كاملة في <a href="privacy.html">سياسة الخصوصية</a>.</p>
+    <!-- ما الذي يحذف -->
+    <section class="legal-section-card">
+      <div class="legal-section-header">
+        <span class="legal-section-num">📋</span>
+        <h2 class="legal-section-title">ما الذي يحذف وما الذي لا يحتفظ به اصلا؟</h2>
+      </div>
+      <ul class="legal-step-list" style="list-style-type: disc;">
+        <li><strong>يحذف بالكامل وفورا:</strong> جميع بياناتك المحلية وعاداتك وسجلاتك المالية ومستوياتك واوسمتك بدون تاخير.</li>
+        <li><strong>لا يحتفظ به اصلا:</strong> عند استخدام المزايا الذكية الاختيارية، تعالج البيانات لحظيا عبر مزود الذكاء الاصطناعي دون تخزين دائم مرتبط بهويتك.</li>
+        <li><strong>بيانات الاشتراك:</strong> يديرها متجر ابل او جوجل مباشرة، ونحن لا نستلم او نخزن اي ارقام بطاقات او حسابات بنكية.</li>
+      </ul>
+    </section>
 
-<h2>تواصل معنا</h2>
-<p>لأي استفسار عن حذف بياناتك، راسلنا على: <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a></p>
+    <!-- تواصل معنا -->
+    <section class="legal-section-card">
+      <div class="legal-section-header">
+        <span class="legal-section-num">📧</span>
+        <h2 class="legal-section-title">استفسارات حذف البيانات والدعم</h2>
+      </div>
+      <p class="legal-section-text">
+        لأي سؤال اضافي بخصوص بياناتك او للمساعدة، تواصل معنا عبر البريد الرسمي:
+        <br>
+        <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+${buildFooter()}
 
 </body>
 </html>
