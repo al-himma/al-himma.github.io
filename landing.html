@@ -349,54 +349,196 @@
       gap: 6px;
     }
 
-    /* شريط الاحصائيات */
-    .landing-stats-section {
+    /* بطاقة وش أستفيد التفاعلية (Native Mobile Carousel) */
+    .landing-benefit-section {
       max-width: 1040px;
-      margin: 20px auto 48px;
+      margin: 20px auto 44px;
       padding: 0 20px;
       width: 100%;
     }
 
-    .landing-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+    .landing-benefit-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 12px;
     }
 
-    .landing-stat-card {
+    .landing-benefit-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--heading);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .landing-benefit-badge {
+      font-size: 0.74rem;
+      color: var(--primary-ink);
+      background: var(--primary-bg);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .landing-benefit-carousel {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+
+    .landing-benefit-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 24px 20px;
-      text-align: center;
+      padding: 18px 16px;
       box-shadow: var(--shadow-card);
       transition: transform 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .landing-stat-card:hover {
-      transform: translateY(-3px);
+    .landing-benefit-card:hover {
+      transform: translateY(-2px);
       border-color: var(--primary);
     }
 
-    .landing-stat-num {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--primary-ink);
-      line-height: 1.1;
-      margin-bottom: 6px;
+    .landing-benefit-card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .landing-stat-label {
+    .landing-benefit-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .landing-benefit-name {
       font-size: 0.96rem;
       font-weight: 800;
       color: var(--heading);
-      margin-bottom: 4px;
     }
 
-    .landing-stat-sub {
-      font-size: 0.8rem;
+    .landing-benefit-tag {
+      font-size: 0.72rem;
       color: var(--text-secondary);
-      line-height: 1.4;
+      background: var(--border-light);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      margin-right: auto;
+    }
+
+    .landing-benefit-text {
+      font-size: 0.84rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    /* الشريط السفلي العائم لمنطقة الإبهام (Thumb-Zone Floating Action Bar) */
+    .landing-fab-bar {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%) translateY(90px);
+      width: calc(100% - 32px);
+      max-width: 420px;
+      background: var(--surface-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+      z-index: 990;
+      opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .landing-fab-bar.is-visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .landing-fab-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-right: 4px;
+    }
+
+    .landing-fab-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .landing-fab-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.2;
+    }
+
+    .landing-fab-sub {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      line-height: 1.1;
+    }
+
+    .landing-fab-btn {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 9px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      white-space: nowrap;
+      transition: transform 0.2s ease;
+    }
+
+    .landing-fab-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* نبضة ضوء هادئة غير متكررة تخدم الفهم والتحميل المباشر */
+    @keyframes single-subtle-glow {
+      0% {
+        box-shadow: 0 0 0 0 rgba(18, 85, 86, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(18, 85, 86, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(18, 85, 86, 0);
+      }
+    }
+
+    .pulse-once {
+      animation: single-subtle-glow 1.4s ease-out 1;
     }
 
     /* قسم مشكلة الطفة والحل السعودي */
@@ -2098,7 +2240,7 @@
       <span class="landing-title-highlight">بهمة ما تنكسر</span>
     </h1>
     <p class="landing-hero-desc">
-      <strong>تبدا بحماس وتطفي بعد ثلاثة ايام؟</strong> المشكلة مو فيك... ما عندك نظام يشبهك! «الهمة» يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI وكل بياناتك بجهازك بخصوصية تامة 100% وبدون اعلانات.
+      <strong>نظامك اليومي المتكامل:</strong> يجمع وردك وصلاتك، روتينك وصحتك، مصاريفك وتطوير ذاتك مع المدرب سعود AI — بخصوصية محلية تامة 100% وبدون اعلانات.
     </p>
 
     <div class="landing-hero-cta-group">
@@ -2121,28 +2263,65 @@
     </div>
   </section>
 
-  <!-- شريط الارقام والاحصائيات -->
-  <section class="landing-stats-section reveal-on-scroll">
-    <div class="landing-stats-grid">
-      <div class="landing-stat-card">
-        <div class="landing-stat-num" data-target="55" data-suffix="+">+55</div>
-        <div class="landing-stat-label">ميزة واداة متكاملة</div>
-        <div class="landing-stat-sub">تغنيك عن 8 تطبيقات منفصلة وتوفر مساحة وذاكرة جوالك</div>
+  <!-- بطاقة وش أستفيد التفاعلية (Native Mobile Carousel) -->
+  <section class="landing-benefit-section reveal-on-scroll" aria-label="وش أستفيد من الهمة">
+    <div class="landing-benefit-header">
+      <div class="landing-benefit-title">
+        <span>💡</span>
+        <span>وش أستفيد من الهمة في 30 ثانية؟</span>
       </div>
-      <div class="landing-stat-card">
-        <div class="landing-stat-num" data-target="100" data-suffix="%">100%</div>
-        <div class="landing-stat-label">خصوصية محلية بجهازك</div>
-        <div class="landing-stat-sub">يومياتك ومصاريفك وصلاتك ما تغادر هاتفك نهائيا</div>
+      <span class="landing-benefit-badge">اسحب لرؤية التبويبات ‹‹</span>
+    </div>
+
+    <div class="landing-benefit-carousel" id="benefit-carousel" role="region" aria-label="أركان الهمة في 30 ثانية">
+      <!-- 1. الرئيسية -->
+      <div class="landing-benefit-card">
+        <div class="landing-benefit-card-head">
+          <span class="landing-benefit-icon">🌅</span>
+          <span class="landing-benefit-name">الرئيسية</span>
+          <span class="landing-benefit-tag">انضباط</span>
+        </div>
+        <p class="landing-benefit-text">روتين الصباح والمساء، سلاسل التزام ما تنكسر (Streak)، وبوصلة نيتك اليومية لحفظ تركيزك بدون تشتت.</p>
       </div>
-      <div class="landing-stat-card">
-        <div class="landing-stat-num">1,800+</div>
-        <div class="landing-stat-label">ريال توفير سنوي</div>
-        <div class="landing-stat-sub">بدل اشتراكات تطبيقات الجيم والعادات والمصاريف والمهام</div>
+
+      <!-- 2. حياتي -->
+      <div class="landing-benefit-card">
+        <div class="landing-benefit-card-head">
+          <span class="landing-benefit-icon">🕌</span>
+          <span class="landing-benefit-name">حياتي</span>
+          <span class="landing-benefit-tag">عبادة وراحة</span>
+        </div>
+        <p class="landing-benefit-text">مصحف كامل بدون انترنت، تقويم ام القرى ومواقيت الصلاة، الاذكار اليومية، ومتابعة نومك وتواصلك مع احبابك.</p>
       </div>
-      <div class="landing-stat-card">
-        <div class="landing-stat-num">24/7</div>
-        <div class="landing-stat-label">المدرب سعود AI معك</div>
-        <div class="landing-stat-sub">مستشارك وخويك الذكي بلهجة سعودية يحلل اداءك ويحفزك</div>
+
+      <!-- 3. التزامي -->
+      <div class="landing-benefit-card">
+        <div class="landing-benefit-card-head">
+          <span class="landing-benefit-icon">🎯</span>
+          <span class="landing-benefit-name">التزامي</span>
+          <span class="landing-benefit-tag">انجاز ومال</span>
+        </div>
+        <p class="landing-benefit-text">اهدافك الكبرى، مصاريفك وقائمة مشترياتك، صيامك ووجباتك، وجدول تمارينك الرياضية في شاشة واحدة تغنيك عن 6 تطبيقات.</p>
+      </div>
+
+      <!-- 4. تطوري -->
+      <div class="landing-benefit-card">
+        <div class="landing-benefit-card-head">
+          <span class="landing-benefit-icon">📈</span>
+          <span class="landing-benefit-name">تطوري</span>
+          <span class="landing-benefit-tag">ذكاء واستشارة</span>
+        </div>
+        <p class="landing-benefit-text">محادثة واستشارة مباشرة مع المدرب سعود AI بلهجة سعودية حكيمة، مع العاب تنشط ذكاءك ومكتبة تطوير ذاتك.</p>
+      </div>
+
+      <!-- 5. فخري -->
+      <div class="landing-benefit-card">
+        <div class="landing-benefit-card-head">
+          <span class="landing-benefit-icon">🏛️</span>
+          <span class="landing-benefit-name">فخري</span>
+          <span class="landing-benefit-tag">تتويج واوسمة</span>
+        </div>
+        <p class="landing-benefit-text">مجلس الهمة، قصائد ديوان الهمة الحصرية، ومتحف الـ 24 وسام انجاز حقيقي تخلد كل مرحلة نجاح تقطعها.</p>
       </div>
     </div>
   </section>
@@ -2420,7 +2599,7 @@
           <span class="landing-feature-tag">التبويب الخامس: فخري</span>
         </div>
         <h3 class="landing-feature-title">المجلس وديوان الهمة</h3>
-        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، موقد الوجار النجدي وشعلة التحدي، ومتحف الـ 24 وساما، وحصاد إنجازك السنوي الفاخر.</p>
+        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، مجلس الهمة وشعلة التحدي، ومتحف الـ 24 وساما، وحصاد إنجازك السنوي الفاخر.</p>
         <span class="landing-feature-action">استكشف ركن الفخر ›</span>
       </div>
     </div>
@@ -2437,7 +2616,7 @@
     <div class="comparison-controls">
       <!-- ازرار التصفية السريعة -->
       <div class="comparison-filters" role="group" aria-label="تصفية معايير المقارنة">
-        <button type="button" class="comparison-filter-btn active" onclick="filterComparison('all', this)">✨ عرض الكل (6 معايير)</button>
+        <button type="button" class="comparison-filter-btn active" onclick="filterComparison('all', this)">✨ عرض الكل (5 معايير)</button>
         <button type="button" class="comparison-filter-btn" onclick="filterComparison('holistic', this)">🕌 الشمولية والعبادة</button>
         <button type="button" class="comparison-filter-btn" onclick="filterComparison('identity', this)">🇸🇦 الهوية والذكاء</button>
         <button type="button" class="comparison-filter-btn" onclick="filterComparison('privacy', this)">🔒 الخصوصية والامان</button>
@@ -2472,7 +2651,7 @@
         <div class="comparison-card-others">
           <div class="comparison-other-col">
             <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
-            <span class="comparison-other-val">❌ عادات مفرغة فقط بلا سياق</span>
+            <span class="comparison-other-val">❌ عادات مفرغة فقط بدون سياق</span>
           </div>
           <div class="comparison-other-col">
             <span class="comparison-other-label">تطبيقات متفرقة:</span>
@@ -2545,57 +2724,33 @@
           </div>
           <div class="comparison-other-col">
             <span class="comparison-other-label">تطبيقات متفرقة:</span>
-            <span class="comparison-other-val">⚠️ معزول بتطبيق مستقل بلا ربط بروتينك</span>
+            <span class="comparison-other-val">⚠️ معزول بتطبيق مستقل بدون ربط بروتينك</span>
           </div>
         </div>
       </div>
 
-      <!-- معيار 5: نظام التحفيز والمكافآت -->
+      <!-- معيار 5: نظام المكافآت والتوفير المالي -->
       <div class="comparison-card-item" data-cat="gamification">
         <div class="comparison-card-header">
-          <div class="comparison-card-title">🏆 نظام التحفيز والالعاب</div>
-          <span class="comparison-card-cat">تحفيز وانجاز</span>
+          <div class="comparison-card-title">🏆 التحفيز والتوفير المالي</div>
+          <span class="comparison-card-cat">تحفيز وتوفير</span>
         </div>
         <div class="comparison-card-himmah">
-          <span class="comparison-card-himmah-tag">حماس مستمر 🔥</span>
+          <span class="comparison-card-himmah-tag">قيمة وحماس مستمر 💎</span>
           <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
-          <div class="comparison-card-himmah-val">✅ مستويات، ريالات همة، 24 وساما، موقد الوجار النجدي وديوان الهمة</div>
+          <div class="comparison-card-himmah-val">✅ مستويات، ريالات همة، 24 وساما، مجلس الهمة — ومجاني بخصائصه الاساسية بدون اشتراكات مفاجئة بالدولار</div>
         </div>
         <div class="comparison-card-others">
           <div class="comparison-other-col">
             <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
-            <span class="comparison-other-val">⚠️ بعضها ارقام جافة وتنبيهات باردة</span>
+            <span class="comparison-other-val">❌ اشتراكات شهرية بالدولار وتنبيهات باردة</span>
           </div>
           <div class="comparison-other-col">
             <span class="comparison-other-label">تطبيقات متفرقة:</span>
-            <span class="comparison-other-val">❌ بدون اي تحفيز او تتويج حقيقي</span>
+            <span class="comparison-other-val">❌ اشتراكات متعددة مرهقة وبدون تحفيز حقيقي</span>
           </div>
         </div>
       </div>
-
-      <!-- معيار 6: التكلفة والوضوح -->
-      <div class="comparison-card-item" data-cat="gamification">
-        <div class="comparison-card-header">
-          <div class="comparison-card-title">💰 التكلفة والاشتراكات</div>
-          <span class="comparison-card-cat">توفير وراحة</span>
-        </div>
-        <div class="comparison-card-himmah">
-          <span class="comparison-card-himmah-tag">قيمة حقيقية 💎</span>
-          <div class="comparison-card-himmah-label">🇸🇦 تطبيق الهمة:</div>
-          <div class="comparison-card-himmah-val">✅ مجاني بالكامل بخصائصه الاساسية، وباقات استثمار واضحة بالريال بلا تجديد مفاجئ</div>
-        </div>
-        <div class="comparison-card-others">
-          <div class="comparison-other-col">
-            <span class="comparison-other-label">تطبيقات العادات الاجنبية:</span>
-            <span class="comparison-other-val">❌ اشتراكات شهرية بالدولار تقص الظهر</span>
-          </div>
-          <div class="comparison-other-col">
-            <span class="comparison-other-label">تطبيقات متفرقة:</span>
-            <span class="comparison-other-val">❌ اشتراكات متعددة مرهقة ومكلفة</span>
-          </div>
-        </div>
-      </div>
-
     </div>
 
     <!-- 2. جدول المقارنة المطور ذو العمود الثابت والمؤشر التفاعلي -->
@@ -2641,16 +2796,10 @@
             <td>⚠️ معزول بتطبيق مستقل</td>
           </tr>
           <tr data-cat="gamification">
-            <td><strong>نظام المكافآت واللعب</strong></td>
-            <td class="col-highlight">✅ مستويات، ريالات همة، 24 وساما، موقد الوجار</td>
-            <td>⚠️ بعضها بسيط وبارد</td>
-            <td>❌ بدون اي تحفيز</td>
-          </tr>
-          <tr data-cat="gamification">
-            <td><strong>التكلفة والاشتراكات</strong></td>
-            <td class="col-highlight">✅ مجاني بالكامل بخصائصه الاساسية وباقات واضحة بالريال</td>
-            <td>❌ اشتراك شهري بالدولار</td>
-            <td>❌ اشتراكات متعددة مرهقة</td>
+            <td><strong>التحفيز والتوفير المالي</strong></td>
+            <td class="col-highlight">✅ مستويات، ريالات همة، 24 وساما، ومجاني بخصائصه الاساسية</td>
+            <td>❌ اشتراكات شهرية وتنبيهات باردة</td>
+            <td>❌ اشتراكات متعددة وبدون اي تحفيز</td>
           </tr>
         </tbody>
       </table>
@@ -2895,6 +3044,21 @@
   <div class="toast" id="toast">تم نسخ رابط التطبيق! شاركه مع ربعك 🚀</div>
   <div class="routine-sim-popup" id="routine-popup">🎉 كفو! +50 نقطة همة وشعلتك زادت توهجا!</div>
 
+  <!-- شريط التحميل العائم لمنطقة الإبهام (Thumb-Zone Floating Action Bar) -->
+  <aside class="landing-fab-bar" id="landing-fab-bar" aria-label="تحميل التطبيق">
+    <div class="landing-fab-info">
+      <img src="logo.png" alt="الهمة" class="landing-fab-logo">
+      <div>
+        <div class="landing-fab-title">تطبيق الهمة</div>
+        <div class="landing-fab-sub">مجاني وبخصوصية تامة</div>
+      </div>
+    </div>
+    <a href="#download" class="landing-fab-btn" id="fab-download-btn" onclick="trackDownloadClick('fab_bar')">
+      <span id="fab-download-icon">📱</span>
+      <span id="fab-download-text">تحميل التطبيق</span>
+    </a>
+  </aside>
+
   <script>
     // بيانات الاركان الـ 10 الشاملة لكل محتويات التطبيق الـ 55+
     const PILLARS_DATA = [
@@ -2965,8 +3129,8 @@
         icon: '🏛️',
         title: 'المجلس وديوان الهمة والـ 24 وساما',
         tag: 'فخر وتتويج',
-        desc: 'منصة تتويج انجازاتك، قصائد ديوان الهمة التحفيزية، موقد الوجار النجدي وشعلة الاستمرار، متحف الـ 24 وساما لتوثيق كل خطوة نحو قمتك، وحصاد الاسبوع التفاعلي.',
-        highlights: ['24 وسام انجاز وتتويج نادر', 'موقد الوجار النجدي وشعلة التحدي', 'تقرير الحصاد الاسبوعي التفاعلي']
+        desc: 'منصة تتويج انجازاتك، قصائد ديوان الهمة التحفيزية، مجلس الهمة وشعلة الاستمرار، متحف الـ 24 وساما لتوثيق كل خطوة نحو قمتك، وحصاد الاسبوع التفاعلي.',
+        highlights: ['24 وسام انجاز وتتويج نادر', 'مجلس الهمة وشعلة التحدي', 'تقرير الحصاد الاسبوعي التفاعلي']
       }
     ];
 
@@ -3067,20 +3231,56 @@
       logEvent('nav_feature', { target: name });
     }
 
-    // اكتشاف نظام التشغيل التلقائي واضاءة المتجر المناسب
+    // اكتشاف نظام التشغيل التلقائي واضاءة المتجر المناسب والشريط العائم
     function detectPlatform() {
       const ua = navigator.userAgent || '';
       const isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       const isAndroid = /Android/.test(ua);
 
+      const fabBtn = document.getElementById('fab-download-btn');
+      const fabIcon = document.getElementById('fab-download-icon');
+      const fabText = document.getElementById('fab-download-text');
+
       if (isIos) {
         switchStore('apple');
         const appleBtn = document.getElementById('btn-apple-badge');
-        if (appleBtn) appleBtn.classList.add('highlighted');
+        if (appleBtn) {
+          appleBtn.classList.add('highlighted');
+          appleBtn.classList.add('pulse-once');
+        }
+        if (fabBtn) {
+          fabBtn.href = 'https://apps.apple.com/app/id6788142781';
+          fabBtn.target = '_blank';
+          fabBtn.rel = 'noopener';
+          if (fabIcon) fabIcon.textContent = '🍏';
+          if (fabText) fabText.textContent = 'حمل من App Store';
+        }
       } else if (isAndroid) {
         switchStore('google');
         const googleBtn = document.getElementById('btn-google-badge');
-        if (googleBtn) googleBtn.classList.add('highlighted');
+        if (googleBtn) {
+          googleBtn.classList.add('highlighted');
+          googleBtn.classList.add('pulse-once');
+        }
+        if (fabBtn) {
+          fabBtn.href = 'https://play.google.com/store/apps/details?id=com.alhimmah.app';
+          fabBtn.target = '_blank';
+          fabBtn.rel = 'noopener';
+          if (fabIcon) fabIcon.textContent = '▶️';
+          if (fabText) fabText.textContent = 'حمل من Google Play';
+        }
+      }
+
+      // ظهور الشريط العائم بسلاسة بعد تجاوز البطل (التمرير 320 بكسل)
+      const fabBar = document.getElementById('landing-fab-bar');
+      if (fabBar) {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 320) {
+            fabBar.classList.add('is-visible');
+          } else {
+            fabBar.classList.remove('is-visible');
+          }
+        }, { passive: true });
       }
     }
 
