@@ -251,6 +251,232 @@
       border-color: var(--primary);
     }
 
+    
+    .landing-btn-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .landing-btn-icon-lg {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* قسم شارك لمن تحب — القمة تتسع للجميع */
+    .landing-share-section {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .landing-share-card {
+      background: linear-gradient(135deg, rgba(18, 85, 86, 0.08) 0%, rgba(212, 160, 23, 0.08) 100%), var(--surface);
+      border: 1.5px solid rgba(18, 85, 86, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 38px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landing-share-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-bg);
+      color: var(--primary-ink);
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(18, 85, 86, 0.15);
+    }
+
+    .landing-share-title {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: var(--heading);
+      margin: 0 0 12px;
+      line-height: 1.35;
+    }
+
+    .landing-share-desc {
+      font-size: 1.02rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 26px;
+      line-height: 1.7;
+    }
+
+    .landing-share-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    .share-btn-platform {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+      border: 1px solid transparent;
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .share-btn-platform:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .share-btn-platform.whatsapp {
+      background: #25D366;
+      color: #ffffff;
+    }
+
+    .share-btn-platform.twitter {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .share-btn-platform.telegram {
+      background: #229ED9;
+      color: #ffffff;
+    }
+
+    .share-btn-platform.copy-link {
+      background: var(--surface);
+      color: var(--heading);
+      border-color: var(--border);
+    }
+
+    .share-btn-platform.copy-link:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .share-smart-tip {
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    /* عرض الأيقونات الرسمية في المتاجر المعتمدة */
+    .landing-store-icons-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 580px;
+      margin: 10px auto 26px;
+    }
+
+    .store-icon-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 20px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .store-icon-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(18, 85, 86, 0.12);
+    }
+
+    .store-icon-card.active {
+      border-color: var(--primary);
+      background: rgba(18, 85, 86, 0.05);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .store-icon-badge-top {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-bg);
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .store-icon-img-wrap {
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.14));
+      transition: transform 0.2s ease;
+    }
+
+    .store-icon-card:hover .store-icon-img-wrap {
+      transform: scale(1.05);
+    }
+
+    .store-showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .store-icon-label {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .store-icon-tag {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 580px) {
+      .landing-share-title { font-size: 1.45rem; }
+      .share-btn-platform { width: 100%; justify-content: center; }
+      .landing-store-icons-showcase { grid-template-columns: 1fr; gap: 12px; }
+      .store-icon-card { padding: 16px 14px; }
+      .store-icon-img-wrap { width: 76px; height: 76px; }
+    }
+
     .landing-btn-download-nav {
       background: var(--primary);
       color: #ffffff;
@@ -2411,7 +2637,7 @@
         📤 مشاركة
       </button>
       <a href="#download" class="landing-btn-download-nav">
-        <img src="logo.png" alt="" class="landing-btn-icon">
+        <img src="logo.png" alt="" class="landing-btn-icon" width="20" height="20">
         <span>تحميل التطبيق</span>
       </a>
     </div>
@@ -2432,7 +2658,7 @@
 
     <div class="landing-hero-cta-group">
       <a href="#download" class="landing-hero-primary-btn" onclick="trackDownloadClick('hero_primary')">
-        <img src="logo.png" alt="" class="landing-btn-icon-lg">
+        <img src="logo.png" alt="" class="landing-btn-icon-lg" width="24" height="24">
         <span>تحميل التطبيق الآن</span>
       </a>
       <a href="#interactive-preview" class="landing-hero-secondary-btn" onclick="trackFeatureNav('hero_chat')">
@@ -3193,6 +3419,47 @@
     </div>
   </section>
 
+
+  <!-- قسم شارك لمن تحب — القمة تتسع للجميع -->
+  <section id="share-friends" class="landing-share-section reveal-on-scroll">
+    <div class="landing-share-card">
+      <div class="landing-share-badge">🏔️ القمة تتسع للجميع</div>
+      <h2 class="landing-share-title">لأنك تحب الخير... شارك الهمة مع من تحب</h2>
+      <p class="landing-share-desc">
+        النجاح والانضباط طعمه الذ لما تصعد مع اخوياك وربعك. شارك تطبيق الهمة مع احبابك، تنافسوا بالتحديات، ونظموا يومكم سويا خطوة بخطوة حتى القمة.
+      </p>
+
+      <div class="landing-share-buttons">
+        <a href="https://api.whatsapp.com/send?text=%D9%8A%D8%A7%20%D9%87%D9%84%D8%A7%D8%8C%20%D8%AC%D8%B1%D8%A8%D8%AA%20%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%87%D9%85%D8%A9%20%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85%20%D8%A7%D9%84%D9%8A%D9%88%D9%85%20%D9%88%D8%A7%D9%84%D8%AA%D8%AD%D8%AF%D9%8A%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%B5%D8%AD%D8%A9%20%D9%88%D8%A3%D8%B9%D8%AC%D8%A8%D9%86%D9%8A%D8%8C%20%D9%88%D8%A7%D9%84%D9%82%D9%85%D8%A9%20%D8%AA%D8%AA%D8%B3%D8%B9%20%D9%84%D9%84%D8%AC%D9%85%D9%8A%D8%B9%20%D8%AE%D9%84%D9%86%D8%A7%20%D9%86%D8%B5%D8%B9%D8%AF%20%D8%B3%D9%88%D9%8A%D8%A7%20%F0%9F%8F%94%EF%B8%8F%3A%20https%3A%2F%2Fal-himma.github.io%2F" 
+           target="_blank" rel="noopener" class="share-btn-platform whatsapp" onclick="logEvent('share_click_whatsapp')">
+          <span class="share-btn-icon">💬</span>
+          <span class="share-btn-text">واتساب لأهلك وأصحابك</span>
+        </a>
+
+        <a href="https://x.com/intent/tweet?text=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%87%D9%85%D8%A9%20%E2%80%94%20%D8%B1%D8%AA%D8%A8%20%D9%8A%D9%88%D9%85%D9%83%20%D9%88%D9%86%D8%A7%D8%AF%D9%8A%D9%83%20%D9%88%D8%B5%D8%AD%D8%AA%D9%83%20%D9%88%D9%85%D8%B5%D8%A7%D8%B1%D9%8A%D9%81%D9%83%20%D9%81%D9%8A%20%D9%85%D9%83%D8%A7%D9%86%20%D9%88%D8%A7%D8%AD%D8%AF%20%D9%88%D8%A8%D8%AF%D9%88%D9%86%20%D8%AA%D8%B4%D8%AA%D9%8A%D8%AA%20%F0%9F%8F%94%EF%B8%8F&url=https%3A%2F%2Fal-himma.github.io%2F" 
+           target="_blank" rel="noopener" class="share-btn-platform twitter" onclick="logEvent('share_click_x')">
+          <span class="share-btn-icon">𝕏</span>
+          <span class="share-btn-text">مشاركة في منصة X</span>
+        </a>
+
+        <a href="https://t.me/share/url?url=https%3A%2F%2Fal-himma.github.io%2F&text=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%87%D9%85%D8%A9%20%E2%80%94%20%D9%85%D8%B9%D9%86%D8%A7%20%D9%86%D8%B4%D8%AD%D9%86%20%D9%87%D9%85%D8%AA%D9%83%20%D9%84%D9%80%20%D9%82%D9%85%D8%AA%D9%83" 
+           target="_blank" rel="noopener" class="share-btn-platform telegram" onclick="logEvent('share_click_telegram')">
+          <span class="share-btn-icon">✈️</span>
+          <span class="share-btn-text">مشاركة عبر تليغرام</span>
+        </a>
+
+        <button type="button" class="share-btn-platform copy-link" onclick="copyShareUrl()" id="btn-copy-share-url">
+          <span class="share-btn-icon">📋</span>
+          <span class="share-btn-text" id="copy-share-text">نسخ رابط الهمة</span>
+        </button>
+      </div>
+
+      <div class="share-smart-tip">
+        💡 يمكنك ايضا الضغط على زر <strong>مشاركة</strong> بأعلى الصفحة أو أسفلها لإرساله عبر أجهزة الجوال مباشرة
+      </div>
+    </div>
+  </section>
+
   <!-- قسم التحميل الرسمي والمتاجر -->
   <section id="download" class="landing-download-section">
     <div class="landing-download-card">
@@ -3201,6 +3468,28 @@
       <p class="landing-download-desc">
         رتب يومك وطاعتك وصحتك بتطبيق واحد خفيف على جوالك وبخصوصية تامة.
       </p>
+
+
+      <!-- عرض الأيقونات الرسمية في المتاجر المعتمدة -->
+      <div class="landing-store-icons-showcase">
+        <div class="store-icon-card active" id="card-icon-apple" onclick="switchStore('apple')">
+          <span class="store-icon-badge-top">متجر App Store الرسمي</span>
+          <div class="store-icon-img-wrap">
+            <img src="apple-store-icon.png" alt="أيقونة تطبيق الهمة على متجر App Store" class="store-showcase-img" width="88" height="88" loading="lazy">
+          </div>
+          <div class="store-icon-label">النسخة الرسمية للايفون والايباد</div>
+          <span class="store-icon-tag">نظام iOS 16 فما فوق</span>
+        </div>
+
+        <div class="store-icon-card" id="card-icon-google" onclick="switchStore('google')">
+          <span class="store-icon-badge-top">متجر Google Play الرسمي</span>
+          <div class="store-icon-img-wrap">
+            <img src="google-play-icon.png" alt="أيقونة تطبيق الهمة على متجر Google Play" class="store-showcase-img" width="88" height="88" loading="lazy">
+          </div>
+          <div class="store-icon-label">النسخة الرسمية لجوالات الاندرويد</div>
+          <span class="store-icon-tag">نظام Android 9 فما فوق</span>
+        </div>
+      </div>
 
       <div class="app-qr-container">
         <div class="app-qr-tabs" role="tablist">
@@ -3585,6 +3874,44 @@
       }
     }
 
+    
+    function copyShareUrl() {
+      const url = 'https://al-himma.github.io/';
+      const textEl = document.getElementById('copy-share-text');
+      const fallback = () => {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = url;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          if (textEl) {
+            const orig = textEl.textContent;
+            textEl.textContent = 'تم نسخ الرابط بنجاح';
+            setTimeout(() => { textEl.textContent = orig; }, 2500);
+          }
+        } catch (e) {
+          shareApp();
+        }
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          if (textEl) {
+            const orig = textEl.textContent;
+            textEl.textContent = 'تم نسخ الرابط بنجاح';
+            setTimeout(() => { textEl.textContent = orig; }, 2500);
+          }
+          logEvent('copy_share_url_success');
+        }).catch(fallback);
+      } else {
+        fallback();
+      }
+    }
+
     function switchStore(store) {
       const appleQr = document.getElementById('qr-container-apple');
       const googleQr = document.getElementById('qr-container-google');
@@ -3600,6 +3927,7 @@
         tabGoogle.classList.remove('active');
         label.textContent = 'امسح بكاميرا الايفون للتحميل الفوري';
         sublabel.textContent = 'يفتح في App Store بحساب دولتك تلقائيا';
+        const ca = document.getElementById('card-icon-apple'); const cg = document.getElementById('card-icon-google'); if (ca && cg) { ca.classList.add('active'); cg.classList.remove('active'); }
         logEvent('switch_qr_store', { store: 'apple' });
       } else {
         appleQr.style.display = 'none';
@@ -3608,6 +3936,7 @@
         tabGoogle.classList.add('active');
         label.textContent = 'امسح بكاميرا الجوال لفتح Google Play';
         sublabel.textContent = 'تحميل مباشر وسريع لجوالات الاندرويد';
+        const ca = document.getElementById('card-icon-apple'); const cg = document.getElementById('card-icon-google'); if (ca && cg) { ca.classList.remove('active'); cg.classList.add('active'); }
         logEvent('switch_qr_store', { store: 'google' });
       }
     }
