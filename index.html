@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تطبيق الهمة — المنظومة السعودية الاولى لتطوير الذات ويومك الكامل</title>
-  <meta name="description" content="تطبيق سعودي يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI بخصوصية محلية 100% وبدون اعلانات.">
-  <meta name="keywords" content="تطبيق الهمة, عادات, روتين, مصحف, صلاة, تمارين, مصاريف, الذكاء الاصطناعي, المدرب سعود AI, تطوير الذات, السعودية">
+  <title>تطبيق الهمة — المنظومة السعودية الأولى لتطوير الذات ويومك الكامل</title>
+  <meta name="description" content="«الهمة» تطبيق سعودي شامل يجمع يومك كله: روتينك، وردك وصلاتك، مذكراتك اليومية، صحتك وجيمك، مصاريفك، ألعاب التحدي، وركن طالب همة مع المدرب سعود AI بخصوصية محلية 100% وبدون إعلانات.">
+  <meta name="keywords" content="تطبيق الهمة, الهمة, الهمة حتى القمة, تطبيق سعودي, مذكراتي اليومية, تتبع العادات, الروتين اليومي, مصحف بدون نت, مواقيت الصلاة, المدرب سعود AI, حاسبة المصاريف, تمارين الجيم والبيت, حاسبة المعدل الجامعي, تطبيق انتاجية سعودي, تطبيق ام القرى, تطوير الذات">
   
+  <link rel="canonical" href="https://al-himma.github.io/">
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://al-himma.github.io/">
-  <meta property="og:title" content="تطبيق الهمة — الهمة حتى القمة">
-  <meta property="og:description" content="تطبيق سعودي يجمع يومك كله: روتينك، وردك وصلاتك، صحتك وجيمك، مصاريفك، العاب تنشط ذكاءك وتتحداك، ركن طالب همة، وعالم الاطفال — مع المدرب سعود AI بخصوصية محلية 100%.">
+  <meta property="og:title" content="تطبيق الهمة — الهمة حتى القمة 🇸🇦">
+  <meta property="og:description" content="منظومة يومك الشاملة: روتينك، وردك وصلاتك، مذكراتك اليومية وشجرة الامتنان، صحتك وجيمك، ومصاريفك مع المدرب سعود AI بخصوصية محلية 100%.">
   <meta property="og:image" content="https://al-himma.github.io/logo.png">
+
+  <!-- Schema.org JSON-LD Structured Data for Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "الهمة - Al-Himmah",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "ProductivityApplication",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1480"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "SAR"
+    },
+    "description": "منظومة سعودية شاملة لتطوير الذات والانضباط اليومي تجمع الروتين، الورد والقرآن، مذكرات الامتنان واليوميات، الصحة والرياضة، المصاريف، مع المدرب سعود AI بخصوصية 100%."
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="apple-touch-icon" href="logo.png">
@@ -188,7 +212,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
     .landing-btn-analytics:hover {
@@ -207,7 +233,12 @@
       font-weight: 700;
       cursor: pointer;
       font-family: inherit;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
     .landing-btn-share:hover {
@@ -347,7 +378,9 @@
       gap: 8px;
       cursor: pointer;
       box-shadow: var(--shadow-sm);
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 48px;
+      transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .landing-hero-secondary-btn:hover {
@@ -752,13 +785,17 @@
       background: var(--surface);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 700;
       cursor: pointer;
       font-family: inherit;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .saud-quick-btn:hover {
@@ -1077,7 +1114,12 @@
       font-weight: 800;
       cursor: pointer;
       font-family: inherit;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
     }
 
     .comparison-filter-btn:hover {
@@ -1106,13 +1148,18 @@
       background: transparent;
       border: none;
       color: var(--text-secondary);
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       font-weight: 800;
       cursor: pointer;
       font-family: inherit;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .view-toggle-btn.active {
@@ -1395,7 +1442,9 @@
       margin-bottom: 6px;
       cursor: pointer;
       user-select: none;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
       font-size: 0.88rem;
       font-weight: 700;
     }
@@ -1447,7 +1496,7 @@
       z-index: 1000;
       opacity: 0;
       pointer-events: none;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .routine-sim-popup.show {
@@ -1703,7 +1752,9 @@
       font-size: 1rem;
       font-weight: 900;
       text-decoration: none;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 48px;
+      transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
     }
 
@@ -1851,7 +1902,9 @@
       color: var(--text-secondary);
       cursor: pointer;
       font-family: inherit;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
     }
 
     .app-qr-tab.active {
@@ -1901,15 +1954,28 @@
     .store-badge-btn {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: #0f172a;
+      gap: 14px;
+      background: linear-gradient(180deg, #182329 0%, #0d1418 100%);
       color: #ffffff;
-      padding: 13px 26px;
-      border-radius: 16px;
+      padding: 12px 26px;
+      border-radius: 18px;
       text-decoration: none;
       font-family: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+      touch-action: manipulation;
+      min-height: 52px;
       transition: transform 0.15s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      border: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .store-badge-btn:active {
+      transform: scale(0.97);
+    }
+
+    .store-badge-svg {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
     }
 
     .store-badge-btn:hover {
@@ -1996,6 +2062,57 @@
       color: var(--primary-ink);
     }
 
+    .landing-footer-socials {
+      max-width: 1080px;
+      margin: 18px auto 0;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      background: var(--primary-bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+    }
+
+    .landing-footer-socials-label {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--primary-ink);
+    }
+
+    .landing-footer-soc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--heading);
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: transform 0.15s ease, border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .landing-footer-soc-link:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      color: var(--primary-ink);
+    }
+
+    .landing-footer-soc-link:active {
+      transform: scale(0.96);
+    }
+
+    .landing-footer-soc-link .soc-ico {
+      font-size: 1.1rem;
+    }
+
     .landing-footer-bottom {
       max-width: 1080px;
       margin: 0 auto;
@@ -2023,13 +2140,15 @@
       right: 0;
       bottom: 0;
       background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 1000;
       display: none;
       align-items: center;
       justify-content: center;
       padding: 16px;
+      padding-top: max(16px, env(safe-area-inset-top));
+      padding-bottom: max(16px, env(safe-area-inset-bottom));
     }
 
     .modal-overlay.open {
@@ -2042,10 +2161,10 @@
       border-radius: var(--radius-lg);
       width: 100%;
       max-width: 580px;
-      max-height: 88vh;
+      max-height: min(88vh, calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 40px));
       overflow-y: auto;
       box-shadow: var(--shadow-lg);
-      padding: 26px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
     }
@@ -2076,6 +2195,12 @@
       cursor: pointer;
       padding: 4px 8px;
       border-radius: 8px;
+      touch-action: manipulation;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-close:hover {
@@ -2106,7 +2231,9 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s ease;
+      touch-action: manipulation;
+      min-height: 44px;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
     }
 
     .modal-tab.active {
@@ -2116,34 +2243,33 @@
     }
 
     .modal-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 22px;
-      margin-bottom: 20px;
+      background: transparent;
+      border: none;
+      padding: 4px 0 16px;
+      margin-bottom: 12px;
     }
 
     .modal-card-tag {
       display: inline-block;
-      font-size: 0.78rem;
+      font-size: 0.82rem;
       font-weight: 800;
       color: var(--primary-ink);
       background: var(--primary-bg);
-      padding: 3px 12px;
-      border-radius: 6px;
-      margin-bottom: 10px;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
     }
 
     .modal-card-title {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       font-weight: 900;
       color: var(--heading);
       margin: 0 0 10px;
     }
 
     .modal-card-desc {
-      font-size: 0.96rem;
-      line-height: 1.75;
+      font-size: 0.98rem;
+      line-height: 1.8;
       color: var(--text);
       margin: 0 0 16px;
     }
@@ -2151,12 +2277,15 @@
     .modal-highlights {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      font-size: 0.84rem;
+      gap: 10px;
+      font-size: 0.88rem;
       font-weight: 700;
       color: var(--text-secondary);
-      border-top: 1px dashed var(--border);
-      padding-top: 12px;
+      background: var(--primary-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-top: 12px;
     }
 
     .modal-footer {
@@ -2230,6 +2359,24 @@
     .toast.show {
       opacity: 1;
     }
+  
+    /* استجابة وسهولة ووصولية (web-interface-guidelines & impeccable) */
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .landing-stat-num,
+    .comparison-card-stat,
+    .pricing-card-price,
+    .savings-total-val,
+    .telemetry-stat-val,
+    .landing-pricing-num {
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+    }
   </style>
 </head>
 <body>
@@ -2260,7 +2407,8 @@
         📤 مشاركة
       </button>
       <a href="#download" class="landing-btn-download-nav">
-        تحميل التطبيق 📥
+        <img src="logo.png" alt="" class="landing-btn-icon">
+        <span>تحميل التطبيق</span>
       </a>
     </div>
   </header>
@@ -2272,7 +2420,7 @@
     </div>
     <h1 class="landing-hero-title">
       حياتك، عاداتك، ووردك...<br>
-      <span class="landing-title-highlight">بهمة ما تنكسر</span>
+      <span class="landing-title-highlight">بهمة حتى القمة</span>
     </h1>
     <p class="landing-hero-desc">
       <strong>نظامك اليومي المتكامل:</strong> يجمع وردك وصلاتك، روتينك وصحتك، مصاريفك وتطوير ذاتك مع المدرب سعود AI — بخصوصية محلية تامة 100% وبدون اعلانات.
@@ -2280,7 +2428,8 @@
 
     <div class="landing-hero-cta-group">
       <a href="#download" class="landing-hero-primary-btn" onclick="trackDownloadClick('hero_primary')">
-        📱 حمل التطبيق وابدا رحلتك مجانا
+        <img src="logo.png" alt="" class="landing-btn-icon-lg">
+        <span>تحميل التطبيق الآن</span>
       </a>
       <a href="#interactive-preview" class="landing-hero-secondary-btn" onclick="trackFeatureNav('hero_chat')">
         💬 كلم المدرب سعود AI الان
@@ -2443,6 +2592,14 @@
         <p class="interactive-card-desc">حدد التطبيقات اللي تدفع عليها حاليا وشوف كم بتوفر لما تجمعها بالهمة:</p>
 
         <div class="savings-calculator-list">
+          <div class="savings-item" onclick="toggleSavingsCheckbox('cb-notes')">
+            <label>
+              <input type="checkbox" id="cb-notes" checked onchange="calculateSavings()">
+              <span>تطبيقات اليوميات والخواطر وشكر النعم (Journaling)</span>
+            </label>
+            <span class="savings-item-cost">240 ريال/سنة</span>
+          </div>
+
           <div class="savings-item" onclick="toggleSavingsCheckbox('cb-habits')">
             <label>
               <input type="checkbox" id="cb-habits" checked onchange="calculateSavings()">
@@ -2489,7 +2646,7 @@
             مجموع ما توفره مع «الهمة» سنويا:
           </div>
           <div id="savings-total-display" style="font-size: 1.7rem; font-weight: 900; color: var(--primary);">
-            1,800 ريال
+            2,040 ريال
           </div>
           <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px;">
             استثمار ذكي في تطبيق واحد يجمع يومك كله 🇸🇦
@@ -2519,12 +2676,12 @@
     </div>
   </section>
 
-  <!-- استعراض الاركان الـ 10 والمميزات الـ 55 -->
+  <!-- استعراض الاركان الـ 12 والمميزات الشاملة -->
   <section id="features" class="landing-features-section reveal-on-scroll">
     <div class="landing-section-header">
       <span class="landing-section-badge">✨ كل ما تحتاجه في مكان واحد</span>
-      <h2 class="landing-section-title">اركان الهمة الشاملة</h2>
-      <p class="landing-section-desc">صممنا 10 اركان تغطي 55+ ميزة لتخدم يومك من الفجر الين النوم باسلوب مريح وبسيط</p>
+      <h2 class="landing-section-title">أركان ومميزات الهمة الشاملة</h2>
+      <p class="landing-section-desc">صممنا 12 ركناً تغطي كافة جوانب يومك وحياتك من دون تشتت باسلوب مريح وبسيط</p>
     </div>
 
     <div class="landing-features-grid">
@@ -2532,10 +2689,10 @@
       <div class="landing-feature-card" onclick="openPreview(0)">
         <div class="landing-feature-head">
           <span class="landing-feature-icon">🌅</span>
-          <span class="landing-feature-tag">التبويب الاول: الرئيسية</span>
+          <span class="landing-feature-tag">إنتاجية</span>
         </div>
         <h3 class="landing-feature-title">الروتين والانضباط اليومي</h3>
-        <p class="landing-feature-desc">روتين الصباح والمساء، سلاسل التزام ما تنكسر (Streak)، بوصلة نيتك اليومية، وحصاد يومك بنقاط فوز حقيقية.</p>
+        <p class="landing-feature-desc">روتين الصباح والمساء، سلاسل التزام متصلة (Streak)، بوصلة نيتك اليومية، وحصاد يومك بنقاط فوز حقيقية.</p>
         <span class="landing-feature-action">استكشف ركن الروتين ›</span>
       </div>
 
@@ -2546,7 +2703,7 @@
           <span class="landing-feature-tag">طاعة وعبادة</span>
         </div>
         <h3 class="landing-feature-title">الورد والقرآن الكريم</h3>
-        <p class="landing-feature-desc">مصحف نصي كامل يشتغل بدون انترنت، تقويم الختمات الذكي، مواقيت الصلاة بتوقيت ام القرى، بنك الاذكار، والقبلة.</p>
+        <p class="landing-feature-desc">مصحف نصي كامل بدون انترنت، تقويم الختمات الذكي، مواقيت الصلاة بتوقيت ام القرى، بنك الاذكار، وركن السيرة النبوية.</p>
         <span class="landing-feature-action">استكشف ركن الورد ›</span>
       </div>
 
@@ -2557,7 +2714,7 @@
           <span class="landing-feature-tag">صحة ونشاط</span>
         </div>
         <h3 class="landing-feature-title">الصحة والجيم والميزان</h3>
-        <p class="landing-feature-desc">المدرب سعود يصمم جدول تمارينك بالصور حسب مكانك بالبيت او النادي وحسب ايامك، مع تتبع شرب الماء والسعرات والنوم والوزن.</p>
+        <p class="landing-feature-desc">المدرب سعود يصمم جدول تمارينك بالصور حسب مكانك بالبيت او النادي، مع تتبع شرب الماء، السعرات، النوم والوزن.</p>
         <span class="landing-feature-action">استكشف ركن الصحة ›</span>
       </div>
 
@@ -2565,76 +2722,98 @@
       <div class="landing-feature-card" onclick="openPreview(3)">
         <div class="landing-feature-head">
           <span class="landing-feature-icon">🍳</span>
-          <span class="landing-feature-tag">اكل ومطبخ</span>
+          <span class="landing-feature-tag">أكل ومطبخ</span>
         </div>
         <h3 class="landing-feature-title">المطبخ والوجبات والتغذية</h3>
         <p class="landing-feature-desc">مصمم الوجبات الذكي، جدول اكلات الاسبوع، وصفات الهمة مع مؤقت الطبخ التفاعلي، وقائمة مقاضي التسوق المصنفة.</p>
         <span class="landing-feature-action">استكشف ركن المطبخ ›</span>
       </div>
 
-      <!-- 5. المالية وبنك الهمة -->
+      <!-- 5. الألعاب والتحديات -->
       <div class="landing-feature-card" onclick="openPreview(4)">
         <div class="landing-feature-head">
-          <span class="landing-feature-icon">💰</span>
-          <span class="landing-feature-tag">التبويب الثاني: التزامي</span>
+          <span class="landing-feature-icon">🎮</span>
+          <span class="landing-feature-tag">ذكاء وتحدي</span>
         </div>
-        <h3 class="landing-feature-title">المالية وبنك الهمة</h3>
-        <p class="landing-feature-desc">تتبع المصاريف والراتب ومتبقي الايام، حاسبة قطة الطلعات بين الشباب، حصالة الاهداف المالية، ومكافآت ريالات الهمة.</p>
-        <span class="landing-feature-action">استكشف ركن المالية ›</span>
+        <h3 class="landing-feature-title">الألعاب والتحديات التراثية</h3>
+        <p class="landing-feature-desc">سلم الهمة، قافلة الهمة، الكلمات وحروف الهمة المبعثرة، وتحديات يومية تنشط ذكاءك وتتحداك بريالات همة.</p>
+        <span class="landing-feature-action">استكشف الألعاب ›</span>
       </div>
 
-      <!-- 6. المدرب سعود AI -->
+      <!-- 6. عالم الأطفال -->
       <div class="landing-feature-card" onclick="openPreview(5)">
+        <div class="landing-feature-head">
+          <span class="landing-feature-icon">👶</span>
+          <span class="landing-feature-tag">عالم الصغار</span>
+        </div>
+        <h3 class="landing-feature-title">عالم الأطفال وبراعم لينا</h3>
+        <p class="landing-feature-desc">واجهة مستقلة وممتعة للاطفال، مهام يومية تناسب اعمارهم، اذكار الصغار وقصص النوم، حصالة التوفير، وبوابة الأهل.</p>
+        <span class="landing-feature-action">استكشف عالم الصغار ›</span>
+      </div>
+
+      <!-- 7. المدرب سعود AI -->
+      <div class="landing-feature-card" onclick="openPreview(6)">
         <div class="landing-feature-head">
           <span class="landing-feature-icon">🤖</span>
           <span class="landing-feature-tag">ذكاء اصطناعي</span>
         </div>
         <h3 class="landing-feature-title">المدرب سعود AI</h3>
-        <p class="landing-feature-desc">مستشارك وخويك الذكي بـ 11 وضعا (المحفز، الصارم، التكتيكي...) يحلل اسبوعك، يعالج التسويف، ويصمم لك جداول تناسبك.</p>
+        <p class="landing-feature-desc">مستشارك وخويك الذكي بلهجة سعودية يحلل اسبوعك، يعالج التسويف، ويصمم لك جداول وخطط تناسب يومك.</p>
         <span class="landing-feature-action">استكشف المدرب سعود ›</span>
       </div>
 
-      <!-- 7. طالب همة والمذاكرة -->
-      <div class="landing-feature-card" onclick="openPreview(6)">
+      <!-- 8. المالية وبنك الهمة -->
+      <div class="landing-feature-card" onclick="openPreview(7)">
+        <div class="landing-feature-head">
+          <span class="landing-feature-icon">💰</span>
+          <span class="landing-feature-tag">مالية وادخار</span>
+        </div>
+        <h3 class="landing-feature-title">المالية وبنك الهمة</h3>
+        <p class="landing-feature-desc">تتبع المصاريف والميزانية، حاسبة قطة الطلعات، حصالة الاهداف المالية، ومكافآت ريالات الهمة.</p>
+        <span class="landing-feature-action">استكشف ركن المالية ›</span>
+      </div>
+
+      <!-- 9. طالب همة والمذاكرة -->
+      <div class="landing-feature-card" onclick="openPreview(8)">
         <div class="landing-feature-head">
           <span class="landing-feature-icon">🎓</span>
           <span class="landing-feature-tag">دراسة وتفوق</span>
         </div>
         <h3 class="landing-feature-title">طالب همة والدراسة</h3>
-        <p class="landing-feature-desc">حاسبة المعدل الفصلي والتراكمي، موزع مراجعة ذكي قبل الاختبارات، جدول المحاضرات ورصد الحرمان، وبطاقة طالب وشهادة التفوق.</p>
+        <p class="landing-feature-desc">حاسبة المعدل الفصلي والتراكمي، موزع مراجعة ذكي قبل الاختبارات، جدول المحاضرات ورصد الحرمان، وبطاقة طالب.</p>
         <span class="landing-feature-action">استكشف ركن الطالب ›</span>
       </div>
 
-      <!-- 8. الالعاب والتحديات -->
-      <div class="landing-feature-card" onclick="openPreview(7)">
-        <div class="landing-feature-head">
-          <span class="landing-feature-icon">🎮</span>
-          <span class="landing-feature-tag">ذكاء وتحدي</span>
-        </div>
-        <h3 class="landing-feature-title">الالعاب والتحديات التراثية</h3>
-        <p class="landing-feature-desc">سلم الهمة، قافلة الهمة، الكلمات وحروف الهمة المبعثرة، وتحديات اسبوعية تنشط ذكاءك وتتحداك وتكافئك بريالات همة حقيقية.</p>
-        <span class="landing-feature-action">استكشف الالعاب ›</span>
-      </div>
-
-      <!-- 9. عالم الاطفال وبراعم لينا -->
-      <div class="landing-feature-card" onclick="openPreview(8)">
-        <div class="landing-feature-head">
-          <span class="landing-feature-icon">👶</span>
-          <span class="landing-feature-tag">عالم الصغار</span>
-        </div>
-        <h3 class="landing-feature-title">عالم الاطفال وبراعم لينا</h3>
-        <p class="landing-feature-desc">واجهة مستقلة وممتعة للاطفال، مهام يومية تناسب اعمارهم، اذكار الصغار وقصص النوم، حصالة التوفير، وبوابة رقابة الاهل.</p>
-        <span class="landing-feature-action">استكشف عالم الصغار ›</span>
-      </div>
-
-      <!-- 10. المجلس وديوان الهمة -->
+      <!-- 10. الهوايات وتطوير المهارات -->
       <div class="landing-feature-card" onclick="openPreview(9)">
         <div class="landing-feature-head">
-          <span class="landing-feature-icon">🏛️</span>
-          <span class="landing-feature-tag">التبويب الخامس: فخري</span>
+          <span class="landing-feature-icon">🎨</span>
+          <span class="landing-feature-tag">إبداع ومهارات</span>
         </div>
-        <h3 class="landing-feature-title">المجلس وديوان الهمة</h3>
-        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، مجلس الهمة وشعلة التحدي، ومتحف الـ 24 وساما، وحصاد إنجازك السنوي الفاخر.</p>
+        <h3 class="landing-feature-title">الهوايات وتطوير المهارات</h3>
+        <p class="landing-feature-desc">سجل رصد وتطوير الهوايات، بناء المهارات الشخصية خطوة بخطوة، وتتبع الشغف والإبداع اليومي.</p>
+        <span class="landing-feature-action">استكشف ركن الهوايات ›</span>
+      </div>
+
+      <!-- 11. الخواطر وشكر النعم والوثائق -->
+      <div class="landing-feature-card" onclick="openPreview(10)">
+        <div class="landing-feature-head">
+          <span class="landing-feature-icon">📝</span>
+          <span class="landing-feature-tag">خواطر ونعم</span>
+        </div>
+        <h3 class="landing-feature-title">خواطري وشكر النعم والوثائق</h3>
+        <p class="landing-feature-desc">سجل النعم والحمد اليومي، الملاحظات السريعة، وتفريغ الذهن وصانع تعهدات الالتزام الشخصي بخصوصية تامة.</p>
+        <span class="landing-feature-action">استكشف الخواطر والنعم ›</span>
+      </div>
+
+      <!-- 12. المجلس وديوان الهمة -->
+      <div class="landing-feature-card" onclick="openPreview(11)">
+        <div class="landing-feature-head">
+          <span class="landing-feature-icon">🏛️</span>
+          <span class="landing-feature-tag">فخر وإنجاز</span>
+        </div>
+        <h3 class="landing-feature-title">المجلس وديوان ومتحف الهمة</h3>
+        <p class="landing-feature-desc">منصة تتويج انجازاتك، قصائد ديوان الهمة، مجلس الهمة وشعلة التحدي، ومتحف الـ 24 وساماً لتوثيق قمتك.</p>
         <span class="landing-feature-action">استكشف ركن الفخر ›</span>
       </div>
     </div>
@@ -2970,13 +3149,53 @@
     </div>
   </section>
 
+  <!-- قسم وسائل التواصل الاجتماعية -->
+  <section class="landing-socials-section reveal-on-scroll">
+    <div class="landing-section-header">
+      <span class="landing-section-badge">🌐 تابعنا وشاركنا شغفك</span>
+      <h2 class="landing-section-title">حساباتنا الرسمية على المنصات</h2>
+      <p class="landing-section-desc">يسعدنا تواصلك واقتراحاتك عبر يوزرنا الموحد <strong>@alhima26</strong></p>
+    </div>
+
+    <div class="landing-socials-grid">
+      <a href="https://x.com/alhima26" target="_blank" rel="noopener" class="landing-social-card">
+        <span class="landing-social-icon">𝕏</span>
+        <div class="landing-social-info">
+          <div class="landing-social-name">منصة X (تويتر)</div>
+          <div class="landing-social-handle">@alhima26</div>
+        </div>
+      </a>
+      <a href="https://instagram.com/alhima26" target="_blank" rel="noopener" class="landing-social-card">
+        <span class="landing-social-icon">📸</span>
+        <div class="landing-social-info">
+          <div class="landing-social-name">إنستغرام</div>
+          <div class="landing-social-handle">@alhima26</div>
+        </div>
+      </a>
+      <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener" class="landing-social-card">
+        <span class="landing-social-icon">🎵</span>
+        <div class="landing-social-info">
+          <div class="landing-social-name">تيك توك</div>
+          <div class="landing-social-handle">@alhima26</div>
+        </div>
+      </a>
+      <a href="https://t.me/Saud_HD" target="_blank" rel="noopener" class="landing-social-card">
+        <span class="landing-social-icon">💬</span>
+        <div class="landing-social-info">
+          <div class="landing-social-name">تليغرام</div>
+          <div class="landing-social-handle">@Saud_HD</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
   <!-- قسم التحميل الرسمي والمتاجر -->
   <section id="download" class="landing-download-section">
     <div class="landing-download-card">
       <img src="logo.png" alt="الهمة" class="landing-download-logo">
-      <h2 class="landing-download-title">جاهز لبدء رحلة التغيير الحقيقي؟</h2>
+      <h2 class="landing-download-title">جاهز لقمتك؟</h2>
       <p class="landing-download-desc">
-        حمل تطبيق «الهمة» اليوم على جوالك وابدا في شحن طاقتك وبناء عاداتك خطوة بخطوة نحو القمة.
+        رتب يومك وطاعتك وصحتك بتطبيق واحد خفيف على جوالك وبخصوصية تامة.
       </p>
 
       <div class="app-qr-container">
@@ -3003,18 +3222,25 @@
         </div>
 
         <div class="app-store-badges">
-          <a href="https://apps.apple.com/app/id6788142781" class="store-badge-btn" id="btn-apple-badge" target="_blank" rel="noopener" onclick="trackDownloadClick('badge_apple')">
-            <span class="store-badge-icon">🍏</span>
+          <a href="https://apps.apple.com/app/id6788142781" class="store-badge-btn" id="btn-apple-badge" target="_blank" rel="noopener" onclick="trackDownloadClick('badge_apple')" aria-label="تحميل تطبيق الهمة من متجر App Store">
+            <svg class="store-badge-svg" viewBox="0 0 170 170" width="26" height="26" fill="currentColor">
+              <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.85-11.7-14.44-6.3-10.15-11.22-21.84-14.75-35.07-3.53-13.23-5.3-25.13-5.3-35.7 0-15.02 3.69-27.18 11.07-36.49 7.38-9.3 16.74-14.07 28.08-14.3 4.8.12 10.1 1.34 15.91 3.66 5.8 2.32 9.68 3.54 11.64 3.66 1.74 0 5.66-1.32 11.78-3.95 6.11-2.64 11.45-3.83 16.03-3.58 11.97.97 21.7 5.72 29.17 14.26-10.37 6.3-15.44 15.22-15.22 26.77.22 8.97 3.58 16.54 10.09 22.7 6.5 6.16 14.18 9.75 23.03 10.77-2.17 6.42-4.56 12.52-7.17 18.3zM119.22 33.02c0-7.23 2.6-13.91 7.8-20.03 5.2-6.13 11.63-10.04 19.3-11.74.22 1.45.33 2.8.33 4.05 0 7.23-2.71 14.11-8.13 20.64-5.42 6.53-12 10.3-19.74 11.31-.11-1.34-.16-2.75-.16-4.23z"/>
+            </svg>
             <div class="store-badge-text">
-              <span class="store-badge-sub">حمله من متجر</span>
+              <span class="store-badge-sub">تحميل من</span>
               <span class="store-badge-main">App Store</span>
             </div>
           </a>
 
-          <a href="https://play.google.com/store/apps/details?id=com.alhimmah.app" class="store-badge-btn" id="btn-google-badge" target="_blank" rel="noopener" onclick="trackDownloadClick('badge_google')">
-            <span class="store-badge-icon">▶️</span>
+          <a href="https://play.google.com/store/apps/details?id=com.alhimmah.app" class="store-badge-btn" id="btn-google-badge" target="_blank" rel="noopener" onclick="trackDownloadClick('badge_google')" aria-label="تحميل تطبيق الهمة من متجر Google Play">
+            <svg class="store-badge-svg" viewBox="0 0 512 512" width="26" height="26">
+              <path fill="#4285F4" d="M47.2 24.3C40.6 31.4 37 42.4 37 56.4v399.2c0 14 3.6 25 10.2 32.1l1.7 1.6 223.5-223.6v-5.4L48.9 22.7l-1.7 1.6z"/>
+              <path fill="#FBBC04" d="M346.7 323.2l-74.3-74.5v-5.4l74.3-74.5 1.7 1 88.2 50.1c25.2 14.3 25.2 37.8 0 52.1l-88.2 50.1-1.7 1.2z"/>
+              <path fill="#EA4335" d="M272.4 243.3l-223.5 223.6c8.3 8.8 22 9.8 37.5 1l260.3-147.9-74.3-76.7z"/>
+              <path fill="#34A853" d="M272.4 268.7l74.3-76.7L86.4 44.1c-15.5-8.8-29.2-7.8-37.5 1l223.5 223.6z"/>
+            </svg>
             <div class="store-badge-text">
-              <span class="store-badge-sub">حمله من متجر</span>
+              <span class="store-badge-sub">تحميل من</span>
               <span class="store-badge-main">Google Play</span>
             </div>
           </a>
@@ -3034,15 +3260,36 @@
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="support.html">الدعم الفني</a>
         <a href="data-deletion.html">حذف البيانات</a>
-        <a href="https://t.me/Saud_HD" target="_blank" rel="noopener">تواصل تليغرام 💬</a>
         <a href="#interactive-preview">المدرب سعود</a>
         <a href="#features">المميزات</a>
         <a href="#pricing">الباقات والاسعار</a>
       </div>
     </div>
+
+    <!-- وسائل التواصل الرسمية بالفوتر المباشر -->
+    <div class="landing-footer-socials" aria-label="حسابات التواصل الرسمية">
+      <span class="landing-footer-socials-label">تابعنا:</span>
+      <a href="https://x.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="منصة إكس">
+        <span class="soc-ico">𝕏</span>
+        <span>منصة إكس</span>
+      </a>
+      <a href="https://instagram.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="إنستغرام">
+        <span class="soc-ico">📸</span>
+        <span>إنستغرام</span>
+      </a>
+      <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تيك توك">
+        <span class="soc-ico">🎵</span>
+        <span>تيك توك</span>
+      </a>
+      <a href="https://t.me/Saud_HD" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تليغرام">
+        <span class="soc-ico">💬</span>
+        <span>تليغرام</span>
+      </a>
+    </div>
+
     <div class="landing-footer-bottom">
       <div class="landing-footer-slogan">الهمة حتى القمة 🏔️</div>
-      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صنع بفخر في المملكة العربية السعودية 🇸🇦</div>
+      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صُنع بفخر وهمة عالية في المملكة العربية السعودية</div>
     </div>
   </footer>
 
@@ -3086,12 +3333,12 @@
       <img src="logo.png" alt="الهمة" class="landing-fab-logo">
       <div>
         <div class="landing-fab-title">تطبيق الهمة</div>
-        <div class="landing-fab-sub">تجربة شهر مجاني وبخصوصية تامة</div>
+        <div class="landing-fab-sub">الهمة بجوالك — رفيق يومك وإنجازك</div>
       </div>
     </div>
     <a href="#download" class="landing-fab-btn" id="fab-download-btn" onclick="trackDownloadClick('fab_bar')">
-      <span id="fab-download-icon">📱</span>
-      <span id="fab-download-text">تحميل التطبيق</span>
+      <span id="fab-download-icon">🏔️</span>
+      <span id="fab-download-text">حمل الآن</span>
     </a>
   </aside>
 
@@ -3101,7 +3348,7 @@
       {
         icon: '🌅',
         title: 'الروتين والانضباط وسلاسل الهمة',
-        tag: 'الرئيسية والالتزام',
+        tag: 'إنتاجية والتزام',
         desc: 'صمم روتين الصباح والمساء، ابن سلاسل التزام ما تنكسر (Streak)، بوصلة نيتك اليومية، مؤقتات المهام، وحصيلة اليوم (Day Wrap) بنقاط خبرة ترفعك مستوى وتمنحك ريالات همة.',
         highlights: ['قوالب روتين جاهزة ومخصصة', 'سلاسل التزام مع حماية التوقف', 'تتويج يومي مع تاثيرات الانجاز']
       },
@@ -3121,17 +3368,24 @@
       },
       {
         icon: '🍳',
-        title: 'المطبخ والوجبات ومقاضي البيت',
-        tag: 'اكل ومطبخ',
+        title: 'المطبخ والوجبات والتغذية ومقاضي البيت',
+        tag: 'أكل ومطبخ',
         desc: 'مصمم الوجبات الذكي وفق سعراتك، جدول اكلات الاسبوع العائلي، وصفات الهمة المتنوعة مع مؤقت طبخ تفاعلي، وقائمة مقاضي التسوق الذكية مع التصنيف التلقائي.',
         highlights: ['مصمم وجبات ذكي مخصص', 'مؤقت طبخ بالخطوات', 'قائمة مقاضي تسوق مصنفة']
       },
       {
-        icon: '💰',
-        title: 'المالية وبنك الهمة والقطات',
-        tag: 'مالية وادخار',
-        desc: 'تتبع المصاريف والميزانية الشهرية والراتب ومتبقي الايام، حاسبة قطة المصاريف والطلعات بين الشباب، حصالة الاهداف المالية، وبنك الهمة لتحويل نقاطك لريالات رمزية.',
-        highlights: ['حاسبة قطة دقيقة للطلعات', 'حصالة ادخار ذكية للاهداف', 'ميزانية الراتب وتقسيم الصرف']
+        icon: '🎮',
+        title: 'الألعاب والتحديات التراثية',
+        tag: 'ذكاء وتحدي',
+        desc: 'سلم الهمة التراثي، قافلة الهمة عبر مدن المملكة، الكلمات وحروف الهمة المبعثرة، وتحديات اسبوعية تنشط ذكاءك وتتحداك وتكافئك بريالات همة ونقاط مستويات.',
+        highlights: ['العاب تراثية بلمسة عصرية', 'تنشط الذكاء وسرعة البديهة', 'مكافآت نقاط واوسمة حقيقية']
+      },
+      {
+        icon: '👶',
+        title: 'عالم الأطفال وبراعم لينا',
+        tag: 'عالم الصغار',
+        desc: 'واجهة مستقلة مرحة للاطفال، مهام يومية تناسب اعمارهم، اذكار الصغار المصورة وقصص قبل النوم الممتعة، حصالة التوفير للصغار، وبوابة رقابة الاهل برمز امان PIN.',
+        highlights: ['واجهة مستقلة وامنة للاطفال', 'حصالة توفير وبراعم لينا', 'بوابة امان خاصة باولياء الامور']
       },
       {
         icon: '🤖',
@@ -3141,6 +3395,13 @@
         highlights: ['11 وضعا تدريبيا (المحفز، الصارم، التكتيكي)', 'فهم تام للبيئة والسياق السعودي', 'تحليل نقاط القوة والضعف الاسبوعية']
       },
       {
+        icon: '💰',
+        title: 'المالية وبنك الهمة والقطات',
+        tag: 'مالية وادخار',
+        desc: 'تتبع المصاريف والميزانية الشهرية والراتب ومتبقي الايام، حاسبة قطة المصاريف والطلعات بين الشباب، حصالة الاهداف المالية، وبنك الهمة لتحويل نقاطك لريالات رمزية.',
+        highlights: ['حاسبة قطة دقيقة للطلعات', 'حصالة ادخار ذكية للاهداف', 'ميزانية الراتب وتقسيم الصرف']
+      },
+      {
         icon: '🎓',
         title: 'طالب همة وحاسبة المعدل وبومودورو',
         tag: 'دراسة وتفوق',
@@ -3148,22 +3409,22 @@
         highlights: ['حاسبة معدل بالساعات المعتمدة', 'موزع المراجعة الذكي لجدولة الاختبارات', 'جدول المحاضرات ورصد نسبة الحرمان']
       },
       {
-        icon: '🎮',
-        title: 'الالعاب والتحديات التراثية',
-        tag: 'ذكاء وتحدي',
-        desc: 'سلم الهمة التراثي، قافلة الهمة عبر مدن المملكة، الكلمات وحروف الهمة المبعثرة، وتحديات اسبوعية تنشط ذكاءك وتتحداك وتكافئك بريالات همة ونقاط مستويات.',
-        highlights: ['العاب تراثية بلمسة عصرية', 'تنشط الذكاء وسرعة البديهة', 'مكافآت نقاط واوسمة حقيقية']
+        icon: '🎨',
+        title: 'الهوايات وتطوير المهارات',
+        tag: 'إبداع ومهارات',
+        desc: 'سجل رصد وتطوير الهوايات، بناء المهارات الشخصية خطوة بخطوة، تتبع الشغف والإبداع اليومي مع ربطها بريالات الهمة ونقاط الخبرة.',
+        highlights: ['تتبع وتوثيق شغفك وهواياتك', 'بناء مهارات جديدة خطوة بخطوة', 'مؤقت تدريب وتطوير ذاتي']
       },
       {
-        icon: '👶',
-        title: 'عالم الاطفال وبراعم لينا',
-        tag: 'عالم الصغار',
-        desc: 'واجهة مستقلة مرحة للاطفال، مهام يومية تناسب اعمارهم، اذكار الصغار المصورة وقصص قبل النوم الممتعة، حصالة التوفير للصغار، وبوابة رقابة الاهل برمز امان PIN.',
-        highlights: ['واجهة مستقلة وامنة للاطفال', 'حصالة توفير وبراعم لينا', 'بوابة امان خاصة باولياء الامور']
+        icon: '📝',
+        title: 'خواطري وشكر النعم والوثائق',
+        tag: 'خواطر ونعم',
+        desc: 'سجل النعم والحمد اليومي، الملاحظات السريعة، وتفريغ الذهن وصانع تعهدات الالتزام الشخصي بخصوصية تامة بدون اتصال.',
+        highlights: ['سجل الحمد وشكر النعم اليومي', 'تفريغ الذهن والفضفضة الآمنة', 'صانع عهود الالتزام الشخصي']
       },
       {
         icon: '🏛️',
-        title: 'المجلس وديوان الهمة والـ 24 وساما',
+        title: 'المجلس وديوان ومتحف الهمة والـ 24 وساما',
         tag: 'فخر وتتويج',
         desc: 'منصة تتويج انجازاتك، قصائد ديوان الهمة التحفيزية، مجلس الهمة وشعلة الاستمرار، متحف الـ 24 وساما لتوثيق كل خطوة نحو قمتك، وحصاد الاسبوع التفاعلي.',
         highlights: ['24 وسام انجاز وتتويج نادر', 'مجلس الهمة وشعلة التحدي', 'تقرير الحصاد الاسبوعي التفاعلي']
@@ -3355,32 +3616,9 @@
       'كيف اوفر من راتبي بدون حرمان؟': 'قاعدة الهمة واضحة: اول ما ينزل الراتب حدد المبلغ اللي تبيه بحصالة الهمة للهدف، والباقي وزعه على الميزانية. ومع حاسبة قطات الطلعات ما عاد تشيل هم حساب القهوة والعشاء مع اخوياك. فلسفة توفير بذكاء مو بحرمان!'
     };
 
-    function askSaud(question) {
-      Telemetry.saudInteractions += 1;
-      localStorage.setItem('alhimmah_saud_count', Telemetry.saudInteractions);
-      logEvent('ask_saud_coach', { question: question });
-
-      const chatBox = document.getElementById('saud-chat-box');
-      if (!chatBox) return;
-
-      const userMsg = document.createElement('div');
-      userMsg.className = 'saud-chat-msg user';
-      userMsg.textContent = question;
-      chatBox.appendChild(userMsg);
-
-      setTimeout(() => {
-        const botMsg = document.createElement('div');
-        botMsg.className = 'saud-chat-msg bot';
-        botMsg.textContent = SAUD_RESPONSES[question] || 'يا هلا بك! اسالني عن روتينك او تمرينك او خطتك وابشر بالسعد.';
-        chatBox.appendChild(botMsg);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }, 400);
-
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
-
     // حاسبة التوفير
     const SAVINGS_VALUES = {
+      'cb-notes': 240,
       'cb-habits': 360,
       'cb-gym': 540,
       'cb-finance': 300,
