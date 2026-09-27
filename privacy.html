@@ -683,6 +683,7 @@
     }
   }
 </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -702,8 +703,12 @@
       <a href="support.html" class="landing-nav-link">الدعم الفني</a>
     </nav>
     <div class="landing-nav-actions">
+      <button class="landing-btn-share" onclick="shareApp()" aria-label="مشاركة رابط تطبيق الهمة">
+        📤 مشاركة
+      </button>
       <a href="landing.html#download" class="landing-btn-download-nav">
-        تحميل التطبيق 📥
+        <img src="logo.png" alt="" class="landing-btn-icon" width="20" height="20">
+        <span>تحميل التطبيق</span>
       </a>
     </div>
   </header>
@@ -820,16 +825,39 @@
         <span>تطبيق الهمة — المنظومة الشاملة</span>
       </div>
       <div class="landing-footer-links">
-        <a href="landing.html">الرئيسية</a>
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="support.html">الدعم الفني</a>
         <a href="data-deletion.html">حذف البيانات</a>
-        <a href="https://t.me/Saud_HD" target="_blank" rel="noopener">تواصل تليغرام 💬</a>
+        <a href="landing.html#interactive-preview">المدرب سعود</a>
+        <a href="landing.html#features">المميزات</a>
+        <a href="landing.html#pricing">الباقات والأسعار</a>
       </div>
     </div>
+
+    <!-- وسائل التواصل الرسمية بالفوتر المباشر -->
+    <div class="landing-footer-socials" aria-label="حسابات التواصل الرسمية">
+      <span class="landing-footer-socials-label">تابعنا:</span>
+      <a href="https://x.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="منصة إكس">
+        <span class="soc-ico">𝕏</span>
+        <span>منصة إكس</span>
+      </a>
+      <a href="https://instagram.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="إنستغرام">
+        <span class="soc-ico">📸</span>
+        <span>إنستغرام</span>
+      </a>
+      <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تيك توك">
+        <span class="soc-ico">🎵</span>
+        <span>تيك توك</span>
+      </a>
+      <a href="https://t.me/Saud_HD" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تليغرام">
+        <span class="soc-ico">💬</span>
+        <span>تليغرام</span>
+      </a>
+    </div>
+
     <div class="landing-footer-bottom">
       <div class="landing-footer-slogan">الهمة حتى القمة 🏔️</div>
-      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صنع بفخر في المملكة العربية السعودية 🇸🇦</div>
+      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صُنع بفخر وهمة عالية في المملكة العربية السعودية</div>
     </div>
   </footer>
 
@@ -857,5 +885,6 @@
       });
     })();
   </script>
+  <script src="site.js"></script>
 </body>
 </html>
