@@ -683,6 +683,7 @@
     }
   }
 </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -702,8 +703,12 @@
       <a href="support.html" class="landing-nav-link">الدعم الفني</a>
     </nav>
     <div class="landing-nav-actions">
+      <button class="landing-btn-share" onclick="shareApp()" aria-label="مشاركة رابط تطبيق الهمة">
+        📤 مشاركة
+      </button>
       <a href="landing.html#download" class="landing-btn-download-nav">
-        تحميل التطبيق 📥
+        <img src="logo.png" alt="" class="landing-btn-icon" width="20" height="20">
+        <span>تحميل التطبيق</span>
       </a>
     </div>
   </header>
@@ -713,14 +718,14 @@
       <span class="legal-badge">🗑️ اجراء فوري معتمد</span>
       <h1 class="legal-title">طلب وإجراءات حذف البيانات — تطبيق الهمة (com.alhimmah.app)</h1>
       <p class="legal-section-text">
-        نظرا لان تطبيق «الهمة» يعتمد التخزين المحلي الكامل على جهازك فقط (Local Storage)، فلا توجد بيانات لك على خوادم مركزية، ولديك الحرية المطلقة لحذف كل شيء فورا وبدون اي وسطاء.
+        نظرا لان تطبيق «الهمة» يعتمد التخزين المحلي الكامل على جهازك فقط (Local Storage)، فلا توجد بيانات لك على خوادم مركزية، ولديك الحرية المطلقة لحذف كل شيء فورا وبدون أي وسطاء.
       </p>
       <div class="legal-meta-row">
         <span class="legal-updated">آخر تحديث: أغسطس ٢٠٢٦</span>
       </div>
     </div>
 
-    <!-- الطريقة الاولى -->
+    <!-- الطريقة الأولى -->
     <section class="legal-section-card">
       <div class="legal-section-header">
         <span class="legal-section-num">١</span>
@@ -746,7 +751,7 @@
         <h2 class="legal-section-title">الطريقة الثانية: عبر نظام تشغيل الجوال</h2>
       </div>
       <p class="legal-section-text">
-        حذف التطبيق نفسه من هاتفك (الغاء التثبيت / Uninstall) او مسح بيانات التخزين من إعدادات النظام يمسح تلقائيا كافة البيانات والملفات المحلية بدون اي استثناء وبدون بقاء اي اثر.
+        حذف التطبيق نفسه من هاتفك (الغاء التثبيت / Uninstall) أو مسح بيانات التخزين من إعدادات النظام يمسح تلقائيا كافة البيانات والملفات المحلية بدون أي استثناء وبدون بقاء أي اثر.
       </p>
     </section>
 
@@ -758,8 +763,8 @@
       </div>
       <ul class="legal-step-list" style="list-style-type: disc;">
         <li><strong>يحذف بالكامل وفورا:</strong> جميع بياناتك المحلية وعاداتك وسجلاتك المالية ومستوياتك واوسمتك بدون تاخير.</li>
-        <li><strong>لا يحتفظ به اصلا:</strong> عند استخدام المزايا الذكية الاختيارية، تعالج الاستفسارات لحظيا لتوليد الرد دون اي تخزين دائم مرتبط بهويتك.</li>
-        <li><strong>بيانات الاشتراك:</strong> تدار بالكامل عبر متجر ابل او جوجل مباشرة، ونحن لا نطلب ولا نستلم ولا نخزن اي ارقام بطاقات او حسابات بنكية نهائيا.</li>
+        <li><strong>لا يحتفظ به اصلا:</strong> عند استخدام المزايا الذكية الاختيارية، تعالج الاستفسارات لحظيا لتوليد الرد دون أي تخزين دائم مرتبط بهويتك.</li>
+        <li><strong>بيانات الاشتراك:</strong> تدار بالكامل عبر متجر ابل أو جوجل مباشرة، ونحن لا نطلب ولا نستلم ولا نخزن أي ارقام بطاقات أو حسابات بنكية نهائيا.</li>
       </ul>
     </section>
 
@@ -770,7 +775,7 @@
         <h2 class="legal-section-title">استفسارات حذف البيانات والدعم</h2>
       </div>
       <p class="legal-section-text">
-        لأي سؤال اضافي بخصوص بياناتك او للمساعدة، تواصل معنا عبر البريد الرسمي:
+        لأي سؤال اضافي بخصوص بياناتك أو للمساعدة، تواصل معنا عبر البريد الرسمي:
         <br>
         <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a>
       </p>
@@ -786,18 +791,42 @@
         <span>تطبيق الهمة — المنظومة الشاملة</span>
       </div>
       <div class="landing-footer-links">
-        <a href="landing.html">الرئيسية</a>
         <a href="privacy.html">سياسة الخصوصية</a>
         <a href="support.html">الدعم الفني</a>
         <a href="data-deletion.html">حذف البيانات</a>
-        <a href="https://t.me/Saud_HD" target="_blank" rel="noopener">تواصل تليغرام 💬</a>
+        <a href="landing.html#interactive-preview">المدرب سعود</a>
+        <a href="landing.html#features">المميزات</a>
+        <a href="landing.html#pricing">الباقات والأسعار</a>
       </div>
     </div>
+
+    <!-- وسائل التواصل الرسمية بالفوتر المباشر -->
+    <div class="landing-footer-socials" aria-label="حسابات التواصل الرسمية">
+      <span class="landing-footer-socials-label">تابعنا:</span>
+      <a href="https://x.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="منصة إكس">
+        <span class="soc-ico">𝕏</span>
+        <span>منصة إكس</span>
+      </a>
+      <a href="https://instagram.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="إنستغرام">
+        <span class="soc-ico">📸</span>
+        <span>إنستغرام</span>
+      </a>
+      <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تيك توك">
+        <span class="soc-ico">🎵</span>
+        <span>تيك توك</span>
+      </a>
+      <a href="https://t.me/Saud_HD" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تليغرام">
+        <span class="soc-ico">💬</span>
+        <span>تليغرام</span>
+      </a>
+    </div>
+
     <div class="landing-footer-bottom">
       <div class="landing-footer-slogan">الهمة حتى القمة 🏔️</div>
-      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صنع بفخر في المملكة العربية السعودية</div>
+      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صُنع بفخر وهمة عالية في المملكة العربية السعودية</div>
     </div>
   </footer>
 
+  <script src="site.js"></script>
 </body>
 </html>
