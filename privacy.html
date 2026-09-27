@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية — تطبيق الهمة</title>
+  <meta name="description" content="سياسة الخصوصية وحماية البيانات لتطبيق الهمة — خصوصية محلية تامة 100% بجهازك وبدون إعلانات.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFWEWVJ35"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1KFWEWVJ35');
+  </script>
+  <style>
+  :root {
+    --bg: #f7f9f8;
+    --surface: #ffffff;
+    --surface-card: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.88);
+    --border: #d8e3e3;
+    --border-light: #ebf2f2;
+    --primary: #124d4e;
+    --primary-hover: #0a3637;
+    --primary-bg: #e8f3f3;
+    --primary-ink: #124d4e;
+    --gold: #c89a2b;
+    --heading: #112627;
+    --text: #243738;
+    --text-secondary: #586c6d;
+    --shadow-sm: 0 2px 10px rgba(17, 38, 39, 0.04);
+    --shadow-card: 0 8px 24px rgba(17, 38, 39, 0.06);
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1414;
+      --surface: #121e1f;
+      --surface-card: #152425;
+      --surface-glass: rgba(18, 30, 31, 0.90);
+      --border: #203334;
+      --border-light: #162627;
+      --primary: #31aba7;
+      --primary-hover: #45c4c0;
+      --primary-bg: #143536;
+      --primary-ink: #65dfdc;
+      --gold: #e5b338;
+      --heading: #eef6f6;
+      --text: #d0dede;
+      --text-secondary: #8b9ea0;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    word-spacing: normal;
+    letter-spacing: normal;
+  }
+
+  /* الترويسة الموحدة */
+  .landing-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: var(--surface-glass);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .landing-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .landing-nav-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .landing-nav-title {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--heading);
+    line-height: 1.1;
+  }
+
+  .landing-nav-sub {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .landing-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .landing-nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+  }
+
+  .landing-nav-link:hover,
+  .landing-nav-link.active {
+    color: var(--primary-ink);
+  }
+
+  .landing-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .landing-btn-download-nav {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 800;
+    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .landing-btn-download-nav:hover {
+    opacity: 0.92;
+  }
+
+  /* الحاوية الرئيسية */
+  .legal-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 36px 20px 80px;
+    flex: 1;
+  }
+
+  /* بطاقة العنوان الرئيسي */
+  .legal-hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .legal-hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--gold));
+  }
+
+  .legal-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--primary-ink);
+    background: var(--primary-bg);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  .legal-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--heading);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .legal-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .legal-updated {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  .copy-btn {
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary-ink);
+    background: var(--primary-bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .copy-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+  }
+
+  .copy-done {
+    color: var(--primary-ink);
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  /* الفهرس السريع */
+  .legal-toc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 22px 24px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .legal-toc-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .legal-toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .legal-toc-link {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    background: var(--bg);
+    border: 1px solid var(--border-light);
+    display: block;
+    transition: all 0.2s ease;
+  }
+
+  .legal-toc-link:hover {
+    border-color: var(--primary);
+    color: var(--primary-ink);
+    background: var(--primary-bg);
+  }
+
+  /* بطاقات البنود والاقسام */
+  .legal-section-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.2s ease;
+  }
+
+  .legal-section-card:hover {
+    border-color: var(--primary);
+  }
+
+  .legal-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .legal-section-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--primary-bg);
+    color: var(--primary-ink);
+    font-weight: 900;
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .legal-section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--heading);
+  }
+
+  .legal-section-text {
+    font-size: 0.94rem;
+    color: var(--text);
+    line-height: 1.85;
+  }
+
+  .legal-section-text a {
+    color: var(--primary-ink);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .legal-step-list {
+    margin: 12px 0 16px;
+    padding-right: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .legal-step-list li {
+    font-size: 0.94rem;
+    color: var(--text);
+  }
+
+  .email-box-modern {
+    background: var(--primary-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .email-box-modern a {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary-ink);
+    text-decoration: none;
+    direction: ltr;
+  }
+
+  .faq-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-q {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .faq-a {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* بطاقة تليغرام للدعم والتواصل */
+  .telegram-card {
+    background: linear-gradient(135deg, rgba(34, 158, 217, 0.08), rgba(18, 77, 78, 0.06));
+    border: 1px solid rgba(34, 158, 217, 0.25);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .telegram-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+
+  .telegram-icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #229ed9;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .telegram-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .btn-telegram-direct {
+    background: #229ed9;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-telegram-direct:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+  }
+
+  /* صندوق المقترحات التفاعلي */
+  .feedback-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feedback-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--primary));
+  }
+
+  .feedback-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 14px 0;
+  }
+
+  .feedback-tag-btn {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-tag-btn:hover {
+    background: var(--primary-bg);
+    color: var(--primary-ink);
+    border-color: var(--primary);
+  }
+
+  .feedback-tag-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    font-weight: 800;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .feedback-textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 0.94rem;
+    color: var(--text);
+    background: var(--bg);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .feedback-textarea:focus {
+    border-color: var(--primary);
+  }
+
+  .feedback-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .feedback-submit-tg {
+    background: #229ed9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-submit-tg:hover {
+    opacity: 0.92;
+  }
+
+  .feedback-submit-mail {
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+    font-family: inherit;
+  }
+
+  .feedback-submit-mail:hover {
+    opacity: 0.92;
+  }
+
+  /* التذييل الموحد */
+  .landing-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 40px 24px 32px;
+    margin-top: auto;
+  }
+
+  .landing-footer-top {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .landing-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--heading);
+  }
+
+  .landing-footer-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .landing-footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .landing-footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+
+  .landing-footer-links a:hover {
+    color: var(--primary-ink);
+  }
+
+  .landing-footer-bottom {
+    max-width: 1040px;
+    margin: 20px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .landing-footer-slogan {
+    font-weight: 800;
+    color: var(--heading);
+  }
+
+  @media (max-width: 768px) {
+    .landing-nav-links {
+      display: none;
+    }
+    .legal-title {
+      font-size: 1.45rem;
+    }
+    .legal-hero-card {
+      padding: 24px 20px;
+    }
+    .legal-section-card {
+      padding: 20px 18px;
+    }
+  }
+</style>
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+  <!-- الترويسة الموحدة -->
+  <header class="landing-nav">
+    <a href="landing.html" class="landing-nav-brand">
+      <img src="logo.png" alt="شعار الهمة" class="landing-nav-logo">
+      <div>
+        <div class="landing-nav-title">الهمة</div>
+        <div class="landing-nav-sub">«الهمة حتى القمة»</div>
+      </div>
+    </a>
+    <nav class="landing-nav-links" aria-label="روابط الموقع">
+      <a href="landing.html" class="landing-nav-link">الرئيسية</a>
+      <a href="privacy.html" class="landing-nav-link active">سياسة الخصوصية</a>
+      <a href="data-deletion.html" class="landing-nav-link">حذف البيانات</a>
+      <a href="support.html" class="landing-nav-link">الدعم الفني</a>
+    </nav>
+    <div class="landing-nav-actions">
+      <button class="landing-btn-share" onclick="shareApp()" aria-label="مشاركة رابط تطبيق الهمة">
+        📤 مشاركة
+      </button>
+      <a href="landing.html#download" class="landing-btn-download-nav">
+        <img src="logo.png" alt="" class="landing-btn-icon" width="20" height="20">
+        <span>تحميل التطبيق</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <div class="legal-hero-card">
+      <span class="legal-badge">🔒 وثيقة رسمية معتمدة</span>
+      <h1 class="legal-title">سياسة الخصوصية وحماية البيانات — تطبيق الهمة</h1>
+      <p class="legal-section-text">
+        نؤمن في تطبيق «الهمة» بان خصوصيتك حق أصيل لا يقبل المساومة. صُمم التطبيق ليعمل وفق مبدا الخصوصية المحلية التامة بجهازك، بدون تتبع، وبدون بيع بيانات، وبدون إعلانات.
+      </p>
+      <div class="legal-meta-row">
+        <span class="legal-updated">آخر تحديث: أغسطس ٢٠٢٦</span>
+        <button class="copy-btn" id="copyLink" type="button">🔗 انسخ رابط الوثيقة</button>
+        <span class="copy-done" id="copyDone" hidden>تم النسخ بنجاح!</span>
+      </div>
+    </div>
+
+    <nav class="legal-toc-card" aria-label="فهرس بنود سياسة الخصوصية">
+      <div class="legal-toc-title">
+        <span>📑</span>
+        <span>فهرس البنود والمحتويات</span>
+      </div>
+      <div class="legal-toc-grid">
+        <a href="#s1" class="legal-toc-link">١. البيانات التي نخزنها</a>
+        <a href="#s2" class="legal-toc-link">٢. المزايا الذكية الاختيارية</a>
+        <a href="#s3" class="legal-toc-link">٣. الاشتراك والمدفوعات</a>
+        <a href="#s4" class="legal-toc-link">٤. الصلاحيات</a>
+        <a href="#s5" class="legal-toc-link">٥. حذف بياناتك</a>
+        <a href="#s6" class="legal-toc-link">٦. تصدير بياناتك</a>
+        <a href="#s7" class="legal-toc-link">٧. تواصل معنا</a>
+      </div>
+    </nav>
+
+    <section class="legal-section-card" id="s1">
+      <div class="legal-section-header">
+        <span class="legal-section-num">١</span>
+        <h2 class="legal-section-title">البيانات التي نخزنها</h2>
+      </div>
+      <p class="legal-section-text">
+        يحفظ تطبيق «الهمة» كل بياناتك الشخصية على جهازك فقط، داخل مساحة تخزين التطبيق المحلية. لا يوجد حساب مستخدم على خادم مركزي لدينا، ولا نبيع بياناتك ولا نشاركها مع أي جهة اعلانية أو تجارية نهائيا.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s2">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٢</span>
+        <h2 class="legal-section-title">المزايا الذكية الاختيارية</h2>
+      </div>
+      <p class="legal-section-text">
+        بعض المزايا الاختيارية (مثل استشارة المدرب سعود AI) ترسل النص أو الصورة التي تدخلها فقط لتوليد الرد المطلوب لحظيا. لا تحفظ هذه الاستفسارات لدينا ولا تستخدم لتعريف هويتك أو للإعلانات، وبيانات محادثاتك تبقى خاصة بك.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s3">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٣</span>
+        <h2 class="legal-section-title">الاشتراك والمدفوعات</h2>
+      </div>
+      <p class="legal-section-text">
+        تتم جميع عمليات الاشتراك والترقية حصريا ومباشرة عبر نظام الفوترة الرسمي لمتجر ابل (App Store) أو متجر جوجل (Google Play). نحن لا نطلب ولا نستلم ولا نخزن أي ارقام بطاقات ائتمانية أو بيانات بنكية نهائيا، وتخضع عمليات الدفع بالكامل لاعلى معايير الأمان والتشفير الخاصة بمتجر جهازك.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s4">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٤</span>
+        <h2 class="legal-section-title">الصلاحيات</h2>
+      </div>
+      <p class="legal-section-text">
+        قد يطلب التطبيق صلاحيات اختيارية (كالكاميرا لمسح الرموز، أو الاشعارات للتذكير بالورد والصلاة، أو عداد الخطوات) لتفعيل مزايا معينة، وتبقى بياناتها داخل جهازك فقط ولا ترسل لأي خادم خارجي.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s5">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٥</span>
+        <h2 class="legal-section-title">حذف بياناتك</h2>
+      </div>
+      <p class="legal-section-text">
+        يمكنك حذف كل بياناتك نهائيا في أي وقت مباشرة من داخل التطبيق: <strong>الإعدادات ← «بياناتك على الجهاز» ← «حذف كل بياناتي نهائيا»</strong>. كما يمسح حذف التطبيق نفسه من جهازك كل بياناته المحلية تلقائيا. الحذف فوري وبدون رجعة فيه. للمزيد راجع صفحة <a href="data-deletion.html">اجراءات حذف البيانات</a>.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s6">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٦</span>
+        <h2 class="legal-section-title">تصدير بياناتك</h2>
+      </div>
+      <p class="legal-section-text">
+        تطبيق الهمة يمنحك حق الملكية الكاملة لمعلوماتك؛ يمكنك تصدير نسخة احتياطية مشفرة أو كاملة من بياناتك من شاشة الإعدادات لحفظها أو استرجاعها بنفسك بدون أي قيود.
+      </p>
+    </section>
+
+    <section class="legal-section-card" id="s7">
+      <div class="legal-section-header">
+        <span class="legal-section-num">٧</span>
+        <h2 class="legal-section-title">تواصل معنا</h2>
+      </div>
+      <p class="legal-section-text">
+        لأي استفسار أو طلب يتعلق بسياسة الخصوصية وحماية بياناتك، يسعدنا تواصلك معنا عبر البريد الرسمي المعتمد:
+        <br>
+        📧 <a href="mailto:tharwat.aleilm@gmail.com">tharwat.aleilm@gmail.com</a>
+      </p>
+    </section>
+  </main>
+
+
+  <!-- التذييل الموحد -->
+  <footer class="landing-footer">
+    <div class="landing-footer-top">
+      <div class="landing-footer-brand">
+        <img src="logo.png" alt="الهمة" class="landing-footer-logo">
+        <span>تطبيق الهمة — المنظومة الشاملة</span>
+      </div>
+      <div class="landing-footer-links">
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="support.html">الدعم الفني</a>
+        <a href="data-deletion.html">حذف البيانات</a>
+        <a href="landing.html#interactive-preview">المدرب سعود</a>
+        <a href="landing.html#features">المميزات</a>
+        <a href="landing.html#pricing">الباقات والأسعار</a>
+      </div>
+    </div>
+
+    <!-- وسائل التواصل الرسمية بالفوتر المباشر -->
+    <div class="landing-footer-socials" aria-label="حسابات التواصل الرسمية">
+      <span class="landing-footer-socials-label">تابعنا:</span>
+      <a href="https://x.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="منصة إكس">
+        <span class="soc-ico">𝕏</span>
+        <span>منصة إكس</span>
+      </a>
+      <a href="https://instagram.com/alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="إنستغرام">
+        <span class="soc-ico">📸</span>
+        <span>إنستغرام</span>
+      </a>
+      <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تيك توك">
+        <span class="soc-ico">🎵</span>
+        <span>تيك توك</span>
+      </a>
+      <a href="https://t.me/Saud_HD" target="_blank" rel="noopener" class="landing-footer-soc-link" aria-label="تليغرام">
+        <span class="soc-ico">💬</span>
+        <span>تليغرام</span>
+      </a>
+    </div>
+
+    <div class="landing-footer-bottom">
+      <div class="landing-footer-slogan">الهمة حتى القمة 🏔️</div>
+      <div>جميع الحقوق محفوظة © تطبيق الهمة 2026 — صُنع بفخر وهمة عالية في المملكة العربية السعودية</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('copyLink');
+      var done = document.getElementById('copyDone');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var url = location.href;
+        var show = function () {
+          done.hidden = false;
+          setTimeout(function () { done.hidden = true; }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(show, function () {});
+          return;
+        }
+        var ta = document.createElement('textarea');
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); show(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+    })();
+  </script>
+  <script src="site.js"></script>
+</body>
+</html>
