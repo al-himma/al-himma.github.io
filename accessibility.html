@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إمكانية الوصول والشمول — تطبيق الهمة</title>
+  <meta name="description" content="دليل ميزات إمكانية الوصول والشمول الاستخدامي في تطبيق الهمة — تصميم عصري يشمل الجميع بدون استثناء.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFWEWVJ35"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1KFWEWVJ35');
+  </script>
+  <style>
+  :root {
+    --bg: #f7f9f8;
+    --surface: #ffffff;
+    --surface-card: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.88);
+    --border: #d8e3e3;
+    --border-light: #ebf2f2;
+    --primary: #124d4e;
+    --primary-hover: #0a3637;
+    --primary-bg: #e8f3f3;
+    --primary-ink: #124d4e;
+    --gold: #c89a2b;
+    --gold-bg: #fcf8ee;
+    --heading: #112627;
+    --text: #243738;
+    --text-secondary: #586c6d;
+    --shadow-sm: 0 2px 10px rgba(17, 38, 39, 0.04);
+    --shadow-card: 0 8px 24px rgba(17, 38, 39, 0.06);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1414;
+      --surface: #121e1f;
+      --surface-card: #152425;
+      --surface-glass: rgba(18, 30, 31, 0.90);
+      --border: #203334;
+      --border-light: #162627;
+      --primary: #31aba7;
+      --primary-hover: #45c4c0;
+      --primary-bg: #143536;
+      --primary-ink: #65dfdc;
+      --gold: #e5b338;
+      --gold-bg: #272112;
+      --heading: #eef6f6;
+      --text: #d0dede;
+      --text-secondary: #8b9ea0;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Header Navigation */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 24px;
+  }
+
+  .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--heading);
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .brand-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+
+  .brand-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--primary);
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 64px 24px 48px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--gold-bg);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--heading);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto 24px;
+    font-weight: 500;
+  }
+
+  /* Main Container */
+  .main-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 24px;
+    flex: 1;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--heading);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+  }
+
+  /* Grid Layout for Features */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .feature-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--primary);
+  }
+
+  .feature-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary-bg);
+    color: var(--primary-ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--heading);
+  }
+
+  .feature-body {
+    font-size: 0.98rem;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .beneficiary-tag {
+    background-color: var(--primary-bg);
+    color: var(--primary-ink);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Philosophy Banner */
+  .philosophy-banner {
+    background: linear-gradient(135deg, var(--primary) 0%, #0c3637 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-bottom: 56px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .philosophy-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: #ffffff;
+  }
+
+  .philosophy-banner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 850px;
+    margin-bottom: 20px;
+  }
+
+  .philosophy-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .highlight-item {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .highlight-title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    color: #ffffff;
+  }
+
+  .highlight-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .philosophy-banner {
+      padding: 24px;
+    }
+    .philosophy-banner h2 {
+      font-size: 1.4rem;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="landing.html" class="brand">
+        <img src="logo.png" alt="شعار الهمة">
+        <div>
+          <span class="brand-title">الهمة</span>
+          <span class="brand-subtitle">تنظيم الوقت والعادات</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="landing.html" class="nav-link">الرئيسية</a>
+        <a href="support.html" class="nav-link">الدعم الفني</a>
+        <a href="privacy.html" class="nav-link">الخصوصية</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-container">
+      <div class="badge">الهمة يهمتك لصحتك وحياتك 🌟</div>
+      <h1>إمكانية الوصول والشمول الاستخدامي</h1>
+      <p>صُمم تطبيق «الهمة» ليكون رفيق كل إنسان في رحلة التطوير الذاتي وبناء العادات، بدون أي عوائق تقنية أو بصريّة أو حركيّة.</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Philosophy Banner -->
+    <section class="philosophy-banner">
+      <h2>فلسفتنا: التطبيق للجميع بدون استثناء</h2>
+      <p>في تطبيق الهمة، نؤمن أن إنجاز الأهداف وتطوير الذات حق لكل شخص. لذلك اعتمدنا أحدث المعايير العالمية لسهولة الوصول (Apple & Google Accessibility Guidelines) لضمان تجربة سلسة تشمل كبار السن، ذوي الإعاقة، وكل من يفضل تجربة استخدام مخصصة.</p>
+      
+      <div class="philosophy-highlights">
+        <div class="highlight-item">
+          <div class="highlight-title">🎯 لمس واسع وقارئ محاذي</div>
+          <div class="highlight-desc">زرار لمس واسعة بحد أدنى 44px مع دقة عالية بقارئ الشاشة.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-title">☀️ تباين بصري مرتفع</div>
+          <div class="highlight-desc">ألوان مدروسة بدقة تتجاوز معايير WCAG AAA لراحة العين تحت الشمس.</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-title">🌱 لغة دافئة ومحفزة</div>
+          <div class="highlight-desc">عبارات واضحة باللهجة السعودية المحفزة بدون تعقيدات لفظية.</div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title">ميزات الوصول المعتمدة والفئات المستفيدة</h2>
+    <p class="section-desc">نستعرض هنا الميزات السباقيّة المدمجة في تطبيق الهمة للوصول الشامل:</p>
+
+    <!-- Features Grid -->
+    <div class="features-grid">
+
+      <!-- 1. VoiceOver & Voice Control -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">🔊</div>
+            <h3 class="feature-title">قارئ الشاشة والتحكم الصوتي</h3>
+          </div>
+          <p class="feature-body">دعم كامل لـ VoiceOver و TalkBack و Voice Control. تمت تسمية كل بطاقة، زر، وقسم بلغة عربية دقيقة، لتمكين التنقل الكامل بدون الحاجة للنظر للشاشة.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: المكفوفون وضغاف البصر ومستخدمي التحكم الصوتي
+        </div>
+      </article>
+
+      <!-- 2. Larger Text -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">النصوص الكبيرة والمرنة</h3>
+          </div>
+          <p class="feature-body">التكيف التلقائي مع إعدادات خط النظام حتى 200% وأكثر. تم بناء الواجهات بمرونة تضمن عدم تداخل الخطوط أو اختفاء البطاقات عند تكبير الخط.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: كبار السن وضغاف البصر الشديد
+        </div>
+      </article>
+
+      <!-- 3. Dark Interface -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">🌙</div>
+            <h3 class="feature-title">الواجهة الداكنة الذكية</h3>
+          </div>
+          <p class="feature-body">وضع داكن متكامل يستجيب لإعدادات الجهاز أو الاختيار اليدوي، مجهّز بألوان مريحة تمنع إجهاد العين وتقليل السطوع المؤذي للعين أثناء الليل.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: حساسو الضوء ومستخدمو التطبيق ليلاً
+        </div>
+      </article>
+
+      <!-- 4. Differentiate Without Color Alone -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">🎨</div>
+            <h3 class="feature-title">التمييز بغير الألوان وحدها</h3>
+          </div>
+          <p class="feature-body">لا نعتمد على اللون فقط لتوضيح إنجاز العادة أو المهمة، بل ندمج الأيقونات والنصوص والنماذج البصرية لمنح دلالة واضحة ومباشرة لكل عنصر.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: المصابون بعمى الألوان أو صعوبة تمييز الألوان
+        </div>
+      </article>
+
+      <!-- 5. Sufficient Contrast -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">✨</div>
+            <h3 class="feature-title">التباين العالي للنصوص والخلفيات</h3>
+          </div>
+          <p class="feature-body">اختيار درجات ألوان متوافقة مع معايير التباين العالمية، مما يجعل القراءة ممتازة وسلسة حتى في الظروف الإضاءة القوية أو أشعة الشمس المباشرة.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: جميع المستخدمين وخاصة تحت أشعة الشمس
+        </div>
+      </article>
+
+      <!-- 6. Reduced Motion -->
+      <article class="feature-card">
+        <div>
+          <div class="feature-header">
+            <div class="feature-icon">🌿</div>
+            <h3 class="feature-title">تقليل الحركة والتشتت</h3>
+          </div>
+          <p class="feature-body">احترام تلقائي لإعدادات النظام لتقليل التحريكات (Reduced Motion)، مما يوقف الاهتزازات والانتقالات المفاجئة لضمان تجربة مستقرة وهادئة.</p>
+        </div>
+        <div class="beneficiary-tag">
+          💡 الفئة المستفيدة: من يعانون من الدوار البصري أو تشتت الانتباه
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>تطبيق «الهمة — تنظيم الوقت والعادات» © 2026. جميع الحقوق محفوظة.</p>
+      <div class="footer-links">
+        <a href="landing.html">الرئيسية</a>
+        <a href="support.html">مركز الدعم الفني</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+        <a href="data-deletion.html">حذف البيانات</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
