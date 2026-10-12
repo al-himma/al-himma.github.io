@@ -784,7 +784,7 @@
         راسلنا مباشرة على البريد الرسمي المعتمد للتطبيق، ونرد على استفساراتك بأسرع وقت:
       </p>
       <div class="email-box-modern">
-        <a href="mailto:tharwat.aleilm@gmail.com" id="supportMail">tharwat.aleilm@gmail.com</a>
+        <a href="mailto:support@alhimmah.app" id="supportMail">support@alhimmah.app</a>
         <button class="copy-btn" id="copyMailBtn" type="button">📋 نسخ البريد</button>
       </div>
       <span class="copy-done" id="mailDone" hidden style="margin-top: 8px; display: inline-block;">تم نسخ البريد بنجاح!</span>
@@ -901,7 +901,7 @@
       var mailDone = document.getElementById('mailDone');
       if (btnMail) {
         btnMail.addEventListener('click', function () {
-          var email = 'tharwat.aleilm@gmail.com';
+          var email = 'support@alhimmah.app';
           var show = function () {
             mailDone.hidden = false;
             setTimeout(function () { mailDone.hidden = true; }, 2200);
@@ -1038,7 +1038,7 @@
             details
           ];
           var body = lines.join('\n');
-          location.href = 'mailto:tharwat.aleilm@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          location.href = 'mailto:support@alhimmah.app?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
         });
       }
     })();
