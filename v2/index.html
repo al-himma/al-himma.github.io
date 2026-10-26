@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>الهمة — يومك كله بمكان واحد، وخطوة توصلك لقمتك</title>
+  <title>تطبيق الهمة — رتب يومك وناديك وصحتك ومصاريفك في مكان واحد وبدون تشتيت، معنا نشحن همتك لـ قمتك</title>
   <meta name="description" content="تطبيق سعودي يجمع صلاتك ووردك، دراستك وشغلك وفلوسك، تمرينك وأكلك وأهلك. المدرب سعود يقترح خطوتك من بياناتك، وأول شهر مجاني بدون بطاقة.">
   <!-- نسخة المعاينة v2: مخفية عن محركات البحث لين تعتمد، وتنشال هذي السطر وقت الترقية للرئيسية -->
   <meta name="robots" content="noindex, nofollow">
@@ -11,12 +11,21 @@
   <meta name="apple-itunes-app" content="app-id=6788142781">
   <meta name="theme-color" content="#0c1717">
 
+  <!-- معاينة الرابط وقت المشاركة (واتساب · إكس · تيليجرام · رسائل الآيفون) -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="تطبيق الهمة">
+  <meta property="og:locale" content="ar_SA">
   <meta property="og:url" content="https://alhimmah.app/">
-  <meta property="og:title" content="الهمة — يومك كله بمكان واحد، وخطوة توصلك لقمتك">
-  <meta property="og:description" content="صلاتك ودراستك وفلوسك وتمرينك وأهلك بتطبيق سعودي واحد، والمدرب سعود يقترح خطوتك الجاية. أول شهر مجاني بدون بطاقة.">
-  <meta property="og:image" content="https://alhimmah.app/logo.png">
+  <meta property="og:title" content="تطبيق الهمة — رتب يومك وناديك وصحتك ومصاريفك في مكان واحد وبدون تشتيت، معنا نشحن همتك لـ قمتك">
+  <meta property="og:description" content="منظومة يومك الشاملة: روتينك، وردك وصلاتك، مذكراتك وواحة الامتنان، صحتك وجيمك، ومصاريفك مع المدرب سعود. وأول شهر مجاني بدون بطاقة.">
+  <meta property="og:image" content="https://alhimmah.app/v2/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="تطبيق الهمة: رتب يومك وناديك وصحتك ومصاريفك بمكان واحد">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="تطبيق الهمة — رتب يومك وناديك وصحتك ومصاريفك في مكان واحد وبدون تشتيت، معنا نشحن همتك لـ قمتك">
+  <meta name="twitter:description" content="منظومة يومك الشاملة: روتينك، وردك وصلاتك، مذكراتك وواحة الامتنان، صحتك وجيمك، ومصاريفك مع المدرب سعود. وأول شهر مجاني بدون بطاقة.">
+  <meta name="twitter:image" content="https://alhimmah.app/v2/img/og.jpg">
 
   <script type="application/ld+json">
   {
@@ -383,7 +392,57 @@
       .qr figcaption { margin-top: 6px; color: var(--ink-2); font-weight: 700; font-size: 0.9rem; }
     }
 
+    /* خطوات البداية ومتطلبات الأنظمة */
+    .steps { list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 10px; }
+    @media (min-width: 760px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .steps li { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--r-md); background: var(--card); border: 1px solid var(--line); }
+    .steps .n { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--terra-soft); color: var(--terra); font-weight: 900; }
+    .steps b { display: block; line-height: 1.35; }
+    .steps small { color: var(--ink-2); font-size: 0.92rem; }
+    .os-note { text-align: center; color: var(--ink-2); font-size: 0.92rem; margin: 14px 0 0; }
+
+    /* ===== شارك الهمة مع من تحب ===== */
+    .share { padding-top: 0; }
+    .share-card {
+      display: grid; gap: 22px; align-items: center;
+      padding: clamp(20px, 4vw, 44px); border-radius: var(--r-lg);
+      background: var(--night); color: var(--night-ink);
+    }
+    @media (min-width: 900px) { .share-card { grid-template-columns: 1fr 1fr; gap: 40px; } }
+    .share-card .kicker { color: var(--night-gold); }
+    .share-card .num .g { width: 1em; height: 1em; }
+    .share-card .lead { color: var(--night-ink-2); margin-bottom: 0; }
+    .share-box label { display: block; margin-bottom: 8px; font-weight: 800; }
+    .share-box select {
+      width: 100%; min-height: 50px; padding: 8px 14px; border-radius: var(--r-sm);
+      border: 1px solid var(--night-line); background: var(--night-2); color: var(--night-ink); font: inherit; font-weight: 700;
+    }
+    .share-msg { margin: 14px 0; padding: 14px 16px; border-radius: var(--r-sm); background: var(--night-2); border-inline-start: 4px solid var(--night-gold); line-height: 1.8; }
+    .share-msg small { display: block; margin-top: 6px; direction: ltr; text-align: right; color: var(--night-gold); font-weight: 700; word-break: break-all; }
+    .share-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    .sbtn {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 18px; border-radius: 999px;
+      border: 1px solid var(--night-line); background: transparent; color: var(--night-ink); font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer;
+    }
+    .sbtn:hover { border-color: var(--night-gold); color: var(--night-gold); }
+    .nav-share {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 44px; min-height: 44px; padding: 8px 12px;
+      border-radius: 999px; border: 1px solid var(--night-line); background: transparent; color: var(--night-ink); font-weight: 700; cursor: pointer;
+    }
+    .nav-share span { display: none; }
+    @media (min-width: 600px) { .nav-share span { display: inline; } }
+    .toast {
+      position: fixed; z-index: 50; inset-inline: 16px; bottom: 96px; margin: 0 auto; max-width: 420px;
+      padding: 12px 18px; border-radius: 999px; background: var(--ink); color: var(--sand); text-align: center; font-weight: 800;
+    }
+    .toast[hidden] { display: none; }
+    @media (min-width: 900px) { .toast { bottom: 32px; } }
+
     /* ===== التذييل ===== */
+    .foot-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--night-ink); }
+    .foot-brand img { width: 44px; height: 44px; border-radius: 12px; }
+    .foot-brand b { display: block; font-size: 1.1rem; line-height: 1.3; }
+    .foot-brand .slogan { font-size: 0.95rem; }
     footer { background: var(--night); color: var(--night-ink-2); padding-block: 40px 110px; }
     @media (min-width: 900px) { footer { padding-bottom: 40px; } }
     footer .wrap { display: grid; gap: 22px; }
@@ -424,6 +483,8 @@
     <symbol id="g-rahl" viewBox="0 0 24 24"><path d="M3.5 6.5L12 9.5L20.5 6.5V12L12 15L3.5 12ZM12 9.5V15M7 13.8L16.5 21M17 13.8L7.5 21"/></symbol>
     <symbol id="g-palette" viewBox="0 0 24 24"><path d="M12 3.5C7 3.5 3.5 7.2 3.5 11.8C3.5 16.5 7.3 20.5 11.5 20.5C13 20.5 13.6 19.6 13.2 18.5C12.7 17.2 13.5 16 15 16H17C19.2 16 20.5 14.6 20.5 12.3C20.5 7.4 16.8 3.5 12 3.5Z"/><path class="f" d="M6.8 10a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M10.3 7.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M14.3 8.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M6.6 14a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0"/></symbol>
     <symbol id="g-sparkles" viewBox="0 0 24 24"><path d="M12 3L13.8 8.2L19 10L13.8 11.8L12 17L10.2 11.8L5 10L10.2 8.2ZM19 17L17.5 18.5L19 20L20.5 18.5ZM5 4L4 5L5 6L6 5Z"/></symbol>
+    <symbol id="g-share" viewBox="0 0 24 24"><path d="M4 12V19A1.5 1.5 0 0 0 5.5 20.5H18.5A1.5 1.5 0 0 0 20 19V12M12 3.5V15M12 3.5L7.5 8M12 3.5L16.5 8"/></symbol>
+    <symbol id="g-link" viewBox="0 0 24 24"><path d="M10 13A5 5 0 0 0 17.5 13.5L20.5 10.5A5 5 0 0 0 13.4 3.4L11.7 5.1M14 11A5 5 0 0 0 6.5 10.5L3.5 13.5A5 5 0 0 0 10.6 20.6L12.3 18.9"/></symbol>
     <symbol id="g-check" viewBox="0 0 24 24"><path d="M5 12.5L10 17.5L19 7"/></symbol>
     <symbol id="g-star" viewBox="0 0 24 24"><path d="M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16L6.71 19.28L8.2 13.24L3.44 9.22L9.65 8.76Z"/></symbol>
     <symbol id="g-lock" viewBox="0 0 24 24"><path d="M5.5 11H18.5V20.5H5.5ZM8 11V8A4 4 0 0 1 16 8V11"/><path class="f" d="M11 15a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/></symbol>
@@ -443,7 +504,9 @@
         <a href="#day">يومك</a>
         <a href="#stories">قصصهم</a>
         <a href="#summit">الباقات</a>
+        <a href="#share">شاركها</a>
       </nav>
+      <button type="button" class="nav-share js-share" aria-label="شارك الهمة مع من تحب"><svg class="g" aria-hidden="true"><use href="#g-share"/></svg><span>شارك</span></button>
       <a class="btn js-store" href="#summit" data-src="nav">شهرك المجاني</a>
     </div>
   </header>
@@ -752,6 +815,12 @@
             <p class="lead">كل شي مفتوح لك شهر كامل، وبعدها تختار اللي يناسبك.</p>
           </div>
 
+          <ol class="steps" aria-label="البداية بسيطة">
+            <li><span class="n">1</span><span><b>التحميل</b><small>بدون إيميل ولا تسجيل</small></span></li>
+            <li><span class="n">2</span><span><b>همتك</b><small>وردك، تمرينك، دراهمك، أو عاداتك</small></span></li>
+            <li><span class="n">3</span><span><b>خطوة وحدة باليوم</b><small>وسعود يدلك على اللي بعدها</small></span></li>
+          </ol>
+
           <div class="plans">
             <div class="plan free">
               <h3>أول شهر</h3>
@@ -794,9 +863,44 @@
               <span><small>متوفر على</small><b>Google Play</b></span>
             </a>
           </div>
+          <p class="os-note">يشتغل على الآيفون والآيباد بنظام iOS 15 فما فوق، والأندرويد 7 فما فوق.</p>
           <div class="qr">
             <figure><img src="img/qr-apple.svg" alt="رمز تحميل الهمة للآيفون" width="150" height="150" loading="lazy"><figcaption>للآيفون</figcaption></figure>
             <figure><img src="img/qr-google.svg" alt="رمز تحميل الهمة للأندرويد" width="150" height="150" loading="lazy"><figcaption>للأندرويد</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- القمة تتسع للجميع: شارك الهمة مع من تحب -->
+      <section class="scene share" id="share" aria-labelledby="share-title">
+        <div class="wrap">
+          <div class="share-card">
+            <div>
+              <p class="kicker"><span class="num"><svg class="g" aria-hidden="true"><use href="#g-heart"/></svg></span>القمة تتسع للجميع</p>
+              <h2 id="share-title">شارك الهمة مع من تحب</h2>
+              <p class="lead">النجاح طعمه ألذ لما تصعدون سوا. وش يهم اللي ببالك؟ نجهز له رسالة على قده، والرابط يفتح على قسمه مباشرة.</p>
+            </div>
+            <div class="share-box">
+              <label for="share-for">وش يهم اللي ببالك؟</label>
+              <select id="share-for">
+                <option value="all">كل يومه</option>
+                <option value="study">الدراسة</option>
+                <option value="work">الشغل والفلوس</option>
+                <option value="sport">التمرين والأكل</option>
+                <option value="parents">نجهز جوال الوالدين</option>
+                <option value="kids">العيال</option>
+                <option value="faith">الصلاة والورد</option>
+                <option value="calm">الراحة والفضفضة</option>
+              </select>
+              <p class="share-msg" aria-live="polite"><span id="share-text"></span><small id="share-url"></small></p>
+              <div class="share-btns">
+                <button type="button" class="btn" id="sh-native" hidden><svg class="g" aria-hidden="true"><use href="#g-share"/></svg>أرسلها الحين</button>
+                <a class="sbtn" id="sh-wa" href="https://wa.me/" target="_blank" rel="noopener">واتساب</a>
+                <a class="sbtn" id="sh-x" href="https://x.com/intent/tweet" target="_blank" rel="noopener">إكس</a>
+                <a class="sbtn" id="sh-tg" href="https://t.me/share/url" target="_blank" rel="noopener">تيليجرام</a>
+                <button type="button" class="sbtn" id="sh-copy"><svg class="g" aria-hidden="true"><use href="#g-link"/></svg>نسخ الرسالة</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -806,7 +910,7 @@
   <footer>
     <div class="wrap">
       <div class="foot-top">
-        <span class="slogan">الهمة حتى القمة</span>
+        <a class="foot-brand" href="#top"><img src="img/logo.webp" alt="" width="44" height="44" loading="lazy"><span><b>تطبيق الهمة</b><small class="slogan">الهمة حتى القمة</small></span></a>
         <nav class="foot-links" aria-label="روابط مهمة">
           <a href="../privacy.html">سياسة الخصوصية</a>
           <a href="../support.html">الدعم الفني</a>
@@ -820,9 +924,11 @@
         <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener">تيك توك</a>
         <a href="https://t.me/Saud_HD" target="_blank" rel="noopener">تيليجرام</a>
       </nav>
-      <small>جميع الحقوق محفوظة © 2026 تطبيق الهمة — صنع بفخر في المملكة العربية السعودية</small>
+      <small>جميع الحقوق محفوظة © 2026 تطبيق الهمة — صنع بفخر وهمة عالية في المملكة العربية السعودية</small>
     </div>
   </footer>
+
+  <p class="toast" id="toast" role="status" hidden></p>
 
   <aside class="dock" id="dock" aria-label="تحميل الهمة" hidden>
     <img src="img/logo.webp" alt="" width="38" height="38">
@@ -871,13 +977,85 @@
     /* ---- شريط الإبهام يطلع بعد الرأس ---- */
     var dock = document.getElementById('dock');
     var hero = document.querySelector('.hero');
-    var summit = document.getElementById('summit');
     if (dock && 'IntersectionObserver' in window) {
-      var heroVisible = true, summitVisible = false;
-      var sync = function () { dock.hidden = heroVisible || summitVisible; };
-      new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; sync(); }).observe(hero);
-      new IntersectionObserver(function (es) { summitVisible = es[0].isIntersecting; sync(); }, { threshold: 0.15 }).observe(summit);
+      /* يختفي فوق الرأس وعند القمة والمشاركة والتذييل، عشان ما يغطي أزرارها */
+      var seen = new Set();
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+        dock.hidden = seen.size > 0;
+      }, { threshold: 0.05 });
+      [hero, document.getElementById('summit'), document.getElementById('share'), document.querySelector('footer')].forEach(function (el) { io.observe(el); });
     }
+
+    /* ---- شارك الهمة مع من تحب: رسالة على قد اللي يهمه، ورابط يفتح على قسمه ---- */
+    var SITE = 'https://alhimmah.app/';
+    var SHARE = {
+      all: 'لقيت لك تطبيق سعودي يرتب يومك وصلاتك وصحتك ومصاريفك بمكان واحد، وأول شهر مجاني بدون بطاقة:',
+      study: 'لقيت لك تطبيق يحول ملخصك لبطاقات مراجعة، ويجدول مذاكرتك قبل الاختبار. أول شهر مجاني:',
+      work: 'لقيت لك تطبيق يسجل مصاريفك من رسالة البنك، ويحسب لك جلسات التركيز قبل الأذان. أول شهر مجاني:',
+      sport: 'لقيت لك تطبيق يقرأ نومك ويقول لك ترفع أو تثبت أوزانك اليوم، ويصمم وجباتك على سعراتك. أول شهر مجاني:',
+      parents: 'خلنا نجهز جوال الوالدين بتطبيق الهمة: خط كبير، وأزرار اتصال بأرقامنا، وأذكار بأصواتنا:',
+      kids: 'لقيت تطبيق فيه عالم كامل للعيال: مهام صغيرة تفرحهم، وقصة نوم بصوت لينا. أول شهر مجاني:',
+      faith: 'لقيت لك تطبيق يرتب يومك على صلاتك، ويتابع وردك وأذكارك. أول شهر مجاني:',
+      calm: 'لقيت لك تطبيق فيه مساحة تفضفض فيها، وهوايات بدون ضغط، وألغاز للوناسة. أول شهر مجاني:'
+    };
+    var shareFor = document.getElementById('share-for');
+    var toast = document.getElementById('toast');
+    var toastTimer = 0;
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.hidden = false;
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.hidden = true; }, 2600);
+    }
+    function shareData(key) {
+      var k = SHARE[key] ? key : 'all';
+      return { text: SHARE[k], url: SITE + (k === 'all' ? '' : '#' + k), key: k };
+    }
+    function renderShare() {
+      var d = shareData(shareFor.value);
+      var full = d.text + ' ' + d.url;
+      document.getElementById('share-text').textContent = d.text;
+      document.getElementById('share-url').textContent = d.url;
+      document.getElementById('sh-wa').href = 'https://wa.me/?text=' + encodeURIComponent(full);
+      document.getElementById('sh-x').href = 'https://x.com/intent/tweet?text=' + encodeURIComponent(d.text) + '&url=' + encodeURIComponent(d.url);
+      document.getElementById('sh-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent(d.url) + '&text=' + encodeURIComponent(d.text);
+    }
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+      return new Promise(function (ok, fail) {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); ok();
+        } catch (e) { fail(e); }
+      });
+    }
+    function nativeShare(d, source) {
+      track('share_click', { channel: 'native', for: d.key, source: source });
+      return navigator.share({ title: 'تطبيق الهمة', text: d.text, url: d.url }).catch(function () {});
+    }
+    renderShare();
+    shareFor.addEventListener('change', renderShare);
+    var nativeBtn = document.getElementById('sh-native');
+    if (navigator.share) {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener('click', function () { nativeShare(shareData(shareFor.value), 'share'); });
+    }
+    [['sh-wa', 'whatsapp'], ['sh-x', 'x'], ['sh-tg', 'telegram']].forEach(function (p) {
+      document.getElementById(p[0]).addEventListener('click', function () { track('share_click', { channel: p[1], for: shareFor.value }); });
+    });
+    document.getElementById('sh-copy').addEventListener('click', function () {
+      var d = shareData(shareFor.value);
+      copyText(d.text + ' ' + d.url).then(function () { showToast('نسخنا الرسالة والرابط، أرسلها لمن تحب'); }, function () { showToast('ما قدرنا ننسخ، جرب زر واتساب'); });
+      track('share_click', { channel: 'copy', for: d.key });
+    });
+    document.querySelectorAll('.js-share').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (navigator.share) nativeShare(shareData('all'), 'nav');
+        else document.getElementById('share').scrollIntoView();
+      });
+    });
 
     /* ---- محادثة سعود: سؤال تلمسه، وجواب يتكتب ---- */
     var ANSWERS = [
