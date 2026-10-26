@@ -210,6 +210,21 @@
     }
     .stars { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
     .stars .star-dots { fill: var(--night-ink); opacity: .55; } .stars .moon { fill: var(--night-gold); }
+    /* سماء ثيم المجرة بالتطبيق: نجوم تلمع وشهاب يعبر كل ١٤ ثانية، وتهدى لما يطلع الرأس من الشاشة */
+    .stars .tw { animation: twinkle 3.4s ease-in-out infinite; }
+    .stars .tw:nth-child(3n) { animation-duration: 4.2s; animation-delay: 1.1s; }
+    .stars .tw:nth-child(3n+1) { animation-delay: 2.3s; }
+    @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+    .stars .mt-a { stop-color: var(--night-ink); stop-opacity: .9; } .stars .mt-b { stop-color: var(--night-ink); stop-opacity: 0; }
+    .stars .meteor-head { fill: var(--night-ink); }
+    .stars .meteor { opacity: 0; animation: meteor 14s linear 2.6s infinite; }
+    @keyframes meteor {
+      0% { transform: translate(0, 0); opacity: 0; }
+      1.5% { opacity: 1; }
+      7% { opacity: .9; }
+      9%, 100% { transform: translate(-330px, 150px); opacity: 0; }
+    }
+    .hero.sky-off .tw, .hero.sky-off .meteor { animation-play-state: paused; }
     .hero-grid { display: grid; gap: 28px; align-items: center; }
     @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; } }
     .pill {
@@ -263,6 +278,9 @@
     .ridge .m1 { fill: var(--night-3); } .ridge .m2 { fill: var(--night-2); } .ridge .m3 { fill: var(--sand); }
     .ridge .trail { fill: none; stroke: var(--night-gold); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
     .ridge .flag { fill: var(--night-gold); }
+    .ridge .trail-lit { display: none; fill: none; stroke: var(--night-gold); stroke-width: 3; stroke-linecap: round; }
+    .dt .ridge .trail-lit { display: inline; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.4s cubic-bezier(.16, 1, .3, 1) .3s; }
+    .dt-go .ridge .trail-lit { stroke-dashoffset: 0; }
 
     /* شريط السدو بين المشاهد */
     .sadu { display: block; width: 100%; height: 18px; }
@@ -271,11 +289,19 @@
     /* ===== الدرب: المحطات ===== */
     .climb { position: relative; }
     @media (min-width: 900px) {
-      .climb::before {
+      html:not(.dt) .climb::before {
         content: ""; position: absolute; inset-block: 40px 120px; inset-inline-start: max(12px, calc((100% - var(--wrap)) / 2 - 18px));
         border-inline-start: 3px dashed var(--gold); opacity: .55;
       }
     }
+    /* درب الفجر: الدرب يكمل من جبال الرأس بجنب المحطات، والشعلة تصعد مع التمرير لين علم القمة */
+    .dawn { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden; }
+    .dawn .base { fill: none; stroke: var(--gold); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; opacity: .55; }
+    .dawn .lit { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .dawn .seal { fill: var(--card); stroke: var(--gold-ink); stroke-width: 2; transition: fill .5s ease; }
+    .dawn .seal.on { fill: var(--gold); }
+    .dawn .halo { fill: var(--gold); opacity: .28; }
+    .dawn .core { fill: var(--terra); stroke: var(--card); stroke-width: 2; }
     .scene { padding-block: clamp(56px, 9vw, 104px); scroll-margin-top: 64px; }
     .kicker {
       display: inline-flex; align-items: center; gap: 10px; margin: 0 0 10px;
@@ -390,6 +416,11 @@
     .peak { display: block; width: min(100%, 520px); height: auto; margin: 0 auto 8px; }
     .peak .sunr { fill: var(--gold); opacity: .22; } .peak .p1 { fill: var(--ink); opacity: .9; } .peak .p2 { fill: var(--ink-2); opacity: .55; }
     .peak .fl { fill: var(--terra); } .peak .pole { stroke: var(--ink); stroke-width: 2; }
+    .peak .raise { transform-box: fill-box; transform-origin: 50% 100%; transition: transform .7s cubic-bezier(.34, 1.56, .64, 1); }
+    .peak .sunr { transition: opacity 1.4s ease; }
+    .dt .peak:not(.reached) .raise { transform: scaleY(0); }
+    .dt .peak:not(.reached) .sunr { opacity: .06; }
+    .peak.reached .sunr { opacity: .32; }
     .peak .trail { fill: none; stroke: var(--gold); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; stroke-linejoin: round; }
     .summit .center { text-align: center; }
     .summit .lead { margin-inline: auto; }
@@ -506,6 +537,9 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .typing i { animation: none; opacity: .7; }
+      .stars .tw { animation: none; }
+      .stars .meteor { display: none; }
+      .dt .ridge .trail-lit, .peak .raise, .peak .sunr, .dawn .seal { transition: none; }
     }
   </style>
 </head>
@@ -554,10 +588,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <svg class="stars" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <g class="star-dots">
-          <circle cx="90" cy="60" r="1.4"/><circle cx="210" cy="140" r="1"/><circle cx="330" cy="40" r="1.6"/><circle cx="460" cy="110" r="1"/>
-          <circle cx="600" cy="30" r="1.3"/><circle cx="720" cy="150" r="1"/><circle cx="860" cy="70" r="1.5"/><circle cx="990" cy="120" r="1"/>
-          <circle cx="1110" cy="50" r="1.3"/><circle cx="1050" cy="230" r="1"/><circle cx="150" cy="260" r="1"/><circle cx="520" cy="220" r="1.1"/>
+          <circle class="tw" cx="90" cy="60" r="1.4"/><circle cx="210" cy="140" r="1"/><circle class="tw" cx="330" cy="40" r="1.6"/><circle cx="460" cy="110" r="1"/>
+          <circle class="tw" cx="600" cy="30" r="1.3"/><circle cx="720" cy="150" r="1"/><circle class="tw" cx="860" cy="70" r="1.5"/><circle cx="990" cy="120" r="1"/>
+          <circle class="tw" cx="1110" cy="50" r="1.3"/><circle cx="1050" cy="230" r="1"/><circle cx="150" cy="260" r="1"/><circle class="tw" cx="520" cy="220" r="1.1"/>
+          <circle class="tw" cx="548" cy="96" r="1.2"/><circle cx="664" cy="182" r="1"/><circle class="tw" cx="586" cy="318" r="1.3"/><circle cx="688" cy="430" r="1"/><circle class="tw" cx="532" cy="520" r="1.2"/>
         </g>
+        <defs><linearGradient id="mt-tail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="mt-a"/><stop offset="1" class="mt-b"/></linearGradient></defs>
+        <g transform="translate(800 40)"><g class="meteor"><path d="M0 0L84 -38" stroke="url(#mt-tail)" stroke-width="1.6" stroke-linecap="round"/><circle class="meteor-head" r="1.8"/></g></g>
         <path d="M176 92a30 30 0 1 1-26-38a24 24 0 0 0 26 38z" class="moon"/>
       </svg>
       <div class="wrap hero-grid">
@@ -606,6 +643,7 @@
         <path class="m1" d="M0 170V96L140 54L260 92L420 20L560 84L700 40L860 100L1010 28L1160 90L1300 50L1440 86V170Z"/>
         <path class="m2" d="M0 170V124L180 88L330 122L520 70L690 118L880 76L1060 124L1240 84L1440 116V170Z"/>
         <path class="trail" d="M1380 160C1240 150 1180 128 1060 120C930 112 880 96 760 92C640 88 560 76 420 52"/>
+        <path class="trail-lit" pathLength="1" d="M1380 160C1240 150 1180 128 1060 120C930 112 880 96 760 92C640 88 560 76 420 52"/>
         <path class="flag" d="M418 52V22L440 30L418 38Z"/>
         <path class="m3" d="M0 170V150C240 140 480 158 720 150C960 142 1200 158 1440 148V170Z"/>
       </svg>
@@ -844,8 +882,7 @@
             <path class="p2" d="M0 170L120 96L190 128L300 60L400 120L520 84V170Z"/>
             <path class="p1" d="M60 170L260 34L460 170Z"/>
             <path class="trail" d="M392 170L318 134L362 116L292 88L318 70L262 38"/>
-            <path class="pole" d="M260 34V6"/>
-            <path class="fl" d="M260 6L288 14L260 22Z"/>
+            <g class="raise"><path class="pole" d="M260 34V6"/><path class="fl" d="M260 6L288 14L260 22Z"/></g>
           </svg>
           <div class="center">
             <p class="kicker"><span class="num"><svg class="g" aria-hidden="true" style="width:1em;height:1em"><use href="#g-flag"/></svg></span>القمة</p>
@@ -1315,6 +1352,136 @@
       render();
     });
     window.addEventListener('load', function () { render(); setInterval(render, 30000); });
+  })();
+  </script>
+  <script>
+  /* ---- درب الفجر: الدرب يكمل من جبال الرأس بجنب المحطات، وشعلة تصعد مع التمرير وتشعل ختم كل محطة لين يرتفع علم القمة ---- */
+  (function () {
+    'use strict';
+    var NS = 'http://www.w3.org/2000/svg';
+    var root = document.documentElement;
+    var climb = document.querySelector('.climb');
+    var peak = document.querySelector('.peak');
+    var hero = document.querySelector('.hero');
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!climb || !peak || !document.createElementNS || !('getTotalLength' in document.createElementNS(NS, 'path'))) return;
+    root.classList.add('dt');
+    requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('dt-go'); }); });
+
+    /* النجوم والشهاب تهدى لما يطلع الرأس من الشاشة */
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { hero.classList.toggle('sky-off', !es[0].isIntersecting); }).observe(hero);
+    }
+
+    function el(tag, cls, parent) {
+      var n = document.createElementNS(NS, tag);
+      if (cls) n.setAttribute('class', cls);
+      if (parent) parent.appendChild(n);
+      return n;
+    }
+    var svg = el('svg', 'dawn');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    var base = el('path', 'base', svg);
+    var lit = el('path', 'lit', svg);
+    var sealsG = el('g', '', svg);
+    var walker = el('g', '', svg);
+    el('circle', 'halo', walker).setAttribute('r', '8');
+    el('circle', 'core', walker).setAttribute('r', '4.5');
+    if (still) walker.style.display = 'none';
+    climb.insertBefore(svg, climb.firstChild);
+
+    /* نفس درب رسمة القمة، عشان الشعلة تكمل عليه لين العلم */
+    var PEAK = [[392, 170], [318, 134], [362, 116], [292, 88], [318, 70], [262, 38]];
+    var L = 0, L1 = 0, endY = 0, samples = [], seals = [], litSeals = 0, reached = false, armed = false, inView = true, ticking = false;
+
+    function lenAt(y) {
+      if (y <= samples[0][1]) return 0;
+      for (var n = 1; n < samples.length; n++) if (samples[n][1] >= y) return samples[n][0];
+      return L1;
+    }
+
+    function build() {
+      var W = climb.clientWidth, H = climb.clientHeight, wrap = climb.querySelector('.wrap');
+      if (!W || !H || !wrap) return;
+      var cr = climb.getBoundingClientRect(), wr = wrap.getBoundingClientRect(), pr = peak.getBoundingClientRect();
+      svg.setAttribute('width', W);
+      svg.setAttribute('height', H);
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+      /* الدرب بالهامش اللي يمين النص: ٨ بكسل من الحافة بالجوال، ونفس مكان الخط القديم بالشاشات العريضة */
+      var edge = wr.right - cr.left - (parseFloat(getComputedStyle(wrap).paddingRight) || 16);
+      var space = W - edge, narrow = space < 30;
+      var gx = edge + Math.min(space / 2, 50), amp = narrow ? 2 : Math.min(space * 0.25, 10);
+      var s = pr.width / 520;
+      var pts = PEAK.map(function (p) { return [pr.left - cr.left + p[0] * s, pr.top - cr.top + p[1] * s]; });
+      var p0 = pts[0], y = 24, i = 0, step = 150, d = 'M' + gx + ' ' + y;
+      endY = p0[1];
+      while (y + step < endY - 80) {
+        d += ' Q' + (gx + (i % 2 ? amp : -amp)) + ' ' + (y + step / 2) + ' ' + gx + ' ' + (y + step);
+        y += step; i++;
+      }
+      d += ' C' + gx + ' ' + endY + ' ' + (p0[0] + 40) + ' ' + endY + ' ' + p0[0] + ' ' + p0[1];
+      lit.setAttribute('d', d);
+      L1 = lit.getTotalLength();
+      for (var k = 1; k < pts.length; k++) d += ' L' + pts[k][0] + ' ' + pts[k][1];
+      base.setAttribute('d', d);
+      lit.setAttribute('d', d);
+      L = lit.getTotalLength();
+      lit.style.strokeDasharray = L;
+      samples = [];
+      for (var n = 0; n <= 200; n++) samples.push([L1 * n / 200, lit.getPointAtLength(L1 * n / 200).y]);
+
+      /* ختم لكل محطة على مستوى رقمها */
+      while (sealsG.firstChild) sealsG.removeChild(sealsG.firstChild);
+      seals = [];
+      climb.querySelectorAll('.kicker .num').forEach(function (num) {
+        var r = num.getBoundingClientRect(), cy = r.top + r.height / 2 - cr.top;
+        if (cy > endY - 20) return;
+        var l = lenAt(cy), q = lit.getPointAtLength(l), c = el('circle', 'seal', sealsG);
+        c.setAttribute('cx', q.x);
+        c.setAttribute('cy', q.y);
+        c.setAttribute('r', narrow ? '5' : '6');
+        if (seals.length < litSeals) c.classList.add('on');
+        seals.push({ c: c, l: l });
+      });
+      update();
+    }
+
+    function update() {
+      ticking = false;
+      if (!L) return;
+      var vh = window.innerHeight, target = vh * 0.6 - climb.getBoundingClientRect().top;
+      var l = still ? L : target <= endY ? lenAt(target) : L1 + (L - L1) * Math.min(1, (target - endY) / (vh * 0.15));
+      lit.style.strokeDashoffset = L - l;
+      var q = lit.getPointAtLength(l);
+      walker.setAttribute('transform', 'translate(' + q.x + ' ' + q.y + ')');
+      /* الأختام والعلم ما تشتعل إلا بتمرير فعلي، عشان قياسات التحميل الأولى ما تحرق اللحظة */
+      if (!armed && !still) return;
+      seals.forEach(function (sl, idx) {
+        if (l >= sl.l - 1 && idx >= litSeals) { sl.c.classList.add('on'); litSeals = idx + 1; }
+      });
+      if (!reached && l >= L - 1) { reached = true; peak.classList.add('reached'); }
+    }
+
+    function schedule() {
+      if (inView && !ticking) { ticking = true; requestAnimationFrame(update); }
+    }
+    if (!still) {
+      window.addEventListener('scroll', function () { armed = true; schedule(); }, { passive: true });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { inView = es[0].isIntersecting; schedule(); }).observe(climb);
+      }
+    }
+
+    /* المحطات يتغير طولها (تبويب الشخصيات، الصور، الخط)، فالدرب ينبني من جديد */
+    var rt;
+    function rebuild() { clearTimeout(rt); rt = setTimeout(build, 150); }
+    if ('ResizeObserver' in window) new ResizeObserver(rebuild).observe(climb);
+    else window.addEventListener('resize', rebuild);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
+    window.addEventListener('load', rebuild);
+    build();
   })();
   </script>
 </body>
