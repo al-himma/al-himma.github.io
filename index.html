@@ -28,12 +28,50 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "الهمة - Al-Himmah",
-    "operatingSystem": "iOS, Android",
-    "applicationCategory": "LifestyleApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "SAR" },
-    "description": "تطبيق سعودي يجمع الصلاة والورد والدراسة والمصاريف والتمارين والوجبات وبر الوالدين وعالم الأطفال، مع المدرب سعود."
+    "@graph": [
+      {
+        "@type": "MobileApplication",
+        "@id": "https://alhimmah.app/#app",
+        "name": "الهمة",
+        "alternateName": [
+          "تطبيق الهمة",
+          "Al-Himmah",
+          "Alhimmah"
+        ],
+        "url": "https://alhimmah.app/",
+        "image": "https://alhimmah.app/v2/img/og.jpg",
+        "inLanguage": "ar",
+        "operatingSystem": "iOS 15+, Android 7+",
+        "applicationCategory": "LifestyleApplication",
+        "description": "تطبيق سعودي يجمع الصلاة والورد، الدراسة والمعدل، المصاريف، التمارين والوجبات، بر الوالدين وعالم الأطفال، مع المدرب سعود. أول شهر مجاني بدون بطاقة.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "SAR"
+        },
+        "installUrl": [
+          "https://apps.apple.com/app/id6788142781",
+          "https://play.google.com/store/apps/details?id=com.alhimmah.app"
+        ],
+        "sameAs": [
+          "https://apps.apple.com/app/id6788142781",
+          "https://play.google.com/store/apps/details?id=com.alhimmah.app",
+          "https://x.com/alhima26",
+          "https://instagram.com/alhima26",
+          "https://tiktok.com/@alhima26"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alhimmah.app/#site",
+        "url": "https://alhimmah.app/",
+        "name": "تطبيق الهمة",
+        "inLanguage": "ar",
+        "about": {
+          "@id": "https://alhimmah.app/#app"
+        }
+      }
+    ]
   }
   </script>
 
@@ -950,6 +988,31 @@
       return null;
     }
 
+    /* ---- الإحصائيات: نفس أسماء أحداث الصفحة الأولى عشان تكمل التقارير على نفس الأرقام ---- */
+    function trackDownload(store, source) {
+      var name = store === 'apple' ? 'click_download_appstore' : store === 'google' ? 'click_download_googleplay' : 'click_download_generic';
+      track(name, { source: source });
+    }
+    var landingPersona = (location.hash || '').slice(1);
+    track('page_view_init', { referrer: document.referrer || 'direct', persona: landingPersona || 'none' });
+    var depthHit = {};
+    window.addEventListener('scroll', function () {
+      var max = document.documentElement.scrollHeight - innerHeight;
+      if (max <= 0) return;
+      var pct = Math.round(scrollY / max * 100);
+      [25, 50, 75, 100].forEach(function (m) {
+        if (pct >= m && !depthHit[m]) { depthHit[m] = true; track('scroll_depth_' + m + 'pct', { depth: m }); }
+      });
+    }, { passive: true });
+    var seconds = 0;
+    var DWELL = { 15: 1, 30: 1, 60: 1, 120: 1, 300: 1 };
+    var dwellTimer = setInterval(function () {
+      if (document.visibilityState !== 'visible') return;
+      seconds += 1;
+      if (DWELL[seconds]) track('dwell_time_' + seconds + 's', { seconds: seconds });
+      if (seconds >= 300) clearInterval(dwellTimer);
+    }, 1000);
+
     /* ---- زر التحميل يروح لمتجر جهازك مباشرة ---- */
     var ua = navigator.userAgent || '';
     var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -965,11 +1028,11 @@
         if (use && platform === 'apple') use.parentNode.style.fill = 'currentColor';
       }
       a.addEventListener('click', function () {
-        track(platform ? 'download_click' : 'cta_click', { store: platform || 'none', source: a.getAttribute('data-src') });
+        trackDownload(platform, a.getAttribute('data-src'));
       });
     });
     document.querySelectorAll('.store').forEach(function (a) {
-      a.addEventListener('click', function () { track('download_click', { store: a.getAttribute('data-store'), source: 'summit' }); });
+      a.addEventListener('click', function () { trackDownload(a.getAttribute('data-store'), 'summit'); });
     });
 
     /* ---- شريط الإبهام يطلع بعد الرأس ---- */
@@ -1030,7 +1093,7 @@
       });
     }
     function nativeShare(d, source) {
-      track('share_click', { channel: 'native', for: d.key, source: source });
+      track('click_share', { channel: 'native', for: d.key, source: source });
       return navigator.share({ title: 'تطبيق الهمة', text: d.text, url: d.url }).catch(function () {});
     }
     renderShare();
@@ -1041,12 +1104,14 @@
       nativeBtn.addEventListener('click', function () { nativeShare(shareData(shareFor.value), 'share'); });
     }
     [['sh-wa', 'whatsapp'], ['sh-x', 'x'], ['sh-tg', 'telegram']].forEach(function (p) {
-      document.getElementById(p[0]).addEventListener('click', function () { track('share_click', { channel: p[1], for: shareFor.value }); });
+      document.getElementById(p[0]).addEventListener('click', function () { track('share_click_' + p[1], { for: shareFor.value }); });
     });
     document.getElementById('sh-copy').addEventListener('click', function () {
       var d = shareData(shareFor.value);
-      copyText(d.text + ' ' + d.url).then(function () { showToast('نسخنا الرسالة والرابط، أرسلها لمن تحب'); }, function () { showToast('ما قدرنا ننسخ، جرب زر واتساب'); });
-      track('share_click', { channel: 'copy', for: d.key });
+      copyText(d.text + ' ' + d.url).then(function () {
+        showToast('نسخنا الرسالة والرابط، أرسلها لمن تحب');
+        track('copy_share_url_success', { for: d.key });
+      }, function () { showToast('ما قدرنا ننسخ، جرب زر واتساب'); });
     });
     document.querySelectorAll('.js-share').forEach(function (b) {
       b.addEventListener('click', function () {
@@ -1078,7 +1143,7 @@
         var i = +b.getAttribute('data-q');
         document.querySelectorAll('.q').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
         bubble('msg me', b.textContent);
-        track('saud_question', { q: i });
+        track('ask_saud_coach', { question: b.textContent });
         if (still) { bubble('msg saud-m', ANSWERS[i]); return; }
         busy = true;
         var t = bubble('typing');
@@ -1120,7 +1185,10 @@
     });
     function fromHash() {
       var k = (location.hash || '').slice(1);
-      if (k && select(k)) document.getElementById('for-you').scrollIntoView();
+      if (k && select(k)) {
+        document.getElementById('for-you').scrollIntoView();
+        track('persona_landing', { persona: k });
+      }
     }
     fromHash();
     window.addEventListener('hashchange', fromHash);
