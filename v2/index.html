@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>الهمة — يومك كله بمكان واحد، وخطوة توصلك لقمتك</title>
+  <meta name="description" content="تطبيق سعودي يجمع صلاتك ووردك، دراستك وشغلك وفلوسك، تمرينك وأكلك وأهلك. المدرب سعود يقترح خطوتك من بياناتك، وأول شهر مجاني بدون بطاقة.">
+  <!-- نسخة المعاينة v2: مخفية عن محركات البحث لين تعتمد، وتنشال هذي السطر وقت الترقية للرئيسية -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://alhimmah.app/">
+  <meta name="apple-itunes-app" content="app-id=6788142781">
+  <meta name="theme-color" content="#0c1717">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alhimmah.app/">
+  <meta property="og:title" content="الهمة — يومك كله بمكان واحد، وخطوة توصلك لقمتك">
+  <meta property="og:description" content="صلاتك ودراستك وفلوسك وتمرينك وأهلك بتطبيق سعودي واحد، والمدرب سعود يقترح خطوتك الجاية. أول شهر مجاني بدون بطاقة.">
+  <meta property="og:image" content="https://alhimmah.app/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "الهمة - Al-Himmah",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "SAR" },
+    "description": "تطبيق سعودي يجمع الصلاة والورد والدراسة والمصاريف والتمارين والوجبات وبر الوالدين وعالم الأطفال، مع المدرب سعود."
+  }
+  </script>
+
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="apple-touch-icon" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="../saud-hero.webp" type="image/webp">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFWEWVJ35"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1KFWEWVJ35', { page_title: 'الهمة v2' });
+  </script>
+
+  <style>
+    /* ===== التوكنز: النهار رمل وذهب وطين، والليل سماء نجد قبل الفجر ===== */
+    :root {
+      --sand: #f6efe4;
+      --sand-2: #efe4d3;
+      --card: #fffaf2;
+      --ink: #231a14;
+      --ink-2: #66564a;
+      --line: #e3d5c1;
+      --gold: #c08a2a;
+      --gold-ink: #85590f;
+      --terra: #b04a30;
+      --terra-hover: #963d26;
+      --terra-soft: #f6e1d6;
+      --on-terra: #ffffff;
+      --on-ink-accent: #e0b04f;
+      --night: #0c1717;
+      --night-2: #14292b;
+      --night-3: #1d3a3c;
+      --night-ink: #f3ead9;
+      --night-ink-2: #b9c4bd;
+      --night-gold: #e0b04f;
+      --night-line: rgba(224, 176, 79, 0.28);
+      --night-glass: rgba(12, 23, 23, 0.94);
+      --night-card: rgba(20, 41, 43, 0.94);
+      --glow: rgba(224, 176, 79, 0.30);
+      --btn-shadow: 0 10px 24px rgba(176, 74, 48, 0.28);
+      --phone-shadow: 0 24px 50px rgba(12, 23, 23, 0.30);
+      --qr-bg: #ffffff;
+      --shadow: 0 18px 40px rgba(35, 26, 20, 0.10);
+      --r-sm: 12px;
+      --r-md: 18px;
+      --r-lg: 28px;
+      --wrap: 1120px;
+      --gutter: clamp(16px, 4vw, 32px);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --sand: #12100e;
+        --sand-2: #191512;
+        --card: #1f1a16;
+        --ink: #f3e9dc;
+        --ink-2: #b8a796;
+        --line: #3a3029;
+        --gold: #d9a640;
+        --gold-ink: #e8bb5c;
+        --terra: #c4573c;
+        --terra-hover: #d66a4e;
+        --terra-soft: #3a211a;
+        --on-ink-accent: #85590f;
+        --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Tajawal', system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--sand);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 8px; }
+    .wrap { width: min(100%, var(--wrap)); margin-inline: auto; padding-inline: var(--gutter); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .g { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .g .f { fill: currentColor; stroke: none; }
+
+    /* ===== الأزرار ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 12px 26px; border-radius: 999px; border: 0;
+      font-size: 1.05rem; font-weight: 800; text-decoration: none; cursor: pointer;
+      background: var(--terra); color: var(--on-terra);
+      box-shadow: var(--btn-shadow);
+      transition: background-color .2s;
+    }
+    .btn:hover { background: var(--terra-hover); }
+    .btn .g { width: 1.3em; height: 1.3em; }
+    .link-btn {
+      display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 8px 6px;
+      font-weight: 700; text-decoration: none; color: inherit; border-bottom: 2px solid currentColor;
+      border-radius: 0;
+    }
+
+    /* ===== الشريط العلوي ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 30;
+      background: var(--night-glass);
+      border-bottom: 1px solid var(--night-line);
+      color: var(--night-ink);
+    }
+    .nav .wrap { display: flex; align-items: center; gap: 16px; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-inline-end: auto; }
+    .brand img { width: 40px; height: 40px; border-radius: 11px; }
+    .brand b { display: block; font-size: 1.15rem; line-height: 1.2; }
+    .brand small { display: block; font-size: 0.75rem; color: var(--night-gold); }
+    .nav-links { display: none; gap: 4px; }
+    .nav-links a { text-decoration: none; padding: 10px 12px; min-height: 44px; display: inline-flex; align-items: center; color: var(--night-ink-2); font-weight: 600; }
+    .nav-links a:hover { color: var(--night-ink); }
+    .nav .btn { min-height: 44px; padding: 8px 18px; font-size: 0.95rem; box-shadow: none; }
+    @media (min-width: 900px) { .nav-links { display: flex; } }
+
+    /* ===== المشهد صفر: الرأس، ليل نجد قبل الفجر ===== */
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden;
+      background: radial-gradient(120% 70% at 30% 0%, var(--night-3) 0%, var(--night-2) 45%, var(--night) 100%);
+      color: var(--night-ink);
+      padding-block: clamp(36px, 7vw, 72px) 0;
+    }
+    .stars { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    .stars .star-dots { fill: var(--night-ink); opacity: .55; } .stars .moon { fill: var(--night-gold); }
+    .hero-grid { display: grid; gap: 28px; align-items: center; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; } }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 16px; border-radius: 999px;
+      border: 1px solid var(--night-line); color: var(--night-gold);
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .hero h1 {
+      margin: 18px 0 14px; font-weight: 900; line-height: 1.3;
+      font-size: clamp(1.9rem, 4.6vw, 3.1rem); text-wrap: balance;
+    }
+    .hero h1 span { color: var(--night-gold); }
+    .hero-sub { margin: 0 0 26px; font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--night-ink-2); max-width: 36em; }
+    .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+    .trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--night-ink-2); font-size: 0.95rem; }
+    .trust li { display: inline-flex; align-items: center; gap: 6px; }
+    .trust .g { color: var(--night-gold); width: 1.1em; height: 1.1em; }
+
+    /* سعود والمحادثة */
+    .saud { position: relative; display: grid; justify-items: center; }
+    .saud-glow { position: absolute; inset: 8% 12% auto; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--glow), transparent 65%); z-index: -1; }
+    .saud picture img { width: clamp(220px, 46vw, 360px); height: auto; }
+    .chat {
+      width: min(100%, 420px); margin-top: -36px;
+      background: var(--night-card); border: 1px solid var(--night-line);
+      border-radius: var(--r-lg); padding: 16px; color: var(--night-ink);
+    }
+    .chat-head { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--night-line); }
+    .chat-head b { display: block; line-height: 1.3; }
+    .chat-head small { color: var(--night-ink-2); font-size: 0.8rem; }
+    .chat-head .g { color: var(--night-gold); width: 1.6em; height: 1.6em; }
+    .chat-log { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; min-height: 7.5rem; }
+    .msg { max-width: 88%; padding: 9px 14px; border-radius: 18px; font-size: 0.98rem; line-height: 1.65; }
+    .msg.saud-m { align-self: flex-start; background: var(--night-3); border-start-start-radius: 6px; }
+    .msg.me { align-self: flex-end; background: var(--night-gold); color: var(--night); font-weight: 600; border-start-end-radius: 6px; }
+    .typing { align-self: flex-start; display: inline-flex; gap: 5px; padding: 12px 14px; background: var(--night-3); border-radius: 18px; }
+    .typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--night-ink-2); animation: blink 1s infinite; }
+    .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+    @keyframes blink { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+    .qs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .q {
+      min-height: 44px; padding: 8px 14px; border-radius: 999px; cursor: pointer;
+      background: transparent; color: var(--night-ink); border: 1px solid var(--night-line); font-weight: 600; font-size: 0.92rem;
+    }
+    .q:hover, .q[aria-pressed="true"] { border-color: var(--night-gold); color: var(--night-gold); }
+    .chat-note { margin: 10px 0 0; font-size: 0.8rem; color: var(--night-ink-2); }
+
+    /* الجبل والدرب الذهبي أسفل الرأس */
+    .ridge { display: block; width: 100%; height: auto; margin-top: 28px; }
+    .ridge .m1 { fill: var(--night-3); } .ridge .m2 { fill: var(--night-2); } .ridge .m3 { fill: var(--sand); }
+    .ridge .trail { fill: none; stroke: var(--night-gold); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
+    .ridge .flag { fill: var(--night-gold); }
+
+    /* شريط السدو بين المشاهد */
+    .sadu { display: block; width: 100%; height: 18px; }
+    .sadu .t1 { fill: var(--gold); } .sadu .t2 { fill: var(--terra); }
+
+    /* ===== الدرب: المحطات ===== */
+    .climb { position: relative; }
+    @media (min-width: 900px) {
+      .climb::before {
+        content: ""; position: absolute; inset-block: 40px 120px; inset-inline-start: max(12px, calc((100% - var(--wrap)) / 2 - 18px));
+        border-inline-start: 3px dashed var(--gold); opacity: .55;
+      }
+    }
+    .scene { padding-block: clamp(56px, 9vw, 104px); scroll-margin-top: 64px; }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px; margin: 0 0 10px;
+      color: var(--gold-ink); font-weight: 800; font-size: 0.95rem;
+    }
+    .kicker .num {
+      display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--gold); color: var(--night); font-weight: 900;
+    }
+    .scene h2 { margin: 0 0 10px; font-size: clamp(1.75rem, 4.4vw, 2.7rem); line-height: 1.3; font-weight: 900; }
+    .lead { margin: 0 0 28px; color: var(--ink-2); font-size: 1.1rem; max-width: 40em; }
+
+    /* ===== المشهد ١: اختر نفسك ===== */
+    .chips { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
+    .chips::-webkit-scrollbar { display: none; }
+    @media (min-width: 900px) { .chips { flex-wrap: wrap; overflow: visible; } }
+    .chip {
+      flex: none; scroll-snap-align: start;
+      display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 10px 18px;
+      border-radius: 999px; border: 1.5px solid var(--line); background: var(--card); color: var(--ink);
+      font-weight: 800; font-size: 1rem; cursor: pointer;
+    }
+    .chip .g { color: var(--gold-ink); }
+    .chip[aria-selected="true"] { background: var(--ink); color: var(--sand); border-color: var(--ink); }
+    .chip[aria-selected="true"] .g { color: var(--on-ink-accent); }
+    .coach-strip {
+      display: flex; align-items: center; gap: 10px; margin: 6px 0 22px; padding: 12px 16px;
+      border-radius: var(--r-sm); background: var(--terra-soft); color: var(--ink); font-weight: 700;
+    }
+    .coach-strip .g { color: var(--terra); }
+    .panel {
+      display: grid; gap: 24px; align-items: center;
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+      padding: clamp(18px, 4vw, 40px); box-shadow: var(--shadow);
+    }
+    .panel[hidden] { display: none; }
+    @media (min-width: 760px) { .panel { grid-template-columns: minmax(0, 1fr) auto; } }
+    .phone {
+      order: -1; justify-self: center; width: clamp(180px, 52vw, 270px); aspect-ratio: 9 / 19.4;
+      border-radius: 36px; padding: 9px; background: var(--night); box-shadow: var(--phone-shadow);
+    }
+    .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 28px; background: var(--sand-2); }
+    @media (min-width: 760px) { .phone { order: 2; } }
+    .tag { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-ink); font-weight: 800; font-size: 0.95rem; }
+    .panel h3 { margin: 8px 0 6px; font-size: clamp(1.45rem, 3.6vw, 2.1rem); line-height: 1.35; font-weight: 900; }
+    .panel .sub { margin: 0 0 16px; color: var(--ink-2); font-size: 1.05rem; }
+    .benefits { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 10px; }
+    .benefits li { display: flex; gap: 10px; align-items: flex-start; font-size: 1.02rem; }
+    .benefits .g { color: var(--terra); margin-top: 0.25em; }
+    .also { margin: 0 0 16px; color: var(--ink-2); font-size: 0.98rem; }
+    .saud-line {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0 0 20px; padding: 12px 16px;
+      border-radius: var(--r-sm); background: var(--sand-2); border-inline-start: 4px solid var(--gold);
+    }
+    .saud-line small { color: var(--ink-2); font-weight: 700; }
+    .saud-line q { quotes: none; font-weight: 800; font-size: 1.05rem; }
+
+    /* ===== المشهد ٢: يومك بين صلواتك ===== */
+    .day { background: var(--sand-2); }
+    .day-card {
+      display: grid; gap: 22px; align-items: center;
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+      padding: clamp(18px, 4vw, 36px); box-shadow: var(--shadow);
+    }
+    @media (min-width: 900px) { .day-card { grid-template-columns: 1.1fr 0.9fr; } }
+    .city { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .city label { font-weight: 800; }
+    .city select {
+      min-height: 48px; padding: 8px 14px; border-radius: var(--r-sm); border: 1.5px solid var(--line);
+      background: var(--sand); color: var(--ink); font: inherit; font-weight: 700;
+    }
+    .arc { width: 100%; height: auto; }
+    .arc .track { fill: none; stroke: var(--line); stroke-width: 6; stroke-linecap: round; }
+    .arc .done { fill: none; stroke: var(--gold); stroke-width: 6; stroke-linecap: round; }
+    .arc .pt { fill: var(--card); stroke: var(--gold-ink); stroke-width: 2.5; }
+    .arc .now { fill: var(--terra); stroke: var(--card); stroke-width: 4; }
+    .arc text { fill: var(--ink-2); font-size: 17px; font-weight: 700; font-family: inherit; }
+    .arc .big { fill: var(--ink); font-size: 30px; font-weight: 900; }
+    .arc .mid { fill: var(--ink-2); font-size: 18px; }
+    .times { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .times li { padding: 10px 8px; text-align: center; border-radius: var(--r-sm); background: var(--sand); }
+    .times li b { display: block; font-size: 0.9rem; color: var(--ink-2); }
+    .times li span { font-weight: 800; font-size: 1.05rem; }
+    .times li.next { background: var(--ink); color: var(--sand); }
+    .times li.next b { color: var(--on-ink-accent); }
+    .day-note { margin: 12px 0 0; color: var(--ink-2); font-size: 0.92rem; }
+
+    /* ===== المشهد ٣: ناس قبلك ===== */
+    .stories { display: grid; gap: 16px; }
+    @media (min-width: 760px) { .stories { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    .story { margin: 0; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); display: flex; flex-direction: column; gap: 16px; }
+    .story blockquote { margin: 0; font-size: 1.02rem; line-height: 1.85; flex: 1; }
+    .story figcaption { display: flex; align-items: center; gap: 10px; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--terra-soft); color: var(--terra); font-weight: 900; }
+    .story figcaption b { display: block; line-height: 1.3; }
+    .story figcaption small { color: var(--ink-2); }
+    .privacy {
+      margin-top: 22px; display: grid; gap: 18px; align-items: center;
+      padding: clamp(20px, 4vw, 34px); border-radius: var(--r-lg);
+      background: var(--night); color: var(--night-ink);
+    }
+    @media (min-width: 900px) { .privacy { grid-template-columns: auto 1fr; gap: 30px; } }
+    .privacy > .g { width: 56px; height: 56px; color: var(--night-gold); }
+    .privacy h3 { margin: 0 0 10px; font-size: 1.5rem; font-weight: 900; }
+    .privacy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    @media (min-width: 760px) { .privacy ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .privacy li { display: flex; gap: 8px; align-items: flex-start; color: var(--night-ink-2); }
+    .privacy li .g { color: var(--night-gold); margin-top: .25em; }
+
+    /* ===== المشهد ٤: القمة ===== */
+    .summit { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%); }
+    .peak { display: block; width: min(100%, 520px); height: auto; margin: 0 auto 8px; }
+    .peak .sunr { fill: var(--gold); opacity: .22; } .peak .p1 { fill: var(--ink); opacity: .9; } .peak .p2 { fill: var(--ink-2); opacity: .55; }
+    .peak .fl { fill: var(--terra); } .peak .pole { stroke: var(--ink); stroke-width: 2; }
+    .peak .trail { fill: none; stroke: var(--gold); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; stroke-linejoin: round; }
+    .summit .center { text-align: center; }
+    .summit .lead { margin-inline: auto; }
+    .plans { display: grid; gap: 16px; margin-top: 8px; }
+    @media (min-width: 760px) { .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; } }
+    .plan {
+      position: relative; display: flex; flex-direction: column; gap: 6px;
+      padding: 26px 22px; border-radius: var(--r-lg); background: var(--card); border: 1.5px solid var(--line);
+    }
+    .plan.free { border-color: var(--gold); }
+    .plan.best { background: var(--ink); color: var(--sand); border-color: var(--ink); box-shadow: var(--shadow); }
+    .plan .badge { position: absolute; top: -14px; inset-inline-start: 22px; padding: 4px 14px; border-radius: 999px; background: var(--gold); color: var(--night); font-weight: 900; font-size: 0.9rem; }
+    .plan h3 { margin: 0; font-size: 1.15rem; font-weight: 800; }
+    .price { display: flex; align-items: baseline; gap: 8px; }
+    .price b { font-size: clamp(2.3rem, 6vw, 3rem); font-weight: 900; line-height: 1.2; }
+    .price span { font-weight: 700; }
+    .plan .hint { margin: 0 0 10px; font-weight: 700; color: var(--gold-ink); }
+    .plan.best .hint { color: var(--on-ink-accent); }
+    .plan ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .plan li { display: flex; gap: 8px; align-items: flex-start; }
+    .plan li .g { color: var(--terra); margin-top: .25em; }
+    .plan.best li .g { color: var(--on-ink-accent); }
+    .pay-note { text-align: center; color: var(--ink-2); font-size: 0.92rem; margin: 18px 0 0; }
+
+    .stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 34px; }
+    .store {
+      display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 10px 22px;
+      border-radius: var(--r-md); background: var(--night); color: var(--night-ink); text-decoration: none;
+    }
+    .store svg { width: 28px; height: 28px; flex: none; }
+    .store small { display: block; font-size: 0.78rem; color: var(--night-ink-2); line-height: 1.2; }
+    .store b { display: block; font-size: 1.15rem; line-height: 1.3; direction: ltr; }
+    .qr { display: none; }
+    @media (min-width: 1024px) {
+      .qr { display: flex; justify-content: center; gap: 28px; margin-top: 26px; }
+      .qr figure { margin: 0; text-align: center; }
+      .qr img { width: 150px; height: 150px; padding: 8px; background: var(--qr-bg); border-radius: var(--r-sm); border: 1px solid var(--line); }
+      .qr figcaption { margin-top: 6px; color: var(--ink-2); font-weight: 700; font-size: 0.9rem; }
+    }
+
+    /* ===== التذييل ===== */
+    footer { background: var(--night); color: var(--night-ink-2); padding-block: 40px 110px; }
+    @media (min-width: 900px) { footer { padding-bottom: 40px; } }
+    footer .wrap { display: grid; gap: 22px; }
+    .foot-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+    .foot-links, .socials { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+    .foot-links a, .socials a { text-decoration: none; padding: 10px; min-height: 44px; display: inline-flex; align-items: center; }
+    .foot-links a:hover, .socials a:hover { color: var(--night-ink); }
+    .slogan { color: var(--night-gold); font-weight: 900; font-size: 1.2rem; }
+
+    /* ===== شريط التحميل بمنطقة الإبهام ===== */
+    .dock {
+      position: fixed; inset-inline: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 40;
+      display: flex; align-items: center; gap: 12px; padding: 10px 10px 10px 16px;
+      background: var(--night-glass); color: var(--night-ink); border: 1px solid var(--night-line); border-radius: 999px;
+    }
+    .dock[hidden] { display: none; }
+    .dock img { width: 38px; height: 38px; border-radius: 10px; }
+    .dock p { margin: 0; margin-inline-end: auto; line-height: 1.3; font-size: 0.9rem; }
+    .dock p b { display: block; font-size: 1rem; }
+    .dock .btn { min-height: 46px; padding: 8px 18px; font-size: 0.95rem; box-shadow: none; }
+    @media (min-width: 900px) { .dock { display: none; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .typing i { animation: none; opacity: .7; }
+    }
+  </style>
+</head>
+<body>
+  <!-- أيقونات الهمة الخطية (نفس HimmahIcon بالتطبيق) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="g-mark" viewBox="0 0 24 24"><path d="M2.5 20L8.2 12.2L10.6 15.2L13.8 8.8L17.3 14.8L18.7 13.2L21.5 20Z"/><path class="f" d="M13.8 2.5L14.33 3.87L15.8 3.95L14.66 4.88L15.03 6.3L13.8 5.5L12.57 6.3L12.94 4.88L11.8 3.95L13.27 3.87Z"/></symbol>
+    <symbol id="g-cap" viewBox="0 0 24 24"><path d="M2.5 9L12 4.5L21.5 9L12 13.5ZM6.5 11V15.5C6.5 17 9 18.5 12 18.5C15 18.5 17.5 17 17.5 15.5V11M21.5 9V14"/></symbol>
+    <symbol id="g-wallet" viewBox="0 0 24 24"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5H17.5V8.5M3.5 7.5V18A1.5 1.5 0 0 0 5 19.5H19A1.5 1.5 0 0 0 20.5 18V10A1.5 1.5 0 0 0 19 8.5H5.5A2 2 0 0 1 3.5 7.5ZM16.5 14H17.5"/></symbol>
+    <symbol id="g-dumbbell" viewBox="0 0 24 24"><path d="M2.5 10V14M5 7.5V16.5M8 7.5V16.5M5 7.5H8M5 16.5H8M8 12H16M16 7.5V16.5M19 7.5V16.5M16 7.5H19M16 16.5H19M21.5 10V14"/></symbol>
+    <symbol id="g-heart" viewBox="0 0 24 24"><path d="M12 20C6 16 3 12.6 3 9.2C3 6.6 5 4.8 7.3 4.8C9.3 4.8 11 6 12 7.8C13 6 14.7 4.8 16.7 4.8C19 4.8 21 6.6 21 9.2C21 12.6 18 16 12 20ZM6.8 12H9.4L10.9 9.6L13 14.4L14.5 12H17.2"/></symbol>
+    <symbol id="g-gift" viewBox="0 0 24 24"><path d="M4 9.5H20V12.5H4ZM5.5 12.5V20.5H18.5V12.5M12 9.5V20.5M12 9.5C10.5 6 7.5 5.5 7 7.2C6.6 8.6 8.8 9.5 12 9.5ZM12 9.5C13.5 6 16.5 5.5 17 7.2C17.4 8.6 15.2 9.5 12 9.5Z"/></symbol>
+    <symbol id="g-rahl" viewBox="0 0 24 24"><path d="M3.5 6.5L12 9.5L20.5 6.5V12L12 15L3.5 12ZM12 9.5V15M7 13.8L16.5 21M17 13.8L7.5 21"/></symbol>
+    <symbol id="g-palette" viewBox="0 0 24 24"><path d="M12 3.5C7 3.5 3.5 7.2 3.5 11.8C3.5 16.5 7.3 20.5 11.5 20.5C13 20.5 13.6 19.6 13.2 18.5C12.7 17.2 13.5 16 15 16H17C19.2 16 20.5 14.6 20.5 12.3C20.5 7.4 16.8 3.5 12 3.5Z"/><path class="f" d="M6.8 10a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M10.3 7.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M14.3 8.5a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0M6.6 14a1.2 1.2 0 1 0 2.4 0a1.2 1.2 0 1 0 -2.4 0"/></symbol>
+    <symbol id="g-sparkles" viewBox="0 0 24 24"><path d="M12 3L13.8 8.2L19 10L13.8 11.8L12 17L10.2 11.8L5 10L10.2 8.2ZM19 17L17.5 18.5L19 20L20.5 18.5ZM5 4L4 5L5 6L6 5Z"/></symbol>
+    <symbol id="g-check" viewBox="0 0 24 24"><path d="M5 12.5L10 17.5L19 7"/></symbol>
+    <symbol id="g-star" viewBox="0 0 24 24"><path d="M12 3L14.35 8.76L20.56 9.22L15.8 13.24L17.29 19.28L12 16L6.71 19.28L8.2 13.24L3.44 9.22L9.65 8.76Z"/></symbol>
+    <symbol id="g-lock" viewBox="0 0 24 24"><path d="M5.5 11H18.5V20.5H5.5ZM8 11V8A4 4 0 0 1 16 8V11"/><path class="f" d="M11 15a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"/></symbol>
+    <symbol id="g-flag" viewBox="0 0 24 24"><path d="M2.5 20.5L9 10.5L12.5 15.5L15 12L21.5 20.5ZM9 10.5V3.5L14 5.2L9 7"/></symbol>
+    <symbol id="g-apple" viewBox="0 0 170 170"><path class="f" d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.6-7.85-11.7-14.44-6.3-10.15-11.22-21.84-14.75-35.07-3.53-13.23-5.3-25.13-5.3-35.7 0-15.02 3.69-27.18 11.07-36.49 7.38-9.3 16.74-14.07 28.08-14.3 4.8.12 10.1 1.34 15.91 3.66 5.8 2.32 9.68 3.54 11.64 3.66 1.74 0 5.66-1.32 11.78-3.95 6.11-2.64 11.45-3.83 16.03-3.58 11.97.97 21.7 5.72 29.17 14.26-10.37 6.3-15.44 15.22-15.22 26.77.22 8.97 3.58 16.54 10.09 22.7 6.5 6.16 14.18 9.75 23.03 10.77-2.17 6.42-4.56 12.52-7.17 18.3zM119.22 33.02c0-7.23 2.6-13.91 7.8-20.03 5.2-6.13 11.63-10.04 19.3-11.74.22 1.45.33 2.8.33 4.05 0 7.23-2.71 14.11-8.13 20.64-5.42 6.53-12 10.3-19.74 11.31-.11-1.34-.16-2.75-.16-4.23z"/></symbol>
+    <symbol id="g-play" viewBox="0 0 512 512"><path fill="#4285F4" d="M47.2 24.3C40.6 31.4 37 42.4 37 56.4v399.2c0 14 3.6 25 10.2 32.1l1.7 1.6 223.5-223.6v-5.4L48.9 22.7l-1.7 1.6z"/><path fill="#FBBC04" d="M346.7 323.2l-74.3-74.5v-5.4l74.3-74.5 1.7 1 88.2 50.1c25.2 14.3 25.2 37.8 0 52.1l-88.2 50.1-1.7 1.2z"/><path fill="#EA4335" d="M272.4 243.3l-223.5 223.6c8.3 8.8 22 9.8 37.5 1l260.3-147.9-74.3-76.7z"/><path fill="#34A853" d="M272.4 268.7l74.3-76.7L86.4 44.1c-15.5-8.8-29.2-7.8-37.5 1l223.5 223.6z"/></symbol>
+  </svg>
+
+  <header class="nav">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="الهمة، للبداية">
+        <img src="img/logo.webp" alt="" width="40" height="40">
+        <span><b>الهمة</b><small>الهمة حتى القمة</small></span>
+      </a>
+      <nav class="nav-links" aria-label="أقسام الموقع">
+        <a href="#for-you">وش فيه لي</a>
+        <a href="#day">يومك</a>
+        <a href="#stories">قصصهم</a>
+        <a href="#summit">الباقات</a>
+      </nav>
+      <a class="btn js-store" href="#summit" data-src="nav">شهرك المجاني</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- المشهد صفر: الرأس -->
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="stars" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g class="star-dots">
+          <circle cx="90" cy="60" r="1.4"/><circle cx="210" cy="140" r="1"/><circle cx="330" cy="40" r="1.6"/><circle cx="460" cy="110" r="1"/>
+          <circle cx="600" cy="30" r="1.3"/><circle cx="720" cy="150" r="1"/><circle cx="860" cy="70" r="1.5"/><circle cx="990" cy="120" r="1"/>
+          <circle cx="1110" cy="50" r="1.3"/><circle cx="1050" cy="230" r="1"/><circle cx="150" cy="260" r="1"/><circle cx="520" cy="220" r="1.1"/>
+        </g>
+        <path d="M176 92a30 30 0 1 1-26-38a24 24 0 0 0 26 38z" class="moon"/>
+      </svg>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill"><svg class="g" aria-hidden="true"><use href="#g-star"/></svg>أول شهر مجاني كامل · بدون بطاقة</span>
+          <h1 id="hero-title">يومك كله بمكان واحد،<br><span>وخطوة وحدة توصلك لقمتك</span></h1>
+          <p class="hero-sub">صلاتك ووردك، دراستك وشغلك وفلوسك، تمرينك وأهلك. والمدرب سعود يقترح خطوتك الجاية من بياناتك، والقرار لك.</p>
+          <div class="hero-cta">
+            <a class="btn js-store" href="#summit" data-src="hero"><svg class="g js-store-glyph" aria-hidden="true"><use href="#g-mark"/></svg><span>شهرك المجاني يبدأ هنا</span></a>
+            <a class="link-btn" href="#for-you">وش فيه لي؟</a>
+          </div>
+          <ul class="trust" aria-label="ليش الهمة مريح">
+            <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بدون إعلانات</li>
+            <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بدون تسجيل ولا إيميل</li>
+            <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بياناتك بجوالك</li>
+            <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بلهجتنا</li>
+          </ul>
+        </div>
+
+        <div class="saud">
+          <span class="saud-glow" aria-hidden="true"></span>
+          <picture>
+            <source srcset="../saud-hero.webp" type="image/webp">
+            <img src="../saud-hero.png" alt="المدرب سعود" width="1024" height="1024" fetchpriority="high" decoding="async">
+          </picture>
+          <div class="chat" role="region" aria-label="محادثة توضيحية مع المدرب سعود">
+            <div class="chat-head">
+              <svg class="g" aria-hidden="true"><use href="#g-sparkles"/></svg>
+              <div><b>المدرب سعود</b><small>أسئلة قصيرة، وجوابه بلهجتنا</small></div>
+            </div>
+            <div class="chat-log" id="chat-log" aria-live="polite">
+              <div class="msg saud-m">هلا والله، أنا سعود. وش ودك تعرف؟</div>
+            </div>
+            <div class="qs" role="group" aria-label="أسئلة لسعود">
+              <button type="button" class="q" data-q="0" aria-pressed="false">ليش أوقف بعد كم يوم؟</button>
+              <button type="button" class="q" data-q="1" aria-pressed="false">وش يميزك عن غيرك؟</button>
+              <button type="button" class="q" data-q="2" aria-pressed="false">وين تروح بياناتي؟</button>
+              <button type="button" class="q" data-q="3" aria-pressed="false">كم يكلف؟</button>
+            </div>
+            <p class="chat-note">محادثة توضيحية، والمدرب بالتطبيق يرد من بياناتك أنت.</p>
+          </div>
+        </div>
+      </div>
+
+      <svg class="ridge" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true">
+        <path class="m1" d="M0 170V96L140 54L260 92L420 20L560 84L700 40L860 100L1010 28L1160 90L1300 50L1440 86V170Z"/>
+        <path class="m2" d="M0 170V124L180 88L330 122L520 70L690 118L880 76L1060 124L1240 84L1440 116V170Z"/>
+        <path class="trail" d="M1380 160C1240 150 1180 128 1060 120C930 112 880 96 760 92C640 88 560 76 420 52"/>
+        <path class="flag" d="M418 52V22L440 30L418 38Z"/>
+        <path class="m3" d="M0 170V150C240 140 480 158 720 150C960 142 1200 158 1440 148V170Z"/>
+      </svg>
+    </section>
+
+    <svg class="sadu" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="sadu-p" width="28" height="18" patternUnits="userSpaceOnUse">
+          <path class="t1" d="M0 18L14 3L28 18Z"/><path class="t2" d="M8 18L14 11.5L20 18Z"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="18" fill="url(#sadu-p)"/>
+    </svg>
+
+    <div class="climb">
+      <!-- المحطة ١: اختر نفسك -->
+      <section class="scene" id="for-you" aria-labelledby="for-you-title">
+        <div class="wrap">
+          <p class="kicker"><span class="num">1</span>المحطة الأولى</p>
+          <h2 id="for-you-title">وش يهمك أنت؟</h2>
+          <p class="lead">كل واحد له قسمه بالهمة. اللي يشبهك تحت، ونوريك وش يسوي لك.</p>
+
+          <div class="chips" role="tablist" aria-label="اللي يشبهك">
+            <button type="button" class="chip" role="tab" id="t-study" aria-controls="p-study" aria-selected="true" data-k="study"><svg class="g" aria-hidden="true"><use href="#g-cap"/></svg>أدرس</button>
+            <button type="button" class="chip" role="tab" id="t-work" aria-controls="p-work" aria-selected="false" tabindex="-1" data-k="work"><svg class="g" aria-hidden="true"><use href="#g-wallet"/></svg>أشتغل</button>
+            <button type="button" class="chip" role="tab" id="t-sport" aria-controls="p-sport" aria-selected="false" tabindex="-1" data-k="sport"><svg class="g" aria-hidden="true"><use href="#g-dumbbell"/></svg>أتمرن</button>
+            <button type="button" class="chip" role="tab" id="t-parents" aria-controls="p-parents" aria-selected="false" tabindex="-1" data-k="parents"><svg class="g" aria-hidden="true"><use href="#g-heart"/></svg>أبر والديني</button>
+            <button type="button" class="chip" role="tab" id="t-kids" aria-controls="p-kids" aria-selected="false" tabindex="-1" data-k="kids"><svg class="g" aria-hidden="true"><use href="#g-gift"/></svg>عندي عيال</button>
+            <button type="button" class="chip" role="tab" id="t-faith" aria-controls="p-faith" aria-selected="false" tabindex="-1" data-k="faith"><svg class="g" aria-hidden="true"><use href="#g-rahl"/></svg>صلاتي ووردي</button>
+            <button type="button" class="chip" role="tab" id="t-calm" aria-controls="p-calm" aria-selected="false" tabindex="-1" data-k="calm"><svg class="g" aria-hidden="true"><use href="#g-palette"/></svg>أبي أرتاح</button>
+          </div>
+
+          <p class="coach-strip"><svg class="g" aria-hidden="true"><use href="#g-sparkles"/></svg>المدرب سعود يقرأ أداءك من بياناتك، ويقترح، وأنت تختار.</p>
+
+          <article class="panel" role="tabpanel" id="p-study" aria-labelledby="t-study">
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-cap"/></svg>قسم طالب همة</span>
+              <h3>صور ملخصك، ويصير بطاقات مراجعة</h3>
+              <p class="sub">جدولك وموادك وواجباتك ومعدلك ومذاكرتك، كلها بقسم واحد.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بطاقات من دفترك ترجع لك بمواعيد متباعدة لين تثبت</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>موزع المراجعة يجدول مذاكرتك قبل الاختبار</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>جدولك الأسبوعي، وتنبيه قبل لا توصل حد الحرمان</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>معدلك الفصلي والتراكمي بسلم 5 أو 4 أو مئوي</li>
+              </ul>
+              <p class="also">وكمان: مؤقت تركيز مربوط بالمادة، وألغاز وناستي لاستراحتك.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>4 أيام على اختبارك · 3 جلسات تكفيك</q></p>
+              <a class="btn js-store" href="#summit" data-src="study">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/student.webp" alt="قسم طالب همة من داخل التطبيق" width="540" height="1170" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-work" aria-labelledby="t-work" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-wallet"/></svg>دراهمي ومؤقت الإنجاز</span>
+              <h3>فلوسك تحت عينك، ووقتك بيدك</h3>
+              <p class="sub">رسالة البنك أو صورة الفاتورة تصير مصروف بلمسة.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>تلصق رسالة البنك أو تصور الفاتورة، والمبلغ يتسجل</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>سقف لكل فئة، وتنبيه مبكر قبل لا تتجاوزه</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>أقساطك وضماناتك بتذكير قبل موعدها</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>جلسات تركيز تعرف كم تلحق منها قبل الأذان</li>
+              </ul>
+              <p class="also">وكمان: سيارتي تذكرك بموعد الزيت والصيانة، ومناسبات الغالين بتقويم جوالك.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>صرفك تحت سقفه 3 أسابيع · ماشي صح</q></p>
+              <a class="btn js-store" href="#summit" data-src="work">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/work.webp" alt="قسم دراهمي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-sport" aria-labelledby="t-sport" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-dumbbell"/></svg>تماريني وصحتي ووجباتي</span>
+              <h3>جدول يدري إن نومك 5 ساعات</h3>
+              <p class="sub">تمرينك وأكلك على قد يومك، عشان توصل قمتك بدون إصابة.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>جاهزيتك اليوم: ترفع، أو تثبت، أو تخفف حسب نومك وطاقتك</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>وجبات مصممة على سعراتك وهدفك ومكوناتك</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>خريطة عضلاتك، وبديل آمن للمفصل المتعب</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>تمرين الصائم، ووقتك الأفضل قبل الفطر أو بعده</li>
+              </ul>
+              <p class="also">وكمان: ماسح الوجبات والباركود، والماء والنوم والخطوات بمكان واحد.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>نمت 5 ساعات · تثبيت الأوزان اليوم أذكى</q></p>
+              <a class="btn js-store" href="#summit" data-src="sport">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/sport.webp" alt="قسم تماريني من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-parents" aria-labelledby="t-parents" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-heart"/></svg>بر الوالدين</span>
+              <h3>جوال أبوك أو أمك يصير أسهل جوال بيدهم</h3>
+              <p class="sub">واجهة بخط كبير تتجهز على جوالهم، وأنت تطمن عليهم من جوالك.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>أرقامكم تصير أزرار اتصال كبيرة</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>مكملاتهم ومواعيدهم الطبية بتذكير</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>الأذكار ورسائل الصباح بصوتك أنت</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>فناجيل البر اليومية، و«طمنهم بسطر» على واتساب</li>
+              </ul>
+              <p class="also">وزر يرجعهم للتطبيق الكامل بتأكيد، عشان ما يطلعون منها بالغلط.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>3 أيام من آخر مكالمة لأمك · صوتك يفرق معها</q></p>
+              <a class="btn js-store" href="#summit" data-src="parents">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/parents.webp" alt="بطاقة بر الوالدين بقسم حياتي" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-kids" aria-labelledby="t-kids" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-gift"/></svg>عالم لينا</span>
+              <h3>مهام صغيرة تفرح عيالك، وقصة نوم بصوت لينا</h3>
+              <p class="sub">واجهة مستقلة للطفل، والخروج منها بسؤال للوالد بس.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>مهام على قد عمره: صليت، نمت بدري، رتبت غرفتي</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>قصة قبل النوم بصوت لينا</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>صك بطل الهمة الصغير لما يكمل</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>ثلاجتي تقترح أكل من الموجود، وقائمة مشتريات لوضع السوق</li>
+              </ul>
+              <p class="also">وكمان: مناسبات العائلة تنزل بتقويم جوالك قبل موعدها.</p>
+              <p class="saud-line"><small>مثال من لينا</small><q>3 نجوم من 4 اليوم · باقي وحدة يا بطل</q></p>
+              <a class="btn js-store" href="#summit" data-src="kids">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/kids.webp" alt="عالم لينا من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-faith" aria-labelledby="t-faith" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-rahl"/></svg>الرئيسية ونور حياتي</span>
+              <h3>يومك يمشي على صلاتك</h3>
+              <p class="sub">قوس يومك من الفجر للعشاء، ومهامك على أوقاتها.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>مواقيت أم القرى لمدينتك، والمؤقت يوقف وقت الأذان</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>وردك بالدقائق، والأجزاء مقروءة أو محفوظة</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>أذكار الصباح والمساء</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>ديوان الهمة: بيت شعر نبطي كل أسبوع من إنجازك</li>
+              </ul>
+              <p class="also">وكمان: عهد على نفسك تتابع أيامه، ورسالة لنفسك تنفتح بعد سنة.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>وردك 5 أيام متتالية · ماشي صح</q></p>
+              <a class="btn js-store" href="#summit" data-src="faith">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/faith.webp" alt="قسم نور حياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="p-calm" aria-labelledby="t-calm" hidden>
+            <div>
+              <span class="tag"><svg class="g" aria-hidden="true"><use href="#g-palette"/></svg>فضفضة وهواياتي ووناستي</span>
+              <h3>اللي بخاطرك تكتبه، وتحفظه أو ترميه</h3>
+              <p class="sub">مساحة تريحك، بدون عداد ولا ضغط.</p>
+              <ul class="benefits">
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>فضفضة تنحفظ بجوالك، أو ترميها وتختفي</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>واحة الامتنان: سطور شكر كل يوم</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>هواياتي بمؤقت وصوت هادئ، بدون ضغط سلاسل</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>وناستي: ألغاز وكلمات وقافلة تربح فيها ريالات همة</li>
+              </ul>
+              <p class="also">وكمان: خطة تخفف وقت الشاشات، ومكتبة تقرأ فيها كتبك.</p>
+              <p class="saud-line"><small>مثال من سعود</small><q>18 ساعة بهوايتك · قربت من العشرين</q></p>
+              <a class="btn js-store" href="#summit" data-src="calm">شهرك المجاني يبدأ هنا</a>
+            </div>
+            <div class="phone"><img src="img/calm.webp" alt="قسم هواياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- المحطة ٢: يومك بين صلواتك -->
+      <section class="scene day" id="day" aria-labelledby="day-title">
+        <div class="wrap">
+          <p class="kicker"><span class="num">2</span>المحطة الثانية</p>
+          <h2 id="day-title">يومك الحين، على مواقيت مدينتك</h2>
+          <p class="lead">هذا قوس يومك مثل ما يطلع لك بالرئيسية، محسوب على جهازك بدون إنترنت.</p>
+
+          <div class="day-card">
+            <div>
+              <div class="city">
+                <label for="city">مدينتك</label>
+                <select id="city"></select>
+              </div>
+              <svg class="arc" id="arc" viewBox="-44 -30 428 238" role="img" aria-labelledby="arc-label">
+                <title id="arc-label">قوس اليوم من الفجر للعشاء</title>
+                <path class="track" d="M310 170A140 140 0 0 0 30 170"/>
+                <path class="done" id="arc-done" d="M310 170A140 140 0 0 0 310 170"/>
+                <g id="arc-pts"></g>
+                <circle class="now" id="arc-now" cx="310" cy="170" r="9"/>
+                <text class="big" id="arc-big" x="170" y="140" text-anchor="middle"></text>
+                <text class="mid" id="arc-mid" x="170" y="166" text-anchor="middle"></text>
+              </svg>
+            </div>
+            <div>
+              <ul class="times" id="times"></ul>
+              <p class="saud-line" style="margin-top:16px"><small>سعود الحين</small><q id="day-saud">نحسب يومك…</q></p>
+              <p class="day-note">بتوقيت السعودية وبطريقة أم القرى. وبالتطبيق تنربط مهامك بهالأوقات وتتحرك معها.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المحطة ٣: ناس قبلك -->
+      <section class="scene" id="stories" aria-labelledby="stories-title">
+        <div class="wrap">
+          <p class="kicker"><span class="num">3</span>المحطة الثالثة</p>
+          <h2 id="stories-title">قصص نجاح من كل مدن المملكة</h2>
+          <p class="lead">ناس كانوا يوقفون بعد كم يوم، وبنوا عادات ثابتة مع الهمة.</p>
+          <div class="stories">
+            <figure class="story">
+              <blockquote>"اول مرة القى تطبيق يربط صلاتي ووردي بتماريني ومصاريفي بهدوء. كنت اتشتت بين عدة تطبيقات وكلها اتركها بعد اسبوع، لكن هنا استمريت اكثر من شهر بدون ضغط ولا تعب."</blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">ر</span><span><b>راكان بن عبدالله</b><small>الرياض — مهندس ومحب للرياضة</small></span></figcaption>
+            </figure>
+            <figure class="story">
+              <blockquote>"حاسبة المعدل الجامعي بالساعات المعتمدة ومؤقت بومودورو مع روتين المذاكرة خلت دراستي أسهل بكثير. والمدرب سعود AI يرد بأسلوب يعطيك دافع مو نصائح مكررة."</blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">ر</span><span><b>رها بنت محمد</b><small>جدة — طالبة جامعية</small></span></figcaption>
+            </figure>
+            <figure class="story">
+              <blockquote>"ميزة أن بياناتي ما تطلع من جوالي بدون إيميل وبدون إعلانات تزعجني هي اللي خلتني أرتاح له. تطبيق محترم وفخم ويستاهل كل جوال سعودي."</blockquote>
+              <figcaption><span class="avatar" aria-hidden="true">ع</span><span><b>عادل العنزي</b><small>الدمام — موظف قطاع خاص</small></span></figcaption>
+            </figure>
+          </div>
+
+          <div class="privacy">
+            <svg class="g" aria-hidden="true"><use href="#g-lock"/></svg>
+            <div>
+              <h3>بياناتك لك</h3>
+              <ul>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>تبدأ على طول، بدون تسجيل ولا إيميل</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>مذكراتك وفضفضتك ومصروفك تنحفظ بجوالك</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>سعود يوصله ملخص مختصر وقت تسأله بس</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>بدون إعلانات، ونسختك الاحتياطية ملف عندك</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- المحطة الأخيرة: القمة -->
+      <section class="scene summit" id="summit" aria-labelledby="summit-title">
+        <div class="wrap">
+          <svg class="peak" viewBox="0 0 520 170" aria-hidden="true">
+            <circle class="sunr" cx="260" cy="120" r="110"/>
+            <path class="p2" d="M0 170L120 96L190 128L300 60L400 120L520 84V170Z"/>
+            <path class="p1" d="M60 170L260 34L460 170Z"/>
+            <path class="trail" d="M392 170L318 134L362 116L292 88L318 70L262 38"/>
+            <path class="pole" d="M260 34V6"/>
+            <path class="fl" d="M260 6L288 14L260 22Z"/>
+          </svg>
+          <div class="center">
+            <p class="kicker"><span class="num"><svg class="g" aria-hidden="true" style="width:1em;height:1em"><use href="#g-flag"/></svg></span>القمة</p>
+            <h2 id="summit-title">قمتك تبدأ بشهر مجاني</h2>
+            <p class="lead">كل شي مفتوح لك شهر كامل، وبعدها تختار اللي يناسبك.</p>
+          </div>
+
+          <div class="plans">
+            <div class="plan free">
+              <h3>أول شهر</h3>
+              <div class="price"><b>مجاني</b></div>
+              <p class="hint">بدون بطاقة ولا التزام</p>
+              <ul>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>يبدأ من أول يوم تفتح فيه الهمة</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>كل الأقسام مفتوحة لك</li>
+              </ul>
+            </div>
+            <div class="plan">
+              <h3>باقة 3 أشهر</h3>
+              <div class="price"><b>11.21</b><span>ريال</span></div>
+              <p class="hint">أقل من ريال بالأسبوع</p>
+              <ul>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>كل الأقسام والميزات</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>كل التحديثات خلال باقتك</li>
+              </ul>
+            </div>
+            <div class="plan best">
+              <span class="badge">الأوفر</span>
+              <h3>مدى الحياة</h3>
+              <div class="price"><b>75</b><span>ريال</span></div>
+              <p class="hint">تدفعها مرة وحدة، بقيمة 20 شهر</p>
+              <ul>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>كل الأقسام والميزات للأبد</li>
+                <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>كل تحديث جاي معك</li>
+              </ul>
+            </div>
+          </div>
+          <p class="pay-note">الدفع عن طريق App Store أو Google Play، وإلغاء باقة الأشهر من إعدادات متجرك بأي وقت.</p>
+
+          <div class="stores" id="download">
+            <a class="store" href="https://apps.apple.com/app/id6788142781" target="_blank" rel="noopener" data-store="apple" data-src="summit" aria-label="الهمة على App Store">
+              <svg aria-hidden="true" style="fill:currentColor"><use href="#g-apple"/></svg>
+              <span><small>متوفر على</small><b>App Store</b></span>
+            </a>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.alhimmah.app" target="_blank" rel="noopener" data-store="google" data-src="summit" aria-label="الهمة على Google Play">
+              <svg aria-hidden="true"><use href="#g-play"/></svg>
+              <span><small>متوفر على</small><b>Google Play</b></span>
+            </a>
+          </div>
+          <div class="qr">
+            <figure><img src="img/qr-apple.svg" alt="رمز تحميل الهمة للآيفون" width="150" height="150" loading="lazy"><figcaption>للآيفون</figcaption></figure>
+            <figure><img src="img/qr-google.svg" alt="رمز تحميل الهمة للأندرويد" width="150" height="150" loading="lazy"><figcaption>للأندرويد</figcaption></figure>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <span class="slogan">الهمة حتى القمة</span>
+        <nav class="foot-links" aria-label="روابط مهمة">
+          <a href="../privacy.html">سياسة الخصوصية</a>
+          <a href="../support.html">الدعم الفني</a>
+          <a href="../data-deletion.html">حذف البيانات</a>
+          <a href="../accessibility.html">سهولة الوصول</a>
+        </nav>
+      </div>
+      <nav class="socials" aria-label="حساباتنا">
+        <a href="https://x.com/alhima26" target="_blank" rel="noopener">إكس</a>
+        <a href="https://instagram.com/alhima26" target="_blank" rel="noopener">إنستغرام</a>
+        <a href="https://tiktok.com/@alhima26" target="_blank" rel="noopener">تيك توك</a>
+        <a href="https://t.me/Saud_HD" target="_blank" rel="noopener">تيليجرام</a>
+      </nav>
+      <small>جميع الحقوق محفوظة © 2026 تطبيق الهمة — صنع بفخر في المملكة العربية السعودية</small>
+    </div>
+  </footer>
+
+  <aside class="dock" id="dock" aria-label="تحميل الهمة" hidden>
+    <img src="img/logo.webp" alt="" width="38" height="38">
+    <p><b>الهمة</b>بدون بطاقة ولا تسجيل</p>
+    <a class="btn js-store" href="#summit" data-src="dock">شهرك المجاني</a>
+  </aside>
+
+  <script src="adhan.min.js" defer></script>
+  <script>
+  (function () {
+    'use strict';
+    var APPLE = 'https://apps.apple.com/app/id6788142781';
+    var GOOGLE = 'https://play.google.com/store/apps/details?id=com.alhimmah.app';
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function track(name, params) {
+      try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+    }
+    function store(key, val) {
+      try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
+      return null;
+    }
+
+    /* ---- زر التحميل يروح لمتجر جهازك مباشرة ---- */
+    var ua = navigator.userAgent || '';
+    var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var isAndroid = /Android/.test(ua);
+    var platform = isIos ? 'apple' : (isAndroid ? 'google' : '');
+    document.querySelectorAll('.js-store').forEach(function (a) {
+      if (platform) {
+        a.href = platform === 'apple' ? APPLE : GOOGLE;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        var use = a.querySelector('.js-store-glyph use');
+        if (use) use.setAttribute('href', platform === 'apple' ? '#g-apple' : '#g-play');
+        if (use && platform === 'apple') use.parentNode.style.fill = 'currentColor';
+      }
+      a.addEventListener('click', function () {
+        track(platform ? 'download_click' : 'cta_click', { store: platform || 'none', source: a.getAttribute('data-src') });
+      });
+    });
+    document.querySelectorAll('.store').forEach(function (a) {
+      a.addEventListener('click', function () { track('download_click', { store: a.getAttribute('data-store'), source: 'summit' }); });
+    });
+
+    /* ---- شريط الإبهام يطلع بعد الرأس ---- */
+    var dock = document.getElementById('dock');
+    var hero = document.querySelector('.hero');
+    var summit = document.getElementById('summit');
+    if (dock && 'IntersectionObserver' in window) {
+      var heroVisible = true, summitVisible = false;
+      var sync = function () { dock.hidden = heroVisible || summitVisible; };
+      new IntersectionObserver(function (es) { heroVisible = es[0].isIntersecting; sync(); }).observe(hero);
+      new IntersectionObserver(function (es) { summitVisible = es[0].isIntersecting; sync(); }, { threshold: 0.15 }).observe(summit);
+    }
+
+    /* ---- محادثة سعود: سؤال تلمسه، وجواب يتكتب ---- */
+    var ANSWERS = [
+      'لأن البداية تكون بعشر عادات مرة وحدة. بالهمة نبدأ بخطوة وحدة صغيرة، ولما تثبت الخطوة نزيد عليها.',
+      'أقرأ يومك من بياناتك بجوالك: نومك وصلاتك وصرفك. وأقترح خطوة تناسب يومك أنت، والقرار لك.',
+      'تنحفظ بجوالك. ووقت السؤال يوصلني ملخص مختصر بس، والمذكرات والفضفضة ما تطلع من جوالك أبداً.',
+      'أول شهر مجاني كامل وبدون بطاقة. بعده 11.21 ريال لثلاث شهور، أو 75 ريال مرة وحدة للأبد.'
+    ];
+    var log = document.getElementById('chat-log');
+    var busy = false;
+    function bubble(cls, text) {
+      var d = document.createElement('div');
+      d.className = cls;
+      if (text) d.textContent = text;
+      log.appendChild(d);
+      while (log.children.length > 3) log.removeChild(log.firstChild);
+      return d;
+    }
+    document.querySelectorAll('.q').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (busy) return;
+        var i = +b.getAttribute('data-q');
+        document.querySelectorAll('.q').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        bubble('msg me', b.textContent);
+        track('saud_question', { q: i });
+        if (still) { bubble('msg saud-m', ANSWERS[i]); return; }
+        busy = true;
+        var t = bubble('typing');
+        for (var k = 0; k < 3; k++) t.appendChild(document.createElement('i'));
+        setTimeout(function () { t.remove(); bubble('msg saud-m', ANSWERS[i]); busy = false; }, 900);
+      });
+    });
+
+    /* ---- اختر نفسك: تبويبات برابط لكل شخصية ---- */
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+    function select(key, focus) {
+      var found = false;
+      tabs.forEach(function (t) {
+        var on = t.getAttribute('data-k') === key;
+        if (on) found = true;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+        if (on && focus) t.focus();
+        if (on) t.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      });
+      return found;
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () {
+        var k = t.getAttribute('data-k');
+        select(k);
+        history.replaceState(null, '', '#' + k);
+        track('persona_select', { persona: k });
+      });
+      t.addEventListener('keydown', function (e) {
+        var step = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0;
+        if (e.key === 'Home') step = -i; else if (e.key === 'End') step = tabs.length - 1 - i;
+        if (!step) return;
+        e.preventDefault();
+        var n = tabs[(i + step + tabs.length) % tabs.length];
+        select(n.getAttribute('data-k'), true);
+      });
+    });
+    function fromHash() {
+      var k = (location.hash || '').slice(1);
+      if (k && select(k)) document.getElementById('for-you').scrollIntoView();
+    }
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
+
+    /* ---- يومك بين صلواتك: مواقيت أم القرى على جهاز الزائر ---- */
+    var CITIES = [
+      ['مكة المكرمة', 21.4225, 39.8262], ['المدينة المنورة', 24.5247, 39.5692], ['الرياض', 24.7136, 46.6753],
+      ['جدة', 21.4858, 39.1925], ['الدمام', 26.4207, 50.0888], ['الخبر', 26.2172, 50.1971], ['الطائف', 21.2703, 40.4158],
+      ['تبوك', 28.3838, 36.555], ['أبها', 18.2465, 42.5117], ['خميس مشيط', 18.3, 42.7333], ['نجران', 17.4924, 44.1277],
+      ['جازان', 16.8892, 42.5611], ['حائل', 27.5219, 41.6907], ['بريدة', 26.326, 43.975], ['عنيزة', 26.0888, 43.9935],
+      ['الأحساء', 25.3647, 49.5864], ['ينبع', 24.0895, 38.0618], ['الجبيل', 27.0046, 49.6607], ['عرعر', 30.9753, 41.0381],
+      ['سكاكا', 29.9697, 40.2064], ['القطيف', 26.5196, 49.9997]
+    ];
+    var NAMES = { fajr: 'الفجر', sunrise: 'الشروق', dhuhr: 'الظهر', asr: 'العصر', maghrib: 'المغرب', isha: 'العشاء' };
+    var ORDER = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
+    var TZ = 'Asia/Riyadh';
+    var sel = document.getElementById('city');
+    var saved = store('alh_v2_city');
+    CITIES.forEach(function (c, i) {
+      var o = document.createElement('option');
+      o.value = String(i);
+      o.textContent = c[0];
+      sel.appendChild(o);
+    });
+    var cityIdx = 2;
+    if (saved !== null && CITIES[+saved]) cityIdx = +saved;
+    sel.value = String(cityIdx);
+
+    function fmt(d) {
+      return d.toLocaleTimeString('ar-SA-u-nu-latn', { timeZone: TZ, hour: 'numeric', minute: '2-digit' });
+    }
+    function riyadhDate(offsetDays) {
+      var p = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()).split('-');
+      return new Date(+p[0], +p[1] - 1, +p[2] + (offsetDays || 0));
+    }
+    /* العدد العربي: ١ مفرد، ٢ مثنى، ٣–١٠ جمع، ١١+ مفرد */
+    function count(n, one, two, few) {
+      if (n === 1) return one;
+      if (n === 2) return two;
+      if (n >= 3 && n <= 10) return n + ' ' + few;
+      return n + ' ' + one;
+    }
+    function dur(mins) {
+      var h = Math.floor(mins / 60), m = mins % 60;
+      var hs = h ? count(h, 'ساعة', 'ساعتين', 'ساعات') : '';
+      var ms = m ? count(m, 'دقيقة', 'دقيقتين', 'دقايق') : '';
+      return hs && ms ? hs + ' و' + ms : (hs || ms || 'دقيقة');
+    }
+    function point(t) {
+      var a = Math.PI * Math.max(0, Math.min(1, t));
+      return [170 + 140 * Math.cos(a), 170 - 140 * Math.sin(a)];
+    }
+    var svgNS = 'http://www.w3.org/2000/svg';
+
+    function render() {
+      if (!window.adhan) return;
+      var A = window.adhan;
+      var c = CITIES[cityIdx];
+      var coords = new A.Coordinates(c[1], c[2]);
+      var params = A.CalculationMethod.UmmAlQura();
+      var today = new A.PrayerTimes(coords, riyadhDate(0), params);
+      var tomorrow = new A.PrayerTimes(coords, riyadhDate(1), params);
+      var now = new Date();
+      var start = today.fajr.getTime(), end = today.isha.getTime(), span = end - start;
+
+      /* الخانات الست */
+      var nextKey = null;
+      for (var i = 0; i < ORDER.length; i++) { if (today[ORDER[i]] > now) { nextKey = ORDER[i]; break; } }
+      var list = document.getElementById('times');
+      list.replaceChildren();
+      ORDER.forEach(function (k) {
+        var li = document.createElement('li');
+        if (k === nextKey) li.className = 'next';
+        var b = document.createElement('b'); b.textContent = NAMES[k];
+        var s = document.createElement('span'); s.textContent = fmt(today[k]);
+        li.appendChild(b); li.appendChild(s); list.appendChild(li);
+      });
+
+      /* القوس */
+      var pts = document.getElementById('arc-pts');
+      pts.replaceChildren();
+      ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'].forEach(function (k) {
+        var p = point((today[k].getTime() - start) / span);
+        var dot = document.createElementNS(svgNS, 'circle');
+        dot.setAttribute('class', 'pt'); dot.setAttribute('cx', p[0]); dot.setAttribute('cy', p[1]); dot.setAttribute('r', 5);
+        var lb = document.createElementNS(svgNS, 'text');
+        var edge = k === 'fajr' || k === 'isha';
+        var lx = edge ? p[0] : 170 + (p[0] - 170) * 1.18, ly = edge ? p[1] + 30 : 170 - (170 - p[1]) * 1.18 + 2;
+        lb.setAttribute('x', lx.toFixed(1)); lb.setAttribute('y', ly.toFixed(1)); lb.setAttribute('text-anchor', 'middle');
+        lb.textContent = NAMES[k];
+        pts.appendChild(dot); pts.appendChild(lb);
+      });
+      var inDay = now.getTime() >= start && now.getTime() <= end;
+      var t = inDay ? (now.getTime() - start) / span : (now.getTime() > end ? 1 : 0);
+      var np = point(t);
+      document.getElementById('arc-done').setAttribute('d', 'M310 170A140 140 0 0 0 ' + np[0].toFixed(1) + ' ' + np[1].toFixed(1));
+      var nowDot = document.getElementById('arc-now');
+      nowDot.setAttribute('cx', np[0].toFixed(1)); nowDot.setAttribute('cy', np[1].toFixed(1));
+      nowDot.style.display = inDay ? '' : 'none';
+
+      /* الرقم البارز وسطر سعود */
+      var target = nextKey ? today[nextKey] : tomorrow.fajr;
+      var targetKey = nextKey || 'fajr';
+      var mins = Math.max(1, Math.round((target.getTime() - now.getTime()) / 60000));
+      document.getElementById('arc-big').textContent = NAMES[targetKey] + ' ' + fmt(target);
+      document.getElementById('arc-mid').textContent = 'باقي ' + dur(mins);
+      var line;
+      if (!nextKey || targetKey === 'fajr') line = 'باقي ' + dur(mins) + ' على الفجر · نومتك تبني بكرة';
+      else if (targetKey === 'sunrise') line = 'باقي ' + dur(mins) + ' على الشروق · وقت وردك الصباحي';
+      else {
+        var sessions = Math.floor(mins / 30);
+        line = sessions >= 1
+          ? 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + ' · ' + count(sessions, 'جلسة تركيز', 'جلستين تركيز', 'جلسات تركيز') + ' تكفيك'
+          : 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + ' · وقت خفيف لوردك';
+      }
+      document.getElementById('day-saud').textContent = line;
+    }
+    sel.addEventListener('change', function () {
+      cityIdx = +sel.value;
+      store('alh_v2_city', String(cityIdx));
+      track('city_select', { city: CITIES[cityIdx][0] });
+      render();
+    });
+    window.addEventListener('load', function () { render(); setInterval(render, 30000); });
+  })();
+  </script>
+</body>
+</html>
