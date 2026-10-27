@@ -435,11 +435,10 @@
     .stories { display: grid; gap: 16px; }
     @media (min-width: 760px) { .stories { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     .story { margin: 0; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); display: flex; flex-direction: column; gap: 16px; }
-    .story blockquote { margin: 0; font-size: 1.02rem; line-height: 1.85; flex: 1; }
-    .story figcaption { display: flex; align-items: center; gap: 10px; }
-    .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--terra-soft); color: var(--terra); font-weight: 900; }
-    .story figcaption b { display: block; line-height: 1.3; }
-    .story figcaption small { color: var(--ink-2); }
+    /* مواقف تشبه يومك: أمثلة بصيغة المخاطب، بدون أسماء ولا مدن */
+    .story-icon { width: 30px; height: 30px; color: var(--gold-ink); }
+    .story h3 { margin: -6px 0 0; font-size: 1.15rem; font-weight: 900; line-height: 1.5; }
+    .story p { margin: 0; font-size: 1.02rem; line-height: 1.85; }
     .privacy {
       margin-top: 22px; display: grid; gap: 18px; align-items: center;
       padding: clamp(20px, 4vw, 34px); border-radius: var(--r-lg);
@@ -617,7 +616,7 @@
       <nav class="nav-links" aria-label="أقسام الموقع">
         <a href="#for-you">وش فيه لي</a>
         <a href="#day">يومك</a>
-        <a href="#stories">قصصهم</a>
+        <a href="#stories">مواقف</a>
         <a href="#summit">الباقات</a>
         <a href="#share">شاركها</a>
       </nav>
@@ -889,21 +888,24 @@
       <section class="scene sky-3" id="stories" aria-labelledby="stories-title">
         <div class="wrap">
           <p class="kicker"><span class="num">3</span>المحطة الثالثة</p>
-          <h2 id="stories-title">قصص نجاح من كل مدن المملكة</h2>
-          <p class="lead">ناس كانوا يوقفون بعد كم يوم، وبنوا عادات ثابتة مع الهمة.</p>
+          <h2 id="stories-title">مواقف تشبه يومك</h2>
+          <p class="lead">يمكن تلقى نفسك بوحدة منها.</p>
           <div class="stories">
-            <figure class="story">
-              <blockquote>"اول مرة القى تطبيق يربط صلاتي ووردي بتماريني ومصاريفي بهدوء. كنت اتشتت بين عدة تطبيقات وكلها اتركها بعد اسبوع، لكن هنا استمريت اكثر من شهر بدون ضغط ولا تعب."</blockquote>
-              <figcaption><span class="avatar" aria-hidden="true">ر</span><span><b>راكان بن عبدالله</b><small>الرياض — مهندس ومحب للرياضة</small></span></figcaption>
-            </figure>
-            <figure class="story">
-              <blockquote>"حاسبة المعدل الجامعي بالساعات المعتمدة ومؤقت بومودورو مع روتين المذاكرة خلت دراستي أسهل بكثير. والمدرب سعود AI يرد بأسلوب يعطيك دافع مو نصائح مكررة."</blockquote>
-              <figcaption><span class="avatar" aria-hidden="true">ر</span><span><b>رها بنت محمد</b><small>جدة — طالبة جامعية</small></span></figcaption>
-            </figure>
-            <figure class="story">
-              <blockquote>"ميزة أن بياناتي ما تطلع من جوالي بدون إيميل وبدون إعلانات تزعجني هي اللي خلتني أرتاح له. تطبيق محترم وفخم ويستاهل كل جوال سعودي."</blockquote>
-              <figcaption><span class="avatar" aria-hidden="true">ع</span><span><b>عادل العنزي</b><small>الدمام — موظف قطاع خاص</small></span></figcaption>
-            </figure>
+            <article class="story">
+              <svg class="g story-icon" aria-hidden="true"><use href="#g-flag"/></svg>
+              <h3>تبدأ بحماس وتوقف بعد أسبوع</h3>
+              <p>تطبيق للصلاة، وثاني للجيم، وثالث للمصاريف، وبعد أسبوع تنساها كلها. بالهمة كلها بمكان واحد، حتى وجباتك تجيك على قد سعراتك. وكل يوم المدرب سعود يعطيك خطوة وحدة بس.</p>
+            </article>
+            <article class="story">
+              <svg class="g story-icon" aria-hidden="true"><use href="#g-cap"/></svg>
+              <h3>اختبارك قرب وما تدري من وين تبدأ</h3>
+              <p>موزع المراجعة يقسم المنهج على الأيام اللي باقية، فتعرف من أول يوم وش تذاكر. وملخصك تلصقه ويصير بطاقات ترجع لك لين تحفظها.</p>
+            </article>
+            <article class="story">
+              <svg class="g story-icon" aria-hidden="true"><use href="#g-heart"/></svg>
+              <h3>تنشغل وتمر الأيام وأنت ما كلمت أمك</h3>
+              <p>سعود يذكرك إن صار لك 3 أيام ما كلمتها. وتقدر تجهز جوالها بالهمة بخط كبير، وأرقامكم أزرار تتصل فيها على طول.</p>
+            </article>
           </div>
 
           <div class="privacy">
