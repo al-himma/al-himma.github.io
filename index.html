@@ -116,7 +116,18 @@
       --night-glass: rgba(12, 23, 23, 0.94);
       --night-card: rgba(20, 41, 43, 0.94);
       --glow: rgba(224, 176, 79, 0.30);
-      --btn-shadow: 0 10px 24px rgba(176, 74, 48, 0.28);
+      --btn-shadow: 0 10px 24px rgba(192, 138, 42, 0.30);
+      /* الزر ذهب الشمس، وبالليل أفتح */
+      --cta: var(--gold);
+      --cta-hover: #a9781f;
+      --on-cta: var(--night);
+      /* سماء الدرب: درجات الليل للمحطات، وأول الضو قبل القمة */
+      --night-4: #24474a;
+      --night-terra: #e8896b;
+      --night-terra-soft: #3a2a24;
+      --night-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      --gold-deep: #85590f;
+      --dawn: #ecdcc2;
       --phone-shadow: 0 24px 50px rgba(12, 23, 23, 0.30);
       --qr-bg: #ffffff;
       --shadow: 0 18px 40px rgba(35, 26, 20, 0.10);
@@ -141,6 +152,8 @@
         --terra-soft: #3a211a;
         --on-ink-accent: #85590f;
         --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        --cta-hover: #e6b552;
+        --dawn: #1c1814;
       }
     }
 
@@ -169,11 +182,14 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
       min-height: 52px; padding: 12px 26px; border-radius: 999px; border: 0;
       font-size: 1.05rem; font-weight: 800; text-decoration: none; cursor: pointer;
-      background: var(--terra); color: var(--on-terra);
+      background: var(--cta); color: var(--on-cta);
       box-shadow: var(--btn-shadow);
       transition: background-color .2s;
     }
-    .btn:hover { background: var(--terra-hover); }
+    .btn:hover { background: var(--cta-hover); }
+    .hero, .nav, .dock, footer, .sky-1, .sky-2, .share-card {
+      --cta: var(--night-gold); --cta-hover: #ecc06a; --btn-shadow: 0 10px 24px rgba(224, 176, 79, 0.22);
+    }
     .btn .g { width: 1.3em; height: 1.3em; }
     .link-btn {
       display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 8px 6px;
@@ -204,7 +220,7 @@
       position: relative; isolation: isolate; overflow: hidden;
       background: radial-gradient(120% 70% at 30% 0%, var(--night-3) 0%, var(--night-2) 45%, var(--night) 100%);
       color: var(--night-ink);
-      padding-block: clamp(36px, 7vw, 72px) 0;
+      padding-block: clamp(64px, 7vw, 72px) 0;
     }
     .stars { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
     .stars .star-dots { fill: var(--night-ink); opacity: .55; } .stars .moon { fill: var(--night-gold); }
@@ -226,17 +242,19 @@
     .hero.sky-js .stars .star-dots { opacity: .85; }
     .hero-grid { display: grid; gap: 28px; align-items: center; }
     @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; } }
-    .pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 7px 16px; border-radius: 999px;
-      border: 1px solid var(--night-line); color: var(--night-gold);
-      font-weight: 700; font-size: 0.95rem;
-    }
     .hero h1 {
-      margin: 18px 0 14px; font-weight: 900; line-height: 1.3;
+      margin: 0 0 14px; font-weight: 900; line-height: 1.3;
       font-size: clamp(1.9rem, 4.6vw, 3.1rem); text-wrap: balance;
     }
-    .hero h1 span { color: var(--night-gold); }
+    /* العنوان لون واحد، ودرب ذهبي ينرسم تحت «لقمتك» وينتهي بعلم */
+    .peak-word { position: relative; display: inline-block; white-space: nowrap; }
+    .word-trail { position: absolute; left: -.08em; right: -.08em; bottom: -.46em; width: calc(100% + .16em); height: auto; overflow: visible; pointer-events: none; }
+    .word-trail .wt { fill: none; stroke: var(--night-gold); stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 0 7; }
+    .word-trail .wf { fill: var(--night-gold); stroke: var(--night-gold); stroke-width: 1.6; stroke-linejoin: round; }
+    .dt .word-trail { clip-path: inset(-2em 0 -1em 100%); transition: clip-path 1.2s cubic-bezier(.16, 1, .3, 1) .5s; }
+    .dt-go .word-trail { clip-path: inset(-2em 0 -1em 0); }
+    .cta-main { display: grid; justify-items: center; gap: 8px; }
+    .cta-note { margin: 0; color: var(--night-ink-2); font-size: 0.95rem; }
     .hero-sub { margin: 0 0 26px; font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--night-ink-2); max-width: 36em; }
     .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
     .trust { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; padding: 0; list-style: none; color: var(--night-ink-2); font-size: 0.95rem; }
@@ -285,7 +303,7 @@
 
     /* الجبل والدرب الذهبي أسفل الرأس */
     .ridge { display: block; width: 100%; height: auto; margin-top: 28px; }
-    .ridge .m1 { fill: var(--night-3); } .ridge .m2 { fill: var(--night-2); } .ridge .m3 { fill: var(--sand); }
+    .ridge .m1 { fill: var(--night-3); } .ridge .m2 { fill: var(--night-2); } .ridge .m3 { fill: var(--night-2); }
     .ridge .trail { fill: none; stroke: var(--night-gold); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
     .ridge .flag { fill: var(--night-gold); }
     .ridge .trail-lit { display: none; fill: none; stroke: var(--night-gold); stroke-width: 3; stroke-linecap: round; }
@@ -293,7 +311,8 @@
     .dt-go .ridge .trail-lit { stroke-dashoffset: 0; }
 
     /* شريط السدو بين المشاهد */
-    .sadu { display: block; width: 100%; height: 18px; }
+    .sadu { display: block; width: 100%; height: 18px; background: var(--night-2); }
+    .sadu.dusk { background: var(--night-3); }
     .sadu .t1 { fill: var(--gold); } .sadu .t2 { fill: var(--terra); }
 
     /* ===== الدرب: المحطات ===== */
@@ -323,6 +342,20 @@
     }
     .scene h2 { margin: 0 0 10px; font-size: clamp(1.75rem, 4.4vw, 2.7rem); line-height: 1.3; font-weight: 900; }
     .lead { margin: 0 0 28px; color: var(--ink-2); font-size: 1.1rem; max-width: 40em; }
+
+    /* سماء الدرب: كل محطة أفتح من اللي قبلها، من آخر الليل لين الفجر عند القمة */
+    .sky-1, .sky-2 {
+      --sand: var(--night-2); --sand-2: var(--night); --card: var(--night-3);
+      --ink: var(--night-ink); --ink-2: var(--night-ink-2); --line: var(--night-line);
+      --gold: var(--night-gold); --gold-ink: var(--night-gold); --on-ink-accent: var(--gold-deep);
+      --terra: var(--night-terra); --terra-soft: var(--night-terra-soft); --shadow: var(--night-shadow);
+      background: var(--night-2); color: var(--ink);
+    }
+    .sky-2 {
+      --sand: var(--night-3); --sand-2: var(--night-3); --card: var(--night-4);
+      background: linear-gradient(180deg, var(--night-2) 0, var(--night-3) 240px);
+    }
+    .sky-3 { background: var(--dawn); }
 
     /* ===== المشهد ١: اختر نفسك ===== */
     .chips { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
@@ -370,7 +403,6 @@
     .saud-line q { quotes: none; font-weight: 800; font-size: 1.05rem; }
 
     /* ===== المشهد ٢: يومك بين صلواتك ===== */
-    .day { background: var(--sand-2); }
     .day-card {
       display: grid; gap: 22px; align-items: center;
       background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
@@ -422,7 +454,7 @@
     .privacy li .g { color: var(--night-gold); margin-top: .25em; }
 
     /* ===== المشهد ٤: القمة ===== */
-    .summit { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%); }
+    .summit { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--dawn) 0%, var(--sand) 45%, var(--sand-2) 100%); }
     .peak { display: block; width: min(100%, 520px); height: auto; margin: 0 auto 8px; }
     .peak .sunr { fill: var(--gold); opacity: .22; } .peak .p1 { fill: var(--ink); opacity: .9; } .peak .p2 { fill: var(--ink-2); opacity: .55; }
     .peak .fl { fill: var(--terra); } .peak .pole { stroke: var(--ink); stroke-width: 2; }
@@ -550,7 +582,7 @@
       .stars .tw { animation: none; }
       .stars .meteor { display: none; }
       .saud-fig.wave .saud-hand { animation: none; }
-      .dt .ridge .trail-lit, .peak .raise, .peak .sunr, .dawn .seal { transition: none; }
+      .dt .ridge .trail-lit, .peak .raise, .peak .sunr, .dawn .seal, .dt .word-trail { transition: none; }
     }
   </style>
 </head>
@@ -610,11 +642,13 @@
       </svg>
       <div class="wrap hero-grid">
         <div>
-          <span class="pill"><svg class="g" aria-hidden="true"><use href="#g-star"/></svg>أول شهر مجاني كامل · بدون بطاقة</span>
-          <h1 id="hero-title">يومك كله بمكان واحد،<br><span>وخطوة وحدة توصلك لقمتك</span></h1>
+          <h1 id="hero-title">يومك كله بمكان واحد،<br>وخطوة وحدة توصلك <span class="peak-word">لقمتك<svg class="word-trail" viewBox="0 0 100 18" aria-hidden="true" focusable="false"><path class="wt" d="M98 7C80 14 62 3 44 9S10 13 -6 6"/><path class="wf" d="M-6 6V-9M-6 -9L-15 -5.5L-6 -2Z"/></svg></span></h1>
           <p class="hero-sub">صلاتك ووردك، دراستك وشغلك وفلوسك، تمرينك وأهلك. والمدرب سعود يقترح خطوتك الجاية من بياناتك، والقرار لك.</p>
           <div class="hero-cta">
+            <div class="cta-main">
             <a class="btn js-store" href="#summit" data-src="hero"><svg class="g js-store-glyph" aria-hidden="true"><use href="#g-mark"/></svg><span>شهرك المجاني يبدأ هنا</span></a>
+              <p class="cta-note">أول شهر مجاني كامل، وبدون بطاقة</p>
+            </div>
             <a class="link-btn" href="#for-you">وش فيه لي؟</a>
           </div>
           <ul class="trust" aria-label="ليش الهمة مريح">
@@ -672,7 +706,7 @@
 
     <div class="climb">
       <!-- المحطة ١: اختر نفسك -->
-      <section class="scene" id="for-you" aria-labelledby="for-you-title">
+      <section class="scene sky-1" id="for-you" aria-labelledby="for-you-title">
         <div class="wrap">
           <p class="kicker"><span class="num">1</span>المحطة الأولى</p>
           <h2 id="for-you-title">وش يهمك أنت؟</h2>
@@ -702,7 +736,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>معدلك الفصلي والتراكمي بسلم 5 أو 4 أو مئوي</li>
               </ul>
               <p class="also">وكمان: مؤقت تركيز مربوط بالمادة، وألغاز وناستي لاستراحتك.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>4 أيام على اختبارك · 3 جلسات تكفيك</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>باقي 4 أيام على اختبارك، وتكفيك 3 جلسات</q></p>
               <a class="btn js-store" href="#summit" data-src="study">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/student.webp" alt="قسم طالب همة من داخل التطبيق" width="540" height="1170" decoding="async"></div>
@@ -720,7 +754,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>جلسات تركيز تعرف كم تلحق منها قبل الأذان</li>
               </ul>
               <p class="also">وكمان: سيارتي تذكرك بموعد الزيت والصيانة، ومناسبات الغالين بتقويم جوالك.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>صرفك تحت سقفه 3 أسابيع · ماشي صح</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>صرفك تحت سقفه 3 أسابيع، وماشي صح</q></p>
               <a class="btn js-store" href="#summit" data-src="work">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/work.webp" alt="قسم دراهمي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -738,7 +772,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>تمرين الصائم، ووقتك الأفضل قبل الفطر أو بعده</li>
               </ul>
               <p class="also">وكمان: ماسح الوجبات والباركود، والماء والنوم والخطوات بمكان واحد.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>نمت 5 ساعات · تثبيت الأوزان اليوم أذكى</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>نمت 5 ساعات، فتثبيت الأوزان اليوم أذكى</q></p>
               <a class="btn js-store" href="#summit" data-src="sport">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/sport.webp" alt="قسم تماريني من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -756,7 +790,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>فناجيل البر اليومية، و«طمنهم بسطر» على واتساب</li>
               </ul>
               <p class="also">وزر يرجعهم للتطبيق الكامل بتأكيد، عشان ما يطلعون منها بالغلط.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>3 أيام من آخر مكالمة لأمك · صوتك يفرق معها</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>مرت 3 أيام من آخر مكالمة لأمك، وصوتك يفرق معها</q></p>
               <a class="btn js-store" href="#summit" data-src="parents">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/parents.webp" alt="بطاقة بر الوالدين بقسم حياتي" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -774,7 +808,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>ثلاجتي تقترح أكل من الموجود، وقائمة مشتريات لوضع السوق</li>
               </ul>
               <p class="also">وكمان: مناسبات العائلة تنزل بتقويم جوالك قبل موعدها.</p>
-              <p class="saud-line"><small>مثال من لينا</small><q>3 نجوم من 4 اليوم · باقي وحدة يا بطل</q></p>
+              <p class="saud-line"><small>مثال من لينا</small><q>جبت 3 نجوم من 4 اليوم، باقي وحدة يا بطل</q></p>
               <a class="btn js-store" href="#summit" data-src="kids">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/kids.webp" alt="عالم لينا من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -792,7 +826,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>ديوان الهمة: بيت شعر نبطي كل أسبوع من إنجازك</li>
               </ul>
               <p class="also">وكمان: عهد على نفسك تتابع أيامه، ورسالة لنفسك تنفتح بعد سنة.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>وردك 5 أيام متتالية · ماشي صح</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>وردك 5 أيام ورا بعض، وماشي صح</q></p>
               <a class="btn js-store" href="#summit" data-src="faith">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/faith.webp" alt="قسم نور حياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -810,7 +844,7 @@
                 <li><svg class="g" aria-hidden="true"><use href="#g-check"/></svg>وناستي: ألغاز وكلمات وقافلة تربح فيها ريالات همة</li>
               </ul>
               <p class="also">وكمان: خطة تخفف وقت الشاشات، ومكتبة تقرأ فيها كتبك.</p>
-              <p class="saud-line"><small>مثال من سعود</small><q>18 ساعة بهوايتك · قربت من العشرين</q></p>
+              <p class="saud-line"><small>مثال من سعود</small><q>18 ساعة بهوايتك، وقربت من العشرين</q></p>
               <a class="btn js-store" href="#summit" data-src="calm">شهرك المجاني يبدأ هنا</a>
             </div>
             <div class="phone"><img src="v2/img/calm.webp" alt="قسم هواياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
@@ -819,7 +853,7 @@
       </section>
 
       <!-- المحطة ٢: يومك بين صلواتك -->
-      <section class="scene day" id="day" aria-labelledby="day-title">
+      <section class="scene day sky-2" id="day" aria-labelledby="day-title">
         <div class="wrap">
           <p class="kicker"><span class="num">2</span>المحطة الثانية</p>
           <h2 id="day-title">يومك الحين، على مواقيت مدينتك</h2>
@@ -851,7 +885,8 @@
       </section>
 
       <!-- المحطة ٣: ناس قبلك -->
-      <section class="scene" id="stories" aria-labelledby="stories-title">
+      <svg class="sadu dusk" aria-hidden="true" focusable="false"><rect width="100%" height="18" fill="url(#sadu-p)"/></svg>
+      <section class="scene sky-3" id="stories" aria-labelledby="stories-title">
         <div class="wrap">
           <p class="kicker"><span class="num">3</span>المحطة الثالثة</p>
           <h2 id="stories-title">قصص نجاح من كل مدن المملكة</h2>
@@ -1347,13 +1382,13 @@
       document.getElementById('arc-big').textContent = NAMES[targetKey] + ' ' + fmt(target);
       document.getElementById('arc-mid').textContent = 'باقي ' + dur(mins);
       var line;
-      if (!nextKey || targetKey === 'fajr') line = 'باقي ' + dur(mins) + ' على الفجر · نومتك تبني بكرة';
-      else if (targetKey === 'sunrise') line = 'باقي ' + dur(mins) + ' على الشروق · وقت وردك الصباحي';
+      if (!nextKey || targetKey === 'fajr') line = 'باقي ' + dur(mins) + ' على الفجر، ونومتك تبني بكرة';
+      else if (targetKey === 'sunrise') line = 'باقي ' + dur(mins) + ' على الشروق، وهذا وقت وردك الصباحي';
       else {
         var sessions = Math.floor(mins / 30);
         line = sessions >= 1
-          ? 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + ' · ' + count(sessions, 'جلسة تركيز', 'جلستين تركيز', 'جلسات تركيز') + ' تكفيك'
-          : 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + ' · وقت خفيف لوردك';
+          ? 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + '، وتكفيك ' + count(sessions, 'جلسة تركيز', 'جلستين تركيز', 'جلسات تركيز')
+          : 'باقي ' + dur(mins) + ' على ' + NAMES[targetKey] + '، والوقت يكفي لوردك';
       }
       document.getElementById('day-saud').textContent = line;
     }
@@ -1397,7 +1432,8 @@
       while (dots.firstChild) dots.removeChild(dots.firstChild);
       var seed = 2026;
       var rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
-      var small = W < 600, mx = Math.max(44, Math.min(W * 0.1, 160)), my = small ? 58 : 84;
+      /* بالجوال القمر فوق العنوان بمساحة الرأس العلوية، وبالشاشة العريضة فوق سعود */
+      var small = W < 600, mx = Math.max(38, Math.min(W * 0.1, 160)), my = small ? 32 : 84;
       var n = Math.max(55, Math.min(150, Math.round(W * H / 5200)));
       for (var i = 0; i < n; i++) {
         var x = rnd() * W, y = Math.pow(rnd(), 1.4) * H * 0.9, k = rnd(), r, op;
@@ -1417,7 +1453,7 @@
         }
         dots.appendChild(c);
       }
-      var ks = small ? 0.85 : 1.15;
+      var ks = small ? 0.6 : 1.15;
       sky.querySelector('.moon').setAttribute('transform', 'translate(' + (mx - 148 * ks).toFixed(1) + ' ' + (my - 80 * ks).toFixed(1) + ') scale(' + ks + ')');
       var mt = sky.querySelector('.meteor-at');
       if (mt) mt.setAttribute('transform', 'translate(' + Math.round(Math.min(W - 24, W * 0.5 + 220)) + ' 36)');
