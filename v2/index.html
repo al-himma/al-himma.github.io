@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>تطبيق الهمة | لتنظيم يومي: مواقيت الصلاة والأذكار، المذاكرة وحساب المعدل، مصاريف، تمارين والوجبات الصحية والعادات</title>
-  <meta name="description" content="تطبيق سعودي يجمع صلاتك ووردك، دراستك وشغلك وفلوسك، تمرينك وأكلك وأهلك. المدرب سعود يقترح خطوتك من بياناتك، وأول شهر مجاني بدون بطاقة.">
+  <meta name="description" content="تطبيق سعودي لتنظيم يومك: مواقيت الصلاة والأذكار، حساب المعدل وجدول المذاكرة، تتبع المصاريف والميزانية، التمارين والوجبات الصحية والعادات. أول شهر مجاني.">
   <!-- نسخة المعاينة v2: مخفية عن محركات البحث لين تعتمد، وتنشال هذي السطر وقت الترقية للرئيسية -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://alhimmah.app/">
@@ -72,6 +72,18 @@
         "about": {
           "@id": "https://alhimmah.app/#app"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://alhimmah.app/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "أبي تطبيق يحسب معدلي، الهمة يسويها؟", "acceptedAnswer": { "@type": "Answer", "text": "ايه، تحسب معدلك الجامعي أو الثانوي من 5 أو من 4 أو مئوي مع الساعات المعتمدة، وتوزع لك المراجعة على الأيام اللي باقية لاختبارك." } },
+          { "@type": "Question", "name": "فيه مواقيت صلاة وأذكار؟", "acceptedAnswer": { "@type": "Answer", "text": "ايه، مواقيت الصلاة على تقويم أم القرى حسب مدينتك، مع أذكار الصباح والمساء وورد القرآن اليومي." } },
+          { "@type": "Question", "name": "يساعدني أضبط مصاريفي؟", "acceptedAnswer": { "@type": "Answer", "text": "تسجل مصروفك بثواني، وتحط ميزانية لكل بند، وتعرف آخر الشهر وين راحت فلوسك." } },
+          { "@type": "Question", "name": "فيه تمارين ووجبات صحية؟", "acceptedAnswer": { "@type": "Answer", "text": "ايه، تسجل تمارينك وأوزانك، وتجيك وجبات صحية على قد سعراتك، وتتابع عاداتك اليومية بمكان واحد." } },
+          { "@type": "Question", "name": "بكم الاشتراك؟", "acceptedAnswer": { "@type": "Answer", "text": "أول شهر مجاني بدون بطاقة، وبعدها باقة 3 أشهر بـ11.21 ريال أو مدى الحياة بـ75 ريال تدفعها مرة وحدة." } },
+          { "@type": "Question", "name": "يشتغل على أي جوال؟", "acceptedAnswer": { "@type": "Answer", "text": "على الآيفون والآيباد بنظام iOS 15 فما فوق، والأندرويد 7 فما فوق." } }
+        ]
       }
     ]
   }
@@ -532,6 +544,12 @@
     .share-msg { margin: 14px 0; padding: 14px 16px; border-radius: var(--r-sm); background: var(--night-2); border-inline-start: 4px solid var(--night-gold); line-height: 1.8; }
     .share-msg small { display: block; margin-top: 6px; direction: ltr; text-align: right; color: var(--night-gold); font-weight: 700; word-break: break-all; }
     .share-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+    /* ===== أسئلة تجينا كثير ===== */
+    .faq { padding-top: 0; }
+    .faq-list { display: grid; gap: 10px; max-width: 46em; }
+    .faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); }
+    .faq summary { cursor: pointer; padding: 16px 20px; min-height: 44px; font-weight: 800; font-size: 1.05rem; line-height: 1.6; }
+    .faq details p { margin: 0; padding: 0 20px 18px; line-height: 1.85; }
     .sbtn {
       display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 10px 18px; border-radius: 999px;
       border: 1px solid var(--night-line); background: transparent; color: var(--night-ink); font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer;
@@ -1027,6 +1045,38 @@
                 <button type="button" class="sbtn" id="sh-copy"><svg class="g" aria-hidden="true"><use href="#g-link"/></svg>نسخ الرسالة</button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <!-- أسئلة الناس: كلمات البحث المطلوبة بإجابة قصيرة -->
+      <section class="scene faq" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <h2 id="faq-title">أسئلة تجينا كثير</h2>
+          <div class="faq-list">
+            <details>
+              <summary>أبي تطبيق يحسب معدلي، الهمة يسويها؟</summary>
+              <p>ايه، تحسب معدلك الجامعي أو الثانوي من 5 أو من 4 أو مئوي مع الساعات المعتمدة، وتوزع لك المراجعة على الأيام اللي باقية لاختبارك.</p>
+            </details>
+            <details>
+              <summary>فيه مواقيت صلاة وأذكار؟</summary>
+              <p>ايه، مواقيت الصلاة على تقويم أم القرى حسب مدينتك، مع أذكار الصباح والمساء وورد القرآن اليومي.</p>
+            </details>
+            <details>
+              <summary>يساعدني أضبط مصاريفي؟</summary>
+              <p>تسجل مصروفك بثواني، وتحط ميزانية لكل بند، وتعرف آخر الشهر وين راحت فلوسك.</p>
+            </details>
+            <details>
+              <summary>فيه تمارين ووجبات صحية؟</summary>
+              <p>ايه، تسجل تمارينك وأوزانك، وتجيك وجبات صحية على قد سعراتك، وتتابع عاداتك اليومية بمكان واحد.</p>
+            </details>
+            <details>
+              <summary>بكم الاشتراك؟</summary>
+              <p>أول شهر مجاني بدون بطاقة، وبعدها باقة 3 أشهر بـ11.21 ريال أو مدى الحياة بـ75 ريال تدفعها مرة وحدة.</p>
+            </details>
+            <details>
+              <summary>يشتغل على أي جوال؟</summary>
+              <p>على الآيفون والآيباد بنظام iOS 15 فما فوق، والأندرويد 7 فما فوق.</p>
+            </details>
           </div>
         </div>
       </section>
