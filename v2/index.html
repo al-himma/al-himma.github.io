@@ -82,7 +82,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="../saud-hero.webp" type="image/webp">
+  <link rel="preload" as="image" href="img/saud-body.webp" type="image/webp">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFWEWVJ35"></script>
   <script>
@@ -225,6 +225,7 @@
       9%, 100% { transform: translate(-330px, 150px); opacity: 0; }
     }
     .hero.sky-off .tw, .hero.sky-off .meteor { animation-play-state: paused; }
+    .hero.sky-js .stars .star-dots { opacity: .85; }
     .hero-grid { display: grid; gap: 28px; align-items: center; }
     @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 40px; } }
     .pill {
@@ -247,9 +248,20 @@
     /* سعود والمحادثة */
     .saud { position: relative; display: grid; justify-items: center; }
     .saud-glow { position: absolute; inset: 8% 12% auto; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, var(--glow), transparent 65%); z-index: -1; }
-    .saud picture img { width: clamp(220px, 46vw, 360px); height: auto; }
+    .saud-fig { position: relative; width: clamp(220px, 46vw, 360px); aspect-ratio: 1; }
+    .saud-fig img { position: absolute; inset: 0; width: 100%; height: 100%; }
+    /* سعود يسلم مرة وحدة: اليد طبقة مستقلة تلف حول الرسغ، والكم فوقها يغطي مفصلها */
+    .saud-hand { transform-origin: 18.6% 43.6%; }
+    .saud-fig.wave .saud-hand { animation: wave 1.5s cubic-bezier(.37, 0, .63, 1) 1; }
+    @keyframes wave {
+      0%, 100% { transform: rotate(0); }
+      18% { transform: rotate(-13deg); }
+      38% { transform: rotate(9deg); }
+      58% { transform: rotate(-10deg); }
+      78% { transform: rotate(5deg); }
+    }
     .chat {
-      width: min(100%, 420px); margin-top: -36px;
+      position: relative; width: min(100%, 420px); margin-top: -36px;
       background: var(--night-card); border: 1px solid var(--night-line);
       border-radius: var(--r-lg); padding: 16px; color: var(--night-ink);
     }
@@ -539,6 +551,7 @@
       .typing i { animation: none; opacity: .7; }
       .stars .tw { animation: none; }
       .stars .meteor { display: none; }
+      .saud-fig.wave .saud-hand { animation: none; }
       .dt .ridge .trail-lit, .peak .raise, .peak .sunr, .dawn .seal { transition: none; }
     }
   </style>
@@ -594,7 +607,7 @@
           <circle class="tw" cx="548" cy="96" r="1.2"/><circle cx="664" cy="182" r="1"/><circle class="tw" cx="586" cy="318" r="1.3"/><circle cx="688" cy="430" r="1"/><circle class="tw" cx="532" cy="520" r="1.2"/>
         </g>
         <defs><linearGradient id="mt-tail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="mt-a"/><stop offset="1" class="mt-b"/></linearGradient></defs>
-        <g transform="translate(800 40)"><g class="meteor"><path d="M0 0L84 -38" stroke="url(#mt-tail)" stroke-width="1.6" stroke-linecap="round"/><circle class="meteor-head" r="1.8"/></g></g>
+        <g class="meteor-at" transform="translate(800 40)"><g class="meteor"><path d="M0 0L84 -38" stroke="url(#mt-tail)" stroke-width="1.6" stroke-linecap="round"/><circle class="meteor-head" r="1.8"/></g></g>
         <path d="M176 92a30 30 0 1 1-26-38a24 24 0 0 0 26 38z" class="moon"/>
       </svg>
       <div class="wrap hero-grid">
@@ -616,10 +629,11 @@
 
         <div class="saud">
           <span class="saud-glow" aria-hidden="true"></span>
-          <picture>
-            <source srcset="../saud-hero.webp" type="image/webp">
-            <img src="../saud-hero.png" alt="المدرب سعود" width="1024" height="1024" fetchpriority="high" decoding="async">
-          </picture>
+          <div class="saud-fig" id="saud-fig">
+            <img src="img/saud-body.webp" alt="المدرب سعود" width="1024" height="1024" fetchpriority="high" decoding="async">
+            <img class="saud-hand" src="img/saud-hand.webp" alt="" width="1024" height="1024" decoding="async">
+            <img class="saud-cuff" src="img/saud-cuff.webp" alt="" width="1024" height="1024" decoding="async">
+          </div>
           <div class="chat" role="region" aria-label="محادثة توضيحية مع المدرب سعود">
             <div class="chat-head">
               <svg class="g" aria-hidden="true"><use href="#g-sparkles"/></svg>
@@ -1355,6 +1369,69 @@
   })();
   </script>
   <script>
+  /* ---- سماء الرأس وسلام سعود: نجوم على قد الشاشة، وسعود يسلم مرة وحدة أول ما تفتح ---- */
+  (function () {
+    'use strict';
+    var NS = 'http://www.w3.org/2000/svg';
+    var hero = document.querySelector('.hero');
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var fig = document.getElementById('saud-fig');
+    if (fig && !still) {
+      var hand = fig.querySelector('.saud-hand');
+      var wave = function () { setTimeout(function () { fig.classList.add('wave'); }, 900); };
+      fig.addEventListener('animationend', function () { fig.classList.remove('wave'); });
+      if (hand.complete) wave(); else hand.addEventListener('load', wave);
+    }
+
+    var sky = hero && hero.querySelector('.stars');
+    if (!sky || !document.createElementNS) return;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { hero.classList.toggle('sky-off', !es[0].isIntersecting); }).observe(hero);
+    }
+
+    /* الرسمة الثابتة مقصوصة بالجوال فما يبان منها إلا شريط نقاط، فنرسم السماء بمقاس الرأس الفعلي */
+    function buildSky() {
+      var W = hero.clientWidth, H = hero.clientHeight;
+      if (!W || !H) return;
+      sky.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      var dots = sky.querySelector('.star-dots');
+      while (dots.firstChild) dots.removeChild(dots.firstChild);
+      var seed = 2026;
+      var rnd = function () { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+      var small = W < 600, mx = Math.max(44, Math.min(W * 0.1, 160)), my = small ? 58 : 84;
+      var n = Math.max(55, Math.min(150, Math.round(W * H / 5200)));
+      for (var i = 0; i < n; i++) {
+        var x = rnd() * W, y = Math.pow(rnd(), 1.4) * H * 0.9, k = rnd(), r, op;
+        if (Math.abs(x - mx) < 46 && Math.abs(y - my) < 46) continue;
+        if (k < 0.8) { r = 0.5 + rnd() * 0.4; op = 0.35 + rnd() * 0.25; }
+        else if (k < 0.96) { r = 0.9 + rnd() * 0.4; op = 0.6 + rnd() * 0.25; }
+        else { r = 1.4 + rnd() * 0.5; op = 0.95; }
+        var c = document.createElementNS(NS, 'circle');
+        c.setAttribute('cx', x.toFixed(1));
+        c.setAttribute('cy', y.toFixed(1));
+        c.setAttribute('r', r.toFixed(2));
+        c.setAttribute('opacity', op.toFixed(2));
+        if (k >= 0.9) {
+          c.setAttribute('class', 'tw');
+          c.style.animationDelay = (-rnd() * 4).toFixed(2) + 's';
+          c.style.animationDuration = (2.8 + rnd() * 2.4).toFixed(2) + 's';
+        }
+        dots.appendChild(c);
+      }
+      var ks = small ? 0.85 : 1.15;
+      sky.querySelector('.moon').setAttribute('transform', 'translate(' + (mx - 148 * ks).toFixed(1) + ' ' + (my - 80 * ks).toFixed(1) + ') scale(' + ks + ')');
+      var mt = sky.querySelector('.meteor-at');
+      if (mt) mt.setAttribute('transform', 'translate(' + Math.round(Math.min(W - 24, W * 0.5 + 220)) + ' 36)');
+      hero.classList.add('sky-js');
+    }
+    var st;
+    var rebuildSky = function () { clearTimeout(st); st = setTimeout(buildSky, 150); };
+    if ('ResizeObserver' in window) new ResizeObserver(rebuildSky).observe(hero);
+    else window.addEventListener('resize', rebuildSky);
+    buildSky();
+  })();
+
   /* ---- درب الفجر: الدرب يكمل من جبال الرأس بجنب المحطات، وشعلة تصعد مع التمرير وتشعل ختم كل محطة لين يرتفع علم القمة ---- */
   (function () {
     'use strict';
@@ -1362,16 +1439,10 @@
     var root = document.documentElement;
     var climb = document.querySelector('.climb');
     var peak = document.querySelector('.peak');
-    var hero = document.querySelector('.hero');
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!climb || !peak || !document.createElementNS || !('getTotalLength' in document.createElementNS(NS, 'path'))) return;
     root.classList.add('dt');
     requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('dt-go'); }); });
-
-    /* النجوم والشهاب تهدى لما يطلع الرأس من الشاشة */
-    if (hero && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) { hero.classList.toggle('sky-off', !es[0].isIntersecting); }).observe(hero);
-    }
 
     function el(tag, cls, parent) {
       var n = document.createElementNS(NS, tag);
