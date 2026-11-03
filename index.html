@@ -1116,6 +1116,39 @@
     'use strict';
     var APPLE = 'https://apps.apple.com/app/id6788142781';
     var GOOGLE = 'https://play.google.com/store/apps/details?id=com.alhimmah.app';
+
+    /* ---- مصدر الزيارة يمشي مع رابط المتجر عشان نعرف أي منصة جابت التنزيل ----
+       أبل: تقرير Sources بـApp Store Connect (يحتاج APPLE_PT، وبدونه تتجاهل ct)
+       جوجل: referrer يقراه Play Console وFirebase بأول فتح */
+    var APPLE_PT = '';
+    var REF_HOSTS = [
+      [/(^|\.)tiktok\.com$/, 'tiktok'], [/(^|\.)(t\.co|x\.com|twitter\.com)$/, 'x'],
+      [/(^|\.)snapchat\.com$/, 'snapchat'], [/(^|\.)instagram\.com$/, 'instagram'],
+      [/(^|\.)(youtube\.com|youtu\.be)$/, 'youtube'], [/(^|\.)(facebook\.com|fb\.com)$/, 'facebook'],
+      [/(^|\.)whatsapp\.(com|net)$/, 'whatsapp'], [/(^|\.)(t\.me|telegram\.org)$/, 'telegram'],
+      [/(^|\.)google\.[a-z.]+$/, 'google'], [/(^|\.)bing\.com$/, 'bing']
+    ];
+    function tag(v) { return String(v || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 40); }
+    var CAMP = (function () {
+      var q;
+      try { q = new URLSearchParams(location.search); } catch (e) { q = { get: function () { return null; } }; }
+      var src = tag(q.get('utm_source'));
+      var med = tag(q.get('utm_medium'));
+      if (!src) {
+        var host = '';
+        try { host = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+        if (host && host !== location.hostname) {
+          src = 'other';
+          for (var i = 0; i < REF_HOSTS.length; i++) if (REF_HOSTS[i][0].test(host)) { src = REF_HOSTS[i][1]; break; }
+          med = med || 'referral';
+        }
+      }
+      return { src: src || 'site', med: med || 'direct', camp: tag(q.get('utm_campaign')) };
+    })();
+    var APPLE_URL = APPLE + '?' + (APPLE_PT ? 'pt=' + APPLE_PT + '&' : '') + 'ct=' + CAMP.src + '&mt=8';
+    var GOOGLE_URL = GOOGLE + '&referrer=' + encodeURIComponent(
+      'utm_source=' + CAMP.src + '&utm_medium=' + CAMP.med + (CAMP.camp ? '&utm_campaign=' + CAMP.camp : '')
+    );
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function track(name, params) {
@@ -1158,7 +1191,7 @@
     var platform = isIos ? 'apple' : (isAndroid ? 'google' : '');
     document.querySelectorAll('.js-store').forEach(function (a) {
       if (platform) {
-        a.href = platform === 'apple' ? APPLE : GOOGLE;
+        a.href = platform === 'apple' ? APPLE_URL : GOOGLE_URL;
         a.target = '_blank';
         a.rel = 'noopener';
         var use = a.querySelector('.js-store-glyph use');
@@ -1170,6 +1203,7 @@
       });
     });
     document.querySelectorAll('.store').forEach(function (a) {
+      a.href = a.getAttribute('data-store') === 'apple' ? APPLE_URL : GOOGLE_URL;
       a.addEventListener('click', function () { trackDownload(a.getAttribute('data-store'), 'summit'); });
     });
 
