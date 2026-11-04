@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إمكانية الوصول والشمول — تطبيق الهمة</title>
-  <meta name="description" content="دليل ميزات إمكانية الوصول والشمول الاستخدامي في تطبيق الهمة — تصميم عصري يشمل الجميع بدون استثناء.">
+  <title id="page-title">إمكانية الوصول والشمول — تطبيق الهمة</title>
+  <meta name="description" content="الهمة للكل: خط يكبر لين 200%، قارئ شاشة بالعربي، داكن مريح، حركة تهدأ، ولمس واسع. جربها بنفسك هنا.">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  
-  <!-- Google tag (gtag.js) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFWEWVJ35"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,536 +17,413 @@
     gtag('config', 'G-1KFWEWVJ35');
   </script>
   <style>
-  :root {
-    --bg: #f7f9f8;
-    --surface: #ffffff;
-    --surface-card: #ffffff;
-    --surface-glass: rgba(255, 255, 255, 0.88);
-    --border: #d8e3e3;
-    --border-light: #ebf2f2;
-    --primary: #124d4e;
-    --primary-hover: #0a3637;
-    --primary-bg: #e8f3f3;
-    --primary-ink: #124d4e;
-    --gold: #c89a2b;
-    --gold-bg: #fcf8ee;
-    --heading: #112627;
-    --text: #243738;
-    --text-secondary: #586c6d;
-    --shadow-sm: 0 2px 10px rgba(17, 38, 39, 0.04);
-    --shadow-card: 0 8px 24px rgba(17, 38, 39, 0.06);
-    --radius-sm: 12px;
-    --radius-md: 18px;
-    --radius-lg: 28px;
-  }
-
-  @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0b1414;
-      --surface: #121e1f;
-      --surface-card: #152425;
-      --surface-glass: rgba(18, 30, 31, 0.90);
-      --border: #203334;
-      --border-light: #162627;
-      --primary: #31aba7;
-      --primary-hover: #45c4c0;
-      --primary-bg: #143536;
-      --primary-ink: #65dfdc;
-      --gold: #e5b338;
-      --gold-bg: #272112;
-      --heading: #eef6f6;
-      --text: #d0dede;
-      --text-secondary: #8b9ea0;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
-      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --bg: #f4f7f6;
+      --surface: #ffffff;
+      --surface-glass: rgba(255, 255, 255, 0.9);
+      --border: #d3dede;
+      --border-light: #e6eded;
+      --primary: #124d4e;
+      --primary-hover: #0a3637;
+      --primary-bg: #e6f2f2;
+      --primary-ink: #124d4e;
+      --on-primary: #ffffff;
+      --gold: #8a6512;
+      --heading: #0e2223;
+      --text: #223536;
+      --text-secondary: #3f5354;
+      --shadow-sm: 0 4px 12px rgba(14, 34, 35, 0.05);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --focus-ring: 0 0 0 3px rgba(49, 171, 167, 0.55);
+      /* معاينة جرب بنفسك */
+      --demo-bg: #ffffff;
+      --demo-text: #0e2223;
+      --demo-dark-bg: #0f1b1c;
+      --demo-dark-text: #e8f1f1;
     }
-  }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  /* Header Navigation */
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--surface-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-light);
-    padding: 16px 24px;
-  }
-
-  .nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--heading);
-  }
-
-  .brand img {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-
-  .brand-title {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--primary);
-  }
-
-  .brand-subtitle {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    display: block;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-  }
-
-  .nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s ease;
-  }
-
-  .nav-link:hover {
-    color: var(--primary);
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: 64px 24px 48px;
-    text-align: center;
-    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--bg) 100%);
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .hero-container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--gold-bg);
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--heading);
-    margin-bottom: 16px;
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 680px;
-    margin: 0 auto 24px;
-    font-weight: 500;
-  }
-
-  /* Main Container */
-  .main-content {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 24px;
-    flex: 1;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--heading);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-desc {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-  }
-
-  /* Grid Layout for Features */
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    margin-bottom: 56px;
-  }
-
-  .feature-card {
-    background: var(--surface-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 28px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-card);
-    border-color: var(--primary);
-  }
-
-  .feature-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-  }
-
-  .feature-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    background-color: var(--primary-bg);
-    color: var(--primary-ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .feature-title {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--heading);
-  }
-
-  .feature-body {
-    font-size: 0.98rem;
-    color: var(--text);
-    margin-bottom: 20px;
-  }
-
-  .beneficiary-tag {
-    background-color: var(--primary-bg);
-    color: var(--primary-ink);
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* Philosophy Banner */
-  .philosophy-banner {
-    background: linear-gradient(135deg, var(--primary) 0%, #0c3637 100%);
-    color: #ffffff;
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    margin-bottom: 56px;
-    box-shadow: var(--shadow-card);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .philosophy-banner h2 {
-    font-size: 1.8rem;
-    font-weight: 900;
-    margin-bottom: 16px;
-    color: #ffffff;
-  }
-
-  .philosophy-banner p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.92);
-    max-width: 850px;
-    margin-bottom: 20px;
-  }
-
-  .philosophy-highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 24px;
-  }
-
-  .highlight-item {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-  }
-
-  .highlight-title {
-    font-weight: 800;
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-    color: #ffffff;
-  }
-
-  .highlight-desc {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  /* Footer */
-  footer {
-    background-color: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: 32px 24px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-  }
-
-  .footer-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer-links a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 640px) {
-    .hero h1 {
-      font-size: 1.8rem;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #091213;
+        --surface: #122021;
+        --surface-glass: rgba(16, 28, 29, 0.9);
+        --border: #24393b;
+        --border-light: #182a2b;
+        --primary: #31aba7;
+        --primary-hover: #45c4c0;
+        --primary-bg: #143335;
+        --primary-ink: #6be3df;
+        --on-primary: #061213;
+        --gold: #ecc048;
+        --heading: #f0f7f7;
+        --text: #d4e1e2;
+        --text-secondary: #a3b5b7;
+        --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+        --focus-ring: 0 0 0 3px rgba(107, 227, 223, 0.6);
+      }
     }
-    .hero p {
-      font-size: 1rem;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Tajawal', 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-    .philosophy-banner {
-      padding: 24px;
+    html[lang="en"] body { font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    .skip-link {
+      position: absolute; top: -100px; right: 16px;
+      background: var(--primary); color: var(--on-primary);
+      padding: 12px 20px; border-radius: var(--radius-sm);
+      z-index: 999; font-weight: 700; text-decoration: none;
     }
-    .philosophy-banner h2 {
-      font-size: 1.4rem;
+    html[dir="ltr"] .skip-link { right: auto; left: 16px; }
+    .skip-link:focus { top: 16px; outline: none; box-shadow: var(--focus-ring); }
+    :focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: 8px; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--surface-glass);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 12px 16px;
     }
-  }
+    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--heading); min-height: 44px; }
+    .brand img { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; }
+    .brand-title { display: block; font-size: 1.25rem; font-weight: 800; color: var(--primary-ink); line-height: 1.2; }
+    .brand-subtitle { display: block; font-size: 0.82rem; color: var(--text-secondary); font-weight: 500; }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .nav-link {
+      color: var(--text-secondary); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      padding: 10px 12px; min-height: 44px; display: inline-flex; align-items: center; border-radius: 8px;
+    }
+    .nav-link:hover { color: var(--primary-ink); background: var(--primary-bg); }
+    .lang-toggle-btn {
+      min-height: 44px; background: var(--surface); border: 1px solid var(--border); color: var(--heading);
+      padding: 8px 18px; border-radius: 22px; font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+    }
+    .lang-toggle-btn:hover { border-color: var(--primary); color: var(--primary-ink); }
+
+    .hero { padding: 56px 16px 40px; border-bottom: 1px solid var(--border-light); }
+    .hero-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    .hero-kicker { color: var(--gold); font-weight: 800; font-size: 0.95rem; margin-bottom: 12px; }
+    .hero h1 { font-size: 2.5rem; font-weight: 900; color: var(--heading); line-height: 1.25; margin-bottom: 16px; }
+    .hero-lead { font-size: 1.15rem; color: var(--text-secondary); max-width: 34em; }
+
+    /* جرب بنفسك */
+    .try {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 24px; box-shadow: var(--shadow-sm);
+    }
+    .try-title { font-weight: 800; color: var(--heading); font-size: 1.1rem; margin-bottom: 4px; }
+    .try-sub { color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px; }
+    .demo {
+      background: var(--demo-bg); color: var(--demo-text);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 18px; display: flex; align-items: center; gap: 14px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-bottom: 16px; min-height: 88px;
+    }
+    .demo.is-dark { background: var(--demo-dark-bg); color: var(--demo-dark-text); border-color: transparent; }
+    .demo-ring { flex-shrink: 0; width: 52px; height: 52px; }
+    .demo-ring circle { fill: none; stroke-width: 6; }
+    .demo-ring .track { stroke: currentColor; opacity: 0.15; }
+    .demo-ring .fill { stroke: #31aba7; stroke-linecap: round; stroke-dasharray: 126; stroke-dashoffset: 40; transform-origin: center; animation: ring-spin 3s linear infinite; }
+    .demo.is-still .demo-ring .fill { animation: none; }
+    @keyframes ring-spin { to { transform: rotate(360deg); } }
+    .demo-text strong { display: block; font-size: 1rem; line-height: 1.4; }
+    .demo-text span { font-size: 0.88rem; opacity: 0.8; }
+    .demo.is-big .demo-text strong { font-size: 2rem; }
+    .demo.is-big .demo-text span { font-size: 1.76rem; }
+    .demo.is-big { flex-wrap: wrap; }
+    .try-switches { display: grid; gap: 8px; }
+    .switch {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      min-height: 48px; width: 100%; padding: 8px 14px;
+      background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius-sm);
+      color: var(--heading); font: inherit; font-weight: 700; font-size: 0.95rem; cursor: pointer; text-align: start;
+    }
+    .switch-knob { flex-shrink: 0; width: 44px; height: 26px; border-radius: 13px; background: var(--border); position: relative; transition: background-color 0.2s ease; }
+    .switch-knob::after { content: ""; position: absolute; top: 3px; inset-inline-start: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--surface); transition: inset-inline-start 0.2s ease; }
+    .switch[aria-pressed="true"] .switch-knob { background: var(--primary); }
+    .switch[aria-pressed="true"] .switch-knob::after { inset-inline-start: 21px; }
+
+    .main-content { max-width: 1100px; margin: 48px auto; padding: 0 16px; flex: 1; width: 100%; }
+    .section-title { font-size: 1.6rem; font-weight: 800; color: var(--heading); margin-bottom: 6px; }
+    .section-desc { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 20px; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .filter {
+      min-height: 44px; background: var(--surface); border: 1px solid var(--border); color: var(--text-secondary);
+      padding: 8px 18px; border-radius: 22px; font: inherit; font-weight: 700; font-size: 0.92rem; cursor: pointer;
+    }
+    .filter:hover { border-color: var(--primary); color: var(--primary-ink); }
+    .filter[aria-pressed="true"] { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+
+    .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-bottom: 56px; }
+    .feature {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 24px; display: flex; flex-direction: column; gap: 12px;
+    }
+    .feature[hidden] { display: none; }
+    .feature-head { display: flex; align-items: center; gap: 14px; }
+    .feature-icon {
+      flex-shrink: 0; width: 52px; height: 52px; border-radius: 16px;
+      background: var(--primary-bg); color: var(--primary-ink);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .feature-icon svg { width: 30px; height: 30px; }
+    .feature-title { font-size: 1.2rem; font-weight: 800; color: var(--heading); line-height: 1.35; }
+    .feature-body { font-size: 1rem; color: var(--text); flex: 1; }
+    .feature-who { font-size: 0.9rem; font-weight: 700; color: var(--primary-ink); border-top: 1px dashed var(--border); padding-top: 12px; }
+
+    .howto { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 56px; }
+    .howto ol { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; counter-reset: step; }
+    .howto li { counter-increment: step; display: flex; gap: 12px; align-items: flex-start; }
+    .howto li::before {
+      content: counter(step); flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: var(--primary-bg); color: var(--primary-ink); font-weight: 900;
+      display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif;
+    }
+    .howto strong { display: block; color: var(--heading); }
+    .howto span { color: var(--text-secondary); font-size: 0.95rem; }
+
+    .saud { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; border-inline-start: 4px solid var(--primary); padding: 8px 20px; margin-bottom: 56px; }
+    .saud-text { flex: 1; min-width: 220px; }
+    .saud-name { font-size: 0.9rem; font-weight: 800; color: var(--gold); }
+    .saud-line { font-size: 1.3rem; font-weight: 800; color: var(--heading); line-height: 1.5; }
+    .saud-btn {
+      display: inline-flex; align-items: center; min-height: 48px; padding: 10px 26px; border-radius: 24px;
+      background: var(--primary); color: var(--on-primary); font-weight: 800; text-decoration: none;
+    }
+    .saud-btn:hover { background: var(--primary-hover); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 16px; text-align: center; font-size: 0.95rem; color: var(--text-secondary); }
+    .footer-links { display: flex; gap: 8px 20px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+    .footer-links a { color: var(--primary-ink); font-weight: 700; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
+
+    @media (max-width: 860px) {
+      .hero-container { grid-template-columns: 1fr; gap: 28px; }
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link" data-ar="انتقل للمحتوى" data-en="Skip to content">انتقل للمحتوى</a>
 
-  <!-- Navigation Bar -->
-  <nav class="nav">
+  <nav class="nav" aria-label="التنقل الرئيسي">
     <div class="nav-container">
       <a href="landing.html" class="brand">
-        <img src="logo.png" alt="شعار الهمة">
-        <div>
-          <span class="brand-title">الهمة</span>
-          <span class="brand-subtitle">تنظيم الوقت والعادات</span>
-        </div>
+        <img src="logo.png" alt="" width="44" height="44">
+        <span>
+          <span class="brand-title" data-ar="الهمة" data-en="Al-Himmah">الهمة</span>
+          <span class="brand-subtitle" data-ar="الهمة حتى القمة" data-en="Drive to the summit">الهمة حتى القمة</span>
+        </span>
       </a>
-      <div class="nav-links">
-        <a href="landing.html" class="nav-link">الرئيسية</a>
-        <a href="support.html" class="nav-link">الدعم الفني</a>
-        <a href="privacy.html" class="nav-link">الخصوصية</a>
+      <div class="nav-actions">
+        <span class="nav-links">
+          <a href="support.html" class="nav-link" data-ar="الدعم" data-en="Support">الدعم</a>
+          <a href="privacy.html" class="nav-link" data-ar="الخصوصية" data-en="Privacy">الخصوصية</a>
+        </span>
+        <button id="lang-toggle" class="lang-toggle-btn" lang="en" aria-label="Switch to English">English</button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <header class="hero">
     <div class="hero-container">
-      <div class="badge">الهمة يهمتك لصحتك وحياتك 🌟</div>
-      <h1>إمكانية الوصول والشمول الاستخدامي</h1>
-      <p>صُمم تطبيق «الهمة» ليكون رفيق كل إنسان في رحلة التطوير الذاتي وبناء العادات، بدون أي عوائق تقنية أو بصريّة أو حركيّة.</p>
+      <div>
+        <p class="hero-kicker" data-ar="إمكانية الوصول والشمول" data-en="Accessibility & inclusion">إمكانية الوصول والشمول</p>
+        <h1 data-ar="الهمة لك، مهما كانت طريقتك بالجوال" data-en="Al-Himmah fits the way you use your phone">الهمة لك، مهما كانت طريقتك بالجوال</h1>
+        <p class="hero-lead" data-ar="تكبر الخط، تسمع بقارئ الشاشة، تحب الداكن، أو تبي الحركة تهدأ؟ الهمة تمشي مع إعدادات جوالك من أول فتحة." data-en="Bigger text, a screen reader, dark mode, or calmer motion? Al-Himmah follows your phone settings from the first launch.">تكبر الخط، تسمع بقارئ الشاشة، تحب الداكن، أو تبي الحركة تهدأ؟ الهمة تمشي مع إعدادات جوالك من أول فتحة.</p>
+      </div>
+
+      <section class="try" aria-labelledby="try-title">
+        <h2 id="try-title" class="try-title" data-ar="جرب بنفسك" data-en="Try it yourself">جرب بنفسك</h2>
+        <p class="try-sub" data-ar="شغل أي مفتاح وشوف بطاقة من الهمة تتغير قدامك." data-en="Flip a switch and watch a real Al-Himmah card adapt.">شغل أي مفتاح وشوف بطاقة من الهمة تتغير قدامك.</p>
+        <div id="demo" class="demo" aria-live="polite">
+          <svg class="demo-ring" viewBox="0 0 52 52" aria-hidden="true"><circle class="track" cx="26" cy="26" r="20"/><circle class="fill" cx="26" cy="26" r="20"/></svg>
+          <div class="demo-text">
+            <strong data-ar="عادتك اليوم: قراءة" data-en="Today's habit: Reading">عادتك اليوم: قراءة</strong>
+            <span data-ar="باقي لك ١٠ دقايق" data-en="10 minutes to go">باقي لك ١٠ دقايق</span>
+          </div>
+        </div>
+        <div class="try-switches">
+          <button class="switch" type="button" aria-pressed="false" data-demo="is-big">
+            <span data-ar="خط بحجم 200%" data-en="Text at 200%">خط بحجم 200%</span><span class="switch-knob" aria-hidden="true"></span>
+          </button>
+          <button class="switch" type="button" aria-pressed="false" data-demo="is-dark">
+            <span data-ar="الوضع الداكن" data-en="Dark mode">الوضع الداكن</span><span class="switch-knob" aria-hidden="true"></span>
+          </button>
+          <button class="switch" type="button" aria-pressed="false" data-demo="is-still">
+            <span data-ar="تقليل الحركة" data-en="Reduce motion">تقليل الحركة</span><span class="switch-knob" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    
-    <!-- Philosophy Banner -->
-    <section class="philosophy-banner">
-      <h2>فلسفتنا: التطبيق للجميع بدون استثناء</h2>
-      <p>في تطبيق الهمة، نؤمن أن إنجاز الأهداف وتطوير الذات حق لكل شخص. لذلك اعتمدنا أحدث المعايير العالمية لسهولة الوصول (Apple & Google Accessibility Guidelines) لضمان تجربة سلسة تشمل كبار السن، ذوي الإعاقة، وكل من يفضل تجربة استخدام مخصصة.</p>
-      
-      <div class="philosophy-highlights">
-        <div class="highlight-item">
-          <div class="highlight-title">🎯 لمس واسع وقارئ محاذي</div>
-          <div class="highlight-desc">زرار لمس واسعة بحد أدنى 44px مع دقة عالية بقارئ الشاشة.</div>
+  <main id="main-content" class="main-content">
+    <h2 class="section-title" data-ar="وش يلقى كل واحد بالهمة" data-en="What everyone gets in Al-Himmah">وش يلقى كل واحد بالهمة</h2>
+    <p class="section-desc" data-ar="اختر اللي يهمك، أو خلها على الكل." data-en="Pick what matters to you, or keep them all.">اختر اللي يهمك، أو خلها على الكل.</p>
+
+    <div class="filters" role="group" aria-label="تصفية الميزات">
+      <button class="filter" type="button" aria-pressed="true" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="vision" data-ar="البصر" data-en="Vision">البصر</button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="text" data-ar="القراءة" data-en="Reading">القراءة</button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="motor" data-ar="اللمس" data-en="Touch">اللمس</button>
+      <button class="filter" type="button" aria-pressed="false" data-filter="cognitive" data-ar="التركيز" data-en="Focus">التركيز</button>
+    </div>
+
+    <div id="features" class="features">
+      <article class="feature" data-category="vision">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 13v6h5l6 5V8l-6 5z"/><path d="M21 12a5 5 0 0 1 0 8M24 9a9 9 0 0 1 0 14"/></svg></span>
+          <h3 class="feature-title" data-ar="قارئ الشاشة بالعربي" data-en="Screen reader in Arabic">قارئ الشاشة بالعربي</h3>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-title">☀️ تباين بصري مرتفع</div>
-          <div class="highlight-desc">ألوان مدروسة بدقة تتجاوز معايير WCAG AAA لراحة العين تحت الشمس.</div>
+        <p class="feature-body" data-ar="كل زر وبطاقة لها اسم عربي واضح، فتقدر تمشي بالهمة كلها مع VoiceOver وTalkBack والتحكم الصوتي بدون ما تشوف الشاشة." data-en="Every button and card has a clear label, so you can use all of Al-Himmah with VoiceOver, TalkBack and Voice Control without looking.">كل زر وبطاقة لها اسم عربي واضح، فتقدر تمشي بالهمة كلها مع VoiceOver وTalkBack والتحكم الصوتي بدون ما تشوف الشاشة.</p>
+        <p class="feature-who" data-ar="يفيد: المكفوفين وضعاف البصر" data-en="Helps: blind and low-vision users">يفيد: المكفوفين وضعاف البصر</p>
+      </article>
+
+      <article class="feature" data-category="text">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="currentColor"><text x="2" y="25" font-family="Inter, sans-serif" font-weight="800" font-size="14">A</text><text x="13" y="27" font-family="Inter, sans-serif" font-weight="800" font-size="22">A</text></svg></span>
+          <h3 class="feature-title" data-ar="خط يكبر معك" data-en="Text that grows with you">خط يكبر معك</h3>
         </div>
-        <div class="highlight-item">
-          <div class="highlight-title">🌱 لغة دافئة ومحفزة</div>
-          <div class="highlight-desc">عبارات واضحة باللهجة السعودية المحفزة بدون تعقيدات لفظية.</div>
+        <p class="feature-body" data-ar="الهمة تاخذ حجم الخط من جوالك لين 200%، والبطاقات تتمدد بدون ما ينقص حرف. وتقدر تكبره من داخل الهمة بعد." data-en="Al-Himmah follows your phone text size up to 200%, and cards stretch without cutting a letter. You can also enlarge it inside the app.">الهمة تاخذ حجم الخط من جوالك لين 200%، والبطاقات تتمدد بدون ما ينقص حرف. وتقدر تكبره من داخل الهمة بعد.</p>
+        <p class="feature-who" data-ar="يفيد: كبار السن وضعاف البصر" data-en="Helps: seniors and low-vision users">يفيد: كبار السن وضعاف البصر</p>
+      </article>
+
+      <article class="feature" data-category="vision">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 5a11 11 0 0 1 0 22z" fill="currentColor"/></svg></span>
+          <h3 class="feature-title" data-ar="داكن مريح للعين" data-en="Dark mode that is easy on the eyes">داكن مريح للعين</h3>
         </div>
-      </div>
+        <p class="feature-body" data-ar="يشتغل مع جوالك تلقائياً أو تختاره بنفسك من الثيمات، بألوان هادية تريح عينك بالليل." data-en="Follows your phone automatically or pick it yourself from the themes, with calm colors for night use.">يشتغل مع جوالك تلقائياً أو تختاره بنفسك من الثيمات، بألوان هادية تريح عينك بالليل.</p>
+        <p class="feature-who" data-ar="يفيد: حساسين الضوء ومستخدمي الليل" data-en="Helps: light-sensitive and night users">يفيد: حساسين الضوء ومستخدمي الليل</p>
+      </article>
+
+      <article class="feature" data-category="vision">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="22" height="22" rx="6"/><path d="M10.5 16.5l4 4 7-8"/></svg></span>
+          <h3 class="feature-title" data-ar="ما نعتمد على اللون وحده" data-en="Never color alone">ما نعتمد على اللون وحده</h3>
+        </div>
+        <p class="feature-body" data-ar="الإنجاز يبان بعلامة وكلمة مع اللون، فتعرف وش خلصت حتى لو الألوان تتشابه عندك." data-en="Progress shows with a mark and a word next to the color, so you know what is done even if colors look alike to you.">الإنجاز يبان بعلامة وكلمة مع اللون، فتعرف وش خلصت حتى لو الألوان تتشابه عندك.</p>
+        <p class="feature-who" data-ar="يفيد: من عنده عمى ألوان" data-en="Helps: color-blind users">يفيد: من عنده عمى ألوان</p>
+      </article>
+
+      <article class="feature" data-category="text">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 5a11 11 0 0 0 0 22z" fill="currentColor"/><path d="M16 9v14" stroke="currentColor" stroke-width="2.4"/></svg></span>
+          <h3 class="feature-title" data-ar="تباين واضح تحت الشمس" data-en="Clear contrast in sunlight">تباين واضح تحت الشمس</h3>
+        </div>
+        <p class="feature-body" data-ar="النصوص والخلفيات مختارة بتباين يتجاوز معيار WCAG AA، فتقرا براحة حتى بالسيارة أو تحت الشمس." data-en="Text and backgrounds meet or exceed WCAG AA contrast, so reading stays easy in the car or in direct sun.">النصوص والخلفيات مختارة بتباين يتجاوز معيار WCAG AA، فتقرا براحة حتى بالسيارة أو تحت الشمس.</p>
+        <p class="feature-who" data-ar="يفيد: الكل، وخصوصاً برا البيت" data-en="Helps: everyone, especially outdoors">يفيد: الكل، وخصوصاً برا البيت</p>
+      </article>
+
+      <article class="feature" data-category="cognitive">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 12c4-4 8 4 12 0s8 4 12 0"/><path d="M4 21h24"/></svg></span>
+          <h3 class="feature-title" data-ar="حركة تهدأ لما تبي" data-en="Motion that calms down">حركة تهدأ لما تبي</h3>
+        </div>
+        <p class="feature-body" data-ar="إذا فعلت تقليل الحركة بجوالك، الهمة توقف الانتقالات والاحتفالات المتحركة، ووضع التركيز يخفي كل شي ما يخدم خطوتك." data-en="Turn on Reduce Motion and Al-Himmah stops transitions and animated celebrations, while Focus mode hides anything that does not serve your next step.">إذا فعلت تقليل الحركة بجوالك، الهمة توقف الانتقالات والاحتفالات المتحركة، ووضع التركيز يخفي كل شي ما يخدم خطوتك.</p>
+        <p class="feature-who" data-ar="يفيد: من عنده دوار أو تشتت انتباه" data-en="Helps: motion sensitivity and ADHD">يفيد: من عنده دوار أو تشتت انتباه</p>
+      </article>
+
+      <article class="feature" data-category="motor">
+        <div class="feature-head">
+          <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="4" width="15" height="15" rx="4" stroke-dasharray="3 3"/><path d="M11 28l-4-7a2 2 0 0 1 3.4-2l1.6 2.4V11a2 2 0 0 1 4 0v6l5 1a3 3 0 0 1 2.4 3.4L22 28"/></svg></span>
+          <h3 class="feature-title" data-ar="لمس واسع ورجة خفيفة" data-en="Big touch targets, gentle haptics">لمس واسع ورجة خفيفة</h3>
+        </div>
+        <p class="feature-body" data-ar="كل زر مساحته 44 نقطة أو أكثر، ومع كل إنجاز رجة خفيفة تأكد لك إن الضغطة وصلت." data-en="Every button is 44 points or larger, and a gentle haptic confirms each completed tap.">كل زر مساحته 44 نقطة أو أكثر، ومع كل إنجاز رجة خفيفة تأكد لك إن الضغطة وصلت.</p>
+        <p class="feature-who" data-ar="يفيد: من عنده رجفة أو صعوبة حركة" data-en="Helps: tremor and motor impairments">يفيد: من عنده رجفة أو صعوبة حركة</p>
+      </article>
+    </div>
+
+    <section class="howto" aria-labelledby="howto-title">
+      <h2 id="howto-title" class="section-title" data-ar="فعلها بثانيتين" data-en="Set it up in seconds">فعلها بثانيتين</h2>
+      <p class="section-desc" data-ar="ما تحتاج إعداد داخل الهمة، هي تتبع جوالك:" data-en="No setup inside Al-Himmah, it follows your phone:">ما تحتاج إعداد داخل الهمة، هي تتبع جوالك:</p>
+      <ol>
+        <li><div><strong data-ar="حجم الخط" data-en="Text size">حجم الخط</strong><span data-ar="الإعدادات ← الشاشة ← حجم النص، أو من إعدادات الهمة مباشرة" data-en="Settings → Display → Text Size, or straight from Al-Himmah settings">الإعدادات ← الشاشة ← حجم النص، أو من إعدادات الهمة مباشرة</span></div></li>
+        <li><div><strong data-ar="قارئ الشاشة" data-en="Screen reader">قارئ الشاشة</strong><span data-ar="الإعدادات ← إمكانية الوصول ← VoiceOver أو TalkBack" data-en="Settings → Accessibility → VoiceOver or TalkBack">الإعدادات ← إمكانية الوصول ← VoiceOver أو TalkBack</span></div></li>
+        <li><div><strong data-ar="تقليل الحركة" data-en="Reduce motion">تقليل الحركة</strong><span data-ar="الإعدادات ← إمكانية الوصول ← الحركة" data-en="Settings → Accessibility → Motion">الإعدادات ← إمكانية الوصول ← الحركة</span></div></li>
+      </ol>
     </section>
 
-    <h2 class="section-title">ميزات الوصول المعتمدة والفئات المستفيدة</h2>
-    <p class="section-desc">نستعرض هنا الميزات السباقيّة المدمجة في تطبيق الهمة للوصول الشامل:</p>
-
-    <!-- Features Grid -->
-    <div class="features-grid">
-
-      <!-- 1. VoiceOver & Voice Control -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">🔊</div>
-            <h3 class="feature-title">قارئ الشاشة والتحكم الصوتي</h3>
-          </div>
-          <p class="feature-body">دعم كامل لـ VoiceOver و TalkBack و Voice Control. تمت تسمية كل بطاقة، زر، وقسم بلغة عربية دقيقة، لتمكين التنقل الكامل بدون الحاجة للنظر للشاشة.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: المكفوفون وضغاف البصر ومستخدمي التحكم الصوتي
-        </div>
-      </article>
-
-      <!-- 2. Larger Text -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">🔍</div>
-            <h3 class="feature-title">النصوص الكبيرة والمرنة</h3>
-          </div>
-          <p class="feature-body">التكيف التلقائي مع إعدادات خط النظام حتى 200% وأكثر. تم بناء الواجهات بمرونة تضمن عدم تداخل الخطوط أو اختفاء البطاقات عند تكبير الخط.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: كبار السن وضغاف البصر الشديد
-        </div>
-      </article>
-
-      <!-- 3. Dark Interface -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">🌙</div>
-            <h3 class="feature-title">الواجهة الداكنة الذكية</h3>
-          </div>
-          <p class="feature-body">وضع داكن متكامل يستجيب لإعدادات الجهاز أو الاختيار اليدوي، مجهّز بألوان مريحة تمنع إجهاد العين وتقليل السطوع المؤذي للعين أثناء الليل.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: حساسو الضوء ومستخدمو التطبيق ليلاً
-        </div>
-      </article>
-
-      <!-- 4. Differentiate Without Color Alone -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">🎨</div>
-            <h3 class="feature-title">التمييز بغير الألوان وحدها</h3>
-          </div>
-          <p class="feature-body">لا نعتمد على اللون فقط لتوضيح إنجاز العادة أو المهمة، بل ندمج الأيقونات والنصوص والنماذج البصرية لمنح دلالة واضحة ومباشرة لكل عنصر.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: المصابون بعمى الألوان أو صعوبة تمييز الألوان
-        </div>
-      </article>
-
-      <!-- 5. Sufficient Contrast -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">✨</div>
-            <h3 class="feature-title">التباين العالي للنصوص والخلفيات</h3>
-          </div>
-          <p class="feature-body">اختيار درجات ألوان متوافقة مع معايير التباين العالمية، مما يجعل القراءة ممتازة وسلسة حتى في الظروف الإضاءة القوية أو أشعة الشمس المباشرة.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: جميع المستخدمين وخاصة تحت أشعة الشمس
-        </div>
-      </article>
-
-      <!-- 6. Reduced Motion -->
-      <article class="feature-card">
-        <div>
-          <div class="feature-header">
-            <div class="feature-icon">🌿</div>
-            <h3 class="feature-title">تقليل الحركة والتشتت</h3>
-          </div>
-          <p class="feature-body">احترام تلقائي لإعدادات النظام لتقليل التحريكات (Reduced Motion)، مما يوقف الاهتزازات والانتقالات المفاجئة لضمان تجربة مستقرة وهادئة.</p>
-        </div>
-        <div class="beneficiary-tag">
-          💡 الفئة المستفيدة: من يعانون من الدوار البصري أو تشتت الانتباه
-        </div>
-      </article>
-
-    </div>
-
+    <section class="saud" aria-labelledby="saud-line">
+      <div class="saud-text">
+        <p class="saud-name" data-ar="المدرب سعود" data-en="Coach Saud">المدرب سعود</p>
+        <p id="saud-line" class="saud-line" data-ar="ما لقيت ميزة تحتاجها؟ قلها لنا، ونبنيها لك." data-en="Missing something you need? Tell us and we will build it for you.">ما لقيت ميزة تحتاجها؟ قلها لنا، ونبنيها لك.</p>
+      </div>
+      <a href="mailto:support@alhimmah.app" class="saud-btn" data-ar="راسلنا" data-en="Email us">راسلنا</a>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="footer-container">
-      <p>تطبيق «الهمة — تنظيم الوقت والعادات» © 2026. جميع الحقوق محفوظة.</p>
-      <div class="footer-links">
-        <a href="landing.html">الرئيسية</a>
-        <a href="support.html">مركز الدعم الفني</a>
-        <a href="privacy.html">سياسة الخصوصية</a>
-        <a href="data-deletion.html">حذف البيانات</a>
-      </div>
-    </div>
+    <p data-ar="تطبيق الهمة © 2026. جميع الحقوق محفوظة." data-en="Al-Himmah © 2026. All rights reserved.">تطبيق الهمة © 2026. جميع الحقوق محفوظة.</p>
+    <nav class="footer-links" aria-label="روابط">
+      <a href="landing.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="support.html" data-ar="الدعم الفني" data-en="Support">الدعم الفني</a>
+      <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy">سياسة الخصوصية</a>
+      <a href="data-deletion.html" data-ar="حذف البيانات" data-en="Data deletion">حذف البيانات</a>
+    </nav>
   </footer>
 
+  <script>
+    (function () {
+      var KEY = 'alhimmah_accessibility_lang';
+      function load() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+      function save(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+      var langBtn = document.getElementById('lang-toggle');
+      var pageTitle = document.getElementById('page-title');
+      var lang = load() === 'en' ? 'en' : 'ar';
+
+      function apply(next) {
+        lang = next; save(next);
+        var ar = next === 'ar';
+        document.documentElement.lang = next;
+        document.documentElement.dir = ar ? 'rtl' : 'ltr';
+        pageTitle.textContent = ar ? 'إمكانية الوصول والشمول — تطبيق الهمة' : 'Accessibility & Inclusion — Al-Himmah';
+        langBtn.textContent = ar ? 'English' : 'العربية';
+        langBtn.lang = ar ? 'en' : 'ar';
+        langBtn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+        document.querySelectorAll('[data-ar][data-en]').forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + next);
+        });
+      }
+      langBtn.addEventListener('click', function () { apply(lang === 'ar' ? 'en' : 'ar'); });
+      if (lang !== 'ar') apply(lang);
+
+      var demo = document.getElementById('demo');
+      document.querySelectorAll('.switch').forEach(function (sw) {
+        sw.addEventListener('click', function () {
+          var on = sw.getAttribute('aria-pressed') !== 'true';
+          sw.setAttribute('aria-pressed', on ? 'true' : 'false');
+          demo.classList.toggle(sw.getAttribute('data-demo'), on);
+        });
+      });
+
+      var filters = document.querySelectorAll('.filter');
+      var cards = document.querySelectorAll('.feature');
+      filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var f = btn.getAttribute('data-filter');
+          filters.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+          cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-category') === f); });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
