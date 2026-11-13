@@ -652,6 +652,11 @@
     .mcore b { font-size: 1.15rem; font-weight: 900; }
     .merge.go .mcore { opacity: 1; transform: translate(50%, -50%) scale(1); }
 
+    .phone video { width: 100%; height: 100%; object-fit: contain; border-radius: 28px; background: var(--night); display: block; }
+    .cta-rating { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 2px; color: inherit; font-weight: 700; font-size: .95rem; text-decoration: none; }
+    .cta-rating .rv-stars { color: var(--night-gold); }
+    #reviews { scroll-margin-top: 80px; }
+
     /* ===== v3: كلامهم بالمتجر ===== */
     .reviews { margin-top: 22px; }
     .reviews-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; }
@@ -751,6 +756,7 @@
             <div class="cta-main">
             <a class="btn js-store" href="#summit" data-src="hero"><svg class="g js-store-glyph" aria-hidden="true"><use href="#g-mark"/></svg><span>شهرك المجاني يبدأ هنا</span></a>
               <p class="cta-note">أول شهر مجاني كامل، وبدون بطاقة</p>
+              <a class="cta-rating" href="#reviews"><span class="rv-stars" aria-hidden="true"><svg class="g"><use href="#g-star"/></svg><svg class="g"><use href="#g-star"/></svg><svg class="g"><use href="#g-star"/></svg><svg class="g"><use href="#g-star"/></svg><svg class="g"><use href="#g-star"/></svg></span>5 من 5 بتقييمات آب ستور</a>
             </div>
             <a class="link-btn" href="#for-you">وش فيه لي؟</a>
           </div>
@@ -867,7 +873,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>باقي 4 أيام على اختبارك، وتكفيك 3 جلسات</q></p>
               <a class="btn js-store" href="#summit" data-src="study">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/student.webp" alt="قسم طالب همة من داخل التطبيق" width="540" height="1170" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/study.mp4" poster="../v2/img/student.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم طالب همة من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-work" aria-labelledby="t-work" hidden>
@@ -885,7 +891,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>صرفك تحت سقفه 3 أسابيع، وماشي صح</q></p>
               <a class="btn js-store" href="#summit" data-src="work">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/work.webp" alt="قسم دراهمي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/work.mp4" poster="../v2/img/work.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم دراهمي من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-sport" aria-labelledby="t-sport" hidden>
@@ -903,7 +909,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>نمت 5 ساعات، فتثبيت الأوزان اليوم أذكى</q></p>
               <a class="btn js-store" href="#summit" data-src="sport">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/sport.webp" alt="قسم تماريني من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/sport.mp4" poster="../v2/img/sport.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم تماريني من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-parents" aria-labelledby="t-parents" hidden>
@@ -921,7 +927,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>مرت 3 أيام من آخر مكالمة لأمك، وصوتك يفرق معها</q></p>
               <a class="btn js-store" href="#summit" data-src="parents">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/parents.webp" alt="بطاقة بر الوالدين بقسم حياتي" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/parents.mp4" poster="../v2/img/parents.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم مجلس الوالدين من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-kids" aria-labelledby="t-kids" hidden>
@@ -939,7 +945,7 @@
               <p class="saud-line"><small>مثال من لينا</small><q>جبت 3 نجوم من 4 اليوم، باقي وحدة يا بطل</q></p>
               <a class="btn js-store" href="#summit" data-src="kids">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/kids.webp" alt="عالم لينا من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/kids.mp4" poster="../v2/img/kids.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="عالم لينا من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-faith" aria-labelledby="t-faith" hidden>
@@ -957,7 +963,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>وردك 5 أيام ورا بعض، وماشي صح</q></p>
               <a class="btn js-store" href="#summit" data-src="faith">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/faith.webp" alt="قسم نور حياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/faith.mp4" poster="../v2/img/faith.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم نور حياتي من داخل التطبيق"></video></div>
           </article>
 
           <article class="panel" role="tabpanel" id="p-calm" aria-labelledby="t-calm" hidden>
@@ -975,7 +981,7 @@
               <p class="saud-line"><small>مثال من سعود</small><q>18 ساعة بهوايتك، وقربت من العشرين</q></p>
               <a class="btn js-store" href="#summit" data-src="calm">شهرك المجاني يبدأ هنا</a>
             </div>
-            <div class="phone"><img src="../v2/img/calm.webp" alt="قسم هواياتي من داخل التطبيق" width="540" height="1170" loading="lazy" decoding="async"></div>
+            <div class="phone"><video class="js-vid" src="vid/calm.mp4" poster="../v2/img/calm.webp" muted loop playsinline preload="none" width="540" height="838" aria-label="قسم هواياتي من داخل التطبيق"></video></div>
           </article>
         </div>
       </section>
@@ -1051,7 +1057,7 @@
             </div>
           </div>
 
-          <div class="reviews">
+          <div class="reviews" id="reviews">
             <div class="reviews-head">
               <h3>كلامهم بالمتجر</h3>
               <a class="js-store-reviews" href="https://apps.apple.com/sa/app/id6788142781?see-all=reviews" target="_blank" rel="noopener">تقييمات حقيقية من آب ستور</a>
@@ -1883,6 +1889,20 @@
       R.forEach(function (r) { track.appendChild(card(r, false)); });
       if (!still) R.forEach(function (r) { track.appendChild(card(r, true)); });
     }
+    var save = navigator.connection && navigator.connection.saveData;
+    var vids = document.querySelectorAll('.js-vid');
+    if (!still && !save && hasIO) {
+      var vo = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else v.pause();
+        });
+      }, { threshold: 0.4 });
+      for (var q = 0; q < vids.length; q++) vo.observe(vids[q]);
+    }
+    var cr = document.querySelector('.cta-rating');
+    if (cr) cr.addEventListener('click', function () { ev('click_hero_rating'); });
     var rl = document.querySelector('.js-store-reviews');
     if (rl) rl.addEventListener('click', function () { ev('click_reviews_appstore'); });
   })();
